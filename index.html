@@ -9,55 +9,180 @@
   
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    background: #fdf6ec;
-    color: #5a3e2b;
+    background: #f0ede8;
+    color: #4a3f35;
     min-height: 100vh;
-    padding: 40px 20px;
   }
   
-  .container {
-    max-width: 760px;
+  .layout {
+    display: flex;
+    max-width: 1100px;
     margin: 0 auto;
+    min-height: 100vh;
   }
   
-  .header {
+  /* 侧边栏 */
+  .sidebar {
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid #e8e0d5;
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
-  .header h1 {
-    font-size: 2rem;
+  .sidebar-header h1 {
+    font-size: 1.1rem;
     color: #c47a3a;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   
-  .header .subtitle {
+  .sidebar-header .date {
+    font-size: 0.8rem;
     color: #a08060;
-    font-size: 0.95rem;
   }
   
-  .header .date-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #f0c98a, #e8a960);
-    color: white;
-    border-radius: 20px;
-    padding: 4px 16px;
+  .sidebar-section {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-section-title {
+    font-size: 0.75rem;
+    color: #b08060;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+  
+  .dragon-mini {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 0.85rem;
-    margin-bottom: 10px;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: #4a3f35;
   }
   
-  .section {
-    background: white;
+  .dragon-mini:hover { background: #f5efe8; }
+  .dragon-mini.active { background: #fdf0e3; color: #c47a3a; }
+  .dragon-mini .rank { font-size: 0.9rem; }
+  .dragon-mini .name { flex: 1; }
+  .dragon-mini .count { font-size: 0.75rem; color: #a08060; }
+  
+  .chat-bubble-mini {
+    background: #fdf6ec;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .chat-bubble-mini:hover { background: #fbe8d0; }
+  
+  .chat-bubble-mini .bubble-who {
+    font-size: 0.78rem;
+    color: #c47a3a;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .chat-bubble-mini .bubble-text {
+    font-size: 0.82rem;
+    color: #5a4030;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .event-tag {
+    display: inline-block;
+    background: #f0e6d8;
+    color: #8a6040;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
+  
+  /* 主内容 */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    overflow: hidden;
+  }
+  
+  .main-header {
+    margin-bottom: 32px;
+  }
+  
+  .main-header h1 {
+    font-size: 1.8rem;
+    color: #c47a3a;
+    margin-bottom: 6px;
+  }
+  
+  .main-header .subtitle {
+    color: #a08060;
+    font-size: 0.9rem;
+  }
+  
+  .active-filter-banner {
+    display: none;
+    background: linear-gradient(135deg, #f8e8c8, #f0d4a0);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .active-filter-banner.show { display: flex; }
+  
+  .active-filter-banner span {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #6a4020;
+  }
+  
+  .active-filter-banner .clear-btn {
+    background: #c47a3a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  
+  /* 事件卡片 */
+  .event-section {
+    background: #fff;
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 24px;
-    box-shadow: 0 4px 20px rgba(180, 120, 60, 0.08);
+    box-shadow: 0 2px 12px rgba(180, 120, 60, 0.06);
   }
   
-  .section-title {
-    font-size: 1.15rem;
+  .event-title {
+    font-size: 1.05rem;
     color: #c47a3a;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     padding-bottom: 10px;
     border-bottom: 2px dashed #f0dcc0;
     display: flex;
@@ -65,99 +190,161 @@
     gap: 8px;
   }
   
-  .link-item {
+  .event-title .event-tags {
+    margin-left: auto;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid #f8f0e3;
-  }
-  .link-item:last-child { border-bottom: none; }
-  
-  .link-item .who {
-    font-size: 0.82rem;
-    color: #b08060;
-    min-width: 70px;
+    gap: 4px;
+    flex-wrap: wrap;
   }
   
-  .link-item .what {
-    font-size: 0.9rem;
-    color: #5a3e2b;
-    word-break: break-all;
-  }
-  
-  .link-item .what a {
+  .event-title .member-chip {
+    background: #fdf6ec;
+    border: 1px solid #f0dcc0;
     color: #c47a3a;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
     text-decoration: none;
   }
   
-  .dragon-list {
+  .event-title .member-chip:hover { background: #fdf0e3; }
+  .event-title .member-chip.active { background: #c47a3a; color: white; border-color: #c47a3a; }
+  
+  /* 对话气泡 */
+  .bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .bubble-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .bubble-row.right { flex-direction: row-reverse; }
+  
+  .bubble-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f0c98a, #e8a960);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  
+  .bubble-avatar:hover { transform: scale(1.1); }
+  
+  .bubble-row.right .bubble-avatar {
+    background: linear-gradient(135deg, #d4a0d0, #c080b0);
+  }
+  
+  .bubble-content {
+    max-width: 75%;
+  }
+  
+  .bubble-row.right .bubble-content { text-align: right; }
+  
+  .bubble-who {
+    font-size: 0.75rem;
+    color: #a08060;
+    margin-bottom: 3px;
+    padding-left: 4px;
+  }
+  
+  .bubble-row.right .bubble-who { padding-right: 4px; }
+  
+  .bubble-chat {
+    display: inline-block;
+    background: #f5efe8;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    color: #4a3f35;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .bubble-chat:hover { background: #ede4d8; }
+  
+  .bubble-row.right .bubble-chat {
+    background: #c47a3a;
+    color: white;
+    border-radius: 16px;
+    border-top-right-radius: 4px;
+  }
+  
+  .bubble-row.right .bubble-chat:hover { background: #b06a2a; }
+  
+  .bubble-chat.highlight {
+    background: #fff3d0 !important;
+    box-shadow: 0 0 0 2px #f0c98a;
+  }
+  
+  .event-comment {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: #fdf6ec;
+    border-radius: 12px;
+    border-left: 4px solid #e8a960;
+    font-size: 0.85rem;
+    color: #8a6040;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  
+  /* 资源板块 */
+  .links-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
   
-  .dragon-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
+  .link-card {
+    background: #fdf9f5;
     border-radius: 12px;
-    font-size: 0.9rem;
+    padding: 14px;
+    border: 1px solid #f0e6d8;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    color: inherit;
   }
   
-  .dragon-item.gold { background: linear-gradient(135deg, #fff8e1, #ffe082); }
-  .dragon-item.silver { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); }
-  .dragon-item.bronze { background: linear-gradient(135deg, #fff3e0, #ffcc80); }
-  .dragon-item.normal { background: #fafafa; }
+  .link-card:hover { border-color: #e8c090; background: #fdf6ec; }
   
-  .dragon-item .rank { font-size: 1.1rem; }
-  .dragon-item .name { flex: 1; color: #5a3e2b; }
-  .dragon-item .count { color: #c47a3a; font-weight: bold; }
-  
-  .event-card {
-    margin-bottom: 24px;
-  }
-  
-  .event-card:last-child { margin-bottom: 0; }
-  
-  .event-title {
-    font-size: 1rem;
-    color: #c47a3a;
-    margin-bottom: 12px;
-    font-weight: bold;
-  }
-  
-  .quote-block {
-    background: #fdf6ec;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-    border-left: 4px solid #e8a960;
-  }
-  
-  .quote-line {
-    font-size: 0.9rem;
-    color: #5a3e2b;
-    line-height: 1.8;
-    margin-bottom: 6px;
-  }
-  
-  .quote-line:last-child { margin-bottom: 0; }
-  
-  .quote-line .speaker {
+  .link-card .link-who {
+    font-size: 0.78rem;
     color: #c47a3a;
     font-weight: bold;
+    margin-bottom: 4px;
   }
   
-  .comment {
-    font-size: 0.88rem;
+  .link-card .link-desc {
+    font-size: 0.85rem;
+    color: #5a4030;
+    margin-bottom: 4px;
+  }
+  
+  .link-card .link-url {
+    font-size: 0.72rem;
     color: #a08060;
-    font-style: italic;
-    padding: 8px 0 0 0;
-    line-height: 1.6;
+    word-break: break-all;
   }
   
+  /* 总结板块 */
   .summary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -171,13 +358,13 @@
   }
   
   .summary-item .label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: #a08060;
     margin-bottom: 4px;
   }
   
   .summary-item .value {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: #5a3e2b;
     font-weight: bold;
   }
@@ -187,191 +374,531 @@
     color: #b08060;
     font-size: 0.8rem;
     margin-top: 40px;
-    padding: 20px;
+    padding-bottom: 40px;
   }
   
-  @media (max-width: 600px) {
-    .dragon-list { grid-template-columns: 1fr; }
+  /* 隐藏未选中的事件 */
+  .event-section.hidden { display: none; }
+  
+  /* 移动端 */
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #e8e0d5; }
+    .main { padding: 20px; }
+    .links-grid { grid-template-columns: 1fr; }
     .summary-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="layout">
 
-  <div class="header">
-    <div class="date-badge">📅 2026年4月30日</div>
-    <h1>🐉 群日报</h1>
-    <div class="subtitle">SimonlinのAI学术交流（兄弟姐妹）· 每日精选</div>
-  </div>
+  <!-- 侧边栏 -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h1>🐉 群日报</h1>
+      <div class="date">2026年4月30日</div>
+    </div>
 
-  <!-- 资源分享 -->
-  <div class="section">
-    <div class="section-title">🔗 资源分享</div>
-    <div class="link-item">
-      <span class="who">千九 [10:23]</span>
-      <span class="what">Token导航站<br><a href="https://tokennav.cc/" target="_blank">https://tokennav.cc/</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">星淇 [15:33]</span>
-      <span class="what">SoftwareCopyright-Skill（软著申请Skill）<br><a href="https://github.com/Fokkyp/SoftwareCopyright-Skill" target="_blank">https://github.com/Fokkyp/SoftwareCopyright-Skill</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">凡有语 [23:13]</span>
-      <span class="what">Cola官网<br><a href="https://colaos.ai/" target="_blank">https://colaos.ai/</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">李华荣 [23:32]</span>
-      <span class="what">Vibe-Skills<br><a href="https://github.com/foryourhealth111-pixel/Vibe-Skills" target="_blank">https://github.com/foryourhealth111-pixel/Vibe-Skills</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">Simonlin [23:44]</span>
-      <span class="what">发现一个不错的API中转站<br><a href="https://m1.92k.store/register?aff=dKxR" target="_blank">https://m1.92k.store/register?aff=dKxR</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">李华荣 [23:47]</span>
-      <span class="what">pi-mono/coding-agent<br><a href="https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent" target="_blank">https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent</a></span>
-    </div>
-    <div class="link-item">
-      <span class="who">马佳彬 [23:55]</span>
-      <span class="what">奶爸的中转站，可以充点小钱看看<br><a href="https://manage-xai.ainaibahub.com" target="_blank">https://manage-xai.ainaibahub.com</a></span>
-    </div>
-  </div>
-
-  <!-- 龙王榜 -->
-  <div class="section">
-    <div class="section-title">🏆 龙王榜</div>
-    <div class="dragon-list">
-      <div class="dragon-item gold"><span class="rank">🥇</span><span class="name">Simonlin</span><span class="count">135条</span></div>
-      <div class="dragon-item gold"><span class="rank">🥈</span><span class="name">马佳彬</span><span class="count">123条</span></div>
-      <div class="dragon-item gold"><span class="rank">🥉</span><span class="name">霄凡旅行小刘</span><span class="count">105条</span></div>
-      <div class="dragon-item normal"><span class="rank">4</span><span class="name">是旦不是蛋</span><span class="count">103条</span></div>
-      <div class="dragon-item normal"><span class="rank">5</span><span class="name">李华荣</span><span class="count">92条</span></div>
-      <div class="dragon-item normal"><span class="rank">6</span><span class="name">Irene（减少熬夜）</span><span class="count">84条</span></div>
-      <div class="dragon-item normal"><span class="rank">7</span><span class="name">๑🌱๑</span><span class="count">80条</span></div>
-      <div class="dragon-item normal"><span class="rank">8</span><span class="name">凡有语</span><span class="count">70条</span></div>
-      <div class="dragon-item normal"><span class="rank">9</span><span class="name">千九</span><span class="count">62条</span></div>
-      <div class="dragon-item normal"><span class="rank">10</span><span class="name">程玉</span><span class="count">56条</span></div>
-    </div>
-  </div>
-
-  <!-- 今日事件 -->
-  <div class="section">
-    <div class="section-title">🔥 今日事件</div>
-
-    <div class="event-card">
-      <div class="event-title">💼 OPC创业大辩论：马佳彬17年血泪 vs 是旦"水到渠成"</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">马佳彬：</span>别鼓吹OPC，一切随缘，这是缺德事。学校喊我回去讲创业课我都不回去的。我从大学一直创业到现在，17年了，见过太多。</div>
-        <div class="quote-line"><span class="speaker">马佳彬：</span>创业有很多事情，你是想不到的。要不然咋有人跳楼。每天一睁眼醒来，几十万的开支，几百万的欠款，那种感觉你去感受几年试试。</div>
-        <div class="quote-line"><span class="speaker">Simonlin：</span>这一块已经成为宝妈和中老年创业新赛道了[旺柴]</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>我觉得创业也好，OC也好，自然而然地做事情吧。首先是自然而然地做事情，不是非要给他套一个概念。有些事情做好了，水到渠成了，爱叫啥叫啥。</div>
-        <div class="quote-line"><span class="speaker">DDA：</span>我们现在做的东西，其实也不叫创业，而是叫一笔买卖。</div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">🔥 快捷事件</div>
+      <div class="chat-bubble-mini" onclick="filterByMember('是旦不是蛋')">
+        <div class="bubble-who">是旦不是蛋</div>
+        <div class="bubble-text">AI模型越来越强，但我好像时间并没有节省出来…</div>
+        <span class="event-tag">AI越强人越累</span>
       </div>
-      <div class="comment">💬 毒舌点评：马佬17年，句句血泪。"要不然咋有人跳楼"——可惜这种话永远没有"月入十万"传播得远。是旦总说"水到渠成"，但水到渠成之前，得先活着。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">🐷 养殖业吐槽大会：海参500万打水漂，养猪场变富二代</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">园宝：</span>我舅养海参500多W打水漂了。还好我舅心态好，自己还有别的工厂，抗过来了。</div>
-        <div class="quote-line"><span class="speaker">Irene（减少熬夜）：</span>巧了，我家开养猪场的。以前还行，后来地被买了，我爸发达了，就不做了。</div>
-        <div class="quote-line"><span class="speaker">DDA：</span>叔叔还想不想要个儿子？哈哈哈哈哈，我突然不太想创业了。</div>
-        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>我是学兽医的，见过太多了，高投入低回报的行业。</div>
-        <div class="quote-line"><span class="speaker">禾怡亲亲：</span>养羊也难，羊怕冷，要架起来住在羊床上，喝水都不能喝凉水。</div>
+      <div class="chat-bubble-mini" onclick="filterByMember('马佳彬')">
+        <div class="bubble-who">马佳彬</div>
+        <div class="bubble-text">要不然咋有人跳楼。创业有很多事情你是想不到的。</div>
+        <span class="event-tag">OPC创业辩论</span>
       </div>
-      <div class="comment">💬 毒舌点评：群里人均隐藏一个养殖户。Irene家"我爸发达了就不做了"——今日最凡尔赛。DDA想认爹结果发现养猪场少爷就在身边。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">💪 "吃好睡好心态好"复读：千九金句引发全群健康宣言</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">千九：</span>吃好，睡好，心态好，人生就没有什么大事[旺柴]</div>
-        <div class="quote-line"><span class="speaker">马佳彬、凡有语、沙皮狗、星淇、Simonlin、禾怡亲亲、何先森Kevin、Stu(dy ing)、悖论：</span>陆续复读，一字不差。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>生前何必久睡，死后自会长眠。</div>
+      <div class="chat-bubble-mini" onclick="filterByMember('๑🌱๑')">
+        <div class="bubble-who">๑🌱๑</div>
+        <div class="bubble-text">我一个礼拜烧了快6亿token，纯他妈的力工。</div>
+        <span class="event-tag">6亿Token力工</span>
       </div>
-      <div class="comment">💬 毒舌点评：九个人用行动证明自己是听话的好群友。是旦用一句话证明自己是广东人。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">🌟 刘导转正：从兽医到旅行产品经理</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>实体胸卡到手，终于转正啦！</div>
-        <div class="quote-line"><span class="speaker">程玉、马佳彬、Simonlin、Lee、星淇：</span>刘导好🫡</div>
-        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>我以组团为主，玩的是那种相对小众一点的品质游。大连海底世界宿营，大连历史citywalk。</div>
-        <div class="quote-line"><span class="speaker">Simonlin：</span>吾去。汝不早曰。太赞了这个海报！</div>
-        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>干了这么多年的幕后，这次老子要上台来[呲牙]</div>
+      <div class="chat-bubble-mini" onclick="filterByMember('霄凡旅行小刘')">
+        <div class="bubble-who">霄凡旅行小刘</div>
+        <div class="bubble-text">干了这么多年的幕后，这次老子要上台来。</div>
+        <span class="event-tag">刘导转正</span>
       </div>
-      <div class="comment">💬 毒舌点评：幕后转台前，工位变现场。刘导从兽医到旅行产品，跨界跨得比AI模型还能整。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">🤖 Cola + DeepSeek真香现场</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>比原生龙虾好用的多得多的多。</div>
-        <div class="quote-line"><span class="speaker">Simonlin：</span>小龙虾我觉得群里最强是李馆长。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>cola最近ds免费。如果后面ds算力充沛价格下来了，cola日常用ds也很好。我今天用了一天，测了几个skills，感觉良好。比minimax强多了。</div>
-        <div class="quote-line"><span class="speaker">๑🌱๑：</span>今天用了同一套长任务测试了一下Gemini 3.1跟DS v4，DS v4逻辑推理能力蛮强，价格还便宜。</div>
-        <div class="quote-line"><span class="speaker">凡有语：</span>不知不觉，Cola已经快满月啦🥳 活动时间：5.1-5.5，分享故事赢$5充能额度。</div>
-      </div>
-      <div class="comment">💬 毒舌点评：Cola满月恰逢DS免费，双喜临门。是旦从"原生龙虾什么垃圾"到"cola配ds真好用"，转身速度比AI还快。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">⚡ 风林6亿Token力工 vs 蒸馏群友</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">๑🌱๑：</span>我一个礼拜烧了快6亿token，纯他妈的力工。为了给某个事儿兜底。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>烧那么少。</div>
-        <div class="quote-line"><span class="speaker">๑🌱๑：</span>或许我可以蒸馏一下一些活跃用户。私聊发我就行，多谢风林哥。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>蒸吧，请大家吃蒸蛋。</div>
-      </div>
-      <div class="comment">💬 毒舌点评：群里两大顶级力工：风林烧6亿Token，是旦被龙虾蒸馏。"烧那么少"的凡尔赛，听得风林想打人。</div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-title">💔 是旦不是蛋：AI越强，人越累</div>
-      <div class="quote-block">
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>AI模型越来越强，但是我好像时间并没有节省出来，我去审核它、校验它输出的时间花得越来越多了。因为我需要自己变得更强，才能找出它交付内容的漏洞。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>甚至甲方都觉得我做的质量太高了，劝我别做那么高质量的。给的又不多。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>但我过不去自己心里那关。</div>
-        <div class="quote-line"><span class="speaker">๑🌱๑：</span>这跟我最近有点像，我说了还没弄好，他们说这个可以了，先给甲方。</div>
-        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>所以我们都是靠谱的人。朋友有事情，第一时间想到的就是找我们。我们这种人不会做100分完成度的60分标准的事。</div>
-      </div>
-      <div class="comment">💬 毒舌点评：本日最扎心，没有之一。"甲方劝我别做那么高质量"——所有靠谱人的共同困境。记住：100分完成度的60分标准，不是摆烂，是放过自己。</div>
-    </div>
-
-  </div>
-
-  <!-- 今日总结 -->
-  <div class="section">
-    <div class="section-title">📊 今日总结</div>
-    <div class="summary-grid">
-      <div class="summary-item">
-        <div class="label">最卷的人</div>
-        <div class="value">๑🌱๑ — 一周烧6亿token，纯纯力工</div>
-      </div>
-      <div class="summary-item">
-        <div class="label">最清醒的人</div>
-        <div class="value">马佳彬 — "要不然咋有人跳楼"</div>
-      </div>
-      <div class="summary-item">
-        <div class="label">最扎心的人</div>
-        <div class="value">是旦不是蛋 — "甲方劝我别做高质量"</div>
-      </div>
-      <div class="summary-item">
-        <div class="label">最佳黑马</div>
-        <div class="value">霄凡旅行小刘 — 刘导转正了</div>
+      <div class="chat-bubble-mini" onclick="filterByMember('千九')">
+        <div class="bubble-who">千九</div>
+        <div class="bubble-text">吃好，睡好，心态好，人生就没有什么大事。</div>
+        <span class="event-tag">吃好睡好心态好</span>
       </div>
     </div>
-    <div style="margin-top:16px; text-align:center; color:#a08060; font-size:0.9rem;">
-      今日金句："吃好，睡好，心态好，人生就没有什么大事" — 千九
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">🏆 龙王榜</div>
+      <div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')">
+        <span class="rank">🥇</span><span class="name">Simonlin</span><span class="count">135条</span>
+      </div>
+      <div class="dragon-mini" onclick="filterByMember('马佳彬')">
+        <span class="rank">🥈</span><span class="name">马佳彬</span><span class="count">123条</span>
+      </div>
+      <div class="dragon-mini" onclick="filterByMember('霄凡旅行小刘')">
+        <span class="rank">🥉</span><span class="name">霄凡旅行小刘</span><span class="count">105条</span>
+      </div>
+      <div class="dragon-mini" onclick="filterByMember('是旦不是蛋')">
+        <span class="rank">4</span><span class="name">是旦不是蛋</span><span class="count">103条</span>
+      </div>
+      <div class="dragon-mini" onclick="filterByMember('李华荣')">
+        <span class="rank">5</span><span class="name">李华荣</span><span class="count">92条</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">🔗 资源分享</div>
+      <div class="link-card" onclick="window.open('https://m1.92k.store/register?aff=dKxR', '_blank')">
+        <div class="link-who">Simonlin · 23:44</div>
+        <div class="link-desc">API中转站</div>
+        <div class="link-url">m1.92k.store</div>
+      </div>
+      <div class="link-card" onclick="window.open('https://colaos.ai/', '_blank')" style="margin-top:8px">
+        <div class="link-who">凡有语 · 23:13</div>
+        <div class="link-desc">Cola官网</div>
+        <div class="link-url">colaos.ai</div>
+      </div>
+      <div class="link-card" onclick="window.open('https://tokennav.cc/', '_blank')" style="margin-top:8px">
+        <div class="link-who">千九 · 10:23</div>
+        <div class="link-desc">Token导航站</div>
+        <div class="link-url">tokennav.cc</div>
+      </div>
     </div>
   </div>
 
-  <div class="footer">
-    共1340条消息 · 2026年4月30日完 · 🐉
-  </div>
+  <!-- 主内容 -->
+  <div class="main">
+    <div class="main-header">
+      <h1>📰 SimonlinのAI学术交流 · 4月30日</h1>
+      <div class="subtitle">共1340条消息 · 7个高光事件</div>
+    </div>
 
+    <div class="active-filter-banner" id="filterBanner">
+      <span id="filterText">当前筛选：</span>
+      <button class="clear-btn" onclick="clearFilter()">清除筛选</button>
+    </div>
+
+    <!-- 事件1：OPC创业 -->
+    <div class="event-section" data-members="马佳彬,Simonlin,是旦不是蛋,DDA" id="event-opc">
+      <div class="event-title">
+        💼 OPC创业大辩论：马佳彬17年血泪劝退
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('马佳彬')">马佳彬</span>
+          <span class="member-chip" onclick="filterByMember('Simonlin')">Simonlin</span>
+          <span class="member-chip" onclick="filterByMember('是旦不是蛋')">是旦不是蛋</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('马佳彬')">马</div>
+          <div class="bubble-content">
+            <div class="bubble-who">马佳彬</div>
+            <div class="bubble-chat" onclick="filterByMember('马佳彬')">别鼓吹OPC，一切随缘，这是缺德事。学校喊我回去讲创业课我都不回去的。我从大学一直创业到现在，17年了，见过太多。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('马佳彬')">马</div>
+          <div class="bubble-content">
+            <div class="bubble-who">马佳彬</div>
+            <div class="bubble-chat" onclick="filterByMember('马佳彬')">创业有很多事情，你是想不到的。要不然咋有人跳楼。每天一睁眼醒来，几十万的开支，几百万的欠款，那种感觉你去感受几年试试。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('Simonlin')">S</div>
+          <div class="bubble-content">
+            <div class="bubble-who">Simonlin</div>
+            <div class="bubble-chat" onclick="filterByMember('Simonlin')">这一块已经成为宝妈和中老年创业新赛道了[旺柴]</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat" onclick="filterByMember('是旦不是蛋')">我觉得创业也好，OC也好，自然而然地做事情吧。有些事情做好了，水到渠成了，爱叫啥叫啥。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：马佬17年，句句血泪。"要不然咋有人跳楼"——可惜这种话永远没有"月入十万"传播得远。是旦总说"水到渠成"，但水到渠成之前，得先活着。</div>
+    </div>
+
+    <!-- 事件2：养殖业 -->
+    <div class="event-section" data-members="园宝,Irene（减少熬夜）,DDA,霄凡旅行小刘,禾怡亲亲" id="event-yangzhi">
+      <div class="event-title">
+        🐷 养殖业吐槽：海参500万打水漂，养猪场变富二代
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('Irene（减少熬夜）')">Irene</span>
+          <span class="member-chip" onclick="filterByMember('霄凡旅行小刘')">小刘</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('园宝')">园</div>
+          <div class="bubble-content">
+            <div class="bubble-who">园宝</div>
+            <div class="bubble-chat">我舅养海参500多W打水漂了。还好我舅心态好，自己还有别的工厂，抗过来了。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('Irene（减少熬夜）')">I</div>
+          <div class="bubble-content">
+            <div class="bubble-who">Irene（减少熬夜）</div>
+            <div class="bubble-chat">巧了，我家开养猪场的。以前还行，后来地被买了，我爸发达了，就不做了。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('DDA')">D</div>
+          <div class="bubble-content">
+            <div class="bubble-who">DDA</div>
+            <div class="bubble-chat">叔叔还想不想要个儿子？哈哈哈哈哈，我突然不太想创业了。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('霄凡旅行小刘')">刘</div>
+          <div class="bubble-content">
+            <div class="bubble-who">霄凡旅行小刘</div>
+            <div class="bubble-chat">我是学兽医的，见过太多了，高投入低回报的行业。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：群里人均隐藏一个养殖户。Irene家"我爸发达了就不做了"——今日最凡尔赛。DDA想认爹结果发现养猪场少爷就在身边。</div>
+    </div>
+
+    <!-- 事件3：吃好睡好 -->
+    <div class="event-section" data-members="千九,马佳彬,是旦不是蛋,Simonlin,凡有语,禾怡亲亲" id="event-jiankang">
+      <div class="event-title">
+        💪 "吃好睡好心态好"复读：千九金句引发全群健康宣言
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('千九')">千九</span>
+          <span class="member-chip" onclick="filterByMember('是旦不是蛋')">是旦</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('千九')">九</div>
+          <div class="bubble-content">
+            <div class="bubble-who">千九</div>
+            <div class="bubble-chat">吃好，睡好，心态好，人生就没有什么大事[旺柴]</div>
+          </div>
+        </div>
+        <div class="bubble-row right">
+          <div class="bubble-avatar">众</div>
+          <div class="bubble-content">
+            <div class="bubble-who">马佳彬、凡有语、沙皮狗、星淇、Simonlin、禾怡亲亲、何先森Kevin、Stu(dy ing)、悖论</div>
+            <div class="bubble-chat">陆续复读，一字不差 👍👍👍</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">生前何必久睡，死后自会长眠。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：九个人用行动证明自己是听话的好群友。是旦用一句话证明自己是广东人。</div>
+    </div>
+
+    <!-- 事件4：刘导转正 -->
+    <div class="event-section" data-members="霄凡旅行小刘,Simonlin,程玉,马佳彬,星淇,Lee" id="event-liudao">
+      <div class="event-title">
+        🌟 刘导转正：从兽医到旅行产品经理
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('霄凡旅行小刘')">小刘</span>
+          <span class="member-chip" onclick="filterByMember('Simonlin')">Simonlin</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('霄凡旅行小刘')">刘</div>
+          <div class="bubble-content">
+            <div class="bubble-who">霄凡旅行小刘</div>
+            <div class="bubble-chat">实体胸卡到手，终于转正啦！🎉</div>
+          </div>
+        </div>
+        <div class="bubble-row right">
+          <div class="bubble-avatar">群</div>
+          <div class="bubble-content">
+            <div class="bubble-who">程玉、马佳彬、Simonlin、星淇、Lee</div>
+            <div class="bubble-chat">刘导好🫡</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('霄凡旅行小刘')">刘</div>
+          <div class="bubble-content">
+            <div class="bubble-who">霄凡旅行小刘</div>
+            <div class="bubble-chat">我以组团为主，玩的是那种相对小众一点的品质游。大连海底世界宿营，大连历史citywalk。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('Simonlin')">S</div>
+          <div class="bubble-content">
+            <div class="bubble-who">Simonlin</div>
+            <div class="bubble-chat">吾去。汝不早曰。太赞了这个海报！</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('霄凡旅行小刘')">刘</div>
+          <div class="bubble-content">
+            <div class="bubble-who">霄凡旅行小刘</div>
+            <div class="bubble-chat">干了这么多年的幕后，这次老子要上台来[呲牙]</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：幕后转台前，工位变现场。刘导从兽医到旅行产品，跨界跨得比AI模型还能整。</div>
+    </div>
+
+    <!-- 事件5：Cola真香 -->
+    <div class="event-section" data-members="是旦不是蛋,Simonlin,๑🌱๑,凡有语" id="event-cola">
+      <div class="event-title">
+        🤖 Cola + DeepSeek真香现场
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('是旦不是蛋')">是旦</span>
+          <span class="member-chip" onclick="filterByMember('๑🌱๑')">๑🌱๑</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">比原生龙虾好用的多得多的多。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('Simonlin')">S</div>
+          <div class="bubble-content">
+            <div class="bubble-who">Simonlin</div>
+            <div class="bubble-chat">小龙虾我觉得群里最强是李馆长。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">cola最近ds免费。如果后面ds算力充沛价格下来了，cola日常用ds也很好。我今天用了一天，测了几个skills，感觉良好。比minimax强多了。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('๑🌱๑')">๑</div>
+          <div class="bubble-content">
+            <div class="bubble-who">๑🌱๑</div>
+            <div class="bubble-chat">今天用了同一套长任务测试了一下Gemini 3.1跟DS v4，DS v4逻辑推理能力蛮强，价格还便宜。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('凡有语')">凡</div>
+          <div class="bubble-content">
+            <div class="bubble-who">凡有语</div>
+            <div class="bubble-chat">不知不觉，Cola已经快满月啦🥳 活动时间：5.1-5.5，分享故事赢$5充能额度。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：Cola满月恰逢DS免费，双喜临门。是旦从"原生龙虾什么垃圾"到"cola配ds真好用"，转身速度比AI还快。</div>
+    </div>
+
+    <!-- 事件6：6亿Token -->
+    <div class="event-section" data-members="๑🌱๑,是旦不是蛋" id="event-token">
+      <div class="event-title">
+        ⚡ 风林6亿Token力工 vs 蒸馏群友
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('๑🌱๑')">๑🌱๑</span>
+          <span class="member-chip" onclick="filterByMember('是旦不是蛋')">是旦</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('๑🌱๑')">๑</div>
+          <div class="bubble-content">
+            <div class="bubble-who">๑🌱๑</div>
+            <div class="bubble-chat">我一个礼拜烧了快6亿token，纯他妈的力工。为了给某个事儿兜底。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">烧那么少。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('๑🌱๑')">๑</div>
+          <div class="bubble-content">
+            <div class="bubble-who">๑🌱๑</div>
+            <div class="bubble-chat">或许我可以蒸馏一下一些活跃用户。私聊发我就行，多谢风林哥。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">蒸吧，请大家吃蒸蛋。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：群里两大顶级力工：风林烧6亿Token，是旦被龙虾蒸馏。"烧那么少"的凡尔赛，听得风林想打人。</div>
+    </div>
+
+    <!-- 事件7：AI越强人越累 -->
+    <div class="event-section" data-members="是旦不是蛋,๑🌱๑" id="event-ai">
+      <div class="event-title">
+        💔 是旦不是蛋：AI越强，人越累
+        <div class="event-tags">
+          <span class="member-chip" onclick="filterByMember('是旦不是蛋')">是旦</span>
+          <span class="member-chip" onclick="filterByMember('๑🌱๑')">๑🌱๑</span>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">AI模型越来越强，但是我好像时间并没有节省出来，我去审核它、校验它输出的时间花得越来越多了。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">甚至甲方都觉得我做的质量太高了，劝我别做那么高质量的。给的又不多。但我过不去自己心里那关。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('๑🌱๑')">๑</div>
+          <div class="bubble-content">
+            <div class="bubble-who">๑🌱๑</div>
+            <div class="bubble-chat">这跟我最近有点像，我说了还没弄好，他们说这个可以了，先给甲方。</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div class="bubble-avatar" onclick="filterByMember('是旦不是蛋')">是</div>
+          <div class="bubble-content">
+            <div class="bubble-who">是旦不是蛋</div>
+            <div class="bubble-chat">所以我们都是靠谱的人。朋友有事情，第一时间想到的就是找我们。我们这种人不会做100分完成度的60分标准的事。</div>
+          </div>
+        </div>
+      </div>
+      <div class="event-comment">💬 毒舌点评：本日最扎心，没有之一。"甲方劝我别做那么高质量"——所有靠谱人的共同困境。记住：100分完成度的60分标准，不是摆烂，是放过自己。</div>
+    </div>
+
+    <!-- 总结 -->
+    <div class="event-section">
+      <div class="event-title">📊 今日总结</div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="label">最卷的人</div>
+          <div class="value">๑🌱๑ — 一周烧6亿token，纯纯力工</div>
+        </div>
+        <div class="summary-item">
+          <div class="label">最清醒的人</div>
+          <div class="value">马佳彬 — "要不然咋有人跳楼"</div>
+        </div>
+        <div class="summary-item">
+          <div class="label">最扎心的人</div>
+          <div class="value">是旦不是蛋 — "甲方劝我别做高质量"</div>
+        </div>
+        <div class="summary-item">
+          <div class="label">最佳黑马</div>
+          <div class="value">霄凡旅行小刘 — 刘导转正了</div>
+        </div>
+      </div>
+      <div style="margin-top:16px; text-align:center; color:#a08060; font-size:0.9rem;">
+        今日金句："吃好，睡好，心态好，人生就没有什么大事" — 千九
+      </div>
+    </div>
+
+    <div class="footer">
+      共1340条消息 · 2026年4月30日完 · 🐉
+    </div>
+  </div>
 </div>
+
+<script>
+let currentFilter = null;
+
+function filterByMember(name) {
+  currentFilter = name;
+  
+  // Update banner
+  const banner = document.getElementById('filterBanner');
+  const filterText = document.getElementById('filterText');
+  banner.classList.add('show');
+  filterText.textContent = `当前筛选：${name}`;
+  
+  // Highlight member chips
+  document.querySelectorAll('.member-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.textContent.trim() === name || 
+      (name === 'Simonlin' && chip.textContent.trim() === 'Simonlin') ||
+      (name === '小刘' && chip.textContent.trim() === '小刘') ||
+      (name === '是旦' && chip.textContent.trim() === '是旦') ||
+      (name === '๑🌱๑' && chip.textContent.trim() === '๑🌱๑') ||
+      (name === 'Irene' && chip.textContent.trim() === 'Irene'));
+  });
+  
+  // Show only matching events
+  document.querySelectorAll('.event-section').forEach(section => {
+    const members = section.getAttribute('data-members') || '';
+    const show = members.includes(name);
+    section.classList.toggle('hidden', !show);
+    
+    // Highlight matching bubbles
+    section.querySelectorAll('.bubble-chat').forEach(bubble => {
+      const row = bubble.closest('.bubble-row');
+      if (row) {
+        const avatar = row.querySelector('.bubble-avatar');
+        const avatarName = avatar ? avatar.textContent.trim() : '';
+        const whoEl = row.querySelector('.bubble-who');
+        const whoName = whoEl ? whoEl.textContent.trim() : '';
+        
+        const match = whoName.includes(name) || 
+          (name === 'Simonlin' && whoName === 'Simonlin') ||
+          (name === '小刘' && whoName === '霄凡旅行小刘') ||
+          (name === '๑🌱๑' && whoName === '๑🌱๑') ||
+          (name === '是旦' && whoName === '是旦不是蛋') ||
+          (name === 'Irene' && whoName.includes('Irene'));
+        
+        bubble.classList.toggle('highlight', match);
+      }
+    });
+  });
+  
+  // Scroll to first matching event
+  const firstMatch = document.querySelector('.event-section:not(.hidden)');
+  if (firstMatch) {
+    firstMatch.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function clearFilter() {
+  currentFilter = null;
+  
+  const banner = document.getElementById('filterBanner');
+  banner.classList.remove('show');
+  
+  document.querySelectorAll('.member-chip').forEach(chip => {
+    chip.classList.remove('active');
+  });
+  
+  document.querySelectorAll('.event-section').forEach(section => {
+    section.classList.remove('hidden');
+  });
+  
+  document.querySelectorAll('.bubble-chat').forEach(bubble => {
+    bubble.classList.remove('highlight');
+  });
+}
+
+// Sidebar quick filters
+document.querySelectorAll('.dragon-mini, .chat-bubble-mini').forEach(el => {
+  el.addEventListener('click', () => {
+    const nameSpan = el.querySelector('.name') || el.querySelector('.bubble-who');
+    if (nameSpan) {
+      const name = nameSpan.textContent.trim();
+      filterByMember(name);
+    }
+  });
+});
+</script>
 </body>
 </html>
