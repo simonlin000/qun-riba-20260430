@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 2026年4月30日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #fdf6ec;
+    color: #5a3e2b;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #c47a3a;
+    margin-bottom: 8px;
+  }
+  
+  .header .subtitle {
+    color: #a08060;
+    font-size: 0.95rem;
+  }
+  
+  .header .date-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #f0c98a, #e8a960);
+    color: white;
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .section {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(180, 120, 60, 0.08);
+  }
+  
+  .section-title {
+    font-size: 1.15rem;
+    color: #c47a3a;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #f0dcc0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .link-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8f0e3;
+  }
+  .link-item:last-child { border-bottom: none; }
+  
+  .link-item .who {
+    font-size: 0.82rem;
+    color: #b08060;
+    min-width: 70px;
+  }
+  
+  .link-item .what {
+    font-size: 0.9rem;
+    color: #5a3e2b;
+    word-break: break-all;
+  }
+  
+  .link-item .what a {
+    color: #c47a3a;
+    text-decoration: none;
+  }
+  
+  .dragon-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .dragon-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .dragon-item.gold { background: linear-gradient(135deg, #fff8e1, #ffe082); }
+  .dragon-item.silver { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); }
+  .dragon-item.bronze { background: linear-gradient(135deg, #fff3e0, #ffcc80); }
+  .dragon-item.normal { background: #fafafa; }
+  
+  .dragon-item .rank { font-size: 1.1rem; }
+  .dragon-item .name { flex: 1; color: #5a3e2b; }
+  .dragon-item .count { color: #c47a3a; font-weight: bold; }
+  
+  .event-card {
+    margin-bottom: 24px;
+  }
+  
+  .event-card:last-child { margin-bottom: 0; }
+  
+  .event-title {
+    font-size: 1rem;
+    color: #c47a3a;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  
+  .quote-block {
+    background: #fdf6ec;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #e8a960;
+  }
+  
+  .quote-line {
+    font-size: 0.9rem;
+    color: #5a3e2b;
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+  
+  .quote-line:last-child { margin-bottom: 0; }
+  
+  .quote-line .speaker {
+    color: #c47a3a;
+    font-weight: bold;
+  }
+  
+  .comment {
+    font-size: 0.88rem;
+    color: #a08060;
+    font-style: italic;
+    padding: 8px 0 0 0;
+    line-height: 1.6;
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .summary-item {
+    background: #fdf6ec;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  
+  .summary-item .label {
+    font-size: 0.8rem;
+    color: #a08060;
+    margin-bottom: 4px;
+  }
+  
+  .summary-item .value {
+    font-size: 0.9rem;
+    color: #5a3e2b;
+    font-weight: bold;
+  }
+  
+  .footer {
+    text-align: center;
+    color: #b08060;
+    font-size: 0.8rem;
+    margin-top: 40px;
+    padding: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .dragon-list { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="date-badge">📅 2026年4月30日</div>
+    <h1>🐉 群日报</h1>
+    <div class="subtitle">SimonlinのAI学术交流（兄弟姐妹）· 每日精选</div>
+  </div>
+
+  <!-- 资源分享 -->
+  <div class="section">
+    <div class="section-title">🔗 资源分享</div>
+    <div class="link-item">
+      <span class="who">千九 [10:23]</span>
+      <span class="what">Token导航站<br><a href="https://tokennav.cc/" target="_blank">https://tokennav.cc/</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">星淇 [15:33]</span>
+      <span class="what">SoftwareCopyright-Skill（软著申请Skill）<br><a href="https://github.com/Fokkyp/SoftwareCopyright-Skill" target="_blank">https://github.com/Fokkyp/SoftwareCopyright-Skill</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">凡有语 [23:13]</span>
+      <span class="what">Cola官网<br><a href="https://colaos.ai/" target="_blank">https://colaos.ai/</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">李华荣 [23:32]</span>
+      <span class="what">Vibe-Skills<br><a href="https://github.com/foryourhealth111-pixel/Vibe-Skills" target="_blank">https://github.com/foryourhealth111-pixel/Vibe-Skills</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">Simonlin [23:44]</span>
+      <span class="what">发现一个不错的API中转站<br><a href="https://m1.92k.store/register?aff=dKxR" target="_blank">https://m1.92k.store/register?aff=dKxR</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">李华荣 [23:47]</span>
+      <span class="what">pi-mono/coding-agent<br><a href="https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent" target="_blank">https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent</a></span>
+    </div>
+    <div class="link-item">
+      <span class="who">马佳彬 [23:55]</span>
+      <span class="what">奶爸的中转站，可以充点小钱看看<br><a href="https://manage-xai.ainaibahub.com" target="_blank">https://manage-xai.ainaibahub.com</a></span>
+    </div>
+  </div>
+
+  <!-- 龙王榜 -->
+  <div class="section">
+    <div class="section-title">🏆 龙王榜</div>
+    <div class="dragon-list">
+      <div class="dragon-item gold"><span class="rank">🥇</span><span class="name">Simonlin</span><span class="count">135条</span></div>
+      <div class="dragon-item gold"><span class="rank">🥈</span><span class="name">马佳彬</span><span class="count">123条</span></div>
+      <div class="dragon-item gold"><span class="rank">🥉</span><span class="name">霄凡旅行小刘</span><span class="count">105条</span></div>
+      <div class="dragon-item normal"><span class="rank">4</span><span class="name">是旦不是蛋</span><span class="count">103条</span></div>
+      <div class="dragon-item normal"><span class="rank">5</span><span class="name">李华荣</span><span class="count">92条</span></div>
+      <div class="dragon-item normal"><span class="rank">6</span><span class="name">Irene（减少熬夜）</span><span class="count">84条</span></div>
+      <div class="dragon-item normal"><span class="rank">7</span><span class="name">๑🌱๑</span><span class="count">80条</span></div>
+      <div class="dragon-item normal"><span class="rank">8</span><span class="name">凡有语</span><span class="count">70条</span></div>
+      <div class="dragon-item normal"><span class="rank">9</span><span class="name">千九</span><span class="count">62条</span></div>
+      <div class="dragon-item normal"><span class="rank">10</span><span class="name">程玉</span><span class="count">56条</span></div>
+    </div>
+  </div>
+
+  <!-- 今日事件 -->
+  <div class="section">
+    <div class="section-title">🔥 今日事件</div>
+
+    <div class="event-card">
+      <div class="event-title">💼 OPC创业大辩论：马佳彬17年血泪 vs 是旦"水到渠成"</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">马佳彬：</span>别鼓吹OPC，一切随缘，这是缺德事。学校喊我回去讲创业课我都不回去的。我从大学一直创业到现在，17年了，见过太多。</div>
+        <div class="quote-line"><span class="speaker">马佳彬：</span>创业有很多事情，你是想不到的。要不然咋有人跳楼。每天一睁眼醒来，几十万的开支，几百万的欠款，那种感觉你去感受几年试试。</div>
+        <div class="quote-line"><span class="speaker">Simonlin：</span>这一块已经成为宝妈和中老年创业新赛道了[旺柴]</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>我觉得创业也好，OC也好，自然而然地做事情吧。首先是自然而然地做事情，不是非要给他套一个概念。有些事情做好了，水到渠成了，爱叫啥叫啥。</div>
+        <div class="quote-line"><span class="speaker">DDA：</span>我们现在做的东西，其实也不叫创业，而是叫一笔买卖。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：马佬17年，句句血泪。"要不然咋有人跳楼"——可惜这种话永远没有"月入十万"传播得远。是旦总说"水到渠成"，但水到渠成之前，得先活着。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">🐷 养殖业吐槽大会：海参500万打水漂，养猪场变富二代</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">园宝：</span>我舅养海参500多W打水漂了。还好我舅心态好，自己还有别的工厂，抗过来了。</div>
+        <div class="quote-line"><span class="speaker">Irene（减少熬夜）：</span>巧了，我家开养猪场的。以前还行，后来地被买了，我爸发达了，就不做了。</div>
+        <div class="quote-line"><span class="speaker">DDA：</span>叔叔还想不想要个儿子？哈哈哈哈哈，我突然不太想创业了。</div>
+        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>我是学兽医的，见过太多了，高投入低回报的行业。</div>
+        <div class="quote-line"><span class="speaker">禾怡亲亲：</span>养羊也难，羊怕冷，要架起来住在羊床上，喝水都不能喝凉水。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：群里人均隐藏一个养殖户。Irene家"我爸发达了就不做了"——今日最凡尔赛。DDA想认爹结果发现养猪场少爷就在身边。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">💪 "吃好睡好心态好"复读：千九金句引发全群健康宣言</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">千九：</span>吃好，睡好，心态好，人生就没有什么大事[旺柴]</div>
+        <div class="quote-line"><span class="speaker">马佳彬、凡有语、沙皮狗、星淇、Simonlin、禾怡亲亲、何先森Kevin、Stu(dy ing)、悖论：</span>陆续复读，一字不差。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>生前何必久睡，死后自会长眠。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：九个人用行动证明自己是听话的好群友。是旦用一句话证明自己是广东人。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">🌟 刘导转正：从兽医到旅行产品经理</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>实体胸卡到手，终于转正啦！</div>
+        <div class="quote-line"><span class="speaker">程玉、马佳彬、Simonlin、Lee、星淇：</span>刘导好🫡</div>
+        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>我以组团为主，玩的是那种相对小众一点的品质游。大连海底世界宿营，大连历史citywalk。</div>
+        <div class="quote-line"><span class="speaker">Simonlin：</span>吾去。汝不早曰。太赞了这个海报！</div>
+        <div class="quote-line"><span class="speaker">霄凡旅行小刘：</span>干了这么多年的幕后，这次老子要上台来[呲牙]</div>
+      </div>
+      <div class="comment">💬 毒舌点评：幕后转台前，工位变现场。刘导从兽医到旅行产品，跨界跨得比AI模型还能整。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">🤖 Cola + DeepSeek真香现场</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>比原生龙虾好用的多得多的多。</div>
+        <div class="quote-line"><span class="speaker">Simonlin：</span>小龙虾我觉得群里最强是李馆长。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>cola最近ds免费。如果后面ds算力充沛价格下来了，cola日常用ds也很好。我今天用了一天，测了几个skills，感觉良好。比minimax强多了。</div>
+        <div class="quote-line"><span class="speaker">๑🌱๑：</span>今天用了同一套长任务测试了一下Gemini 3.1跟DS v4，DS v4逻辑推理能力蛮强，价格还便宜。</div>
+        <div class="quote-line"><span class="speaker">凡有语：</span>不知不觉，Cola已经快满月啦🥳 活动时间：5.1-5.5，分享故事赢$5充能额度。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：Cola满月恰逢DS免费，双喜临门。是旦从"原生龙虾什么垃圾"到"cola配ds真好用"，转身速度比AI还快。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">⚡ 风林6亿Token力工 vs 蒸馏群友</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">๑🌱๑：</span>我一个礼拜烧了快6亿token，纯他妈的力工。为了给某个事儿兜底。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>烧那么少。</div>
+        <div class="quote-line"><span class="speaker">๑🌱๑：</span>或许我可以蒸馏一下一些活跃用户。私聊发我就行，多谢风林哥。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>蒸吧，请大家吃蒸蛋。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：群里两大顶级力工：风林烧6亿Token，是旦被龙虾蒸馏。"烧那么少"的凡尔赛，听得风林想打人。</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-title">💔 是旦不是蛋：AI越强，人越累</div>
+      <div class="quote-block">
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>AI模型越来越强，但是我好像时间并没有节省出来，我去审核它、校验它输出的时间花得越来越多了。因为我需要自己变得更强，才能找出它交付内容的漏洞。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>甚至甲方都觉得我做的质量太高了，劝我别做那么高质量的。给的又不多。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>但我过不去自己心里那关。</div>
+        <div class="quote-line"><span class="speaker">๑🌱๑：</span>这跟我最近有点像，我说了还没弄好，他们说这个可以了，先给甲方。</div>
+        <div class="quote-line"><span class="speaker">是旦不是蛋：</span>所以我们都是靠谱的人。朋友有事情，第一时间想到的就是找我们。我们这种人不会做100分完成度的60分标准的事。</div>
+      </div>
+      <div class="comment">💬 毒舌点评：本日最扎心，没有之一。"甲方劝我别做那么高质量"——所有靠谱人的共同困境。记住：100分完成度的60分标准，不是摆烂，是放过自己。</div>
+    </div>
+
+  </div>
+
+  <!-- 今日总结 -->
+  <div class="section">
+    <div class="section-title">📊 今日总结</div>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="label">最卷的人</div>
+        <div class="value">๑🌱๑ — 一周烧6亿token，纯纯力工</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">最清醒的人</div>
+        <div class="value">马佳彬 — "要不然咋有人跳楼"</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">最扎心的人</div>
+        <div class="value">是旦不是蛋 — "甲方劝我别做高质量"</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">最佳黑马</div>
+        <div class="value">霄凡旅行小刘 — 刘导转正了</div>
+      </div>
+    </div>
+    <div style="margin-top:16px; text-align:center; color:#a08060; font-size:0.9rem;">
+      今日金句："吃好，睡好，心态好，人生就没有什么大事" — 千九
+    </div>
+  </div>
+
+  <div class="footer">
+    共1340条消息 · 2026年4月30日完 · 🐉
+  </div>
+
+</div>
+</body>
+</html>
