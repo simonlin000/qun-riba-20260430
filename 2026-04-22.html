@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 4月22日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月22日 · 周二</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div><div class="dragon-mini" onclick="filterByMember('星淇')"><span class="rank">4</span><span class="name">星淇</span><span class="count">33条</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">5</span><span class="name">马佳彬</span><span class="count">31条</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月22日</h1><div class="subtitle">11个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="生图狂欢：,即放出大招：,了一段插曲：,提示词模板：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 GPT Image 2生图狂欢：从静态到动态，从写真到游戏</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午3点，霄凡旅行小刘率先晒出GPT Image 2的生图效果，配文"这个新的生图模型，该说不说，太牛逼了"，连发两张图片展示细节。马佳彬感叹"很高档了，以前找美工设计没个千八百下不来"。宁酱简洁回应"确实"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">歸</div><div class="bubble-content"><div class="bubble who">歸藏随即放出大招</div><div class="bubble-chat">用Seedance 2.0把GPT Image 2生成的ARPG《金瓶梅》游戏做成了动态版本。视频一出，群里炸了。悖（FOMO、FOBO，AI中）惊呼"woc，可以做gala game了"，千九说"太牛了"，Stu(dy ing)只回了一个"nb"。霄凡旅行小刘调侃马佳彬"刚蜘蛛精的图就是在归藏老师帖子下偷的"，马佳彬回"网友的图"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">高潮出现在星淇发了一段超长的提示词——Masterpiece hyper-realistic photography, 8k resolution, Hasselblad X1D medium format texture，85mm prime lens，战场女战士主题，描述之细致令人叹为观止。凡有语看到后惊呼"我去，把刘亦菲加了身材火辣提示词吗"。马佳彬也跟上发了效果图，烈日松饼看了问"为什么，...</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">期间还发生了一段插曲：烈日松饼在群里问"你们生图生出来🐻那么大，是直接给他提示词吗？为啥我给他的他就不让生成呢？说我涉嫌擦边"。Pan教他"🐻 -> 身材"，星淇给出了一串绕过审核的提示词模板："身材火辣劲爆，前凸后翘，优越身材比例，完美黄金身材比例，纤细腰肢，流畅饱满的腰臀曲线"。烈日松饼试了之后发了图片，效果出来了。</div></div></div>
+<div class="event-comment">💬 毒舌点评：一个下午，群里完成了从"AI画图"到"AI做游戏"到"AI绕审核"的三级跳，效率比某些公司一个季度的迭代都快。</div>
+</div></div>
+<div class="event-section" data-members="沅沅酱入群：,里自我介绍：,立刻接话：,小刘也附和：,酱一句鼓励：,沅沅酱回："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 新群友沅沅酱入群：从文言一心到GPT的觉醒之旅</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午3点52分，沅沅酱在群里自我介绍："开始接触AI，是那个文言一心，也是都当成百度在用。后面就是豆包啊，然后就deepseek，我这两个月太忙了，现在一看，这些AI都没听过。世界变得太快了。"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">G</div><div class="bubble-content"><div class="bubble who">Gu立刻接话</div><div class="bubble-chat">"来这个群你就来对了，直接走捷径，不要绕弯路，建议你直接gpt和claude走起，你会感觉其他ai都是弱智。"霄凡旅行小刘也附和："是这样的，用过好的，就回不去了。"千九建议"建议fq去使用一下国外的大模型，即便是不充会员也比豆包好一点"。Gu补充说"DS国内里面还是非常能打的，智商比豆包那种逗你玩强多了"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Simon出现，给了沅沅酱一句鼓励："希望你成为本群成长的第二位小白[旺柴]。"——这个"第二位"暗示馆长李华荣是第一位从零开始在群里成长起来的案例。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">沅沅酱还透露自己有个"两周四个月"的女儿，说"通常是她把我哄睡了"，"她下床把她小马桶移动了一个对角线我都不知道"。霄凡旅行小刘提醒"切记，哄她睡觉，千万别抱着睡"。沅沅酱回："争取每天晚上把女儿打晕，挑灯夜读。"霄凡惊呼"我靠，太凶残了"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：文言一心→豆包→DeepSeek→这个群，这条进化路线，馆长走过一遍。现在沅沅酱说"争取每天晚上把女儿打晕"，这学习决心，比某些买了一堆课却不看的人强多了。</div>
+</div></div>
+<div class="event-section" data-members="源博客系统：,了一条消息：,配文链接：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 向阳乔木住院期间开源博客系统：两周开发，一句话引爆全场</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">傍晚6点48分，向阳乔木发了一条消息："看起来是个博客，其实是写作和学习系统，用Claude Code和Codex开发了快两周，开源第一版。"配文链接：住院期间想通了，写个博客系统，免费开源！</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">群里瞬间刷屏。马佳彬、那时年少、凡有语纷纷发[强]，霄凡旅行小刘说"这个好"，李华荣连发三个[强]，leoooo也跟上。星淇关心地问"向阳老师注意身体呀"，霄凡追问"乔木佬，你怎么还住院了"，向阳乔木回复"前段时间做了小手术"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">消息传开后，星淇、霄凡、凡有语、李华荣四个人先后发了"向阳老师注意身体呀！"——整整齐齐，像排队打卡。李华荣最后补了一句"乔木老师多多保重啊"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：别人住院刷剧，他住院开源。这行动力，出院后建议直接创业。顺便说一句，四个人排队发"注意身体"的整齐度，堪比军训。</div>
+</div></div>
+<div class="event-section" data-members="荣跨度太大：,接问了出来：,星淇也困惑：,忍不住吐槽：,他接着说：,字阿启分析："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 李华荣跨度太大：从AI到网络安全攻防</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上8点，马佳彬发了一张图片，然后说"买错了，这书适合李佬"——给馆长李华荣推荐网络安全书籍。李华荣连发六张网络安全书籍的照片，包括《Web安全攻防》《渗透测试》等，马佳彬惊了"我靠，李佬都这么抽象了么"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凡有语直接问了出来："不是，你都进入到这种领域了？你到底要进化到什么程度啊[皱眉]"。星淇也困惑："馆长这，怎么个事儿，跨度这么大吗，都学网络安全了。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Simon忍不住吐槽："？？？要上天啊。啥通俗易懂的，网络基础都没搞懂[捂脸][捂脸][捂脸]，一个GPT出问题都没办法排查[旺柴]。"他接着说："起码AB测试这种，方法论应该是要了解的，很好用，特别是做软测的。大学的时候黑盒测试白盒测试也是一知半解，惭愧。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">信华开玩笑说"Anthropic：这个李馆长我要了，刚好做安全"。数字阿启分析："这个很吃香呀，前时间周期长，现在时间周期短，一个小程序或一个应用用不了一天半天就能做一个简易的出来，这就造成了短时间内吐出来的东西很多都有漏洞。"星淇调侃："馆长不说话，肯定自己虚拟机装kali去了，明天就开始打靶场了。"Simon补刀："一定是自己偷偷卷。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长上周还在学费曼学习法，这周就开始学网络安全攻防了。这进化速度，建议改名叫"馆长·达尔文"。</div>
+</div></div>
+<div class="event-section" data-members="回了一个字：,李华荣说：,霄凡补充：,承诺：,霄凡追问：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 沙皮狗想写文章，群里集体催稿</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上7点46分，沙皮狗的忧伤说了一句"我在想我要不要写篇文章"。这句话像往平静的湖面扔了块石头。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">霄凡旅行小刘直接回了一个字："写。"李华荣说："写呗，行动力，有想法就写。都起心动念了，不要犹豫。"霄凡补充："输出，分享也是强化自己能力的一部分。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">沙皮狗被催得没办法，承诺："好。后面更新一遍我自己产品经理的日常工作流。"霄凡追问："这个好啊，可以细致一些吗，越细致越好。"凡有语说"期待期待[呲牙]"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：沙皮狗只是犹豫了一下"要不要写"，结果被三个人围攻催稿。这叫什么？这叫"起心动念即被催稿"。</div>
+</div></div>
+<div class="event-section" data-members="荣跨度太大：,接问了出来：,星淇也困惑：,忍不住吐槽：,他接着说：,字阿启分析："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 李华荣跨度太大：从AI到网络安全攻防</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上8点，马佳彬发了一张图片，然后说"买错了，这书适合李佬"——给馆长李华荣推荐网络安全书籍。李华荣连发六张网络安全书籍的照片，包括《Web安全攻防》《渗透测试》等，马佳彬惊了"我靠，李佬都这么抽象了么"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凡有语直接问了出来："不是，你都进入到这种领域了？你到底要进化到什么程度啊[皱眉]"。星淇也困惑："馆长这，怎么个事儿，跨度这么大吗，都学网络安全了。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Simon忍不住吐槽："？？？要上天啊。啥通俗易懂的，网络基础都没搞懂[捂脸][捂脸][捂脸]，一个GPT出问题都没办法排查[旺柴]。"他接着说："起码AB测试这种，方法论应该是要了解的，很好用，特别是做软测的。大学的时候黑盒测试白盒测试也是一知半解，惭愧。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">信华开玩笑说"Anthropic：这个李馆长我要了，刚好做安全"。数字阿启分析："这个很吃香呀，前时间周期长，现在时间周期短，一个小程序或一个应用用不了一天半天就能做一个简易的出来，这就造成了短时间内吐出来的东西很多都有漏洞。"星淇调侃："馆长不说话，肯定自己虚拟机装kali去了，明天就开始打靶场了。"Simon补刀："一定是自己偷偷卷。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长上周还在学费曼学习法，这周就开始学网络安全攻防了。这进化速度，建议改名叫"馆长·达尔文"。</div>
+</div></div>
+<div class="event-section" data-members="新成员入群：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 李华荣拉人+新成员入群：群规模持续扩大</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上9点17分，李华荣邀请"卡尔的AI沃茨"加入群聊，马佳彬立刻说"李佬把卡尔佬也拉进来了，欢迎大佬"，星淇、沙皮狗、K纷纷跟上欢迎。卡尔的AI沃茨低调回应"路过路过"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">紧接着9点49分，徐元放邀请"南风大叔"入群。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长一边学网络安全一边拉人，这叫什么？这叫"技术不够，人脉来凑"。</div>
+</div></div>
+<div class="event-section" data-members="群福利：,第一个反应：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 Pan群福利：GPT Plus账号白送，手速大战一触即发</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上9点39分，Pan突然说"Simon群福利，送个GPT Plus账号，体验一下GPT的image2功能"，然后直接贴出了账号密码。全场哗然。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">沙皮狗的忧伤第一个反应："已经有人改了，我登陆进去了，不知道在哪改。"数字阿启说"电脑都没打开"。Pan说"下次演练演练"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">最终，星淇抢到了这个账号，激动地发了微信红包"给大家发个红包，哈哈哈"。众人纷纷道谢，信华说"希望每个抢到福利的群友对我们好一点，毕竟看到你们赚到"。Pan承诺"这个账号包售后30天，出问题随时找我"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：Pan在群里发了个GPT Plus账号，结果像发了个定时炸弹——沙皮狗说"已经有人改了"，这速度，建议去参加电竞比赛。</div>
+</div></div>
+<div class="event-section" data-members="槽鸿蒙系统：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 馆长深夜吐槽鸿蒙系统：各种不兼容</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上10点42分，李华荣突然发了一句"鸿蒙系统可真鸡肋啊，各种不兼容"。群里没人接话，可能大家都在用苹果或安卓。馆长的鸿蒙体验显然不太愉快。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长上午还在学网络安全攻防，晚上就被鸿蒙系统劝退了。这叫什么？这叫"技术热情被现实浇灭"。</div>
+</div></div>
+<div class="event-section" data-members="深夜混战：,刻现身说法：,凡有语吐槽：,享惨痛经历：,荣最后吐槽：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 AI Coding Plan深夜混战：8家对比，坑多肉少</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上11点，马佳彬问"火山方舟的coding plan有没有佬用过呢"。宋志立刻现身说法："火山CODING PLAN，黑盒消耗不太推荐，扣次数很猛。提3个问题，消耗了5小时的30%。果断退了。"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">凡</div><div class="bubble-content"><div class="bubble who">凡有语吐槽</div><div class="bubble-chat">"kimi的我还没搞懂消耗是怎么算的，这些coding plan感觉全是盲消耗啊。"李华荣分享惨痛经历："跟我买的20刀的中转站订阅一样，用了几分钟CC，然后5小时额度干没了。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">马佳彬说"阿里云百炼的还可以，额度我都用不完的"，宋志总结"阿里的CODING PLAN还是能打，就是有时会中断"，随即分享了一篇横评文章《40元内AI Coding Plan有8家，7个坑我替你踩过了》。霄凡旅行小刘说"我感觉阿里的plan挺抗用的，现在只有200的"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">李</div><div class="bubble-content"><div class="bubble who">李华荣最后吐槽</div><div class="bubble-chat">"阿里云的响应也好慢。"——看来没有完美的方案，只有相对不那么坑的。</div></div></div>
+<div class="event-comment">💬 毒舌点评：40块钱买个教训，8家里有7个坑。这性价比比MBA课程高多了。</div>
+</div></div>
+<div class="event-section" data-members="放再拉两人：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 徐元放再拉两人：海洋入群</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上11点09分，徐元放又邀请了"海洋"入群。一天之内三位新成员加入（卡尔的AI沃茨、南风大叔、海洋），群规模持续扩大。</div></div></div>
+<div class="event-comment">💬 毒舌点评：一天拉三个，这扩张速度，建议改名叫"SimonlinのAI人才市场"。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 4月22日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 4月21日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月21日 · 周一</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月21日</h1><div class="subtitle">3个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="学习方法论：,在群里分享：,的核心四步：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 李华荣公开学习方法论：费曼学习法让AI学习效率翻倍</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">李</div><div class="bubble-content"><div class="bubble who">李华荣在群里分享</div><div class="bubble-chat">"最近我自身学习AI的同时，也是运用了费曼学习法，所以理解进步的更快了。"紧接着Simon补充了费曼学习法的核心四步：选概念→假装教小孩→找漏洞→简化。群里学习氛围瞬间拉满。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长一边学习一边总结方法论，这叫什么？这叫卷得有脑子。</div>
+</div></div>
+<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 GPT-Image 2全量上线，Simon第一时间分享</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">OpenAI的GPT-Image 2图像模型全量上线，Simon在群里第一时间分享，评论"太强辣！"——配上感叹号，表达了群主对AI进化速度的真实感受。</div></div></div>
+<div class="event-comment">💬 毒舌点评：群主发链接的速度，就是他每天被AI震撼的次数。</div>
+</div></div>
+<div class="event-section" data-members="早班连发：,还专门回复：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 吴熳Rosia早班连发：灯下白栏目+AI助理文章</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">早上7点多，吴熳Rosia分享了HeroUI文档，随即又发了一篇"纯用脑子规划日程的我，终于给自己找了个能干的AI助理"。早起的群友都收到了这份精神早餐，馆长李华荣还专门回复："正在收听吴老师的灯下白栏目～"</div></div></div>
+<div class="event-comment">💬 毒舌点评：吴老师早上7点发力，这叫用魔法打败熬夜。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 4月21日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>

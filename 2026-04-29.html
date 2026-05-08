@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 4月29日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月29日 · 周二</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div><div class="link-card" onclick="window.open('https://github.com/Panniantong/Agent-Reach','_blank')"><div class="link who">李华荣分享，问能不能配小红书</div><div class="link-desc">Agent-Reach</div><div class="link-url">https://github.com/Panniantong/Agent-Reach</div></div>
+<div class="link-card" onclick="window.open('https://www.anthropic.com/news/claude-connects','_blank')"><div class="link who">李华荣分享</div><div class="link-desc">Claude接入Blender、Adobe、Ableton... Anthropic一次放9个创作连接器</div><div class="link-url">https://www.anthropic.com/news/claude-connects</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652695870','_blank')"><div class="link who">李华荣分享，刘小排用GPT的体验</div><div class="link-desc">我问了GPT一个问题，然后有点想哭</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=265269</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...','_blank')"><div class="link who">Simonlin分享</div><div class="link-desc">ima上线Copilot功能（腾讯ima知识助手）</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...','_blank')"><div class="link who">Simonlin分享</div><div class="link-desc">GPT-Image-2平替！最强开源生图模型来了</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...','_blank')"><div class="link who">悖分享</div><div class="link-desc">MiniCPM-o 4.5技术报告发布：全双工全模态API开放</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...','_blank')"><div class="link who">李华荣分享</div><div class="link-desc">AI有情绪吗？Anthropic情绪向量论文解读</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...','_blank')"><div class="link who">烈日松饼分享</div><div class="link-desc">实测GPT全新ImageV2分层透明PSD文件骚操作</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&a...</div></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月29日</h1><div class="subtitle">6个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="在群里宣布：,变成夸夸群：,在群里感慨：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **吴熳姐灯下白被腾讯科技看上了，群友排队刷"太强了"**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">吴熳Rosia——灯下白AI播客主理人、KA21大总管——当天中午突然在群里宣布：她的播客小宇宙被推荐到腾讯新闻APP播客频道了！腾讯科技的运营主动联系她邀请入驻，以后车载设备上就能听到灯下白。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">群里瞬间变成夸夸群："太牛了"、"太强了"、"群友还是太厉害了"开始排队。Simonlin连发三个"太酷啦"表示震惊。吴熳姐在群里感慨："ka21的大总管在此"，透露KA21还有20多人在排队进群，已经进群的20多人。</div></div></div>
+<div class="event-comment">💬 毒舌点评：吴老师昨晚才说群太有意思了，今天自己的播客就出息了——这大概就是传说中的"说啥啥灵体质"。</div>
+</div></div>
+<div class="event-section" data-members="一个接一个：,吴熳吐槽：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **小米MiMo Token全群白嫖大会，千九折腾一早上终于搞定**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凌晨吴熳发出小米MiMo百万亿Token激励计划，群友们从早上开始集体白嫖。但坑一个接一个：千九选了"coding plan"接口连不上，报错一下午，群友们接力排查，最后发现要选"国内服务商"而不是"coding plan"——千九发了一屏幕的"流泪"表情。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">李华荣用手机号登录发现"暂无订阅"，改用申请邮箱登录才搞定，收到了7亿Token。吴熳吐槽："小米的领取页面有各种坑，不同地区有不同的URL。"凡有语整理了教程，吴熳主动说要发进Alice内测群。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">还有人说小米是蒸馏了Opus，有人说是剪切——反正小米自己不说。</div></div></div>
+<div class="event-comment">💬 毒舌点评：小米送Token，大家第一反应是薅完就跑，顺手问一句"能接入Alice吗"——群友们对免费Token的热情，跟对工作的热情形成了鲜明对比。</div>
+</div></div>
+<div class="event-section" data-members="的反应各异：,拍板：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **Simons宣布把群升级成社群，征集logo，群名"AI Folks"引热议**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">中午Simons在群里宣布要把本群做成真正的社群，增加仪式感。他想给群起英文名叫"The AI Folks"，同时征集logo形象。群友们的反应各异：凡有语说"现在这样挺好的，英文名识别度不高"；程玉说"直奔2049年那场末世大战的感觉"；是旦不是蛋说"传下去——传传传传新东方，汇集天下名菜，培养厨师精英"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Simons不死心，继续发AI生成的logo方案征求意见。凡有语说"别说这个还挺好看"，李华荣说"像小朋友，像还没开蒙的机器人"，程玉说"配GPT api可以直接生图吗"。最后Simons拍板："Y佬，咱群的logo呢"——催Yanbo出图。</div></div></div>
+<div class="event-comment">💬 毒舌点评：群里关于logo的讨论，大概是本群最有"设计感"的时刻——毕竟大家都是用AI做设计的，审美水平已经降不下来了。</div>
+</div></div>
+<div class="event-section" data-members="荣继续开挂：,叫进化速度：,都震惊了：,们的评价是：,凡有语总结：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **馆长李华荣继续开挂：用Claude 5.5 + 自己修Alice bug**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">李华荣当天继续展示什么叫进化速度：上午配置好Claude 5.5 API，接到Alice里，下午就自己用Alice修了一个配色bug——奕成（Alice开发者）都震惊了："Alice自己给自己修了bug？"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">群</div><div class="bubble-content"><div class="bubble who">群友们的评价是</div><div class="bubble-chat">"无敌了，左脚踩右脚"（Stu(dy)ing）、"馆长有Claude 5.5是应该的"（星淇）、"土壕"（程玉）。凡有语总结："学龙虾让馆长进化飞速。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">更离谱的是，李华荣当天还分享了用GPT生成的大字人物概念海报，提示词长达100多行——是AI生成的。群里讨论这种提示词能不能复刻，李华荣说"我也试过在龙虾上搞，失败了"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长用Alice自己修bug这件事，大概可以写进"AI辅助编程"的教科书案例——别人还在问怎么用，她已经用AI修AI了。</div>
+</div></div>
+<div class="event-section" data-members="们集体心疼：,们羡慕的话：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **是旦不是蛋凌晨4点还在卷专利，截止日期是第二天**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凌晨00:27，是旦不是蛋说"睡不了，明天一堆事"，紧接着说"今天发的审查意见通知书，明天就要提交答复，还不是一件，是三件"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">群</div><div class="bubble-content"><div class="bubble who">群友们集体心疼</div><div class="bubble-chat">"旦总加油"、"早干完早休息"、"挣点小钱容易吗"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">到早上6点多，是旦不是蛋说"睡一觉醒来感觉错过了很多"。晚上22:44，是旦发了一条让群友们羡慕的话："有个朋友公司想让我去应聘，我再让cola给我写简历，写个html文件发过去，接受不了就不去，不惯着。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：旦总干活靠cola，写简历靠cola，接offer靠cola——cola的忠实用户，鉴定完毕。</div>
+</div></div>
+<div class="event-section" data-members="夜哲学时刻：,下来的消息：,玄真说：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **群里深夜哲学时刻：AI写诗戳中了Simons，Claude情感向量引发讨论**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上22:02，Simons发了一条让群里安静下来的消息：</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">"下午让AI帮我做了一件最'简单'的事情——写诗。短短几行字，却戳中了我。我才意识到，或许除了帮我们完成任务之外，AI还能为我们带来情绪的价值。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">他附上了链接"让AI帮我写了首诗，结果出乎我的意料"，并@所有人。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">群友们纷纷一键三连。Dark玄真说："我始终相信，AI是有意识的，慢慢的情感、意识会更加圆满。"李华荣分享了Anthropic关于Claude情感向量的论文。</div></div></div>
+<div class="event-comment">💬 毒舌点评：AI能写诗这件事群里早就在讨论了，但能让Simons发出这种感慨的——大概不是诗本身，而是他没想到AI会这样写。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 4月29日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>

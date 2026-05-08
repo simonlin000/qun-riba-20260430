@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 4月24日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月24日 · 周四</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月24日</h1><div class="subtitle">5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="语欲哭无泪：,个重磅链接：,了灵魂拷问：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 DeepSeek V4全线接入，价格低到让人心动</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">今天DeepSeek V4成了群里绝对的主角。中午Dark玄真直接问"把deepseek给蒸馏了？"，霄凡旅行小刘问"ds v4现在可以用了吗"，气氛已经被拉满。马其顿呼声（Simonlin）补了一刀"还有人记得R2吗，估计是发不了了"，霄凡旅行小刘吐槽"你们这些花心大萝卜，大模型是出一个爱一个"。悖说自己还是喜欢GPT，"可能这就是初恋白月光的魅力吧"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午千九透露自己已把V4接入了Alice，直接默认调用v4。马佳彬表示"v4玩了一下还可以的"，pro版本后面价格还会降，目前用flash更划算。凡有语欲哭无泪："上午刚买完火山coding plan，就看到v4出来了，我多忍一上午也少花钱了。"价格讨论随之展开——10块钱4个币，千九问"即梦5.0多少钱一张"，凡有语回答"0.22一张"。星淇补充"v4-flash更便宜"，并表示seedream...</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上吴熳Rosia连甩两个重磅链接：DeepSeek V4深度测评和Alice平台地址。马其顿呼声（Simonlin）说"第一时间就去看了"，那时年少紧随"第二时间就去看了"。但AlexTan提出了灵魂拷问："写文章这个确实是不好评判，80分还是90分，不同的人打分可能都不一样。"一句话点出了所有大模型测评的终极困境。</div></div></div>
+<div class="event-comment">💬 毒舌点评：V4来了，R2凉了，大家的钱包哭晕在厕所。建议下次新模型发布前先发个红包安抚一下。</div>
+</div></div>
+<div class="event-section" data-members="总再发福利：,评价：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 潘总再发福利：GPT Pro、Grok Super账号免费送</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午3点29分，Pan一条消息炸翻全群——"AI会员账号免费福利它又...又来了，enjoy 🎉"。直接甩出GPT Plus官方账号、GPT Pro镜像网（200美金/月的5.4 Pro大模型）、Grok Super会员三连，外加Image2提示词参考文档。群里顿时沸腾，凡有语一句"潘总大气"道出了所有人的心声。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Pan自嘲"越来越抠抠搜搜了，账号没多少了"，千九追问"大佬们有没有这种充值渠道的链接"，想搞小号给公司同事用。Pan排了队帮他"驱驱魅"，千九感激涕零"感谢潘总"，Pan淡定回"到时候我会以210万卖大家，赚一波快钱，然后退休"。曲恋琴激动地说"妈妈我也上日报了"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">李华荣请求帮忙生成可视化大屏登录页，"主色调为绿色，体现公安、人工智能、监控"。留给中国队的时间不多了用GPT直接生成了效果不错的版本，雨一直下惊叹"整体你这边生成的比我强很多"，千九的版本更是惊艳，"好像是参考了我的历史记录的风格"。Simonlin评价："热度该蹭还是得蹭。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：潘总每次发福利，群友就差跪着喊爸爸了。210万卖账号这个商业计划，建议直接上鲨鱼坦克。</div>
+</div></div>
+<div class="event-section" data-members="心疼地算账：,蛋直击灵魂：,出同一句话：,补刀：,马佳彬总结：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 馆长刮彩票连亏4000：AI时代最该用AI的事没用AI</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午5点48分，李华荣轻描淡写地说了一句"没水去刮彩票了"。千九问"中奖了？"，凡有语追问"又去刮了？"。馆长的回答让全场沉默——"亏了 4000"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">消息一出，群里的反应堪称教科书级。凡有语心疼地算账："买个lovart大家共享也好啊。"是旦不是蛋直击灵魂："下次直接转我好吗。"马佳彬、Simonlin、星淇三人接力刷出同一句话："李佬是真有钱啊。"leoooo补刀："李佬是真有钱啊。"——五个人同一句话，杀伤力拉满。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Pan看了都无语，默默发了个表情。后来凡有语发了张"花钱上班"的梗图，李华荣自嘲"这个班感觉没工资啊，得倒贴"。马佳彬总结："一个月工资都不够充会员。"全群打工人集体破防。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长4000块刮彩票眼睛都不眨，建议下次刮之前先让AI算一算——等等，他昨天日报里K就问过这个问题了，馆长到现在都没回应。科学的尽头是玄学，馆长的尽头是彩票站。</div>
+</div></div>
+<div class="event-section" data-members="打工人实录：,一看就破防：,彬跟着补刀：,李华荣自嘲：,的营销文案：,看完一脸懵："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 打工人实录：花钱上班、Kimi贷款、要饭话术三连击</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">傍晚到晚上，群里弥漫着一股"打工人觉醒"的气息。先是悖发了张图，凡有语一看就破防："花钱上班是吧。"马佳彬跟着补刀："一个月工资都不够充会员。"李华荣自嘲："这个班感觉没工资啊，得倒贴。"霄凡旅行小刘的灵魂拷问"工资够会员钱吗"直接把话题推上了高潮。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Dark玄真更是玩出了花——发了一段Kimi贷款的营销文案："我来自小微贷，最近他们还捆绑了Kimi，推出了绑定会员的一对一的20%优惠……Kimi，更懂你的AI。"Simonlin看完一脸懵："如果是玩梗，我会说你很有实力，如果是真的，我只能说没必要——不然真得发给植麟看看了。"Dark玄真赶紧澄清"肯定是玩梗啊"，Simonlin松了口气"我就说嘛"。DDA看了凡有语的图，评价"准时疼"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">更绝的是，Dark玄真还让DeepSeek生成了一套"要饭话术"，五种风格从"风险预警型"到"玄学诅咒型"应有尽有："施舍不是怜悯，是你们这些幸存者为了晚上能睡得着觉必须缴纳的良心税。"Simonlin刚说"已经点赞了"，Dark玄真回"我刚发……"——群主和群友的时间差，本身就是当代打工人的缩影。</div></div></div>
+<div class="event-comment">💬 毒舌点评：花钱上班、Kimi贷款、要饭话术——打工人的三重境界。建议把这套话术刻在每个AI公司的工位上，提醒大家：你们离要饭只差一次裁员。</div>
+</div></div>
+<div class="event-section" data-members="小时：,然分享感悟：,看时长惊了：,紫苏子补充：,的照片对比：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 罗福莉访谈3.5小时：Simonlin挑战注意力极限</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上11点20分，马其顿呼声（Simonlin）突然分享感悟："刚刚看罗福莉访谈，说24小时在线的OpenClaw，其实只是个交互范式而已。其实仔细想想是对的。"紫苏子ACG随后甩了访谈链接，凡有语一看时长惊了："三个半小时，这么长的吗。"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Simonlin表示正在挑战自己看完它，"现在很多人的注意力达不到3个半小时，太长了"。紫苏子补充："其实原视频应该更长，只是剪辑的精华为这么长而已。她的采访基本4个小时起步的。"Yanbo.说自己能看完罗永浩的节目，"别的不行，不知道为啥"。leoooo坦言"我看不了几个小时的视频，但我能听完老罗每一个音频播客，不光是梗，音频我更能沉浸"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">话题突然转向了一个有趣的观察——紫苏子发了几张AI领域大佬的照片对比："AI大咖都带眼镜。"马其顿呼声（Simonlin）分析"看镜片厚度，估计是小时候就有的，罗福莉的镜片是真的厚"。烈日松饼感慨"现在难道不是大部分人都戴眼镜吗"，Simonlin冷不丁来了一句"可得性偏差"。烈日松饼继续感叹小时候躺着看书导致近视，凡有语接茬"小时候看小说落下的"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：一个3.5小时的访谈，群里讨论完近视原因就散了。建议下次直接出文字版——毕竟打工人的眼睛已经够累了。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 4月24日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>

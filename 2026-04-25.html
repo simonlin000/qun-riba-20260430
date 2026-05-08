@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 4月25日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月25日 · 周六</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月25日</h1><div class="subtitle">5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="爆单发红包：,群主秒懂：,重总结到位：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 洪年哥爆单发红包：全群跪喊谢谢老板</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">上午10点37分，霄凡旅行小刘连发两张截图，轻描淡写一句"兄弟们，我也是好起来了"。截图显示他接了个海报设计的单子，650元。凡有语秒回"太强了，洪年哥"，马其顿呼声（Simonlin）感慨"洪年哥太有实力了"，还补了一刀"都是同龄人我原本没想降维打击！"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凡有语一句"我的变现还是靠你们的群红包"引起了Simonlin的注意——群主秒懂："哦，明白了，意思是暗示洪年哥发红包了。"霄凡旅行小刘二话不说，直接甩了个微信红包。马佳彬惊呼"哇靠，好大红包"，烈日松饼直呼"woc午饭有了谢谢老板"，还说"没想到我能抢到，我也是出息了"。凡有语感叹"我以为我6块多就很大了，居然还有高手"。大橘为重总结到位："洪年哥真是东北好大哥。"</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">后来悖问霄凡旅行小刘手机爆了是"因为图片吗还是AI助手"，洪年哥表示"天黑出门，天黑回家"，是旦不是蛋接茬"业务接不过来了"。Simonlin调侃"你一发红包，单子就多了，多好啊"。星淇补了一句"洪年兄要崛起"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：洪年哥用一个650的单子换来了全群的"谢谢老板"，这波品牌营销ROI直接拉满。建议下次接个6500的，发个更大的。</div>
+</div></div>
+<div class="event-section" data-members="日集体翻车：,率先开炮：,饼再次发难：,一针见血：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 AI作图今日集体翻车：即梦4天没跑完，GPT生成10次全废</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">上午10点32分，看到我请叫我滚去练琴（曲恋琴）率先开炮："即梦真是刷新我的下限了，4天了，还没生成完。"烈日松饼冷嘲"即梦还有下限吗？毫无下限"，凡有语断言"这个根本没必要等了"。程玉补刀"即梦也是字节的吧"，紧接着说"字节好像最近也吃不消了，套餐也限购了"。烈日松饼联想当年"番茄进入网文的时候，起点写文的都无语了"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午4点10分，烈日松饼再次发难："插个嘴，GPT现在的图形生成是崩了吗？我咋生成了十遍了，没有一个成功的。"哆啦A梦安慰"人多，他直接降智了"。烈日松饼不服"今天又不是工作日，咋能崩呢"。看到我请叫我滚去练琴也吐槽"昨天生成的好好，今天怎么觉得有瑕疵呢"。马其顿呼声（Simonlin）淡定建议"国内用星流，国外用Lovart"。霄凡旅行小刘试了下星流，发现"感觉星流在PUA我，什么叫媲美"。Ya...</div></div></div>
+<div class="event-comment">💬 毒舌点评：即梦4天没跑完，GPT10次全废——AI作图界今日集体摸鱼。群友建议拜一拜再生成，毕竟这玩意儿比算命还玄。</div>
+</div></div>
+<div class="event-section" data-members="版汉化工具：,链接：,后号召全群：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 悖哥开源CC桌面版汉化工具：一键跳过登录，全群排队加星</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午5点29分，悖（FOMO、FOBO）在群里丢了个GitHub链接："做了个开源小工具，就是win版本汉化和跳过cc登录的cc客户端安装脚本。有需要的可以下载用用。"半小时后补充"做了小优化，已经一键绕过登录"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">马其顿呼声（Simonlin）带头喊"支持"，随后号召全群："都去给我悖哥加星，兄弟们。"K、马佳彬、看到我请叫我滚去练琴、凡有语纷纷排队说"支持"，Dark玄真也来插了一脚。凡有语问"是需要先安装cc吗"，Simonlin秒回"不用"。霄凡旅行小刘确认"这是cc桌面版的那个吗"。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">到了晚上，马佳彬展示了截图并表白"悖哥第九颗心是我点的，代表爱你到天长地久"。凡有语则自嘲"我点的是第三颗，可惜我没装明白"。马佳彬又说"我desktop一直没下完"——工具都开源了，自己还在下安装包，也是群内一景。</div></div></div>
+<div class="event-comment">💬 毒舌点评：悖哥默默做了个工具，全群排队喊"支持"。这要是放在GitHub上，star数早过百了——等等，你们真的去加了吗？</div>
+</div></div>
+<div class="event-section" data-members="验横扫群聊：,个惊天细节：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 版式艺术实验横扫群聊：Image2效果惊艳，二维码居然能扫</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">上午10点07分，马其顿呼声（Simonlin）发了张Image 2生成的图片，说"有一说一这个图片不错"。吴熳Rosia评价"不错，不过不像版式艺术实验"。凡有语感叹"去推广了下版式艺术实验，就有人跟着做出来了，倒佬还是太强了"，顺手发了两张别人跟做的效果。Dark玄真总结"image2还是屌"。吴熳Rosia还发现"原来Claude也可以选取元素，这两家的桌面端真的是逐渐统一"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午2点47分，Simonlin又发了一组版式艺术实验的成果图，感慨"艺术实验果然厉害"。凡有语确认"这版好看"，leoooo说"还是要版式"。最绝的是Corripo在3点25分发现了一个惊天细节："这个二维码甚至可以扫。"——Simonlin生成的海报里居然包含一个可扫的真二维码，连群主本人都没想到。伊利丹看了说"这个真棒啊"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：Image2生成的海报连二维码都能扫了。以后设计师失业不是被AI替代，是被AI生成的二维码扫没了。</div>
+</div></div>
+<div class="event-section" data-members="聊创业：,务实的建议：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 钢针Edu找Simonlin聊创业：AI帮地摊做海报能赚钱吗？</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午3点02分，钢针Edu连发两张创业相关图片，@马其顿呼声（Simonlin）"创业吗"。Simonlin反问"现在创业啊"。钢针Edu坦言"真难啊，实际去落地感觉真费劲，一个好的样版都做着费劲"，还分享了自己给一个烤肉店做的海报样本，自嘲"自己都感觉不咋滴"。悖也凑热闹"带带我，我也想创业，走上人生巅峰"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">凡有语给出了务实的建议："你倒是感觉你可以顺便试试做个抖音自媒体，比如帮地摊做海报换饭吃，看看能不能涨涨粉。"他进一步分析"洪年哥是本身有业务渠道，他这个没有业务渠道，需要重新摸索，所以同时开自媒体获取流量是双重测试，看哪个能跑通"。看到我请叫我滚去练琴插嘴"就跟洪年哥一样给别人弄海报一样"，凡有语纠正"洪年哥是本身有业务渠道，他这个没有业务渠道"。</div></div></div>
+<div class="event-comment">💬 毒舌点评：钢针Edu想用AI帮烤肉店做海报创业，自己先被海报水平烤了。不过凡有语的"抖音帮地摊做海报换饭吃"思路倒是清奇——毕竟帮别人画饼之前，先得自己吃上饭。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 4月25日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>

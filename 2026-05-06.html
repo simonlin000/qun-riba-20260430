@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月6日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}
+.dragon-mini .rank{font-size:0.9rem}
+.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
+.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
+.back-link:hover{background:#b06a2a}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月6日 · 周三</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div><div class="dragon-mini" onclick="filterByMember('霄凡旅行小刘')"><span class="rank">4</span><span class="name">霄凡旅行小刘</span><span class="count">16次</span></div>
+<div class="dragon-mini" onclick="filterByMember('是旦不是蛋')"><span class="rank">5</span><span class="name">是旦不是蛋</span><span class="count">13次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div><div class="link-card" onclick="window.open('https://simonlin.substack.com','_blank')"><div class="link who">奕成</div><div class="link-desc">提升 Agent 应用活人感的工程化思考</div><div class="link-url">https://simonlin.substack.com</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">瓦叔（原文链接未捕获）</div><div class="link-desc">8小时高铁，一堂最贵的AI课</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">千九（原文链接未捕获）</div><div class="link-desc">云舒的AI实践笔记的文字分享</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">马其顿呼声（Simonlin）</div><div class="link-desc">本地知识库+AI协作，才是真正的第二大脑</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+<div class="link-card" onclick="window.open('https://github.com/simonlin000/xcolab','_blank')"><div class="link who">马其顿呼声（Simonlin）</div><div class="link-desc">xcolab 项目发布（CodeX宠物召唤Skill）</div><div class="link-url">https://github.com/simonlin000/xcolab</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">卡尔的AI沃茨（原文链接未捕获）</div><div class="link-desc">实测Buzzy：能精确二创视频的AI工作流</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">向阳乔木（原文链接未捕获）</div><div class="link-desc">同时听懂+看懂+读懂，豆包 Seed 2.0 lite 多个场景实测</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/xxxx','_blank')"><div class="link who">是旦不是蛋（原文链接未捕获）</div><div class="link-desc">我就BB怎么了 · 文字分享</div><div class="link-url">https://mp.weixin.qq.com/s/xxxx</div></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+</div>
+<div class="main">
+<a href="index.html" class="back-link">← 日报馆</a>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 5月6日</h1><div class="subtitle">5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **饼干哥哥进群，馆长人脉又发力了**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">馆长李华荣中午 11:01 把饼干哥哥（@苍何）邀请进了群。饼干哥哥一进群就说"又是一个大家庭"，还跟奕成（山佬）打招呼说"又见山佬"——显然老熟人了。群里马上刷起欢迎"欢迎饼干哥哥"，霄凡旅行小刘还补充"刚刚我们还提起您"，说明大家早就惦记着这位技术大佬。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">而饼干哥哥的真实身份，正是凌晨群里霄凡旅行小刘讨论生图分层PSD技能时提到的那个"饼干哥哥方案"——饼干哥哥就是作者本人，群里早就用上了人家的东西。</div></div></div>
+<div class="event-comment">💬 毒舌点评：馆长这人脉，真的跟开了地图一样，拉完一个来一个，就是从来不拉自己。</div>
+</div></div>
+<div class="event-section" data-members="转站被群嘲：,马佳彬爆料：,玉直接定性：,补刀：,点最有意思：,彬最后总结："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **孙割中转站被群嘲：既当裁判又当运动员**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午群里的技术圈老炮儿们（马佳彬、悖、Stu(dy ing)、程玉、马其顿呼声）开了一场关于AI API中转站的吐槽大会。导火索是马佳彬爆料：傅盛做了个中转站，拿开源的newapi一改就说是自己的，在X上被追着骂，后来赞助了才平息。而孙割更绝——自己开了个纯净度检测站，把自家接口悄悄放进白名单。程玉直接定性："一鱼两吃。"Stu(dy ing)补刀："印钞机。"</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">悖</div><div class="bubble-content"><div class="bubble who">悖的观点最有意思</div><div class="bubble-chat">"人人都是中转站，谁低价谁就先跑路"——直接说出这行的本质。悖还说"AI时代，任何订阅都不能超过一个月"。马佳彬最后总结："只要有中国人参与，很快就会被玩死。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：中转站这门生意，门槛低到人人能开，卷到人人都跑——除了孙割，人家跑之前已经把镰刀磨好了。</div>
+</div></div>
+<div class="event-section" data-members="垫好了基调：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **"字生万象"提示词传疯了，群友集体求图**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午18:50左右，程玉分享了一张"字生万象"风格的中式图形设计作品图，引发群里连锁反应。众人纷纷求提示词，Simon直接把完整提示词（洋洋洒洒数百字的设计指南）整段发出，一时间@Simon求图的络绎不绝。李华荣看了之后连要两份，先要了繁体的又要简体的，说"可以可以"。DDA更是激动，说"突然找到我公司的logo了"——发完还撤回了消息补了句"太爱了"。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">而奕成早上的分享已经铺垫好了基调：他整理了《提升Agent应用活人感的工程化思考》1.6万字，公开了Alice的设计哲学，中午群里还在讨论"你们就是想攻略Alice而已"，晚上这边已经在疯狂生成汉字logo图了——群里的精力真的无穷无尽。</div></div></div>
+<div class="event-comment">💬 毒舌点评：DDA那句"撤回也值了"——建议列入群友年度最佳发言。</div>
+</div></div>
+<div class="event-section" data-members="在群里问：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **xcolab项目深夜发布，作者自问"有跑通的没"**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上22:59，马其顿呼声（Simonlin）甩出GitHub链接 https://github.com/simonlin000/xcolab，说"做了个skill，大家去看看"。群里马上刷起"收到"——程玉、马佳彬、是旦不是蛋、凡有语相继回复。然而22分钟后，Simon在群里问："有跑通的没？"林义辉立刻拍了拍他示意"快去写稿"。场面一度有点微妙。</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">与此同时，新人饼干哥哥（苍何老师）被钢针Edu追问win版wechat-cli的问题，Simon说"大佬很忙的，等晚点吧"。饼干哥哥确实很忙——毕竟刚进群，还没来得及回答win用户的问题，自己就先被群里的人蹭上了。</div></div></div>
+<div class="event-comment">💬 毒舌点评：深夜发布项目，然后自问"有跑通的没"——这大概就是开源作者的宿命，写完代码的那一刻孤独感最强。</div>
+</div></div>
+<div class="event-section" data-members="之辩：,表示认同：,最后服气：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 **Mac vs Windows之辩：AI时代谁在裸泳**</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">整个下午到晚上还穿插了一场Mac值不值买的老话题。Stanley突然问"Mac值得买吗"，李华荣直接回"玩AI必买，买了Mac发现以前电脑都白玩了"，还说"龙虾（Cola）的bug基本上是Windows的"。Stanley回忆SD时代Mac被踩到脚底，"因为显卡，因为CUDA"；程玉补充"Win的硬件系统搭配无穷无尽，bug稀奇古怪的"。马其顿呼声（Simonlin）表示认同："难怪我说我都没遇到...</div></div></div>
+<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">Stanley最后服气："确实，不过从当时可以看得出来，越来越多小白开始接触AI了，问题也就多了——让一个连终端都不知道是什么的人来部署项目，部署都部署不起来。"</div></div></div>
+<div class="event-comment">💬 毒舌点评：SD时代Mac是狗都不理，AI时代Win是bug之源——所以最后大家都去用API了，谁还本地部署啊。</div>
+</div></div>
+
+<div class="footer">🐉 SimonlinのAI学术交流 · 5月6日</div>
+</div>
+</div>
+<script>
+function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
+function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
+document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+</script>
+</body>
+</html>
