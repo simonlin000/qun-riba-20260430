@@ -65,6 +65,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .event-section.hidden{display:none}
 @media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.links-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="daily-enhance.css?v=2">
 </head>
 <body>
 <div class="layout">
@@ -131,11 +132,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 <div class="footer">共433条消息 · 2026年4月20日完 · 🐉</div>
 </div>
 </div>
-<script>
-let currentFilter=null;
-function filterByMember(n){currentFilter=n;const b=document.getElementById('filterBanner'),t=document.getElementById('filterText');b.classList.add('show');t.textContent='当前筛选：'+n;document.querySelectorAll('.member-chip').forEach(c=>{c.classList.toggle('active',c.textContent.trim()===n)});document.querySelectorAll('.event-section').forEach(s=>{const ms=s.getAttribute('data-members')||'';s.classList.toggle('hidden',!ms.includes(n));s.querySelectorAll('.bubble-chat').forEach(bc=>{const r=bc.closest('.bubble-row'),a=r?.querySelector('.bubble-avatar'),wn=r?.querySelector('.bubble-who');const match=(wn?.textContent||'').includes(n);bc.classList.toggle('highlight',match)})});const f=document.querySelector('.event-section:not(.hidden)');if(f)f.scrollIntoView{behavior:'smooth',block:'start'}}
-function clearFilter(){currentFilter=null;document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.member-chip').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'));document.querySelectorAll('.bubble-chat').forEach(bc=>bc.classList.remove('highlight'))}
-document.querySelectorAll('.dragon-mini,.chat-bubble-mini').forEach(el=>{el.addEventListener('click',()=>{const ns=el.querySelector('.name,.bubble-who');if(ns)filterByMember(ns.textContent.trim())})});
-</script>
+<script src="daily-enhance.js?v=2"></script>
 </body>
 </html>
