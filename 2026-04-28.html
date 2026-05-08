@@ -15,96 +15,113 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .sidebar-section{margin-bottom:20px}
 .sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
 .dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
-.dragon-mini:hover{background:#f5efe8}
-.dragon-mini .rank{font-size:0.9rem}
-.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
-.dragon-mini .count{font-size:0.75rem;color:#a08060}
-.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
-.link-card:hover{border-color:#e8c090;background:#fdf6ec}
-.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
-.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
-.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
 .main{flex:1;padding:32px 40px;overflow:hidden}
 .main-header{margin-bottom:32px}
 .main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
 .main-header .subtitle{color:#a08060;font-size:0.9rem}
-.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
-.back-link:hover{background:#b06a2a}
-.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
-.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
-.bubbles{display:flex;flex-direction:column;gap:12px}
-.bubble-row{display:flex;align-items:flex-start;gap:10px}
-.bubble-row.right{flex-direction:row-reverse}
-.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
-.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
-.bubble-content{max-width:75%}
-.bubble-row.right .bubble-content{text-align:right}
-.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
-.bubble-row.right .bubble{padding-right:4px}
-.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
-.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
-.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
-.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
-.event-section.hidden{display:none}
 .active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
 .active-filter-banner.show{display:flex}
 .active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
 .active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
-@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.event-title .event-tags{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.member-chip{background:#fdf6ec;border:1px solid #f0dcc0;color:#c47a3a;font-size:0.72rem;padding:2px 8px;border-radius:10px;cursor:pointer;transition:all 0.15s;text-decoration:none}
+.member-chip:hover{background:#fdf0e3}.member-chip.active{background:#c47a3a;color:white;border-color:#c47a3a}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0;cursor:pointer;transition:transform 0.15s}
+.bubble-avatar:hover{transform:scale(1.1)}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble-who{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6;cursor:pointer;transition:background 0.15s}
+.bubble-chat:hover{background:#ede4d8}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.bubble-row.right .bubble-chat:hover{background:#b06a2a}
+.bubble-chat.highlight{background:#fff3d0!important;box-shadow:0 0 0 2px #f0c98a}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.links-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="layout">
 <div class="sidebar">
 <div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月28日 · 周一</div></div>
-<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div><div class="dragon-mini" onclick="filterByMember('凡有语')"><span class="rank">4</span><span class="name">凡有语</span><span class="count">76次</span></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">吴熳Rosia——灯下白AI高手访谈播客主理人、牛马库AI导航网站创始人、英国大使馆文教处聘任专家——下午被S</div><span class="event-tag">吴熳姐空降，播客</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">下午19点多，李华荣（馆长）邀请Alchian花生（花叔）入群。群里瞬间沸腾——"神级大佬"、"馆长人脉太恐怖</div><span class="event-tag">馆长又拉大佬进群</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">傍晚18点，Simonlin甩出一则链接："剪映""猫箱""即梦AI"被约谈！消息一出，群里立刻有人跟上"Ch</div><span class="event-tag">字节系AI被约谈</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">晚间22点，群里突然开始聊Cola的新订阅方案。Stuart贴出汇率6.89，凡有语说自己的Cola只有99刀</div><span class="event-tag">Cola新订阅价</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">晚间21点40分，小马哥说"还好用小号提取的记录"，因为被微信警告了——提示是"不安全环境登录"，昨晚直接被强</div><span class="event-tag">小马哥被微信警告</span></div>
+
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥇</span><span class="name">马其顿呼声Simonlin</span><span class="count">183次</span></div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">🥈</span><span class="name">李华荣</span><span class="count">99次</span></div>
+<div class="dragon-mini" onclick="filterByMember('吴熳Rosia')"><span class="rank">🥉</span><span class="name">吴熳Rosia</span><span class="count">85次</span></div>
+<div class="dragon-mini" onclick="filterByMember('凡有语')"><span class="rank">4</span><span class="name">凡有语</span><span class="count">76次</span></div>
 <div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">5</span><span class="name">马佳彬</span><span class="count">73次</span></div>
-<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">6</span><span class="name">千九</span><span class="count">72次</span></div>
-<div class="dragon-mini" onclick="filterByMember('程玉')"><span class="rank">7</span><span class="name">程玉</span><span class="count">62次</span></div>
+
 </div>
-<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div><div class="link-card" onclick="window.open('https://ka21.org/podcast-dashboard/index.html?locale=zh','_blank')"><div class="link who">Simonlin推荐吴熳那期：四次跨界从文科生到AI编程讲师；吴熳推荐计育韬那期：从哲学到代码把"语言"变成生产力</div><div class="link-desc">灯下白播客（全集）</div><div class="link-url">https://ka21.org/podcast-dashboard/index.html?locale=zh</div></div>
-<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652695870','_blank')"><div class="link who">NΞO分享</div><div class="link-desc">NUS&NTU发布Pask：把贾维斯AI拉进现实</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=265269</div></div>
-<div class="link-card" onclick="window.open('https://polymarket.com/zh','_blank')"><div class="link who">Simonlin分享</div><div class="link-desc">Polymarket预测市场</div><div class="link-url">https://polymarket.com/zh</div></div>
-<div class="link-card" onclick="window.open('https://ka21.org/zh','_blank')"><div class="link who">吴熳分享</div><div class="link-desc">牛马库AI工具导航</div><div class="link-url">https://ka21.org/zh</div></div>
-<div class="link-card" onclick="window.open('https://ka21.org/personal-site/index.html?locale=zh','_blank')"><div class="link who">吴熳分享</div><div class="link-desc">AI赋能英语教学网站</div><div class="link-url">https://ka21.org/personal-site/index.html?locale=zh</div></div>
-<div class="link-card" onclick="window.open('https://github.com/Panniantong/Agent-Reach','_blank')"><div class="link who">程玉分享，配好可少装很多额外工具</div><div class="link-desc">Agent-Reach</div><div class="link-url">https://github.com/Panniantong/Agent-Reach</div></div>
-<div class="link-card" onclick="window.open('https://github.com/tmstack/awesome-persona-skills','_blank')"><div class="link who">紫苏子分享</div><div class="link-desc">awesome-persona-skills</div><div class="link-url">https://github.com/tmstack/awesome-persona-skills</div></div>
-<div class="link-card" onclick="window.open('https://alice.fans/?from=about','_blank')"><div class="link who">千九分享</div><div class="link-desc">Alice粉丝站</div><div class="link-url">https://alice.fans/?from=about</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://ka21.org/podcast-dashboard/index.html?locale=zh','_blank')"><div class="link-who">Simonlin推荐吴熳那期：四次跨界从文科生到AI编程讲师；吴熳推荐计育韬那期：从哲学到代码把"语言"变成生产力</div><div class="link-desc">灯下白播客（全集）</div><div class="link-url">https://ka21.org/podcast-dashboard/index.html?loca</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652695870','_blank')"><div class="link-who">NΞO分享</div><div class="link-desc">NUS&NTU发布Pask：把贾维斯AI拉进现实</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&</div></div>
+<div class="link-card" onclick="window.open('https://polymarket.com/zh','_blank')"><div class="link-who">Simonlin分享</div><div class="link-desc">Polymarket预测市场</div><div class="link-url">https://polymarket.com/zh</div></div>
+<div class="link-card" onclick="window.open('https://ka21.org/zh','_blank')"><div class="link-who">吴熳分享</div><div class="link-desc">牛马库AI工具导航</div><div class="link-url">https://ka21.org/zh</div></div>
+
 </div>
-<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
 </div>
 <div class="main">
-<a href="index.html" class="back-link">← 日报馆</a>
-<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月28日</h1><div class="subtitle">5个高光事件</div></div>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月28日</h1><div class="subtitle">共1181条消息 · 5个高光事件</div></div>
 <div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
-<div class="event-section" data-members="技巧：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 吴熳姐空降，播客主理人炸群一小时</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">吴熳Rosia——灯下白AI高手访谈播客主理人、牛马库AI导航网站创始人、英国大使馆文教处聘任专家——下午被Simonlin拉进群聊，随后开启了群里有史以来最密集的高密度输出之一。她分享了四次跨界从文科生到AI编程讲师的心路历程，提到用Alice帮自己重新措辞简历，盘点完一年的成果后自己都震惊了。她还透露自己作为多个AI模型厂商的品牌挚友，会收到免费算力。更重要的是她分享了一个实用的prompt技...</div></div></div>
-<div class="event-comment">💬 毒舌点评：吴老师干活和水群并不矛盾，因为她是在等AI干活——这大概是最高效的时间管理方式。</div>
-</div></div>
-<div class="event-section" data-members="题逐渐失控：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 馆长又拉大佬进群，全员感叹"人脉深不可测"</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">下午19点多，李华荣（馆长）邀请Alchian花生（花叔）入群。群里瞬间沸腾——"神级大佬"、"馆长人脉太恐怖了"、"守护我们最好的李佬"开始刷屏。紧接着话题逐渐失控：有人说馆长是亿万富豪来体验生活的，有人说她是大唐陇西李氏后代，有人说她买帝王蟹眼都不眨，然后话锋一转发现她是吃素的，"帝王蟹自己跳出来跟她走的"。馆长本人连连感叹"谣言就是这么产生的"、"艾玛这个群太可怕了"。DDA发了一条被截图成...</div></div></div>
-<div class="event-comment">💬 毒舌点评：在这个群里传出去的话，够得上造谣罪了。</div>
-</div></div>
-<div class="event-section" data-members="出一则链接：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 字节系AI被约谈，"约谈一下"成为当日金句</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">傍晚18点，Simonlin甩出一则链接："剪映""猫箱""即梦AI"被约谈！消息一出，群里立刻有人跟上"ChatGPT生图也没加水印"、"建议约谈一下"，Simonlin本人和馆长异口同声发出"建议约谈一下"。紧接着话题延伸到AI造谣——有图无真相、DDA说自己用AI整过活（后来撤回了）、群里开始集体讨论"AI造谣不需要成本"这个严肃话题。傍晚22点，关于AI造谣的讨论再次升温，Simonlin...</div></div></div>
-<div class="event-comment">💬 毒舌点评：剪映被约谈，大家的反应是"建议约谈一下"——群友们的正义感，约等于在食堂说"阿姨真辛苦"。</div>
-</div></div>
-<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 Cola新订阅价格出炉，群友热议"百炼之前送10亿"</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚间22点，群里突然开始聊Cola的新订阅方案。Stuart贴出汇率6.89，凡有语说自己的Cola只有99刀和100刀的充值选项。李华荣（馆长）推了Alice的推文，Simonlin大号小号都点了。与此同时群里还讨论了搬瓦工VPS、马佳彬说自己还有"一只小鸡"做备用、Irene说自己"天天手机没电，习惯了"。话题逐渐延伸到翻墙工具越来越难用，"V已经不是出国最好的方案了"、"以后都不能用了"——...</div></div></div>
-<div class="event-comment">💬 毒舌点评：群里从Cola订阅聊到搬瓦工，再到搬瓦工已成上个世纪的产物——话题漂移幅度，大概只有AI能跟上。</div>
-</div></div>
-<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 小马哥被微信警告，群里分享"用小号提取记录"</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚间21点40分，小马哥说"还好用小号提取的记录"，因为被微信警告了——提示是"不安全环境登录"，昨晚直接被强制下线，今天到家才用手机解封。林义辉追问"你小号是什么手机"，Simonlin淡淡回答"红米"，然后补了一句"因为我在Mac上登录的"——言下之意这不重要。被强制下线的原因，是因为他用小号提取聊天记录导致被系统风控。群里另一位成员说"以后有空搞个备用的"，马佳彬也附议。</div></div></div>
-<div class="event-comment">💬 毒舌点评：用AI提取聊天记录，然后被微信警告——真正的AI受害者出现了。</div>
-</div></div>
+<div class="event-section" data-members="技巧：,毒舌点评：" id="event-0"><div class="event-title">🔥 吴熳姐空降，播客主理人炸群一小时<div class="event-tags"><span class="member-chip" onclick="filterByMember('技巧：')">技巧：</span><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">吴熳Rosia——灯下白AI高手访谈播客主理人、牛马库AI导航网站创始人、英国大使馆文教处聘任专家——下午被Simonlin拉进群聊，随后开启了群里有史以来最密集的高密度输出之一。她分享了四次跨界从文科生到AI编程讲师的心路历程，提到用Alice帮自己重新措辞简历，盘点完一年的成果后自己都震惊了。她还透露自己作为多个AI模型厂商的品牌挚友，会收到免费算力。更重要的是她分享了一个实用的prompt技</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：吴老师干活和水群并不矛盾，因为她是在等AI干活——这大概是最高效的时间管理方式。</div></div>
 
-<div class="footer">🐉 SimonlinのAI学术交流 · 4月28日</div>
+<div class="event-section" data-members="接着话题逐渐失控：,毒舌点评：" id="event-1"><div class="event-title">🔥 馆长又拉大佬进群，全员感叹"人脉深不可测"<div class="event-tags"><span class="member-chip" onclick="filterByMember('接着话题逐渐失控：')">接着话题逐渐失控：</span><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">下午19点多，李华荣（馆长）邀请Alchian花生（花叔）入群。群里瞬间沸腾——"神级大佬"、"馆长人脉太恐怖了"、"守护我们最好的李佬"开始刷屏。紧接着话题逐渐失控：有人说馆长是亿万富豪来体验生活的，有人说她是大唐陇西李氏后代，有人说她买帝王蟹眼都不眨，然后话锋一转发现她是吃素的，"帝王蟹自己跳出来跟她走的"。馆长本人连连感叹"谣言就是这么产生的"、"艾玛这个群太可怕了"。DDA发了一条被截图成</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：在这个群里传出去的话，够得上造谣罪了。</div></div>
+
+<div class="event-section" data-members="甩出一则链接：,毒舌点评：" id="event-2"><div class="event-title">🔥 字节系AI被约谈，"约谈一下"成为当日金句<div class="event-tags"><span class="member-chip" onclick="filterByMember('甩出一则链接：')">甩出一则链接：</span><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">傍晚18点，Simonlin甩出一则链接："剪映""猫箱""即梦AI"被约谈！消息一出，群里立刻有人跟上"ChatGPT生图也没加水印"、"建议约谈一下"，Simonlin本人和馆长异口同声发出"建议约谈一下"。紧接着话题延伸到AI造谣——有图无真相、DDA说自己用AI整过活（后来撤回了）、群里开始集体讨论"AI造谣不需要成本"这个严肃话题。傍晚22点，关于AI造谣的讨论再次升温，Simonlin</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：剪映被约谈，大家的反应是"建议约谈一下"——群友们的正义感，约等于在食堂说"阿姨真辛苦"。</div></div>
+
+<div class="event-section" data-members="毒舌点评：" id="event-3"><div class="event-title">🔥 Cola新订阅价格出炉，群友热议"百炼之前送10亿"<div class="event-tags"><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚间22点，群里突然开始聊Cola的新订阅方案。Stuart贴出汇率6.89，凡有语说自己的Cola只有99刀和100刀的充值选项。李华荣（馆长）推了Alice的推文，Simonlin大号小号都点了。与此同时群里还讨论了搬瓦工VPS、马佳彬说自己还有"一只小鸡"做备用、Irene说自己"天天手机没电，习惯了"。话题逐渐延伸到翻墙工具越来越难用，"V已经不是出国最好的方案了"、"以后都不能用了"——</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：群里从Cola订阅聊到搬瓦工，再到搬瓦工已成上个世纪的产物——话题漂移幅度，大概只有AI能跟上。</div></div>
+
+<div class="event-section" data-members="毒舌点评：" id="event-4"><div class="event-title">🔥 小马哥被微信警告，群里分享"用小号提取记录"<div class="event-tags"><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚间21点40分，小马哥说"还好用小号提取的记录"，因为被微信警告了——提示是"不安全环境登录"，昨晚直接被强制下线，今天到家才用手机解封。林义辉追问"你小号是什么手机"，Simonlin淡淡回答"红米"，然后补了一句"因为我在Mac上登录的"——言下之意这不重要。被强制下线的原因，是因为他用小号提取聊天记录导致被系统风控。群里另一位成员说"以后有空搞个备用的"，马佳彬也附议。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：用AI提取聊天记录，然后被微信警告——真正的AI受害者出现了。</div></div>
+
+
+
+<div class="footer">共1181条消息 · 2026年4月28日完 · 🐉</div>
 </div>
 </div>
 <script>
-function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
-function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
-document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+let currentFilter=null;
+function filterByMember(n){currentFilter=n;const b=document.getElementById('filterBanner'),t=document.getElementById('filterText');b.classList.add('show');t.textContent='当前筛选：'+n;document.querySelectorAll('.member-chip').forEach(c=>{c.classList.toggle('active',c.textContent.trim()===n)});document.querySelectorAll('.event-section').forEach(s=>{const ms=s.getAttribute('data-members')||'';s.classList.toggle('hidden',!ms.includes(n));s.querySelectorAll('.bubble-chat').forEach(bc=>{const r=bc.closest('.bubble-row'),a=r?.querySelector('.bubble-avatar'),wn=r?.querySelector('.bubble-who');const match=(wn?.textContent||'').includes(n);bc.classList.toggle('highlight',match)})});const f=document.querySelector('.event-section:not(.hidden)');if(f)f.scrollIntoView{behavior:'smooth',block:'start'}}
+function clearFilter(){currentFilter=null;document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.member-chip').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'));document.querySelectorAll('.bubble-chat').forEach(bc=>bc.classList.remove('highlight'))}
+document.querySelectorAll('.dragon-mini,.chat-bubble-mini').forEach(el=>{el.addEventListener('click',()=>{const ns=el.querySelector('.name,.bubble-who');if(ns)filterByMember(ns.textContent.trim())})});
 </script>
 </body>
 </html>

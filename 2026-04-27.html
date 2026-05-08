@@ -15,84 +15,109 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .sidebar-section{margin-bottom:20px}
 .sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
 .dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
-.dragon-mini:hover{background:#f5efe8}
-.dragon-mini .rank{font-size:0.9rem}
-.dragon-mini .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
-.dragon-mini .count{font-size:0.75rem;color:#a08060}
-.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;margin-bottom:8px;transition:all 0.15s}
-.link-card:hover{border-color:#e8c090;background:#fdf6ec}
-.link-card .link{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
-.link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px;word-break:break-all}
-.link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
 .main{flex:1;padding:32px 40px;overflow:hidden}
 .main-header{margin-bottom:32px}
 .main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
 .main-header .subtitle{color:#a08060;font-size:0.9rem}
-.back-link{display:inline-block;background:#c47a3a;color:white;text-decoration:none;padding:6px 14px;border-radius:8px;font-size:0.85rem;margin-bottom:20px;transition:background 0.15s}
-.back-link:hover{background:#b06a2a}
-.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
-.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0}
-.bubbles{display:flex;flex-direction:column;gap:12px}
-.bubble-row{display:flex;align-items:flex-start;gap:10px}
-.bubble-row.right{flex-direction:row-reverse}
-.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
-.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
-.bubble-content{max-width:75%}
-.bubble-row.right .bubble-content{text-align:right}
-.bubble{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
-.bubble-row.right .bubble{padding-right:4px}
-.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
-.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
-.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
-.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
-.event-section.hidden{display:none}
 .active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
 .active-filter-banner.show{display:flex}
 .active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
 .active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
-@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{padding:20px}}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.event-title .event-tags{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.member-chip{background:#fdf6ec;border:1px solid #f0dcc0;color:#c47a3a;font-size:0.72rem;padding:2px 8px;border-radius:10px;cursor:pointer;transition:all 0.15s;text-decoration:none}
+.member-chip:hover{background:#fdf0e3}.member-chip.active{background:#c47a3a;color:white;border-color:#c47a3a}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0;cursor:pointer;transition:transform 0.15s}
+.bubble-avatar:hover{transform:scale(1.1)}
+.bubble-row.right .bubble-avatar{background:linear-gradient(135deg,#d4a0d0,#c080b0)}
+.bubble-content{max-width:75%}
+.bubble-row.right .bubble-content{text-align:right}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-row.right .bubble-who{padding-right:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6;cursor:pointer;transition:background 0.15s}
+.bubble-chat:hover{background:#ede4d8}
+.bubble-row.right .bubble-chat{background:#c47a3a;color:white;border-radius:16px;border-top-right-radius:4px}
+.bubble-row.right .bubble-chat:hover{background:#b06a2a}
+.bubble-chat.highlight{background:#fff3d0!important;box-shadow:0 0 0 2px #f0c98a}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.links-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="layout">
 <div class="sidebar">
 <div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">4月27日 · 周日</div></div>
-<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div></div>
-<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div><div class="link-card" onclick="window.open('https://polymarket.com/zh','_blank')"><div class="link who">Simonlin分享，万物皆可预测的链上预测平台，国内使用有合规风险</div><div class="link-desc">Polymarket预测市场</div><div class="link-url">https://polymarket.com/zh</div></div>
-<div class="link-card" onclick="window.open('链接','_blank')"><div class="link who">烈日松饼分享，B站教程视频</div><div class="link-desc">Codex 2026完全教程</div><div class="link-url">链接</div></div>
-<div class="link-card" onclick="window.open('https://arxiv.org/abs/2405.04434','_blank')"><div class="link who">奕成分享</div><div class="link-desc">arxiv MTP架构论文</div><div class="link-url">https://arxiv.org/abs/2405.04434</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">周日晚上群里突然开始聊起Polymarket——一个链上预测市场平台。程玉说"这些赚钱肯定是可以的，只是早就有</div><span class="event-tag">Polymark</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">晚上23点多，信华甩图提到罗福莉（DeepSeek-V4关键人物）访谈，说小米选择了类似MTP架构。Simon</div><span class="event-tag">李总=罗福莉同学</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">DDA现身说法列举Codex日常用法：财务审批、内务通知、政策解读、考勤等，"能动AI的绝不动手"。leooo</div><span class="event-tag">Codex讨论持</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">群友</div><div class="bubble-text">是旦不是蛋说"本群要不要弄个知识库"。Simonlin回复"我们早有了"，但补充"可以做的深一点"，并号召"有</div><span class="event-tag">是旦不是蛋提议做</span></div>
+
 </div>
-<div class="sidebar-section"><div class="sidebar-section-title">🏠 日报馆</div><a href="index.html" class="dragon-mini" style="color:#c47a3a;font-weight:600;">← 返回日报馆首页</a></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥇</span><span class="name">马其顿呼声Simonlin</span><span class="count">约45次</span></div>
+<div class="dragon-mini" onclick="filterByMember('看到我请叫我滚去练琴')"><span class="rank">🥈</span><span class="name">看到我请叫我滚去练琴</span><span class="count">约22次</span></div>
+<div class="dragon-mini" onclick="filterByMember('烈日松饼')"><span class="rank">🥉</span><span class="name">烈日松饼</span><span class="count">约18次</span></div>
+<div class="dragon-mini" onclick="filterByMember('凡有语')"><span class="rank">4</span><span class="name">凡有语</span><span class="count">约15次</span></div>
+<div class="dragon-mini" onclick="filterByMember('程玉')"><span class="rank">5</span><span class="name">程玉</span><span class="count">约12次</span></div>
+
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://polymarket.com/zh','_blank')"><div class="link-who">Simonlin分享，万物皆可预测的链上预测平台，国内使用有合规风险</div><div class="link-desc">Polymarket预测市场</div><div class="link-url">https://polymarket.com/zh</div></div>
+<div class="link-card" onclick="window.open('链接','_blank')"><div class="link-who">烈日松饼分享，B站教程视频</div><div class="link-desc">Codex 2026完全教程</div><div class="link-url">链接</div></div>
+<div class="link-card" onclick="window.open('https://arxiv.org/abs/2405.04434','_blank')"><div class="link-who">奕成分享</div><div class="link-desc">arxiv MTP架构论文</div><div class="link-url">https://arxiv.org/abs/2405.04434</div></div>
+
+</div>
 </div>
 <div class="main">
-<a href="index.html" class="back-link">← 日报馆</a>
-<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月27日</h1><div class="subtitle">4个高光事件</div></div>
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 4月27日</h1><div class="subtitle">共500条消息 · 4个高光事件</div></div>
 <div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
-<div class="event-section" data-members="玉解释原理：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 Polymarket预测市场突然爆火</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">周日晚上群里突然开始聊起Polymarket——一个链上预测市场平台。程玉说"这些赚钱肯定是可以的，只是早就有人去干了，他们也不会发出来"。Simonlin接着发了polymarket.com/zh的链接，说"万物皆可预测"。星淇补充这是"之前付费预测那个"。程玉解释原理：把真实世界中尚未产生结果的事件当作考题，玩家下注，AI自动在平台预测交易。Simonlin更透露前一天福州面基时和群友当面讨论...</div></div></div>
-<div class="event-comment">💬 毒舌点评：Polymarket这东西，听着像菠菜，本质是信息博弈。Simonlin说"万物皆可预测"的时候，我仿佛看到他在晨光中举起了一杯茶。</div>
-</div></div>
-<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 李总=罗福莉同学，群内大地震</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">晚上23点多，信华甩图提到罗福莉（DeepSeek-V4关键人物）访谈，说小米选择了类似MTP架构。Simonlin追问"李总难道....@李总"，李总淡淡回复"同班同学"。群里瞬间炸了——"对不起李总，之前和你说话太大声了"被凡有语、程玉、星淇、是旦不是蛋等至少10个人排队复读，形成当晚最壮观刷屏事件。是旦不是蛋追问"能把罗福莉拉群里吗"，李总连忙说"太打扰人家了，怕被拉黑"，又说"我也不是大佬...</div></div></div>
-<div class="event-comment">💬 毒舌点评：同班同学是什么体验？就好比你在群里吹水，突然发现旁边坐的是你导师的同学。</div>
-</div></div>
-<div class="event-section" data-members="日常用法：,毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 Codex讨论持续升温，Alice问题集中爆发</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">DDA现身说法列举Codex日常用法：财务审批、内务通知、政策解读、考勤等，"能动AI的绝不动手"。leoooo说自己用Codex让AI自动写飞书问卷，"哼哧哼哧就搞定了"。但问题随之爆发——李华荣说Alice接不上ChatGPT，帮我想个好名字说wiki收录有bug、minimax用起来有问题。奕成（山佬）被点名技术支持，建议开魔法走端口。烈日松饼说"五一找个时间先把Codex研究一下"，并分享...</div></div></div>
-<div class="bubble-row right"><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">帮我想个好名字发了美式怀旧度假海报风的AI绘图并分享提示词，霄凡旅行小刘立刻存进skills库。烈日松饼说是"波普艺术"，小刘反驳"波普不是这样的吧"，引发一小轮艺术风格科普。</div></div></div>
-<div class="event-comment">💬 毒舌点评：每天三次更新的软件，就像每天三次准时出现的妈——你知道该感动，但你只想躲。</div>
-</div></div>
-<div class="event-section" data-members="毒舌点评："><div class="event-title"></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">🔥 是旦不是蛋提议做群知识库，Simonlin说早有了可以加深</div></div></div>
-<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble who"></div><div class="bubble-chat">是旦不是蛋说"本群要不要弄个知识库"。Simonlin回复"我们早有了"，但补充"可以做的深一点"，并号召"有好东西别藏私"，同时说"不允许推流"——好东西内部分享可以，外部传播不行。凡有语说"最近信息过载，看不过来学不过来"，烈日松饼说"知识库还没更新吧"，Simonlin自嘲"群主没动力[脸红]"。</div></div></div>
-<div class="event-comment">💬 毒舌点评：知识库就像健身卡——建的时候豪情万丈，用的时候选择性失忆。</div>
-</div></div>
+<div class="event-section" data-members="程玉解释原理：,毒舌点评：" id="event-0"><div class="event-title">🔥 Polymarket预测市场突然爆火<div class="event-tags"><span class="member-chip" onclick="filterByMember('程玉解释原理：')">程玉解释原理：</span><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">周日晚上群里突然开始聊起Polymarket——一个链上预测市场平台。程玉说"这些赚钱肯定是可以的，只是早就有人去干了，他们也不会发出来"。Simonlin接着发了polymarket.com/zh的链接，说"万物皆可预测"。星淇补充这是"之前付费预测那个"。程玉解释原理：把真实世界中尚未产生结果的事件当作考题，玩家下注，AI自动在平台预测交易。Simonlin更透露前一天福州面基时和群友当面讨论</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Polymarket这东西，听着像菠菜，本质是信息博弈。Simonlin说"万物皆可预测"的时候，我仿佛看到他在晨光中举起了一杯茶。</div></div>
 
-<div class="footer">🐉 SimonlinのAI学术交流 · 4月27日</div>
+<div class="event-section" data-members="毒舌点评：" id="event-1"><div class="event-title">🔥 李总=罗福莉同学，群内大地震<div class="event-tags"><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上23点多，信华甩图提到罗福莉（DeepSeek-V4关键人物）访谈，说小米选择了类似MTP架构。Simonlin追问"李总难道....@李总"，李总淡淡回复"同班同学"。群里瞬间炸了——"对不起李总，之前和你说话太大声了"被凡有语、程玉、星淇、是旦不是蛋等至少10个人排队复读，形成当晚最壮观刷屏事件。是旦不是蛋追问"能把罗福莉拉群里吗"，李总连忙说"太打扰人家了，怕被拉黑"，又说"我也不是大佬</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：同班同学是什么体验？就好比你在群里吹水，突然发现旁边坐的是你导师的同学。</div></div>
+
+<div class="event-section" data-members="日常用法：,毒舌点评：" id="event-2"><div class="event-title">🔥 Codex讨论持续升温，Alice问题集中爆发<div class="event-tags"><span class="member-chip" onclick="filterByMember('日常用法：')">日常用法：</span><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">DDA现身说法列举Codex日常用法：财务审批、内务通知、政策解读、考勤等，"能动AI的绝不动手"。leoooo说自己用Codex让AI自动写飞书问卷，"哼哧哼哧就搞定了"。但问题随之爆发——李华荣说Alice接不上ChatGPT，帮我想个好名字说wiki收录有bug、minimax用起来有问题。奕成（山佬）被点名技术支持，建议开魔法走端口。烈日松饼说"五一找个时间先把Codex研究一下"，并分享</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">帮我想个好名字发了美式怀旧度假海报风的AI绘图并分享提示词，霄凡旅行小刘立刻存进skills库。烈日松饼说是"波普艺术"，小刘反驳"波普不是这样的吧"，引发一小轮艺术风格科普。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：每天三次更新的软件，就像每天三次准时出现的妈——你知道该感动，但你只想躲。</div></div>
+
+<div class="event-section" data-members="毒舌点评：" id="event-3"><div class="event-title">🔥 是旦不是蛋提议做群知识库，Simonlin说早有了可以加深<div class="event-tags"><span class="member-chip" onclick="filterByMember('毒舌点评：')">毒舌点评：</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📢</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">是旦不是蛋说"本群要不要弄个知识库"。Simonlin回复"我们早有了"，但补充"可以做的深一点"，并号召"有好东西别藏私"，同时说"不允许推流"——好东西内部分享可以，外部传播不行。凡有语说"最近信息过载，看不过来学不过来"，烈日松饼说"知识库还没更新吧"，Simonlin自嘲"群主没动力[脸红]"。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：知识库就像健身卡——建的时候豪情万丈，用的时候选择性失忆。</div></div>
+
+
+
+<div class="footer">共500条消息 · 2026年4月27日完 · 🐉</div>
 </div>
 </div>
 <script>
-function filterByMember(n){document.getElementById('filterBanner').classList.add('show');document.getElementById('filterText').textContent='当前筛选：'+n;document.querySelectorAll('.event-section').forEach(s=>{s.classList.toggle('hidden',!s.getAttribute('data-members')?.includes(n))})}
-function clearFilter(){document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'))}
-document.querySelectorAll('.dragon-mini').forEach(el=>{el.addEventListener('click',()=>{const n=el.querySelector('.name');if(n)filterByMember(n.textContent.trim())})});
+let currentFilter=null;
+function filterByMember(n){currentFilter=n;const b=document.getElementById('filterBanner'),t=document.getElementById('filterText');b.classList.add('show');t.textContent='当前筛选：'+n;document.querySelectorAll('.member-chip').forEach(c=>{c.classList.toggle('active',c.textContent.trim()===n)});document.querySelectorAll('.event-section').forEach(s=>{const ms=s.getAttribute('data-members')||'';s.classList.toggle('hidden',!ms.includes(n));s.querySelectorAll('.bubble-chat').forEach(bc=>{const r=bc.closest('.bubble-row'),a=r?.querySelector('.bubble-avatar'),wn=r?.querySelector('.bubble-who');const match=(wn?.textContent||'').includes(n);bc.classList.toggle('highlight',match)})});const f=document.querySelector('.event-section:not(.hidden)');if(f)f.scrollIntoView{behavior:'smooth',block:'start'}}
+function clearFilter(){currentFilter=null;document.getElementById('filterBanner').classList.remove('show');document.querySelectorAll('.member-chip').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.event-section').forEach(s=>s.classList.remove('hidden'));document.querySelectorAll('.bubble-chat').forEach(bc=>bc.classList.remove('highlight'))}
+document.querySelectorAll('.dragon-mini,.chat-bubble-mini').forEach(el=>{el.addEventListener('click',()=>{const ns=el.querySelector('.name,.bubble-who');if(ns)filterByMember(ns.textContent.trim())})});
 </script>
 </body>
 </html>
