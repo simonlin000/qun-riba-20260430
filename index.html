@@ -74,6 +74,30 @@
     color: rgba(255,255,255,0.6);
   }
 
+  .view-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 8px 16px;
+    border: 1px solid rgba(240, 192, 96, 0.35);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.88rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .view-counter strong {
+    color: #f0c060;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .view-counter.is-loading strong {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
   .header-divider {
     width: 60px;
     height: 3px;
@@ -226,6 +250,7 @@
   @media (max-width: 600px) {
     .header h1 { font-size: 1.6rem; }
     .header-stats { gap: 24px; }
+    .view-counter { font-size: 0.82rem; }
     .report-grid { grid-template-columns: 1fr; }
     .container { padding: 24px 16px 40px; }
   }
@@ -250,6 +275,9 @@
       <span class="num">5月8日</span>
       <span class="label">最新一期</span>
     </div>
+  </div>
+  <div class="view-counter is-loading" id="viewCounter" aria-live="polite">
+    已被 <strong id="viewCount">...</strong> 人次看过
   </div>
   <div class="header-divider"></div>
 </div>
@@ -516,6 +544,33 @@
   🐉 日报馆 · SimonlinのAI学术交流<br>
   共17期日报 · 持续更新中
 </div>
+
+<script>
+  (function updateViewCounter() {
+    var counter = document.getElementById('viewCounter');
+    var count = document.getElementById('viewCount');
+    var endpoint = 'https://api.counterapi.dev/v1/qun-riba-20260430/homepage-views/up';
+
+    function render(value) {
+      if (!Number.isFinite(value)) return;
+      count.textContent = value.toLocaleString('zh-CN');
+      counter.classList.remove('is-loading');
+    }
+
+    fetch(endpoint, { cache: 'no-store' })
+      .then(function(response) {
+        if (!response.ok) throw new Error('Counter request failed');
+        return response.json();
+      })
+      .then(function(data) {
+        render(Number(data && data.count));
+      })
+      .catch(function() {
+        count.textContent = '--';
+        counter.classList.remove('is-loading');
+      });
+  })();
+</script>
 
 </body>
 </html>
