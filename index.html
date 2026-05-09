@@ -549,7 +549,11 @@
   (function updateViewCounter() {
     var counter = document.getElementById('viewCounter');
     var count = document.getElementById('viewCount');
-    var endpoint = 'https://api.counterapi.dev/v1/qun-riba-20260430/homepage-views/up';
+    var namespace = 'qun-riba-20260430';
+    var uniqueCounter = 'homepage-unique-ip-views';
+    var counterBase = 'https://api.counterapi.dev/v1/' + namespace + '/';
+    var ipEndpoint = 'https://api64.ipify.org?format=json';
+    var fingerprintPrefix = 'homepage-ip-';
 
     function render(value) {
       if (!Number.isFinite(value)) return;
@@ -557,17 +561,76 @@
       counter.classList.remove('is-loading');
     }
 
-    fetch(endpoint, { cache: 'no-store' })
-      .then(function(response) {
-        if (!response.ok) throw new Error('Counter request failed');
-        return response.json();
+    function getCounter(name) {
+      return fetch(counterBase + encodeURIComponent(name) + '/', { cache: 'no-store' })
+        .then(function(response) {
+          return response.json().catch(function() {
+            return {};
+          }).then(function(data) {
+            if (!response.ok && data && data.message === 'record not found') return null;
+            if (!response.ok) throw new Error('Counter request failed');
+            return data;
+          });
+        });
+    }
+
+    function upCounter(name) {
+      return fetch(counterBase + encodeURIComponent(name) + '/up', { cache: 'no-store' })
+        .then(function(response) {
+          if (!response.ok) throw new Error('Counter update failed');
+          return response.json();
+        });
+    }
+
+    function hashText(text) {
+      if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+        return Promise.resolve(text.replace(/[^a-zA-Z0-9]/g, '-'));
+      }
+
+      return window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+        .then(function(buffer) {
+          return Array.prototype.map.call(new Uint8Array(buffer), function(byte) {
+            return byte.toString(16).padStart(2, '0');
+          }).join('');
+        });
+    }
+
+    function getVisitorKey() {
+      return fetch(ipEndpoint, { cache: 'no-store' })
+        .then(function(response) {
+          if (!response.ok) throw new Error('IP request failed');
+          return response.json();
+        })
+        .then(function(data) {
+          if (!data || !data.ip) throw new Error('IP missing');
+          return hashText(namespace + ':' + data.ip);
+        })
+        .then(function(hash) {
+          return fingerprintPrefix + hash.slice(0, 32);
+        });
+    }
+
+    getVisitorKey()
+      .then(function(visitorKey) {
+        return getCounter(visitorKey).then(function(visitorRecord) {
+          if (visitorRecord) return getCounter(uniqueCounter);
+          return upCounter(visitorKey).then(function() {
+            return upCounter(uniqueCounter);
+          });
+        });
       })
-      .then(function(data) {
-        render(Number(data && data.count));
+      .then(function(response) {
+        render(Number(response && response.count));
       })
       .catch(function() {
-        count.textContent = '--';
-        counter.classList.remove('is-loading');
+        getCounter(uniqueCounter)
+          .then(function(data) {
+            render(Number(data && data.count));
+          })
+          .catch(function() {
+            count.textContent = '--';
+            counter.classList.remove('is-loading');
+          });
       });
   })();
 </script>
