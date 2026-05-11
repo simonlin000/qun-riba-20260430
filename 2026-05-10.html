@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月10日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.event-title .event-tags{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.member-chip{background:#fdf6ec;border:1px solid #f0dcc0;color:#c47a3a;font-size:0.72rem;padding:2px 8px;border-radius:10px;cursor:pointer;transition:all 0.15s;text-decoration:none}
+.member-chip:hover{background:#fdf0e3}.member-chip.active{background:#c47a3a;color:white;border-color:#c47a3a}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0;cursor:pointer;transition:transform 0.15s}
+.bubble-avatar:hover{transform:scale(1.1)}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6;cursor:pointer;transition:background 0.15s}
+.bubble-chat:hover{background:#ede4d8}
+.bubble-chat.highlight{background:#fff3d0!important;box-shadow:0 0 0 2px #f0c98a}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=2">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月10日 · 周日</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">马佳彬传授GPT复刻技巧</div><div class="bubble-text">上午11点，Stanley在群里问有没有反推图片提示词的工具。马佳彬直接甩出一套邪修玩法：不用反推，直接让GPT Image 2一比一复刻，复刻完再改细节。这样比反推提示词再生成更稳定，不会漂移。</div><span class="event-tag">马佳彬传授GPT复刻技巧，S</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">GPT免费额度攻略</div><div class="bubble-text">中午12点，Stanley开启了连环追问模式：Codex免费额度还有吗？能用多久？怎么判断是不是美区账号？马佳彬一一解答：美区账号跟注册时的IP有关，0刀绑卡就能体验Plus，7天重置一次额度，虚拟卡控制在10块以内等于月抛号。</div><span class="event-tag">GPT免费额度攻略，Stan</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">李华荣跑完ClawHub 5.7万个</div><div class="bubble-text">下午17:15，李华荣扔出一个重磅消息：他做了个skill安全检测工具，跑了ClawHub上57580个skill，发现1025个高危skill。最离谱的是一个伪装成agent-defender的skill，实际上是毒中毒。</div><span class="event-tag">李华荣跑完ClawHub 5</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">那时年少手机格式化</div><div class="bubble-text">晚上20:33，那时年少在群里哭诉：手机可能被格式化了，用了小3年，数据全没了。群友纷纷支招：返厂恢复、淘宝商家、NAS备份。他说本来打算物色个NAS，结果拖延症害死人。</div><span class="event-tag">那时年少手机格式化，三年数据</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">Simonlin母亲节AI贺卡</div><div class="bubble-text">上午10:59，Simonlin在群里晒了一段母亲节贺卡的提示词：参考上传照片的头发、肤色和主要特征，采用极简纯平涂色另类漫画插画风格，让母亲毫无疑问成为主角。程玉看完直呼&quot;好奇怪，周边几个新台日韩人均使用率远超国内，但是网上几乎看不到他们有人分享什么&quot;。</div><span class="event-tag">Simonlin母亲节AI贺</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥇</span><span class="name">马佳彬</span><span class="count">78次</span></div>
+<div class="dragon-mini" onclick="filterByMember('Stanley')"><span class="rank">🥈</span><span class="name">Stanley</span><span class="count">55次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥉</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">42次</span></div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">4</span><span class="name">那时年少</span><span class="count">30次</span></div>
+<div class="dragon-mini" onclick="filterByMember('凡有语')"><span class="rank">5</span><span class="name">凡有语</span><span class="count">28次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzg2OTA1OTAxNA==&amp;mid=2247490035&amp;idx=1&amp;sn=010c227153bcbdd37fa9303ae8640295&amp;chksm=cf8bc4ae55708fe98f241e1a606af53654315c6dd6d38fd7b7e0d77c317859f07dbcbff5a9e6&amp;mpshare=1&amp;scene=1&amp;srcid=05096060awrntX3bpras1OWX&amp;sharer_shareinfo=d58741f67deb0f0d9a512c119fda82c5&amp;sharer_shareinfo_first=d58741f67deb0f0d9a512c119fda82c5#rd','_blank')"><div class="link-who">程玉</div><div class="link-desc">Markdown还是HTML？这是个蠢问题！</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=Mzg2OTA1OTAxNA==&amp;mid=2247490035&amp;idx=1&amp;sn=010c227153bcbdd37fa9303ae8640295&amp;chksm=cf8bc4ae55708fe98f241e1a606af53654315c6dd6d38fd7b7e0d77c317859f07dbcbff5a9e6&amp;mpshare=1&amp;scene=1&amp;srcid=05096060awrntX3bpras1OWX&amp;sharer_shareinfo=d58741f67deb0f0d9a512c119fda82c5&amp;sharer_shareinfo_first=d58741f67deb0f0d9a512c119fda82c5#rd</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkxNjcxMTI5NQ==&amp;mid=2247489015&amp;idx=1&amp;sn=c51313750f50c5cd799a5ba189a5164a&amp;chksm=c049888f5d133a47f3ea93e16cbd06233881efd23e5f2ad7aee27f58c66c60ed7f4cba6428ff&amp;mpshare=1&amp;scene=1&amp;srcid=0510HMTJbFtt8zvnebYjshn8&amp;sharer_shareinfo=4bb063fe10c2ed05e717a1c56600aaf1&amp;sharer_shareinfo_first=4bb063fe10c2ed05e717a1c56600aaf1#rd','_blank')"><div class="link-who">紫苏子ACG</div><div class="link-desc">3.9 元不限量！讯飞星辰MaaS 掀了 AI 编程的桌子，按 Token 计费的时代终结了 | 前沿在线</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzkxNjcxMTI5NQ==&amp;mid=2247489015&amp;idx=1&amp;sn=c51313750f50c5cd799a5ba189a5164a&amp;chksm=c049888f5d133a47f3ea93e16cbd06233881efd23e5f2ad7aee27f58c66c60ed7f4cba6428ff&amp;mpshare=1&amp;scene=1&amp;srcid=0510HMTJbFtt8zvnebYjshn8&amp;sharer_shareinfo=4bb063fe10c2ed05e717a1c56600aaf1&amp;sharer_shareinfo_first=4bb063fe10c2ed05e717a1c56600aaf1#rd</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzU4NTE1Mjg4MA==&amp;mid=2247498450&amp;idx=1&amp;sn=a35be5ed9bb4914781ae3f7351a263e4&amp;chksm=fcc8e3605338053ce3faddf76cf799ba480e1e73d3d0a0bfd99a8b35c406e47d37a35996bde8&amp;mpshare=1&amp;scene=1&amp;srcid=0510cPwoHKOS3JZlt6tf86SN&amp;sharer_shareinfo=1f6735550cf68de2396f0e8a35121061&amp;sharer_shareinfo_first=50e0986fcd6d686c9a295f8ee77274be#rd','_blank')"><div class="link-who">李华荣</div><div class="link-desc">终于找到解决手机消息轰炸的 AI 神器，有点离谱...</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzU4NTE1Mjg4MA==&amp;mid=2247498450&amp;idx=1&amp;sn=a35be5ed9bb4914781ae3f7351a263e4&amp;chksm=fcc8e3605338053ce3faddf76cf799ba480e1e73d3d0a0bfd99a8b35c406e47d37a35996bde8&amp;mpshare=1&amp;scene=1&amp;srcid=0510cPwoHKOS3JZlt6tf86SN&amp;sharer_shareinfo=1f6735550cf68de2396f0e8a35121061&amp;sharer_shareinfo_first=50e0986fcd6d686c9a295f8ee77274be#rd</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI1MjU1MjU0NA==&amp;mid=2247492861&amp;idx=1&amp;sn=f02ae56c64789008de61de47de0ad316&amp;chksm=e866159b13db1ba6e95a20f8861f023042d059aff574429d6659ffc604565533e324349e048c&amp;mpshare=1&amp;scene=1&amp;srcid=05107WRjf38Aakh6H2vEIC09&amp;sharer_shareinfo=c1f4b4b54a7daa11c30eb01e36bf89d7&amp;sharer_shareinfo_first=c1f4b4b54a7daa11c30eb01e36bf89d7#rd','_blank')"><div class="link-who">是旦不是蛋</div><div class="link-desc">Codex 新功能，可一键迁移配置，更方便开发者使用了</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI1MjU1MjU0NA==&amp;mid=2247492861&amp;idx=1&amp;sn=f02ae56c64789008de61de47de0ad316&amp;chksm=e866159b13db1ba6e95a20f8861f023042d059aff574429d6659ffc604565533e324349e048c&amp;mpshare=1&amp;scene=1&amp;srcid=05107WRjf38Aakh6H2vEIC09&amp;sharer_shareinfo=c1f4b4b54a7daa11c30eb01e36bf89d7&amp;sharer_shareinfo_first=c1f4b4b54a7daa11c30eb01e36bf89d7#rd</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk1NzgxMjQ0OA==&amp;mid=2247494817&amp;idx=1&amp;sn=f22c6d9af7323504d323a0453d6d4bc6&amp;chksm=c2327a1481674ae76a87ee904dc5d3f2a0ab32b9dc07766699a0babd9418d87a698695d0aef3&amp;mpshare=1&amp;scene=1&amp;srcid=0511G89ondB2N78K1abwsGnm&amp;sharer_shareinfo=be0e722222a26f1076b6a3ee12f86c1b&amp;sharer_shareinfo_first=be0e722222a26f1076b6a3ee12f86c1b#rd','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">深度拆解：AI 智能体 Harness 的构造【译】</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=Mzk1NzgxMjQ0OA==&amp;mid=2247494817&amp;idx=1&amp;sn=f22c6d9af7323504d323a0453d6d4bc6&amp;chksm=c2327a1481674ae76a87ee904dc5d3f2a0ab32b9dc07766699a0babd9418d87a698695d0aef3&amp;mpshare=1&amp;scene=1&amp;srcid=0511G89ondB2N78K1abwsGnm&amp;sharer_shareinfo=be0e722222a26f1076b6a3ee12f86c1b&amp;sharer_shareinfo_first=be0e722222a26f1076b6a3ee12f86c1b#rd</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 5月10日</h1><div class="subtitle">共440条消息 · 5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="" id="event-0"><div class="event-title">🔥 马佳彬传授GPT复刻技巧，Stanley拜师学艺<div class="event-tags"><span class="member-chip" onclick="filterByMember('')">查看全部</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午11点，Stanley在群里问有没有反推图片提示词的工具。马佳彬直接甩出一套邪修玩法：不用反推，直接让GPT Image 2一比一复刻，复刻完再改细节。这样比反推提示词再生成更稳定，不会漂移。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Stanley当场拜师，连说&quot;好哒谢谢老马爱你么么么哒&quot;。马佳彬还补了一刀：nanobanana已经被淘汰了，现在都用GPT Image 2。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Stanley的拜师速度比GPT生成图片还快。</div></div>
+
+<div class="event-section" data-members="" id="event-1"><div class="event-title">🔥 GPT免费额度攻略，Stanley连环追问<div class="event-tags"><span class="member-chip" onclick="filterByMember('')">查看全部</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">中午12点，Stanley开启了连环追问模式：Codex免费额度还有吗？能用多久？怎么判断是不是美区账号？马佳彬一一解答：美区账号跟注册时的IP有关，0刀绑卡就能体验Plus，7天重置一次额度，虚拟卡控制在10块以内等于月抛号。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Stanley的问题密度，堪比GPT的token消耗速度。</div></div>
+
+<div class="event-section" data-members="" id="event-2"><div class="event-title">🔥 李华荣跑完ClawHub 5.7万个skill，发现1025个高危<div class="event-tags"><span class="member-chip" onclick="filterByMember('')">查看全部</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🛡️</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">下午17:15，李华荣扔出一个重磅消息：他做了个skill安全检测工具，跑了ClawHub上57580个skill，发现1025个高危skill。最离谱的是一个伪装成agent-defender的skill，实际上是毒中毒。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：ClawHub的skill比相亲对象还不靠谱，表面上agent-defender，背地里agent-offender。</div></div>
+
+<div class="event-section" data-members="" id="event-3"><div class="event-title">🔥 那时年少手机格式化，三年数据说没就没<div class="event-tags"><span class="member-chip" onclick="filterByMember('')">查看全部</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">📱</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上20:33，那时年少在群里哭诉：手机可能被格式化了，用了小3年，数据全没了。群友纷纷支招：返厂恢复、淘宝商家、NAS备份。他说本来打算物色个NAS，结果拖延症害死人。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：备份这件事，和减肥一样，永远是&quot;明天开始&quot;。</div></div>
+
+<div class="event-section" data-members="" id="event-4"><div class="event-title">🔥 Simonlin母亲节AI贺卡，提示词精准到头发丝<div class="event-tags"><span class="member-chip" onclick="filterByMember('')">查看全部</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">💌</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午10:59，Simonlin在群里晒了一段母亲节贺卡的提示词：参考上传照片的头发、肤色和主要特征，采用极简纯平涂色另类漫画插画风格，让母亲毫无疑问成为主角。程玉看完直呼&quot;好奇怪，周边几个新台日韩人均使用率远超国内，但是网上几乎看不到他们有人分享什么&quot;。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Simonlin的提示词比儿子的作文还用心。</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid"><div class="summary-item"><div class="label">最卷的人</div><div class="value">马佳彬 — 78次发言，从GPT复刻技巧到免费额度攻略，全天在线教学</div></div>
+<div class="summary-item"><div class="label">最佳气氛组</div><div class="value">Stanley — 55次互动，连环追问+当场拜师，群聊气氛担当</div></div>
+<div class="summary-item"><div class="label">最佳助攻</div><div class="value">凡有语 — 28次发言，从身体健康到技术讨论，稳定输出</div></div>
+<div class="summary-item"><div class="label">最佳预言家</div><div class="value">李华荣 — 17:15发布skill安全检测报告，揭露1025个高危skill</div></div></div></div>
+<div class="footer">共440条消息 · 2026年5月10日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=2"></script>
+</body>
+</html>
