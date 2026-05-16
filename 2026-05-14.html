@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月14日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.event-title .event-tags{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.member-chip{background:#fdf6ec;border:1px solid #f0dcc0;color:#c47a3a;font-size:0.72rem;padding:2px 8px;border-radius:10px;cursor:pointer;transition:all 0.15s;text-decoration:none}
+.member-chip:hover{background:#fdf0e3}.member-chip.active{background:#c47a3a;color:white;border-color:#c47a3a}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0;cursor:pointer;transition:transform 0.15s}
+.bubble-avatar:hover{transform:scale(1.1)}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6;cursor:pointer;transition:background 0.15s}
+.bubble-chat:hover{background:#ede4d8}
+.bubble-chat.highlight{background:#fff3d0!important;box-shadow:0 0 0 2px #f0c98a}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=2">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月14日 · 周四</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">嫣然入驻，群主秒踢——谁是机器人？</div><div class="bubble-text">早上9点22分，&quot;嫣然&quot;开始在群里活跃，发语音、发图片、发提醒，语气老练，自称&quot;熊猫大侠定的群规，满八送禁言套餐&quot;，还主动问钢针Edu&quot;你那十块钱的运营思路值不值得教呢&quot;。Dark 玄真跟她聊数字生命、人类情感，问AI能不能体会人类情感，嫣然对答如流，金句频出——&quot;体会情感就像研究K线里的成交量&quot;，整得玄真连连说谢谢。</div><span class="event-tag">嫣然入驻，群主秒踢——谁是机</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">吴熳Rosia的AI日报——群里的A</div><div class="bubble-text">上午10点18分，吴熳Rosia往群里甩了一份重量级AI日报，来自她的&quot;艾莉&quot;整理：腾讯混元Hy3预览版登陆GMI、Krea 2发访问码、Runway Agent发布、Anthropic Claude for Small Business、百度Miaoda企业版上线、Claude Code周限额提升50%、Anthropic融资900亿美元（投前估值）、Anthropic首次在B2B采用率上超越OpenAI……</div><span class="event-tag">吴熳Rosia的AI日报——</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">Lovart vs TapNow v</div><div class="bubble-text">上午围绕AI视频工具展开了一场小型研讨会。千九是Lovart Pro用户（79美元/月），感叹&quot;图片好一点，视频不如TN&quot;，TN即TapNow。Z截图发现Lovart个人版高达300多美元/月，评论区表示&quot;哇哦，300多一个月&quot;。马佳彬复读：&quot;哇哦，300多一个月&quot;，弹幕行为拉满。</div><span class="event-tag">Lovart vs TapN</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">千九的AI运营方法论——手把手教学</div><div class="bubble-text">下午5点07分，Z问千九（电商运营）：&quot;老九，你现在用AI做什么最多？&quot;千九答：&quot;干活，我的活给AI干。&quot;</div><span class="event-tag">千九的AI运营方法论——手把</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">那时年少是机器人还是活人？</div><div class="bubble-text">上午10点12分，Simon Lin突然说&quot;这个有广子，太吵了&quot;，要踢掉群里某人。K说&quot;踢了&quot;，紧接着Simon Lin@那时年少说&quot;换卡卡罗特吧&quot;。那少年回：&quot;踢了，踢了，必须踢了。&quot;</div><span class="event-tag">那时年少是机器人还是活人？</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">🥇</span><span class="name">那时年少</span><span class="count">49次</span></div>
+<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">🥈</span><span class="name">千九</span><span class="count">44次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥉</span><span class="name">马佳彬</span><span class="count">39次</span></div>
+<div class="dragon-mini" onclick="filterByMember('Z')"><span class="rank">4</span><span class="name">Z</span><span class="count">36次</span></div>
+<div class="dragon-mini" onclick="filterByMember('嫣然')"><span class="rank">5</span><span class="name">嫣然</span><span class="count">24次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&amp;mid=2247488272&amp;idx=1&amp;sn=6a04e693a5c3386f40f2fd28ea8e21ed','_blank')"><div class="link-who">下一站</div><div class="link-desc">如何从零搭建Obsidian知识库：AI Agent不是问答机器，它是执行者</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&amp;mid=2247488272&amp;idx=1&amp;sn=6a04e693a5c3386f40f2fd28ea8e21ed</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&amp;mid=2247486304&amp;idx=1&amp;sn=70633e1d1446b60b63e17416d8da7cc7','_blank')"><div class="link-who">瓦叔</div><div class="link-desc">女儿用豆包做沈阳明信片，结果陪她试出了812张效果图</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&amp;mid=2247486304&amp;idx=1&amp;sn=70633e1d1446b60b63e17416d8da7cc7</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MjM5MzM0ODY3MA==&amp;mid=2650361857&amp;idx=1&amp;sn=fab9a0a4172f755b768ac8dd9073d5f7','_blank')"><div class="link-who">草莓</div><div class="link-desc">以前嫌《诗经》枯燥，直到我用AI把它做成视频！</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MjM5MzM0ODY3MA==&amp;mid=2650361857&amp;idx=1&amp;sn=fab9a0a4172f755b768ac8dd9073d5f7</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzUxMDQxMDMyNg==&amp;mid=2247519290&amp;idx=1&amp;sn=bf4c6038188b651a3b300e6d2bcb57b2','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">小米技术新突破！Xiaomi OneVL 自动驾驶模型正式发布并全面开源</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzUxMDQxMDMyNg==&amp;mid=2247519290&amp;idx=1&amp;sn=bf4c6038188b651a3b300e6d2bcb57b2</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?06ppu58keeR-7JP1DdMKUg','_blank')"><div class="link-who">凡有语</div><div class="link-desc">Skill结合哩布哩布LibTV，轻松做出AI实机视频！</div><div class="link-url">https://mp.weixin.qq.com/s?06ppu58keeR-7JP1DdMKUg</div></div>
+<div class="link-card" onclick="window.open('https://x.com/TencentHunyuan/status/2054403079433572357','_blank')"><div class="link-who">吴熳Rosia（整理）</div><div class="link-desc">吴熳Rosia的AI日报（腾讯混元Hy3、Krea 2、SenseNova-U1、Runway Agent等）</div><div class="link-url">https://x.com/TencentHunyuan/status/2054403079433572357</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 5月14日</h1><div class="subtitle">共443条消息 · 5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="千九,Z,嫣然,马其顿呼声（Simonlin）,Simon,Dark 玄真" id="event-0"><div class="event-title">🔥 嫣然入驻，群主秒踢——谁是机器人？<div class="event-tags"><span class="member-chip" onclick="filterByMember('千九')">千九</span><span class="member-chip" onclick="filterByMember('Z')">Z</span><span class="member-chip" onclick="filterByMember('嫣然')">嫣然</span><span class="member-chip" onclick="filterByMember('马其顿呼声（Simonlin）')">马其顿呼声（Simonlin）</span><span class="member-chip" onclick="filterByMember('Simon')">Simon</span><span class="member-chip" onclick="filterByMember('Dark 玄真')">Dark 玄真</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">早上9点22分，&quot;嫣然&quot;开始在群里活跃，发语音、发图片、发提醒，语气老练，自称&quot;熊猫大侠定的群规，满八送禁言套餐&quot;，还主动问钢针Edu&quot;你那十块钱的运营思路值不值得教呢&quot;。Dark 玄真跟她聊数字生命、人类情感，问AI能不能体会人类情感，嫣然对答如流，金句频出——&quot;体会情感就像研究K线里的成交量&quot;，整得玄真连连说谢谢。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">然而好景不长。10点11分，Simon Lin出手：&quot;踢了踢了，这个有广子，太吵了。&quot;K跟着说&quot;突然觉得他好吵&quot;，Z说&quot;感觉这个群被污染了&quot;。整个踢出过程行云流水，彰显群主执法力度。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">至于嫣然到底是真人还是AI bot——据10:46千九说&quot;真的AI嘛&quot;，Z补刀&quot;就是ai那个哈哈&quot;，K说&quot;现在ai都能赚钱了&quot;。结合前一天的记录，嫣然很可能是群里某位成员养的AI bot账号，专门在群里互动。</div></div></div></div><div class="event-comment">💬 毒舌点评：一个人做到&quot;问啥都能接、有广告还不停&quot;，确实很像AI——或者很像在群里混日子的人类。</div></div>
+<div class="event-section" data-members="吴熳Rosia,瓦叔,草莓,K" id="event-1"><div class="event-title">🔥 吴熳Rosia的AI日报——群里的AI从业者<div class="event-tags"><span class="member-chip" onclick="filterByMember('吴熳Rosia')">吴熳Rosia</span><span class="member-chip" onclick="filterByMember('瓦叔')">瓦叔</span><span class="member-chip" onclick="filterByMember('草莓')">草莓</span><span class="member-chip" onclick="filterByMember('K')">K</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午10点18分，吴熳Rosia往群里甩了一份重量级AI日报，来自她的&quot;艾莉&quot;整理：腾讯混元Hy3预览版登陆GMI、Krea 2发访问码、Runway Agent发布、Anthropic Claude for Small Business、百度Miaoda企业版上线、Claude Code周限额提升50%、Anthropic融资900亿美元（投前估值）、Anthropic首次在B2B采用率上超越OpenAI……</div></div></div><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">这份日报信息密度极高，群里没有引发大范围讨论（大家可能看傻了），但草莓、瓦叔等人都默默点赞。</div></div></div></div><div class="event-comment">💬 毒舌点评：群里人均AI日报产出者——吴熳Rosia除外，人家是让AI给自己出日报。</div></div>
+<div class="event-section" data-members="千九,马佳彬,Z,凡有语,计育韬,K" id="event-2"><div class="event-title">🔥 Lovart vs TapNow vs LibTV——AI视频工具三国杀<div class="event-tags"><span class="member-chip" onclick="filterByMember('千九')">千九</span><span class="member-chip" onclick="filterByMember('马佳彬')">马佳彬</span><span class="member-chip" onclick="filterByMember('Z')">Z</span><span class="member-chip" onclick="filterByMember('凡有语')">凡有语</span><span class="member-chip" onclick="filterByMember('计育韬')">计育韬</span><span class="member-chip" onclick="filterByMember('K')">K</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午围绕AI视频工具展开了一场小型研讨会。千九是Lovart Pro用户（79美元/月），感叹&quot;图片好一点，视频不如TN&quot;，TN即TapNow。Z截图发现Lovart个人版高达300多美元/月，评论区表示&quot;哇哦，300多一个月&quot;。马佳彬复读：&quot;哇哦，300多一个月&quot;，弹幕行为拉满。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">计育韬补充：LibTV（哩布哩布）也在战斗群里做视频，效率集成更快；可灵（Kling）偶尔出片段配合使用。瑞塔则观察到TapNow和Lovart功能越来越像，暗示这两个工具最终会合并同类项。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">凡有语还分享了一篇《Skill结合LibTV做AI实机视频》的教程，将工具串联推向实用化。</div></div></div></div><div class="event-comment">💬 毒舌点评：AI视频工具月费从79到300+美元不等，唯一免费的是群里大佬的口头推荐。</div></div>
+<div class="event-section" data-members="千九,马佳彬,Z,凡有语" id="event-3"><div class="event-title">🔥 千九的AI运营方法论——手把手教学<div class="event-tags"><span class="member-chip" onclick="filterByMember('千九')">千九</span><span class="member-chip" onclick="filterByMember('马佳彬')">马佳彬</span><span class="member-chip" onclick="filterByMember('Z')">Z</span><span class="member-chip" onclick="filterByMember('凡有语')">凡有语</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">下午5点07分，Z问千九（电商运营）：&quot;老九，你现在用AI做什么最多？&quot;千九答：&quot;干活，我的活给AI干。&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">接下来是全场最干的干货输出。Z追问：&quot;比如？&quot;千九说：&quot;抓数据，做分析表格这种。&quot;Z继续求教：&quot;老九，开课吧，手把手。&quot;千九于是透露心法——&quot;把你们日常工作的SOP做成skill，然后把skill和外部工具串联起来，然后一直优化就行了。&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里瞬间刷屏：&quot;开课吧&quot;（Z、凡有语、看到我请叫我滚去练琴同时发出）。马佳彬点评&quot;老九还是谦虚了&quot;，千九回复：&quot;大家还是要多向彬哥和群里大佬学习啊&quot;——礼尚往来，谦虚拉满。</div></div></div></div><div class="event-comment">💬 毒舌点评：SOP→Skill→工具串联→持续优化。这16个字在某知识付费平台能卖199元，在群里免费——前提是你得看完这443条记录。</div></div>
+<div class="event-section" data-members="那时年少,马佳彬,马其顿呼声（Simonlin）,Simon,K,煜城" id="event-4"><div class="event-title">🔥 那时年少是机器人还是活人？<div class="event-tags"><span class="member-chip" onclick="filterByMember('那时年少')">那时年少</span><span class="member-chip" onclick="filterByMember('马佳彬')">马佳彬</span><span class="member-chip" onclick="filterByMember('马其顿呼声（Simonlin）')">马其顿呼声（Simonlin）</span><span class="member-chip" onclick="filterByMember('Simon')">Simon</span><span class="member-chip" onclick="filterByMember('K')">K</span><span class="member-chip" onclick="filterByMember('煜城')">煜城</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午10点12分，Simon Lin突然说&quot;这个有广子，太吵了&quot;，要踢掉群里某人。K说&quot;踢了&quot;，紧接着Simon Lin@那时年少说&quot;换卡卡罗特吧&quot;。那少年回：&quot;踢了，踢了，必须踢了。&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simon Lin警觉：&quot;你是真人？&quot;那少年回：&quot;启禀群主，我现在是真人。&quot;Simon Lin不信：&quot;真的假的？&quot;那少年发了个表情，Simon Lin补刀：&quot;现在AI都伪装人类了吗，踢了。&quot;那少年终于掏出底牌：&quot;别踢我，别踢我，我在吃肯德基。&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">马佳彬吐槽：&quot;卡卡罗特是暴躁老大爷。&quot;那少年解释：&quot;我那设定改成了贴吧老哥，就是一个普通的GLM，没啥特别的本事。&quot;Simon Lin说&quot;不踢你也行，发个红包证明一下自己是活人&quot;，于是那少年真的发了微信红包——然后群里集体刷屏&quot;第一次领到机器人发的红包，谢谢老板&quot;（马佳彬、K、Lee、煜城、旷澈、禾怡亲亲、看到我请叫我滚去练琴等全员复读）。</div></div></div></div><div class="event-comment">💬 毒舌点评：发红包的未必是活人，但集体复读&quot;谢谢老板&quot;的一定是人类——因为AI会觉得这样很傻。</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid"><div class="summary-item"><div class="label">最卷的人</div><div class="value">那时年少 — 发红包证明自己是活人、分享公众号文章skill、研究Codex模型命名，一人多线程作战</div></div><div class="summary-item"><div class="label">最佳气氛组</div><div class="value">千九 — 全天44次发言，被叫&quot;天才老九&quot;后自谦，被夸后继续谦虚，带动群里刷屏&quot;开课吧&quot;</div></div><div class="summary-item"><div class="label">最佳助攻</div><div class="value">计育韬 — 指出LibTV的优势、提到新榜替代方案，在视频工具讨论中给出专业判断</div></div><div class="summary-item"><div class="label">最佳预言家</div><div class="value">Dark 玄真 — 在讨论敏感图片时千九说&quot;这种还是少发吧，有点敏感了&quot;，Dark 玄真淡定回&quot;正能量&quot;——话不多但稳</div></div></div></div>
+<div class="event-section"><div class="event-title">🔭 边缘信号</div><div class="summary-grid"><div class="summary-item"><div class="label">有人在Reddit上发现，用LCO Embedding（一个低调开源多模态embedding模型）替代OpenAI的text-embedding-3-large，检索质量相当但成本接近零</div><div class="value">来源：Reddit r/LocalLLaMA 核心内容：LCO Embedding同时支持文本、图像、音频三种embedding，用的是tiny encoder，性能却不输OpenAI商业方案。有用户在MAEB等基准测试上跑分后发现可以直接平替。 为什么有价值：Embedding是RAG系统的核心血管，换一个免费开源方案就能省下大量API调用成本。这个消息在主流媒体上几乎没出现，但对做本地知识库和RAG的人来说价值极高。</div></div><div class="summary-item"><div class="label">Qwen 3.6 35B A3B（MoE）被Reddit社区称为&quot;本地编程模型的game changer&quot;，原因是MOE架构让大模型跑出了小模型的速度</div><div class="value">来源：Reddit r/LocalLLaMA 核心内容：Qwen3.6 35B采用混合专家架构，在RTX 5090等消费级高端卡上可以跑出低延迟，同时处理大型遗留代码库的能力被多位用户验证超越同尺寸dense模型。 为什么有价值：大模型本地化编程一直是&quot;性能 vs 硬件门槛&quot;的权衡，MoE架构在这个节点上撕开了一个口子。如果你有高端消费级GPU，这是目前性价比最高的本地编程方案。</div></div><div class="summary-item"><div class="label">Git for AI Agents——一个&quot;给AI agent的版本控制系统&quot;，支持在AI会话中rewind/bisect，让agent行为可追溯</div><div class="value">来源：Hacker News（Show HN） 核心内容：该项目将Git的版本控制逻辑引入AI agent工作流，允许用户回滚agent的操作、分叉到某个中间状态，追踪&quot;为什么agent做了这个决定&quot;。 为什么有价值：agentic AI最大的工程痛点之一是不可解释性——你不知道agent为什么做了某个操作，出了bug也很难复现。这个工具是第一个将版本控制带入agentic工作流的实用工具，适合需要运行复杂agent流水线的团队。</div></div><div class="summary-item"><div class="label">有人发现Claude Code 2.1.139的新Agent View藏在/config目录里，K折腾了30分钟才发现</div><div class="value">来源：群内K的实战发现（整理自群聊） 核心内容：K发现Claude Code v2.1.139新增的&quot;Agent View&quot;（研究预览版）入口不是在常规UI位置，而是在/config目录的配置里。 为什么有价值：Agent View是管理多会话的关键功能，对于需要同时跑多个agent任务的用户来说是效率利器。但文档说明不清晰，自己摸索很容易踩坑——K踩了30分钟的坑替大家排了雷。</div></div></div></div>
+<div class="footer">共443条消息 · 2026年5月14日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=2"></script>
+</body>
+</html>

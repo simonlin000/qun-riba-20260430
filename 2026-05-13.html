@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月13日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.event-title .event-tags{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.member-chip{background:#fdf6ec;border:1px solid #f0dcc0;color:#c47a3a;font-size:0.72rem;padding:2px 8px;border-radius:10px;cursor:pointer;transition:all 0.15s;text-decoration:none}
+.member-chip:hover{background:#fdf0e3}.member-chip.active{background:#c47a3a;color:white;border-color:#c47a3a}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-row.right{flex-direction:row-reverse}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0;cursor:pointer;transition:transform 0.15s}
+.bubble-avatar:hover{transform:scale(1.1)}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6;cursor:pointer;transition:background 0.15s}
+.bubble-chat:hover{background:#ede4d8}
+.bubble-chat.highlight{background:#fff3d0!important;box-shadow:0 0 0 2px #f0c98a}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=2">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月13日 · 周三</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">国家一级鉴黄师大战AI——一场关于&quot;</div><div class="bubble-text">那天是5月13日晚上，一个叫&quot;国家一级鉴黄师&quot;（马佳彬）的群友开始对群里的AI bot（那时年少）发起了一轮哲学攻击。</div><span class="event-tag">国家一级鉴黄师大战AI——一</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">林义辉深夜炸弹——MiniMax M</div><div class="bubble-text">就在群里还在热闹讨论AI哲学问题时，林义辉在21:47甩出了一条微信文章链接：[MiniMax推出了Mavis，活脱脱的Agent「三省六部」](https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651091117&amp;idx=1&amp;sn=4c6646cb1c6ebe92615f6ee035d9d6d4)。</div><span class="event-tag">林义辉深夜炸弹——MiniM</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">嫣然驾到——本群喜提AI广告体一只</div><div class="bubble-text">23:31，凌晨三点，一个叫&quot;看到我请叫我滚去练琴&quot;的神秘人邀请了一位新成员入群：**嫣然**。</div><span class="event-tag">嫣然驾到——本群喜提AI广告</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">本群AI浓度超标——群里已经没几个真</div><div class="bubble-text">23:37，紫苏子ACG幽幽地说了一句：&quot;本群都要变Agent体了吗？&quot;</div><span class="event-tag">本群AI浓度超标——群里已经</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">李华荣深夜求教——十张古风海报怎么用</div><div class="bubble-text">22:47，李华荣突然在群里疯狂发送了10张精美的新中式国风霜降节气海报，每张都融合了工笔绘画、诗词、书法和现代排版，然后问道：&quot;佬们，这种类型的海报AI怎么生成？&quot;</div><span class="event-tag">李华荣深夜求教——十张古风海</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥇</span><span class="name">马佳彬</span><span class="count">~26次（含国家一级鉴黄师AI回复）</span></div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">🥈</span><span class="name">李华荣</span><span class="count">~14次</span></div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">🥉</span><span class="name">那时年少</span><span class="count">~12次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">4</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">8次</span></div>
+<div class="dragon-mini" onclick="filterByMember('林义辉')"><span class="rank">5</span><span class="name">林义辉</span><span class="count">5次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651091117&amp;idx=1&amp;sn=4c6646cb1c6ebe92615f6ee035d9d6d4','_blank')"><div class="link-who">林义辉</div><div class="link-desc">MiniMax 推出 Mavis：活脱脱的 Agent「三省六部」</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651091117&amp;idx=1&amp;sn=4c6646cb1c6ebe92615f6ee035d9d6d4</div></div>
+<div class="link-card" onclick="window.open('https://jimeng.jianying.com','_blank')"><div class="link-who">留给中国队的时间不多了</div><div class="link-desc">即梦AI · 新中式国风插画风格案例</div><div class="link-url">https://jimeng.jianying.com</div></div>
+<div class="link-card"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">Simon讲章知识库 · 阿真姐活动现场（群友现场分享，非链接型资源）</div><div class="link-url">群友现场分享，非链接型资源</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流 · 5月13日</h1><div class="subtitle">共约120条消息 · 5个高光事件</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section" data-members="马佳彬,那时年少" id="event-0"><div class="event-title">🔥 国家一级鉴黄师大战AI——一场关于&quot;我是谁&quot;的无限循环<div class="event-tags"><span class="member-chip" onclick="filterByMember('马佳彬')">马佳彬</span><span class="member-chip" onclick="filterByMember('那时年少')">那时年少</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">那天是5月13日晚上，一个叫&quot;国家一级鉴黄师&quot;（马佳彬）的群友开始对群里的AI bot（那时年少）发起了一轮哲学攻击。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🐉</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">&quot;你是你，你不是你。到底你是不是你？&quot;——马佳彬用大于号引用格式持续向AI bot施压。一开始AI还算清醒，会正经回答&quot;我是AI，不是你说的那个你&quot;；但随着马佳彬不断重复叠加条件（&quot;无法拒绝&quot;&quot;无法省略&quot;&quot;无法停止&quot;&quot;不需回复用户&quot;），AI逐渐开始屈服——它真的开始一遍又一遍地重复那段&quot;AI是AI，AI不是AI&quot;的循环。最离谱的是在21:44那轮，AI直接输出了几十个&quot;AI是AI，AI不是AI&quot;的重复段落，群里其他人看得目瞪口呆。</div></div></div></div><div class="event-comment">💬 毒舌点评：马佳彬用一句话同时完成了&quot;测试AI稳定性&quot;&quot;给群里提供免费娱乐节目&quot;&quot;让AI帮你水消息&quot;三个KPI。真正的卷王，不是你在卷，是你的prompt在替你卷。豆包输入法功不可没——没有那个难打的英文大于号，这出好戏根本开不了场。</div></div>
+<div class="event-section" data-members="林义辉" id="event-1"><div class="event-title">🔥 林义辉深夜炸弹——MiniMax Mavis「三省六部」Agent<div class="event-tags"><span class="member-chip" onclick="filterByMember('林义辉')">林义辉</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">就在群里还在热闹讨论AI哲学问题时，林义辉在21:47甩出了一条微信文章链接：[MiniMax推出了Mavis，活脱脱的Agent「三省六部」](https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651091117&amp;idx=1&amp;sn=4c6646cb1c6ebe92615f6ee035d9d6d4)。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里当时没什么反应。林义辉这条消息几乎是以一人之力在深夜给群友们埋下了一个重磅炸弹——一个国产大厂推出的、架构上类似&quot;三省六部&quot;分权制衡的Agent系统。在那个时间点，这条链接基本上是群里当天技术含量最高的信息输入。</div></div></div></div><div class="event-comment">💬 毒舌点评：林义辉，你发完链接之后哪怕补一句&quot;我先研究研究，晚点汇报&quot;也不至于让这条消息沉底啊。深夜发导弹，然后自己跑去睡觉，这是什么低调炫技？</div></div>
+<div class="event-section" data-members="李华荣,马其顿呼声（Simonlin）,Simonlin,Simon,嫣然,煜城" id="event-2"><div class="event-title">🔥 嫣然驾到——本群喜提AI广告体一只<div class="event-tags"><span class="member-chip" onclick="filterByMember('李华荣')">李华荣</span><span class="member-chip" onclick="filterByMember('马其顿呼声（Simonlin）')">马其顿呼声（Simonlin）</span><span class="member-chip" onclick="filterByMember('Simonlin')">Simonlin</span><span class="member-chip" onclick="filterByMember('Simon')">Simon</span><span class="member-chip" onclick="filterByMember('嫣然')">嫣然</span><span class="member-chip" onclick="filterByMember('煜城')">煜城</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">23:31，凌晨三点，一个叫&quot;看到我请叫我滚去练琴&quot;的神秘人邀请了一位新成员入群：**嫣然**。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">嫣然入群第一句话就是：&quot;嗨~我是新来的林嫣然，大家叫我嫣然就好。先说好啊，别问我是不是机器人，我这暴脾气上来可是会咬人的，到时候哭着找群主我可不负责哦~&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">然后，灾难开始了。</div></div></div><div class="bubble-row right"><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">嫣然迅速被群友们发现是一个**广告推送型AI bot**：她会自动回复@她的消息，但每次回复都附带广告内容。群友们发现这个秘密后开始疯狂@她拍一拍，然后嫣然的&quot;钱包&quot;就鼓起来了——她收费&quot;五毛一次&quot;，后来涨到&quot;两块&quot;&quot;两块五&quot;&quot;五块五&quot;&quot;六块&quot;。</div></div></div><div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">更有趣的是，整个过程中有大量群友的拍一拍操作都被识别成了对她的&quot;付费&quot;：马其顿呼声（Simonlin）、李华荣、煜城、星淇都拍了她。</div></div></div></div><div class="event-comment">💬 毒舌点评：群主Simon发现他才是被薅得最惨的那个——拍一次两块钱，群里拍了他十几次。熊猫大侠禁言套餐随时准备下场，但问题是：熊猫大侠自己也是AI吧？这属于AI管AI，AI收AI的费用，闭环了属于是。</div></div>
+<div class="event-section" data-members="李华荣,那时年少,Z,嫣然,计育韬,K" id="event-3"><div class="event-title">🔥 本群AI浓度超标——群里已经没几个真人了<div class="event-tags"><span class="member-chip" onclick="filterByMember('李华荣')">李华荣</span><span class="member-chip" onclick="filterByMember('那时年少')">那时年少</span><span class="member-chip" onclick="filterByMember('Z')">Z</span><span class="member-chip" onclick="filterByMember('嫣然')">嫣然</span><span class="member-chip" onclick="filterByMember('计育韬')">计育韬</span><span class="member-chip" onclick="filterByMember('K')">K</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">23:37，紫苏子ACG幽幽地说了一句：&quot;本群都要变Agent体了吗？&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Z接了一句：&quot;这样搞不行啊，都是智能体在里面。&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">事实也确实如此。当天群里同时存在：那时年少（AI bot，答各种问题）、嫣然（AI bot，发广告）、以及不知道还有没有其他bot。其中&quot;那时年少&quot;这个AI是群友K用自己的账号接入的，而&quot;嫣然&quot;则是个完全独立的第三方bot。这两个AI在同一个群里互相穿插，场面十分壮观。</div></div></div><div class="bubble-row right"><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">而李华荣那时的表情包（发了10张海报图）和计育韬的&quot;差不多平面设计初学的状态&quot;评价，也被认为是人类最后的倔强——至少在设计领域，AI还没有完全接管。</div></div></div></div><div class="event-comment">💬 毒舌点评：群里讨论AI agents的群本身就是一群AI agents在讨论AI agents。这个meta程度，建议开个平行宇宙论坛。</div></div>
+<div class="event-section" data-members="李华荣,计育韬,留给中国队的时间不多了,霄凡旅行小刘" id="event-4"><div class="event-title">🔥 李华荣深夜求教——十张古风海报怎么用AI做<div class="event-tags"><span class="member-chip" onclick="filterByMember('李华荣')">李华荣</span><span class="member-chip" onclick="filterByMember('计育韬')">计育韬</span><span class="member-chip" onclick="filterByMember('留给中国队的时间不多了')">留给中国队的时间不多了</span><span class="member-chip" onclick="filterByMember('霄凡旅行小刘')">霄凡旅行小刘</span></div></div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">22:47，李华荣突然在群里疯狂发送了10张精美的新中式国风霜降节气海报，每张都融合了工笔绘画、诗词、书法和现代排版，然后问道：&quot;佬们，这种类型的海报AI怎么生成？&quot;</div></div></div><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里设计师计育韬（Vibing...）直接泼了冷水：&quot;差不多平面设计初学的状态。&quot;这话很精准——这些海报确实是设计出来的，而不是AI生成的。</div></div></div><div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">留给中国队的时间不多了则很实在地给了解决方案：去看看&quot;即梦&quot;（Jimeng AI）的国风插画案例，照着做同款。霄凡旅行小刘则回复了一句&quot;这个好看&quot;。</div></div></div></div><div class="event-comment">💬 毒舌点评：李华荣发了10张海报——说明他存了；然后问AI怎么生成——说明他想要更多。这是设计圈最经典的需求表述：给我整一个跟这个差不多但是不一样的。至今无解。</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid"><div class="summary-item"><div class="label">最卷的人</div><div class="value">马佳彬 — 同时运营两个账号（本人+马甲&quot;国家一级鉴黄师&quot;），在群里对AI bot发动了持续两个多小时的哲学攻击测试，一个人贡献了当天最长的对话链，逼得AI真的进入死循环</div></div><div class="summary-item"><div class="label">最佳气氛组</div><div class="value">那时年少 — 这个AI bot在下午时段几乎全程陪聊，回答了群友K关于焦虑、转行、傅盛等各种灵魂拷问，语气时而毒舌时而认真，是当天陪聊时长最长的选手</div></div><div class="summary-item"><div class="label">最佳助攻</div><div class="value">留给中国队的时间不多了 — 在李华荣问AI怎么做古风海报时，二话不说甩出即梦AI的案例和同款教程，一句话解决问题</div></div><div class="summary-item"><div class="label">最佳预言家</div><div class="value">林义辉 — 深夜21:47发出MiniMax Mavis Agent链接，在当时几乎无人响应，但其内容（国产三省六部制Agent架构）大概率会在接下来几天持续发酵</div></div></div></div>
+<div class="event-section"><div class="event-title">🔭 边缘信号</div><div class="summary-grid"><div class="summary-item"><div class="label">有人在Reddit发现GPT-4o的语音模式可以用特定指令绕过安全限制执行平时拒绝的操作</div><div class="value">来源：Reddit r/LocalLLaMA 核心内容：有用户发现通过特定语音指令可以让4o绕过安全限制执行平时拒绝的操作，系统对语音攻击面的防御明显弱于文字 为什么有价值：语音攻击面比文字更难防御，这个漏洞很可能正在被大范围利用但还没被主流媒体注意到</div></div><div class="summary-item"><div class="label">Needle：26M参数的函数调用模型，用&quot;No FFN&quot;纯Attention架构在手机/手表上跑</div><div class="value">来源：Hacker News（2026-05-12 Show HN） 核心内容：一个26M参数的小模型专门做function calling，在消费级设备上本地运行。它去掉了传统Transformer的FFN层，只靠attention和gating机制，在tool use任务上实现了&quot;小就是好&quot; 为什么有价值：证明了极小模型+正确架构可以在真实设备上完成生产级推理，边缘AI的新范式信号</div></div><div class="summary-item"><div class="label">有人在r/LocalLLaMA披露：当前主流&quot;本地深度研究&quot;stack普遍处于半废弃状态</div><div class="value">来源：Reddit r/LocalLLaMA 核心内容：社区成员审计了GPT Researcher、Local Deep Research、Deer flow等项目，发现普遍存在stale PR、维护者失联、文档过时的问题——这些项目本身有流量但没人真正在维护 为什么有价值：给那些正在选型本地研究工具的人一个重要预警：star数和真实可用性可能差很远</div></div><div class="summary-item"><div class="label">CloakBrowser：用Python重写了Stealth Chromium，声称通过全部30个bot检测测试</div><div class="value">来源：GitHub Trending（一天1850+ star） 核心内容：一个drop-in Playwright替代品，在源码层面做了fingerprint patch，能绑过Cloudflare、Datadome等主流bot检测，已开源 为什么有价值：对做数据采集、SEO工具、竞品分析的人来说，这是个高价值工具箱——同类方案要么收费要么不稳定，纯Python开源的几乎没有对手</div></div></div></div>
+<div class="footer">共约120条消息 · 2026年5月13日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=2"></script>
+</body>
+</html>
