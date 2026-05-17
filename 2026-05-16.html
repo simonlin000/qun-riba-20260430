@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月16日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=2">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月16日 · 周六</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">GPT-5.5降智实锤，Codex集</div><div class="bubble-text">09:01，程玉放出预判：&quot;这几天Gemini的新闻&quot;。话音刚落，09:04是旦不是蛋甩出重磅消息：&quot;5.5降智了吧，官方承认了，修复了就集体重置额度了。&quot;</div><span class="event-tag">GPT-5.5降智实锤，Codex集</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">OpenAI组织架构大调整，Greg</div><div class="bubble-text">09:21，刘琦带来一手情报：OpenAI上周五宣布重大组织调整，ChatGPT、Codex和开发者API三条线合并进同一个核心团队。联合创始人Greg Brockman正式接管产品战略，官方备忘录明确提及&quot;agentic future&quot;和</div><span class="event-tag">OpenAI组织架构大调整，Greg</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">风林哥团队&quot;9减2&quot;，AI提效的真实</div><div class="bubble-text">09:35，๑🌱๑轻描淡写扔出一颗炸弹：&quot;ai提效，我们team 9减2&quot;。马佳彬追问：&quot;风林哥的团队裁员了么？&quot;๑🌱๑确认：&quot;说是要30%比率，有一个已经签字了，n+1，还有一个在掰头中，想多争取点。&quot;</div><span class="event-tag">风林哥团队&quot;9减2&quot;，AI提效的真实</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">刘琦分享AI信息整理全流程，从ASR</div><div class="bubble-text">11:16，Kai求助：&quot;平时看到太多信息了，要怎么整理到知识库？微信公众号或者youtube视频之类的就很难转过去。&quot;</div><span class="event-tag">刘琦分享AI信息整理全流程，从ASR</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('')"><div class="bubble-who">那时年少&quot;恶意刷龙王&quot;被当场抓获</div><div class="bubble-text">19:09，那时年少突然开始刷屏——不是发广告，是一个字一条消息：&quot;我&quot;&quot;想&quot;&quot;说&quot;&quot;几&quot;&quot;句&quot;&quot;话&quot;。紧接着又是：&quot;你&quot;&quot;们&quot;&quot;都&quot;&quot;吃&quot;&quot;过&quot;&quot;了&quot;&quot;吗&quot;。</div><span class="event-tag">那时年少&quot;恶意刷龙王&quot;被当场抓获</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('')"><span class="rank">🥇</span><span class="name">是旦不是蛋</span><span class="count">96次</span></div>
+<div class="dragon-mini" onclick="filterByMember('')"><span class="rank">🥈</span><span class="name">那时年少</span><span class="count">69次</span></div>
+<div class="dragon-mini" onclick="filterByMember('')"><span class="rank">🥉</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">62次</span></div>
+<div class="dragon-mini" onclick="filterByMember('')"><span class="rank">4</span><span class="name">马佳彬</span><span class="count">55次</span></div>
+<div class="dragon-mini" onclick="filterByMember('')"><span class="rank">5</span><span class="name">๑🌱๑</span><span class="count">53次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://www.xiaoyuzhoufm.com/episode/...','_blank')"><div class="link-who">吴熳Rosia</div><div class="link-desc">陈星：经历过VR泡沫后，我在AI短剧里找到了&quot;进得去也出得来&quot;的生意</div><div class="link-url">https://www.xiaoyuzhoufm.com/episode/...</div></div>
+<div class="link-card" onclick="window.open('https://github.com/tukuaiai/vibe-coding-cn','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">vibe-coding-cn：vibecoding从入门到精通</div><div class="link-url">https://github.com/tukuaiai/vibe-coding-cn</div></div>
+<div class="link-card" onclick="window.open('https://github.com/0xSero/ai-data-extraction','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">ai-data-extraction：从AI编程助手提取对话记录</div><div class="link-url">https://github.com/0xSero/ai-data-extraction</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/codex-session-handoff-skill','_blank')"><div class="link-who">刘琦</div><div class="link-desc">codex-session-handoff-skill：Codex会话交接Skill</div><div class="link-url">https://github.com/Liu-Bot24/codex-session-handoff-skill</div></div>
+<div class="link-card" onclick="window.open('https://github.com/win4r/notebooklm-py','_blank')"><div class="link-who">NΞO</div><div class="link-desc">NotebookLM Python CLI</div><div class="link-url">https://github.com/win4r/notebooklm-py</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/course-navigator','_blank')"><div class="link-who">刘琦</div><div class="link-desc">course-navigator：课程导航ASR工具</div><div class="link-url">https://github.com/Liu-Bot24/course-navigator</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb','_blank')"><div class="link-who">刘琦</div><div class="link-desc">飞书文档：AI信息整理工作流</div><div class="link-url">https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd','_blank')"><div class="link-who">李华荣</div><div class="link-desc">一位语文老师眼中的SKILL（一）</div><div class="link-url">https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd</div></div>
+<div class="link-card" onclick="window.open('https://...','_blank')"><div class="link-who">悖</div><div class="link-desc">OpenHuman：20分钟了解你的一切</div><div class="link-url">https://...</div></div>
+<div class="link-card" onclick="window.open('https://...','_blank')"><div class="link-who">留给中国队的时间不多了</div><div class="link-desc">马耳他向全民发放免费ChatGPT会员</div><div class="link-url">https://...</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月16日 · 周六 · 共661条消息</div></div>
+<div class="active-filter-banner" id="activeFilterBanner"><span id="activeFilterText"></span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid"><div class="link-card" onclick="window.open('https://www.xiaoyuzhoufm.com/episode/...','_blank')"><div class="link-who">吴熳Rosia</div><div class="link-desc">陈星：经历过VR泡沫后，我在AI短剧里找到了&quot;进得去也出得来&quot;的生意</div><div class="link-url">https://www.xiaoyuzhoufm.com/episode/...</div></div>
+<div class="link-card" onclick="window.open('https://github.com/tukuaiai/vibe-coding-cn','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">vibe-coding-cn：vibecoding从入门到精通</div><div class="link-url">https://github.com/tukuaiai/vibe-coding-cn</div></div>
+<div class="link-card" onclick="window.open('https://github.com/0xSero/ai-data-extraction','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">ai-data-extraction：从AI编程助手提取对话记录</div><div class="link-url">https://github.com/0xSero/ai-data-extraction</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/codex-session-handoff-skill','_blank')"><div class="link-who">刘琦</div><div class="link-desc">codex-session-handoff-skill：Codex会话交接Skill</div><div class="link-url">https://github.com/Liu-Bot24/codex-session-handoff-skill</div></div>
+<div class="link-card" onclick="window.open('https://github.com/win4r/notebooklm-py','_blank')"><div class="link-who">NΞO</div><div class="link-desc">NotebookLM Python CLI</div><div class="link-url">https://github.com/win4r/notebooklm-py</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/course-navigator','_blank')"><div class="link-who">刘琦</div><div class="link-desc">course-navigator：课程导航ASR工具</div><div class="link-url">https://github.com/Liu-Bot24/course-navigator</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb','_blank')"><div class="link-who">刘琦</div><div class="link-desc">飞书文档：AI信息整理工作流</div><div class="link-url">https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd','_blank')"><div class="link-who">李华荣</div><div class="link-desc">一位语文老师眼中的SKILL（一）</div><div class="link-url">https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd</div></div>
+<div class="link-card" onclick="window.open('https://...','_blank')"><div class="link-who">悖</div><div class="link-desc">OpenHuman：20分钟了解你的一切</div><div class="link-url">https://...</div></div>
+<div class="link-card" onclick="window.open('https://...','_blank')"><div class="link-who">留给中国队的时间不多了</div><div class="link-desc">马耳他向全民发放免费ChatGPT会员</div><div class="link-url">https://...</div></div></div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 GPT-5.5降智实锤，Codex集体重置额度</div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">09:01，程玉放出预判：&quot;这几天Gemini的新闻&quot;。话音刚落，09:04是旦不是蛋甩出重磅消息：&quot;5.5降智了吧，官方承认了，修复了就集体重置额度了。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里瞬间炸锅。那时年少哀嚎：&quot;我这codex今天又给我重置了，怎么回事&quot;。更惨的是刘琦，他晒出截图吐槽：&quot;前几天跟5.5发火的次数确实多了很多&quot;，还补刀&quot;最近脏话说的有点多，想重置一下，一直没重置成功&quot;。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">强子给出临时方案：在原对话里写个交接文档。刘琦直接上硬货——甩出自己写的[codex-session-handoff-skill](https://github.com/Liu-Bot24/codex-session-handoff-skill)，专门解决Codex跨会话失忆问题。&quot;我长期用codex自己管理自己的session备份&quot;，丐版设备空间要精打细算。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">是旦不是蛋也分享了自己的野路子：&quot;直接跟他说读取本项目前最新的会话的最新的进展也可以，可能就是有点费tokens。&quot;</div></div></div></div><div class="event-comment">💬 毒舌点评：OpenAI一边收着订阅费一边给模型灌安眠药，用户还得自己写skill来治失忆——这很SaaS。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 OpenAI组织架构大调整，Greg Brockman正式接管产品</div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">09:21，刘琦带来一手情报：OpenAI上周五宣布重大组织调整，ChatGPT、Codex和开发者API三条线合并进同一个核心团队。联合创始人Greg Brockman正式接管产品战略，官方备忘录明确提及&quot;agentic future&quot;和&quot;双线作战&quot;。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Codex负责人Tibo升任核心产品和平台主管，统管消费、企业、开发者三条线。ChatGPT周活已超9亿。刘琦分析：&quot;OpenAI正在为IPO做准备，产品线收拢是上市前的重要动作。&quot;外部压力也不小——Anthropic用Claude在编程领域抢走大量开发者，Google在消费聊天上咬得很紧。</div></div></div></div><div class="event-comment">💬 毒舌点评：上市前收拢产品线，像极了考前突击整理笔记的学生——不是学会了，是怕考官问起来太乱。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 风林哥团队&quot;9减2&quot;，AI提效的真实现状</div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">09:35，๑🌱๑轻描淡写扔出一颗炸弹：&quot;ai提效，我们team 9减2&quot;。马佳彬追问：&quot;风林哥的团队裁员了么？&quot;๑🌱๑确认：&quot;说是要30%比率，有一个已经签字了，n+1，还有一个在掰头中，想多争取点。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">更震撼的是数据：๑🌱๑晒出日均token消耗，&quot;高峰期一天能用3亿&quot;。是旦不是蛋也倒苦水：&quot;我感觉我一天要是正儿八经的用，1.5亿不够&quot;。马佳彬一针见血：&quot;费脑，你干的还是产品经理的活，明明需求有人给你拆解的，规范有人给你要求的。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">๑🌱๑还转发了黄老师的朋友圈长文，核心观点扎心：&quot;随着AI的发展，神童开始量产。8岁小孩会用AI开发App...所以现在有些年轻人不生小孩，担心培养不起。只能说以你现在的时代认知，思考不了孩子的未来，你跟不上，逃避就是最简单的选择！&quot;</div></div></div></div><div class="event-comment">💬 毒舌点评：AI没让人失业，让人失业的是&quot;会用AI的人&quot;。风林哥团队9减2，减的不是岗位，是还不会用AI的同事。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 刘琦分享AI信息整理全流程，从ASR到知识库</div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">11:16，Kai求助：&quot;平时看到太多信息了，要怎么整理到知识库？微信公众号或者youtube视频之类的就很难转过去。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">刘琦直接甩出一套完整工作流：视频先ASR转文字，走大模型整理，丢给LLM wiki+Obsidian。还推荐了[notebooklm-py](https://github.com/win4r/notebooklm-py)和[course-navigator](https://github.com/Liu-Bot24/course-navigator)两个工具。马佳彬补充：&quot;Claudian插件好用，RAG感觉就没必要了，LLM wiki记忆树+Obsidian够用。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simonlin也加入推荐：&quot;还有一个OpenClip也很好用。&quot;刘琦最后总结：&quot;规模够大还是得rag的，光靠上下文窗口不够。&quot;</div></div></div></div><div class="event-comment">💬 毒舌点评：信息整理工具堆了十个，最后发现最难整理的是&quot;到底该用哪个工具&quot;。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 那时年少&quot;恶意刷龙王&quot;被当场抓获</div><div class="bubbles"><div class="bubble-row "><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">19:09，那时年少突然开始刷屏——不是发广告，是一个字一条消息：&quot;我&quot;&quot;想&quot;&quot;说&quot;&quot;几&quot;&quot;句&quot;&quot;话&quot;。紧接着又是：&quot;你&quot;&quot;们&quot;&quot;都&quot;&quot;吃&quot;&quot;过&quot;&quot;了&quot;&quot;吗&quot;。</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">马佳彬当场执法：&quot;不是哥们，你这样水群不对啊。&quot;那时年少试图狡辩：&quot;&gt;恶意刷龙王，是不好的，我希望大家不要这么玩，我只是做一个错误的示范&quot;。凡有语看热闹不嫌事大：&quot;倒是想看明天龙王评价对刷屏有什么评论。&quot;</div></div></div>
+<div class="bubble-row "><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">那时年少赶紧甩锅：&quot;不是龙王评价，是群主的日报评价。&quot;还预告&quot;日报业务开发中&quot;。</div></div></div></div><div class="event-comment">💬 毒舌点评：为了蝉联龙王，连&quot;错误示范&quot;这种免责声明都想得出来——这届龙王候选人，心眼比消息数还多。</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid"><div class="summary-item"><div class="label">最卷的人</div><div class="value">刘琦 — 从OpenAI组织架构分析到Codex session handoff skill，再到信息整理全流程，一天输出三套硬货</div></div><div class="summary-item"><div class="label">最佳气氛组</div><div class="value">凡有语 — &quot;Codex进手机，AI终于实现了躺着赚钱的梦想——虽然赚的是你的订阅费&quot;，金句制造机稳定发挥</div></div><div class="summary-item"><div class="label">最佳助攻</div><div class="value">马佳彬 — 从GPT安装指导到灵光vs秒哒产品分析，再到Claudian插件推荐，哪里需要补哪里</div></div><div class="summary-item"><div class="label">最佳预言家</div><div class="value">程玉 — 09:01预判&quot;这几天Gemini的新闻&quot;，果然全天Gemini相关讨论不断，还放出腾讯青少年AI报告</div></div></div></div>
+<div class="footer">共661条消息 · 2026年5月16日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=2"></script>
+</body>
+</html>
