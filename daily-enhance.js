@@ -1,4 +1,143 @@
 (function () {
+  const normalizeText = (text) => String(text || '').toLowerCase().replace(/\s+/g, '');
+
+  const setupArchivePage = () => {
+    if (!document.body.classList.contains('archive-page')) return;
+
+    const container = document.querySelector('.container');
+    const grid = document.querySelector('.report-grid');
+    const sectionTitle = document.querySelector('.section-title');
+    if (!container || !grid || document.getElementById('archiveSearch')) return;
+
+    const cards = [...grid.querySelectorAll('.report-card')];
+    const toolbar = document.createElement('div');
+    toolbar.className = 'archive-toolbar';
+    toolbar.innerHTML = [
+      '<label class="archive-search"><span>搜索</span><input id="archiveSearch" type="search" placeholder="日期、龙王、事件数..." autocomplete="off"></label>',
+      '<div class="archive-tabs" aria-label="按月份筛选"><button type="button" class="is-active" data-month="all">全部</button><button type="button" data-month="05">5月</button><button type="button" data-month="04">4月</button></div>',
+      '<div class="archive-count" id="archiveCount"></div>'
+    ].join('');
+
+    const empty = document.createElement('div');
+    empty.className = 'archive-empty';
+    empty.id = 'archiveEmpty';
+    empty.textContent = '没有匹配到日报，换个关键词试试。';
+
+    sectionTitle.insertAdjacentElement('afterend', toolbar);
+    grid.insertAdjacentElement('afterend', empty);
+
+    cards.forEach((card) => {
+      const href = card.getAttribute('href') || '';
+      const month = href.match(/2026-(\d{2})-/)?.[1] || '';
+      card.dataset.month = month;
+      card.dataset.search = normalizeText(card.textContent + ' ' + href);
+      card.setAttribute('aria-label', card.textContent.replace(/\s+/g, ' ').trim());
+    });
+
+    const searchInput = document.getElementById('archiveSearch');
+    const count = document.getElementById('archiveCount');
+    let activeMonth = 'all';
+
+    const render = () => {
+      const query = normalizeText(searchInput.value);
+      let visible = 0;
+      cards.forEach((card) => {
+        const monthMatch = activeMonth === 'all' || card.dataset.month === activeMonth;
+        const queryMatch = !query || card.dataset.search.includes(query);
+        const show = monthMatch && queryMatch;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      count.textContent = '当前显示 ' + visible + ' / ' + cards.length + ' 期';
+      empty.classList.toggle('show', visible === 0);
+    };
+
+    toolbar.querySelectorAll('[data-month]').forEach((button) => {
+      button.addEventListener('click', () => {
+        activeMonth = button.dataset.month;
+        toolbar.querySelectorAll('[data-month]').forEach((item) => item.classList.toggle('is-active', item === button));
+        render();
+      });
+    });
+
+    searchInput.addEventListener('input', render);
+    render();
+  };
+
+  const setupReaderChrome = () => {
+    const main = document.querySelector('.main');
+    const sidebar = document.querySelector('.sidebar');
+    if (!main || !sidebar || document.body.classList.contains('archive-page')) return;
+
+    const progress = document.createElement('div');
+    progress.className = 'reading-progress';
+    document.body.prepend(progress);
+
+    const header = main.querySelector('.main-header');
+    if (header && !header.querySelector('.reader-actions')) {
+      const actions = document.createElement('div');
+      actions.className = 'reader-actions';
+      actions.innerHTML = [
+        '<a href="index.html" aria-label="返回日报馆">返回日报馆</a>',
+        '<button type="button" id="copyReportLink">复制本期链接</button>'
+      ].join('');
+      header.prepend(actions);
+    }
+
+    if (!document.getElementById('readerSearch')) {
+      const search = document.createElement('label');
+      search.className = 'reader-search';
+      search.innerHTML = '<input id="readerSearch" type="search" placeholder="搜索本期事件、群友、资源..." autocomplete="off">';
+      const firstSection = sidebar.querySelector('.sidebar-section');
+      sidebar.insertBefore(search, firstSection || sidebar.firstChild);
+    }
+
+    const searchInput = document.getElementById('readerSearch');
+    const sections = [...document.querySelectorAll('.main .event-section')];
+    const sidebarItems = [...document.querySelectorAll('.sidebar .chat-bubble-mini, .sidebar .link-card')];
+
+    const applyReaderSearch = () => {
+      const query = normalizeText(searchInput.value);
+      sections.forEach((section) => {
+        section.classList.toggle('search-hidden', Boolean(query) && !normalizeText(section.textContent).includes(query));
+      });
+      sidebarItems.forEach((item) => {
+        item.classList.toggle('search-hidden', Boolean(query) && !normalizeText(item.textContent).includes(query));
+      });
+    };
+
+    searchInput.addEventListener('input', applyReaderSearch);
+
+    const copyButton = document.getElementById('copyReportLink');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const url = window.location.href;
+        const done = () => {
+          copyButton.textContent = '已复制';
+          window.setTimeout(() => {
+            copyButton.textContent = '复制本期链接';
+          }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done).catch(done);
+        } else {
+          done();
+        }
+      });
+    }
+
+    const updateProgress = () => {
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      progress.style.transform = 'scaleX(' + Math.min(1, window.scrollY / max) + ')';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  };
+
+  setupArchivePage();
+  setupReaderChrome();
+
   const aliasMap = new Map([
     ['马其顿呼声Simonlin', '马其顿呼声（Simonlin）'],
     ['马其顿呼声（Simonlin）', '马其顿呼声（Simonlin）'],
@@ -228,7 +367,7 @@
     section.dataset.members = [...new Set([...eventNames, section.dataset.members || ''])].join(',');
   });
 
-  const banner = document.getElementById('filterBanner');
+  const banner = document.getElementById('filterBanner') || document.getElementById('activeFilterBanner');
   if (banner && !document.getElementById('noFilterResult')) {
     const empty = document.createElement('div');
     empty.id = 'noFilterResult';
@@ -242,7 +381,7 @@
     if (!member) return clearFilter();
 
     const aliases = aliasesFor(member);
-    const filterText = document.getElementById('filterText');
+    const filterText = document.getElementById('filterText') || document.getElementById('activeFilterText');
     const empty = document.getElementById('noFilterResult');
     let visibleCount = 0;
 
@@ -267,7 +406,7 @@
     });
 
     if (empty) empty.classList.toggle('show', visibleCount === 0);
-    const first = document.querySelector('.event-section:not(.hidden)');
+    const first = document.querySelector('.event-section:not(.hidden):not(.search-hidden)');
     if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
