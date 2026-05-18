@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月17日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=3">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月17日 · 周日</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('刘琦')"><div class="bubble-who">Codex跨会话记忆问题</div><div class="bubble-text">早上9点，那时年少在群里哀嚎："我这codex今天又给我重置了，怎么回事。"刘琦直接甩出自己写的GitHub项目 codex-session-handoff-skill。</div><span class="event-tag">Codex记忆</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('刘琦')"><div class="bubble-who">信息整理workflow大讨论</div><div class="bubble-text">上午11点，Kai求助信息整理方案。刘琦、NΞO、程玉接连甩出飞书、NotebookLM、ASR和工具链方案。</div><span class="event-tag">信息整理</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('钢针Edu')"><div class="bubble-who">Codex当赛博包工头</div><div class="bubble-text">晚上20:40，钢针Edu想让Codex管理本机所有Agent，是旦不是蛋给出飞书机器人调度方案。</div><span class="event-tag">Agent管理</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('李华荣')"><div class="bubble-who">李华荣做成Codex桌宠</div><div class="bubble-text">晚上21:51，李华荣发文章说把自己做成了Codex桌宠，星淇吐槽"馆长，你的下半身好小"。</div><span class="event-tag">桌宠</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('见路不走')"><div class="bubble-who">见路不走想让Simonlin开课</div><div class="bubble-text">晚上23:52，见路不走说想学，Simonlin意识到这正是"知识的诅咒"。</div><span class="event-tag">知识的诅咒</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">🥇</span><span class="name">李华荣</span><span class="count">90次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥈</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">47次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥉</span><span class="name">马佳彬</span><span class="count">39次</span></div>
+<div class="dragon-mini" onclick="filterByMember('刘琦')"><span class="rank">4</span><span class="name">刘琦</span><span class="count">37次</span></div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">5</span><span class="name">那时年少</span><span class="count">28次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd','_blank')"><div class="link-who">李华荣</div><div class="link-desc">飞书文档：一位语文老师眼中的SKILL</div><div class="link-url">https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/codex-session-handoff-skill','_blank')"><div class="link-who">刘琦</div><div class="link-desc">codex-session-handoff-skill：Codex会话交接Skill</div><div class="link-url">https://github.com/Liu-Bot24/codex-session-handoff-skill</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb','_blank')"><div class="link-who">刘琦</div><div class="link-desc">飞书文档：AI信息整理工作流</div><div class="link-url">https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb</div></div>
+<div class="link-card" onclick="window.open('https://github.com/win4r/notebooklm-py','_blank')"><div class="link-who">NΞO</div><div class="link-desc">notebooklm-py：NotebookLM Python CLI</div><div class="link-url">https://github.com/win4r/notebooklm-py</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/course-navigator','_blank')"><div class="link-who">刘琦</div><div class="link-desc">course-navigator：课程导航ASR工具</div><div class="link-url">https://github.com/Liu-Bot24/course-navigator</div></div>
+<div class="link-card" onclick="window.open('https://github.com/joeseesun/qiaomu-anything-to-notebooklm','_blank')"><div class="link-who">程玉</div><div class="link-desc">qiaomu-anything-to-notebooklm：Anything转NotebookLM</div><div class="link-url">https://github.com/joeseesun/qiaomu-anything-to-notebooklm</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月17日 · 周日 · 共437条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card" onclick="window.open('https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd','_blank')"><div class="link-who">李华荣</div><div class="link-desc">飞书文档：一位语文老师眼中的SKILL</div><div class="link-url">https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/codex-session-handoff-skill','_blank')"><div class="link-who">刘琦</div><div class="link-desc">codex-session-handoff-skill：Codex会话交接Skill</div><div class="link-url">https://github.com/Liu-Bot24/codex-session-handoff-skill</div></div>
+<div class="link-card" onclick="window.open('https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb','_blank')"><div class="link-who">刘琦</div><div class="link-desc">飞书文档：AI信息整理工作流</div><div class="link-url">https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb</div></div>
+<div class="link-card" onclick="window.open('https://github.com/win4r/notebooklm-py','_blank')"><div class="link-who">NΞO</div><div class="link-desc">notebooklm-py：NotebookLM Python CLI</div><div class="link-url">https://github.com/win4r/notebooklm-py</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Liu-Bot24/course-navigator','_blank')"><div class="link-who">刘琦</div><div class="link-desc">course-navigator：课程导航ASR工具</div><div class="link-url">https://github.com/Liu-Bot24/course-navigator</div></div>
+<div class="link-card" onclick="window.open('https://github.com/joeseesun/qiaomu-anything-to-notebooklm','_blank')"><div class="link-who">程玉</div><div class="link-desc">qiaomu-anything-to-notebooklm：Anything转NotebookLM</div><div class="link-url">https://github.com/joeseesun/qiaomu-anything-to-notebooklm</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 Codex跨会话记忆问题，刘琦甩出session handoff skill<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">早上9点，那时年少在群里哀嚎："我这codex今天又给我重置了，怎么回事。"接着补刀："新会话下，codex仿佛没有记忆一样啊。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">⚡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">刘琦直接甩出自己写的GitHub项目 codex-session-handoff-skill，说："我长期用codex自己管理自己的session备份。"是旦不是蛋也分享了自己的野路子："直接跟他说读取本项目前最新的会话的最新的进展也可以，可能就是有点费tokens。"</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Codex的记忆像金鱼，7秒就忘，但你的token账单记得清清楚楚。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 信息整理workflow大讨论，工具链百花齐放<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🧠</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午11点，Kai在群里求助："各位佬，平时看到太多信息了，要怎么整理到知识库？微信公众号或者youtube视频之类的就很难转过去。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">🔗</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">刘琦分享了自己的workflow："从飞书cli过一道，分享方便。"NΞO甩了 notebooklm-py。刘琦还推荐了 course-navigator："如果用ASR方案的话，可以参考一下我这个。"程玉也补了一个 qiaomu-anything-to-notebooklm。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：信息整理工具千千万，最后都变成了"先收藏再说"。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 钢针Edu想让Codex当赛博包工头，管理所有Agent<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上20:40，钢针Edu问："怎么让codex管理本机所有的龙虾呀，给龙虾派活，让codex做管理者，告诉openclaw该怎么做，做什么。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">⚙️</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">是旦不是蛋给方案："分别分配一个飞书机器人，给codex也接一个，都拉到一个飞书群里就好，设定好权限分工和工作空间。"</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Codex当监工，龙虾当工人，这就是AI时代的赛博包工头。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 李华荣把自己做成Codex桌宠，星淇吐槽"下半身好小"<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上21:51，李华荣在群里发文章："我把自己做成了codex桌宠，喜当赛博监工。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">💬</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">22:28马佳彬问："李佬，是这样的桌宠吗？"Stanley一脸懵："还有桌宠？"吴熳Rosia解释："这是华荣用jiangye写的文章做的codex的桌宠。"李华荣说还在优化中，又发了个视频。星淇看完笑喷："馆长，你的下半身好小。"李华荣无奈："没办法，Q版的只能这样了，它自己手绘的。"星淇也做了一个，李华荣看完："你这个可以呢，我重新做一个。"结果重做还是不行："为啥我的是这样。"</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：同样的jiangye，不同的手，AI桌宠也分颜值高低。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 见路不走想让Simonlin开课，触发"知识的诅咒"<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">📚</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上23:52，见路不走说："群主弄个付费课程教吧，想学哦。"Simonlin回："我咋感觉我没啥能教大家的。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">💡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">见路不走认真了："不是的，因为你在这个圈子里，你觉得这些都很简单。比如我是其他行业的小白，我想弄个这样的知识库，其实挺难的。"Simonlin顿悟："你说得对，知识的诅咒。"</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：知识的诅咒就是——你会的越多，越觉得自己啥都不会教。</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最卷的人</div><div class="value">李华荣 — 90条消息，做了Codex桌宠，被吐槽下半身太小，重做还是不行，执着程度满分</div></div>
+<div class="summary-item"><div class="label">最佳气氛组</div><div class="value">星淇 — "馆长你的下半身好小"，一句话让群里笑炸</div></div>
+<div class="summary-item"><div class="label">最佳助攻</div><div class="value">刘琦 — 甩了3个GitHub项目，从session管理到课程总结，工具链齐全</div></div>
+<div class="summary-item"><div class="label">最佳预言家</div><div class="value">是旦不是蛋 — "分别分配一个飞书机器人给codex也接一个"，赛博包工头方案一步到位</div></div>
+</div></div>
+<div class="footer">共437条记录 · 2026年5月17日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=3"></script>
+</body>
+</html>
