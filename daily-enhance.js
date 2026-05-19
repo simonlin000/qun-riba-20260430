@@ -421,7 +421,38 @@
     document.querySelectorAll('.bubble-chat').forEach((chat) => chat.classList.remove('highlight'));
   };
 
-  document.querySelectorAll('.dragon-mini,.chat-bubble-mini,.link-who').forEach((el) => {
+  window.jumpToEvent = function jumpToEvent(target) {
+    const section = typeof target === 'string' ? document.getElementById(target.replace(/^#/, '')) : target;
+    if (!section) return;
+
+    window.clearFilter();
+    section.classList.add('event-focus');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => {
+      section.classList.remove('event-focus');
+    }, 1800);
+  };
+
+  document.querySelectorAll('.sidebar .chat-bubble-mini').forEach((el, index) => {
+    const target = document.getElementById('event-' + (index + 1));
+    if (!target) return;
+    el.onclick = null;
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('aria-label', '查看事件：' + (el.querySelector('.bubble-who')?.textContent.trim() || index + 1));
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      window.jumpToEvent(target);
+    });
+    el.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      window.jumpToEvent(target);
+    });
+  });
+
+  document.querySelectorAll('.dragon-mini,.link-who').forEach((el) => {
     el.addEventListener('click', (event) => {
       const fromClick = getOnclickName(el.getAttribute('onclick'));
       const text = el.querySelector('.name,.bubble-who')?.textContent.trim() || el.textContent.trim();
