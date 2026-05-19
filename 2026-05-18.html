@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月18日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=3">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月18日 · 周一</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('数字阿启')"><div class="bubble-who">小白学AI的痛点</div><div class="bubble-text">凌晨见路不走抛出扎心问题：教程很多，但自学成本太高。Simon点破："小白缺的不是资源，缺的是自己知道自己要啥。"</div><span class="event-tag">AI入门</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('S\\'F')"><div class="bubble-who">GPT额度消费升级</div><div class="bubble-text">S'F求助 ChatGPT Plus 限额不够用，千九和亿华工业地产 朱孟凯讨论从 Plus 到 Pro 的取舍。</div><span class="event-tag">GPT额度</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('千九')"><div class="bubble-who">Lovart质量下降</div><div class="bubble-text">雨一直下率先吐槽 Lovart 出图质量下降，千九附和并转战 GPT，还分享了电商设计工作流。</div><span class="event-tag">AI设计</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('钢针Edu')"><div class="bubble-who">OpenClaw虾塘退潮</div><div class="bubble-text">钢针Edu吐槽 OpenClaw 经常返工暂停，群友开始转向 Hermes、Codex 和 Claude Code。</div><span class="event-tag">Agent趋势</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('千九')"><div class="bubble-who">千九电商设计workflow</div><div class="bubble-text">千九系统分享用 GPT/Codex 做电商详情页设计，并想把美工工作蒸馏成 skill。</div><span class="event-tag">电商工作流</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥇</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">196次</span></div>
+<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">🥈</span><span class="name">千九</span><span class="count">153次</span></div>
+<div class="dragon-mini" onclick="filterByMember('是旦不是蛋')"><span class="rank">🥉</span><span class="name">是旦不是蛋</span><span class="count">103次</span></div>
+<div class="dragon-mini" onclick="filterByMember('亿华工业地产 朱孟凯')"><span class="rank">4</span><span class="name">亿华工业地产 朱孟凯</span><span class="count">62次</span></div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">5</span><span class="name">李华荣</span><span class="count">54次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://github.com/datawhalechina/easy-vibe','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">Datawhale AI教程 easy-vibe</div><div class="link-url">https://github.com/datawhalechina/easy-vibe</div></div>
+<div class="link-card" onclick="window.open('https://datawhalechina.github.io/ai-prompting-for-everyone','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">AI提示词教程</div><div class="link-url">https://datawhalechina.github.io/ai-prompting-for-everyone</div></div>
+<div class="link-card" onclick="window.open('https://www.vibevibe.cn/zh/','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">VibeVibe中文教程站</div><div class="link-url">https://www.vibevibe.cn/zh/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?t=pages/video_detail_new','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">藏师傅PPT Skill + Codex + HyperFrames</div><div class="link-url">https://mp.weixin.qq.com/s?t=pages/video_detail_new</div></div>
+<div class="link-card" onclick="window.open('https://labs.google/fx/zh/tools/flow','_blank')"><div class="link-who">千九</div><div class="link-desc">Google Flow视频生成</div><div class="link-url">https://labs.google/fx/zh/tools/flow</div></div>
+<div class="link-card"><div class="link-who">李华荣</div><div class="link-desc">通往AGI之路的视频</div><div class="link-url">视频资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">《一人企业方法论》v2.0 PDF</div><div class="link-url">PDF资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">论文PDF：Useful Memories Become Faulty When Continuously Updated by LLMs</div><div class="link-url">PDF资源</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月18日 · 周一 · 共1184条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card" onclick="window.open('https://github.com/datawhalechina/easy-vibe','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">Datawhale AI教程 easy-vibe，突破1万星</div><div class="link-url">https://github.com/datawhalechina/easy-vibe</div></div>
+<div class="link-card" onclick="window.open('https://datawhalechina.github.io/ai-prompting-for-everyone','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">AI提示词教程</div><div class="link-url">https://datawhalechina.github.io/ai-prompting-for-everyone</div></div>
+<div class="link-card" onclick="window.open('https://www.vibevibe.cn/zh/','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">VibeVibe中文教程站</div><div class="link-url">https://www.vibevibe.cn/zh/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?t=pages/video_detail_new','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">藏师傅PPT Skill + Codex + HyperFrames</div><div class="link-url">https://mp.weixin.qq.com/s?t=pages/video_detail_new</div></div>
+<div class="link-card" onclick="window.open('https://labs.google/fx/zh/tools/flow','_blank')"><div class="link-who">千九</div><div class="link-desc">Google Flow视频生成，Veo 3.1模型</div><div class="link-url">https://labs.google/fx/zh/tools/flow</div></div>
+<div class="link-card"><div class="link-who">李华荣</div><div class="link-desc">通往AGI之路的视频</div><div class="link-url">视频资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">《一人企业方法论》v2.0 PDF</div><div class="link-url">PDF资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">论文PDF：Useful Memories Become Faulty When Continuously Updated by LLMs</div><div class="link-url">PDF资源</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 小白学AI的痛点：不是缺资源，是缺知道自己要啥<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">📚</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">凌晨见路不走抛出一个扎心问题：教程很多，但自学成本太高。想用上 GitHub，水平仅限于注册了个账号；找梯子、买 Claude 账号，花了4-6小时。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">💡</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simon直接点破："小白缺的不是资源，缺的是自己知道自己要啥。"数字阿启推荐 Datawhale 社区，有系统路线还能和北大等名校大佬交流。李华荣自嘲"像我吗"，结果 Simon 回了个"比如你吗[旺柴]"。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：找梯子花6小时，这时间成本够买三个Claude账号了。信息差这玩意，有时候比智商差还致命。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 GPT额度不够用？从Plus到Pro的消费升级<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">💳</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">S'F下午求助：ChatGPT Plus 5小时限额不够用，该拼 team 号、找中转站还是充 Pro？千九建议需求大就冲 Pro，一般就再充个 Plus 或中转站，拼号不建议。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">📈</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">亿华工业地产 朱孟凯补充："100刀的Pro目前是10倍Plus额度，用起来还够用，Plus真的分分钟用完。"结果 S'F 说："100刀的Pro还用不满，稍微还有点心疼。"</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：从"用不起GPT"到"GPT额度不够用"，这消费升级比房价涨得还快。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 Lovart质量下降，群友集体吐槽<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🎨</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">雨一直下率先发难："Lovart今天使用出图感觉质量下降了，有点闹脾气出不到想要的效果。"千九附和："是的，最近的Lovart不行了"，已经转战 GPT。南舟推荐 liblib 但表示"吞金兽"，积分消耗太大。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">🧩</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">千九还分享了电商设计工作流：先让 GPT 反推提示词，按模块区域单独生成场景图，再替换到详情页中。人物模糊问题至今无解，只能单独生成模特场景图后调用 PS 插件替换。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Lovart不行了就换GPT，GPT不行了就换Claude，工具永远在迭代，只有钱包在受伤。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 OpenClaw虾塘退潮，全员Hermes趋势明显<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🤖</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">钢针Edu晚上吐槽：把 Codex 作为管理者、OpenClaw 作为执行者，但 OpenClaw 经常需要返工且时不时暂停。"如果 Token 足够的话，干脆不用 OpenClaw 了，直接 Codex 就行。"</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">🌊</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">这引发群友共鸣，草莓表示"我的虾听得瑟瑟发抖"，Trus"默默卸载了小龙虾"，紫苏子ACG宣布"全员Hermes了"。Simon深夜总结：养虾用户脱坑后分为两派，一派转投其他本地 agent，一派转投 Codex 和 Claude Code。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：OpenClaw的虾塘正在经历一场史无前例的退潮，Hermes成了新的避风港。养虾时代落幕，马年（Hermes）到来，Simon这总结比星座运势还准。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 千九的AI电商设计工作流：想把美工蒸馏成skill<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">🛒</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">千九详细分享了用 GPT/Codex 完成电商详情页设计的全流程：先让 GPT 反推提示词，按模块区域单独生成场景图，再替换到详情页中。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">⚙️</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">对于人物模糊问题，目前的解决方案是单独生成模特场景图后调用 PS 插件替换。还提到想把美工工作蒸馏为一个 skill，用 Codex 调用。这操作已经相当系统化。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：千九这workflow已经卷到想把美工都蒸馏成skill了，下一步是不是要把老板也蒸馏了？</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最卷的人</div><div class="value">Simon — 196条消息，从凌晨教程分享到深夜趋势总结，一天把别人一周的KPI都完成了</div></div>
+<div class="summary-item"><div class="label">最佳气氛组</div><div class="value">是旦不是蛋 — 103条消息，全天活跃，从早水到晚</div></div>
+<div class="summary-item"><div class="label">最佳助攻</div><div class="value">千九 — 153条消息，从工作流到工具推荐全方位输出，还分享了Google Flow视频生成工具</div></div>
+<div class="summary-item"><div class="label">最佳预言家</div><div class="value">Simon — 精准总结养虾脱坑两大流派，全员Hermes趋势被他一句话点破</div></div>
+</div></div>
+<div class="footer">共1184条记录 · 2026年5月18日完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=3"></script>
+</body>
+</html>
