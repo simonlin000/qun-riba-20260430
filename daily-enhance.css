@@ -852,13 +852,13 @@ body.archive-page {
   }
 
   .sidebar {
-    position: sticky !important;
-    top: 0;
-    z-index: 30;
+    position: static !important;
+    top: auto;
+    z-index: auto;
     width: 100% !important;
     height: auto !important;
-    max-height: 58vh;
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
