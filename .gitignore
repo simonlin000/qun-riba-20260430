@@ -1,0 +1,4 @@
+.private/
+private/
+*.local.json
+search-password-*.txt

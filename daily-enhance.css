@@ -1145,3 +1145,75 @@ body.archive-page {
     padding: 20px 16px !important;
   }
 }
+
+
+.knowledge-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 26px;
+  padding: 20px 22px;
+  border: 1px solid rgba(196, 122, 58, 0.24);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.94), rgba(255, 244, 226, 0.82));
+  box-shadow: 0 14px 34px rgba(74, 43, 20, 0.08);
+  overflow: hidden;
+}
+.knowledge-entry::after {
+  content: "知";
+  position: absolute;
+  right: 112px;
+  top: -42px;
+  font-family: Georgia, serif;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(196, 122, 58, 0.08);
+  pointer-events: none;
+}
+.knowledge-entry .kicker {
+  color: #c47a3a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.knowledge-entry h2 {
+  margin: 4px 0 7px;
+  font-size: 1.35rem;
+  color: #3b291f;
+}
+.knowledge-entry p {
+  margin: 0;
+  color: #7a6251;
+  line-height: 1.65;
+}
+.knowledge-entry a {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  background: linear-gradient(135deg, #c47a3a, #8d4f2d);
+  box-shadow: 0 10px 22px rgba(141, 79, 45, 0.24);
+}
+@media (max-width: 700px) {
+  .knowledge-entry {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+  .knowledge-entry::after {
+    right: 12px;
+    top: -28px;
+  }
+  .knowledge-entry a {
+    width: 100%;
+  }
+}
