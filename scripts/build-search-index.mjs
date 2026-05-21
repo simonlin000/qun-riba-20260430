@@ -108,9 +108,7 @@ function loadMessages(files) {
       const key = `${parsed.date}|${parsed.time}|${parsed.who}|${parsed.text}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      const id = `${parsed.date}-${String(messages.length + 1).padStart(5, '0')}`;
-      const reportHref = /^\d{4}-\d{2}-\d{2}$/.test(parsed.date) ? `${parsed.date}.html` : '';
-      messages.push({ id, date: parsed.date, time: parsed.time, who: parsed.who, text: parsed.text, reportHref });
+      messages.push({ date: parsed.date, time: parsed.time, who: parsed.who, text: parsed.text });
       days.set(parsed.date, (days.get(parsed.date) || 0) + 1);
     }
   }
