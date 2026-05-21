@@ -1,0 +1,1921 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-21T01:48:07.302Z",
+  "stats": {
+    "resourceCount": 239
+  },
+  "resources": [
+    {
+      "id": "resource-0001",
+      "date": "2026-04-20",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "最强编程Agent不是Codex，也不是Claude Code，而是ChatGPT Pro",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MTUxNzgxMA==&mid=2247501770&idx=1&sn=aa3acb2e824aeda008398cb242c467ce&chksm=e897d27576bdb144f4a473959c262e38cb217b5355ef7f47851cc43f4141dfe0112123407c05&mpshare=1&scene=1&srcid=04202R8wdEd5rwzZZwhmjqtx&sharer_shareinfo=93c44522af0b70ec1a8aafec76523cbb&sharer_shareinfo_first=93c44522af0b70ec1a8aafec76523cbb#rd",
+      "reportHref": "2026-04-20.html"
+    },
+    {
+      "id": "resource-0002",
+      "date": "2026-04-20",
+      "who": "瓦叔分享",
+      "title": "十岁女儿逃避复习，却用4个AI软件给我演示了什么是“超级个体”",
+      "url": "https://mp.weixin.qq.com/s/29l2i4ZzfQmF3_lRmgBmzg",
+      "reportHref": "2026-04-20.html"
+    },
+    {
+      "id": "resource-0003",
+      "date": "2026-04-20",
+      "who": "千九分享",
+      "title": "从0开始，在国内用上Claude Code的终极保姆教程来了。",
+      "url": "https://mp.weixin.qq.com/s/AA2NHww4jUBuAfi10EYICw",
+      "reportHref": "2026-04-20.html"
+    },
+    {
+      "id": "resource-0004",
+      "date": "2026-04-20",
+      "who": "李华荣分享",
+      "title": "很多人没用好AI，竟是从付费这一步卡住的。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247493010&idx=1&sn=fa3c89472f4e3d81ff963e8c5c866f7a&chksm=c031a0a8c57c1ad8c35fec24e2bd45704ca68f48af712f11645ce6370eaa6f1ce9e4afd9130d&mpshare=1&scene=1&srcid=0420nuWwiFKoutWFuvlytElO&sharer_shareinfo=ef5d5baf9c86fbda5bf955f90a321876&sharer_shareinfo_first=ef5d5baf9c86fbda5bf955f90a321876#rd",
+      "reportHref": "2026-04-20.html"
+    },
+    {
+      "id": "resource-0005",
+      "date": "2026-04-20",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "知识星球危？ima 支持知识库付费订阅，一手内测",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYyMTY1NDA0Nw==&mid=2247517230&idx=1&sn=2e3b759fb0d6c6d44fa8ed680a9b44df&chksm=fe4beda4d87bfc9a99e140ff489cf93728a6f4f6dbe43baa18c5e7e8599f2bc4d8753f917ba1&mpshare=1&scene=1&srcid=04204xh5tZ9VLcmtioR9Vw6o&sharer_shareinfo=a1ce8b5fdcae5374244bb419431bd3e6&sharer_shareinfo_first=a1ce8b5fdcae5374244bb419431bd3e6#rd",
+      "reportHref": "2026-04-20.html"
+    },
+    {
+      "id": "resource-0006",
+      "date": "2026-04-21",
+      "who": "李华荣分享",
+      "title": "「年度海报大赏」实力设计师叶盈汐让博物馆展览“点石成金”",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4NjE0MjMxOA==&mid=2652431834&idx=1&sn=a45281a3d3f8d1434b2c6a662f8e069d&chksm=857e09b9ac2deea32c7f1dba9da542f8b230c8f147e6e636522a2abe3a88be5c857de1990c41&mpshare=1&scene=1&srcid=1209c3ZlRW0Ypm0X5wQ26VuE&sharer_shareinfo=cafd5cdf5b112bb33461f9eac0f26d06&sharer_shareinfo_first=cafd5cdf5b112bb33461f9eac0f26d06#rd",
+      "reportHref": "2026-04-21.html"
+    },
+    {
+      "id": "resource-0007",
+      "date": "2026-04-21",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "开源Turix，你可以把任何App当Agent Skill用！比如微信...",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwMzE4NjU5NA==&mid=2247516145&idx=1&sn=43079b57544662c6f1094a49c1ed951d&chksm=c11dec12a6081d09784d449e6204482655f59161b46dad0606e53097e946aedcfbd42c2e96bc&mpshare=1&scene=1&srcid=0421S3if4blNypjFfdiP1SJU&sharer_shareinfo=7c74e5114a7e0ca76e0fbc7786d66d83&sharer_shareinfo_first=7c74e5114a7e0ca76e0fbc7786d66d83#rd",
+      "reportHref": "2026-04-21.html"
+    },
+    {
+      "id": "resource-0008",
+      "date": "2026-04-21",
+      "who": "吴熳Rosia分享",
+      "title": "纯用脑子规划日程的我，终于给自己找了个能干的AI助理",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5ODU1ODg1Mg==&mid=2247490381&idx=1&sn=a4955cc4d43862f1b6b1c8286d7f97a8&chksm=c10631ccd8480ab0248046b32794c0d3db978c0f2ffd87701179a28e6d55d28a0a2497a7002a&mpshare=1&scene=1&srcid=04216ngcJigKsSoFz8eHBDkf&sharer_shareinfo=71c29e60e79880d891c74b95e7697927&sharer_shareinfo_first=2de5564fbd0c7e7b2d311f35dabcdb7e#rd",
+      "reportHref": "2026-04-21.html"
+    },
+    {
+      "id": "resource-0009",
+      "date": "2026-04-21",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "GPT-Image 2 图像模型全量上线，太强辣！",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzU0MDk3NTUxMA==&mid=2247496564&idx=1&sn=c15774ae4f7c5e6123acfceb241982aa&from_masonry=1&sharer_shareinfo_first=d4d03228e7b0858e5d4698765eac373b&sharer_shareinfo=ccf6821299492e1018a5beedf15080b1#wechat_redirect",
+      "reportHref": "2026-04-21.html"
+    },
+    {
+      "id": "resource-0010",
+      "date": "2026-04-22",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "实测GPT-image-2，设计行业真的完蛋了吗？",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647681704&idx=1&sn=87dd146262a41ba26c7f7f4ea5956c92&chksm=f1ff7c509dc1228f7df57d04c83502b4ce5378b77dd81ea7e8bb0a0eae5b458328e8b8cacdef&mpshare=1&scene=1&srcid=0422RYr5m8Q7TJO4GEk8X2oM&sharer_shareinfo=d2216c2879fec2474e4ab65dbeb11a06&sharer_shareinfo_first=e663a0f370886be4fd4ad02c3ff2425a#rd",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0011",
+      "date": "2026-04-22",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "突发：Claude Code把Pro用户「踢」了",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MjM5MjAyNDUyMA==&mid=2651088811&idx=1&sn=bb0127a195ae5975757b96c98127ee57&from_masonry=1&sharer_shareinfo_first=425c3994be9def0831548565f89e1f95&sharer_shareinfo=39709a3c995cef3ca718dfbd71b65f60#wechat_redirect",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0012",
+      "date": "2026-04-22",
+      "who": "那时年少分享",
+      "title": "突发！马斯克600 亿美元收购 Cursor",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650594339&idx=1&sn=de7608ca4da91f7db5456f302f443708&chksm=f00139e2ba225477ecac6bc9697944f963622514e3dc52e982df15008ffb12dc34cfbbbb3395&mpshare=1&scene=1&srcid=0422WzrmdJfvnuUwRm4jYWaX&sharer_shareinfo=6014766591301c4b5dd897bcd6774d13&sharer_shareinfo_first=30b085b5bac09521dfa07c9921d26629#rd",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0013",
+      "date": "2026-04-22",
+      "who": "向阳乔木分享",
+      "title": "住院期间想通了，写个博客系统，免费开源！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwODIyOTQ4Mw==&mid=2649447183&idx=1&sn=dff85f3807a56da2e3564b24391f0262&chksm=82e6cbbc01f37bd83756912ab05f2caff41de4005dda4a338770c17fb09b77ffd97227870d3b&mpshare=1&scene=1&srcid=0422QJ4V4cMnCBXl1pVZJ2Mz&sharer_shareinfo=df51e311073275539ce1eca67866fdeb&sharer_shareinfo_first=7d292e85a49755639c7832f236327998#rd",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0014",
+      "date": "2026-04-22",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "开源「仓颉.Skill」，你现在可以蒸馏任何书！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwMzE4NjU5NA==&mid=2247516072&idx=1&sn=63e5ebee8477b3c352c69191880e1954&chksm=c19397ae7c3bf503325bad42e60906c09e7de4c9a2be570fd88433a4553b10ee20486f038be2&mpshare=1&scene=1&srcid=0422IcSeLGGWXesZhd1HvuAv&sharer_shareinfo=7a1e098c6cc1e347de198a66a3b8a5c6&sharer_shareinfo_first=7a1e098c6cc1e347de198a66a3b8a5c6#rd",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0015",
+      "date": "2026-04-22",
+      "who": "凡有语分享",
+      "title": "AGENT橘的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzkwMzY5NzU2Nw==&mid=2247489445&idx=1&sn=97e47f89391b043b6eba9b46899d56da&sharer_shareinfo_first=051bfe2e9a1e9cfc4a19e39641c60615&sharer_shareinfo=051bfe2e9a1e9cfc4a19e39641c60615#wechat_redirect",
+      "reportHref": "2026-04-22.html"
+    },
+    {
+      "id": "resource-0016",
+      "date": "2026-04-24",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "实测小米MiMo-V2.5-Pro，这可能是目前国内最适合Claude Code的新模型。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647681810&idx=1&sn=c9e33fc419c2d2de2bd63d6abd9fbe65&chksm=f1137a79f38e2f4ee7e2c40bec0e0d636417c132aeba759a519dfbb156577d5fff4cc839cede&mpshare=1&scene=1&srcid=04242xFRVlit6mbqVoRbQP58&sharer_shareinfo=9c4dce3715d062cea31b2db58b9db9ad&sharer_shareinfo_first=9c4dce3715d062cea31b2db58b9db9ad#rd",
+      "reportHref": "2026-04-24.html"
+    },
+    {
+      "id": "resource-0017",
+      "date": "2026-04-24",
+      "who": "霄凡旅行小刘分享",
+      "title": "刚刚！DeepSeek V4发布，API已开放调用，今晚昇腾首发直播",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NzU4MDgzMA==&mid=2247557929&idx=1&sn=09fab6ac91525d6255faade6daaa2e4f&chksm=cf74c596ad60da4b91d248a6e02de24f378e42be23c465bc52d8f17ae0bcbce69916ab159652&mpshare=1&scene=1&srcid=0424Vkwa6SR3ovukmm3cuv2t&sharer_shareinfo=73c8a8a10c095705f8a3965619dbf088&sharer_shareinfo_first=73c8a8a10c095705f8a3965619dbf088#rd",
+      "reportHref": "2026-04-24.html"
+    },
+    {
+      "id": "resource-0018",
+      "date": "2026-04-24",
+      "who": "leoooo分享",
+      "title": "DeepSeek-V4 预览版：迈入百万上下文普惠时代",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ==&mid=2247485745&idx=1&sn=ef3bc11042fc329e89bc66a8938e8b2c&chksm=c2ff7430b6320be31d5ebe253817faa7bc9c761daa9baf4b7240dac43255256d5bfbb7ced272&mpshare=1&scene=1&srcid=04249zGUgH3h2bucf4Nk6d8q&sharer_shareinfo=efcaf5625bc005ab832e2ba1ad2a7085&sharer_shareinfo_first=5e7e1941daf9cb8f1e5fd4e3e4029862#rd",
+      "reportHref": "2026-04-24.html"
+    },
+    {
+      "id": "resource-0019",
+      "date": "2026-04-24",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "DeepSeek V4来了，开源模型第一次追平GPT！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247487972&idx=1&sn=4c416d3e0aff9268b2311b1c2361a5ce&chksm=fa86e833bf58953f1cb7ac73e04c689f7438417c2747ffee71e51e370ea9932a974729939e77&mpshare=1&scene=1&srcid=0424UB5H447hPbxEavE6gHeg&sharer_shareinfo=04b5215704b4f9b7128ddedcdf968f74&sharer_shareinfo_first=04b5215704b4f9b7128ddedcdf968f74#rd",
+      "reportHref": "2026-04-24.html"
+    },
+    {
+      "id": "resource-0020",
+      "date": "2026-04-25",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "刚刚，姚顺雨腾讯首秀来了！三个月重建混元新模型，实测到底什么水平",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&mid=2651089001&idx=1&sn=99087b312b800ab59c88102bd5911f00&chksm=bcb0589c605e61e7a59a8f6ec22a40e7c081dc8627b22854b0f7228d59c4148c71048b8175b1&mpshare=1&scene=1&srcid=0425kSvNeRxLRMOYjUH9H7jQ&sharer_shareinfo=8ee701a1af1e80b05e38d9031a3fbdd5&sharer_shareinfo_first=8ee701a1af1e80b05e38d9031a3fbdd5#rd",
+      "reportHref": "2026-04-25.html"
+    },
+    {
+      "id": "resource-0021",
+      "date": "2026-04-25",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "DeepSeek V4开源，但这次不止一位屠龙少年",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwMzY5NzU2Nw==&mid=2247489480&idx=1&sn=99225a4a5b4e056d552a64c499b1abcc&chksm=c14ce07b5bd988ffa1ac53bf879d9cf01114985444cccec47cfa008edc1ea3942cb86cbc4aa4&mpshare=1&scene=1&srcid=0425cX5saMCBG1bot9YXvp74&sharer_shareinfo=74c5c9a02bbd67c88f39b9e87a3f4fcd&sharer_shareinfo_first=74c5c9a02bbd67c88f39b9e87a3f4fcd#rd",
+      "reportHref": "2026-04-25.html"
+    },
+    {
+      "id": "resource-0022",
+      "date": "2026-04-27",
+      "who": "Simonlin分享，万物皆可预测的链上预测平台，国内使用有合规风险",
+      "title": "Polymarket预测市场",
+      "url": "https://polymarket.com/zh",
+      "reportHref": "2026-04-27.html"
+    },
+    {
+      "id": "resource-0023",
+      "date": "2026-04-27",
+      "who": "奕成分享",
+      "title": "arxiv MTP架构论文",
+      "url": "https://arxiv.org/abs/2405.04434",
+      "reportHref": "2026-04-27.html"
+    },
+    {
+      "id": "resource-0024",
+      "date": "2026-04-27",
+      "who": "李华荣分享",
+      "title": "实测GPT全新ImageV2分层透明PSD文件 骚操作",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzI5MTY0MDkzMQ==&mid=2247484544&idx=1&sn=36af0d35fccdb66c3dd20ec6375e4459&from_masonry=1&sharer_shareinfo_first=80b441422fdc245516276185c71ec1e0&sharer_shareinfo=80b441422fdc245516276185c71ec1e0#wechat_redirect",
+      "reportHref": "2026-04-27.html"
+    },
+    {
+      "id": "resource-0025",
+      "date": "2026-04-27",
+      "who": "德信创意 毛 MXM分享",
+      "title": "LibTV 全网首发｜HappyHorse 1.0 现已上线",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk0NjUyMDc4Mw==&mid=2247517350&idx=1&sn=9fb4558932685da35eae6acdd0df42ee&chksm=c25f6cc042798bcfa020419e0d613e86d5d816eb73545493bde570cbf065892cca45f180c5dc&mpshare=1&scene=1&srcid=0427OL6Pp5PJDzkDJIHWo0Z3&sharer_shareinfo=09e8872605ec328ee92c831f4be097db&sharer_shareinfo_first=09e8872605ec328ee92c831f4be097db&hit_product=1#rd",
+      "reportHref": "2026-04-27.html"
+    },
+    {
+      "id": "resource-0026",
+      "date": "2026-04-27",
+      "who": "星淇分享",
+      "title": "AI时代的迷失：可怕的不是跟不上变化，而是用旧思维赶路",
+      "url": "https://mp.weixin.qq.com/s/mwfkGCPd8m6o6Ln8XmzUSQ",
+      "reportHref": "2026-04-27.html"
+    },
+    {
+      "id": "resource-0027",
+      "date": "2026-04-28",
+      "who": "Simonlin推荐吴熳那期：四次跨界从文科生到AI编程讲师；吴熳推荐计育韬那期：从哲学到代码把\"语言\"变成生产力",
+      "title": "灯下白播客（全集）",
+      "url": "https://ka21.org/podcast-dashboard/index.html?locale=zh",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0028",
+      "date": "2026-04-28",
+      "who": "Simonlin分享",
+      "title": "Polymarket预测市场",
+      "url": "https://polymarket.com/zh",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0029",
+      "date": "2026-04-28",
+      "who": "吴熳分享",
+      "title": "牛马库AI工具导航",
+      "url": "https://ka21.org/zh",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0030",
+      "date": "2026-04-28",
+      "who": "李华荣分享",
+      "title": "罗福莉最大胆的一次判断：AGI两年内到来，工作模式先被颠覆",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NDEyNjE0MQ==&mid=2652687803&idx=1&sn=91015a8af1e08b118ef1321bbd8c83f6&chksm=bc042aac9efc9103ed30c982ad84a0efe8d98045a49cd6df0c48660f72c02969a19c8ae1b7e9&mpshare=1&scene=1&srcid=0428OsS86JR1aaFERRglz7cR&sharer_shareinfo=ce862911b2419f82c6cb960ad9969945&sharer_shareinfo_first=ce862911b2419f82c6cb960ad9969945#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0031",
+      "date": "2026-04-28",
+      "who": "奕成分享",
+      "title": "小米 MiMo-V2.5 系列开源 & Orbit 百万亿 Token 计划启动",
+      "url": "https://mp.weixin.qq.com/s/CX0mcpaE_sCTKxRBzebMvQ",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0032",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "小米 MiMo-V2.5 系列开源 & Orbit 百万亿 Token 计划启动",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA==&mid=2247484681&idx=1&sn=60241f47e569b8105e66bf704cd4c98b&chksm=c517e78d3cc91a433c1d9b23ad48f8de96275fbfdda1e4351c9add6264b04b55216bfd39b028&mpshare=1&scene=1&srcid=0428NuM3J8sVeO0va3QMEiKJ&sharer_shareinfo=67f5c7ecf398f3afa6df39966e1e0810&sharer_shareinfo_first=67f5c7ecf398f3afa6df39966e1e0810#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0033",
+      "date": "2026-04-28",
+      "who": "烈日松饼分享",
+      "title": "“躺平网红”被境外组织资助，系统性开展“躺平洗脑”……国安部揭秘！",
+      "url": "https://mp.weixin.qq.com/s/8eVtMv0JB0cB7TyiJkJ8WA",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0034",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "别研究一人公司了，抓紧卖课吧",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxMzY0MzMyNA==&mid=2247539955&idx=1&sn=6c6354b940df047485b949ebda301df6&chksm=c06b843d943516b3d5b4c4bfade6ae81e8dd90d804d6555d8729f2ee71a1cd689a7d68adf7c2&mpshare=1&scene=1&srcid=04288tAQu9al0pbOdzWh31Um&sharer_shareinfo=23dc64b5378e40d4556407d70dbf2a42&sharer_shareinfo_first=bc699ed8e741b001a6b4986980af4c7e#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0035",
+      "date": "2026-04-28",
+      "who": "千九分享",
+      "title": "我把GPT-Image-2 的电商素材能力，装进了一个 Skill 里。",
+      "url": "https://mp.weixin.qq.com/s/MaLnBpaqjR5BiW8ovXMDAw",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0036",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "喜大普奔！最近很火的顶流生图模型，在国内也能用了。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247488019&idx=1&sn=28a9cf8fbf200556d32501111c139b9c&chksm=faffd076adb6e9c7ccef425bbf4aabef4d56ce6fa8771c0d10ad9232ce51beac7f1061a2a91a&mpshare=1&scene=1&srcid=0428yakbOP8PjjQfBMh5TJSt&sharer_shareinfo=bd3b9e77b50bf2dc3ae29096b0c86a72&sharer_shareinfo_first=bd3b9e77b50bf2dc3ae29096b0c86a72#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0037",
+      "date": "2026-04-28",
+      "who": "Pan分享",
+      "title": "知识体系",
+      "url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA4MzMwNzQxNA==&action=getalbum&album_id=2555474183867367424&subscene=1&scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzA4MzMwNzQxNA%3D%3D%26mid%3D2650317565%26idx%3D2%26sn%3D7ea53b84d5a7158a1cb56f7678d7d470%26scene%3D1%26click_id%3D25%26key%3Ddaf9bdc5abc4e8d011dc5b8e6b4c7e07cec1dfd6983abc49ea116d3e696726ddce723988b0ce1c86d757670dd4195c88f50a6c912bb79b7b0ab643c828cc771e7bb467ff12159ebc1adb6d7b6b38d6ac847b839d0a5b5b188eca06d3d4b2d1f1fbd4c4e129def1c510f15613f650cea2a04c4f75d14828e19bae4e0d617be7ee%26ascene%3D0%26uin%3DNTA1MjMzNjU1%26devicetype%3DUnifiedPCMac%26version%3Df264191b%26lang%3Dzh_CN%26countrycode%3DCN%26exportkey%3Dn_ChQIAhIQdQD4tdwpEiiV6b7wbhS3GRLxAQIE97dBBAEAAAAAAKQFN%252FpEmFQAAAAOpnltbLcz9gKNyK89dVj08KWhATfkMZD3JogeSx4AVFK%252B43v5ptE%252BuSxBOWnssm1Z%252Bx0et09O1EiUVvwl4kVmgZZBeQk4ZMv4KXYX5u5NtF8eIUVrS1mozCdBk3Flii4XZqb8xOxBPnrtGkxLgEUS%252FO1DQ8nDG0GzcEDXcPZrOU68FKqeoddCOM0Bp54bAdCyogo1Eg3irH9ZUdjLS7ytlIwZfUZIwy4LEu6dUN8kc4C5Ec4npLLVpwQQ4RMXuIR6K23jEi97d8dsr1pBKDXLaVVK%252BMPchZrFAiI%253D%26acctmode%3D0%26pass_ticket%3DJJeUAD40gye5Mk%252B%252B02%252Fs8K59Tk4hDha3M7e4vTzc5TmtnbIHy4aMAMp1D13xMNRl%26wx_header%3D0&nolastread=1&sessionid=#wechat_redirect",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0038",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "新功能：当面聊天→文字记录",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjM4MDAxMg==&mid=2655154486&idx=1&sn=0216c638fb2f8ff206a2ede3613fe0f6&chksm=bc44a827e9bc389edba028d396cf6ccb7b88a581b4ae583c9a4feb2ecb27abda18218af8968b&mpshare=1&scene=1&srcid=0428XLvAKibyC3RI0UiesbuC&sharer_shareinfo=9f81d0fe7444ec373dcf109ec60059df&sharer_shareinfo_first=9f81d0fe7444ec373dcf109ec60059df#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0039",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "“剪映”“猫箱”“即梦AI”被约谈！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667009568&idx=1&sn=fb8e4c9578525d17c78ea5f6d37c8560&chksm=bc4953da6b75eaa7087883560cef8e3f2ff3ea374f382555283486fc32115b8219191dba0c18&mpshare=1&scene=1&srcid=04282ltKFf0phwEi7z5LkCMi&sharer_shareinfo=7a976b9f0fb06befa93896fd297d542c&sharer_shareinfo_first=7a976b9f0fb06befa93896fd297d542c#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0040",
+      "date": "2026-04-28",
+      "who": "NΞO分享",
+      "title": "流式意图检测+永久记忆，NUS&NTU发布Pask：把贾维斯AI拉进现实",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652695870&idx=3&sn=87b914aeb294b1abce0ec1a65f5539ba&chksm=f0f91e16bfdf818b262d77f659601cf2ca7e5978bfe226db13731d9b73f47bedd5b6399f494a&mpshare=1&scene=1&srcid=0428lwjNw5eZeccllzF1i8Zl&sharer_shareinfo=8d3ab084a34edc460c7f4323d1907c1b&sharer_shareinfo_first=95a62b985c27716b279226073f5a8df3#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0041",
+      "date": "2026-04-28",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "AGENT橘的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzkwMzY5NzU2Nw==&mid=2247489522&idx=1&sn=03aa809fa2b5138055f3a9005cd6a226&sharer_shareinfo_first=622524911ecfb61106d7302b1bdba23c&sharer_shareinfo=8d5e87b1dde66f3b3f375e869f36c286#wechat_redirect",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0042",
+      "date": "2026-04-28",
+      "who": "李华荣分享",
+      "title": "真好啊Alice！小白也能玩转的AI助理APP。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247497447&idx=1&sn=b1fb56473c4c8971a29b48ea73dfa383&chksm=c0dcb8c495119e9625d6102424780e7d5c2aa6bff4d83f5422e656d550ade682869ff0fe2f8a&mpshare=1&scene=1&srcid=0428nYr9pPjkn471ii8VmNHS&sharer_shareinfo=bcfcc59e9bf86e03d48f2b331f6b4681&sharer_shareinfo_first=bcfcc59e9bf86e03d48f2b331f6b4681#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0043",
+      "date": "2026-04-28",
+      "who": "李华荣分享",
+      "title": "一个人带5个AI Agent，两天搭出企业知识库MVP(这是一个真实的故事)",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3OTYxODc2Mg==&mid=2247491013&idx=1&sn=4511c3c7e67b9c4be830706f31733d1d&chksm=fc57e0db87d7a60f8604774b4c24908a2eb1421452577db639e014f79e73b4bed8eaf4a94a48&mpshare=1&scene=1&srcid=0428myylnPoFzZCh5IhJhkPi&sharer_shareinfo=9ff5f58948593c753a24aa40fe51ace7&sharer_shareinfo_first=aa98ad96aea71ff045168bb3cc75c49e#rd",
+      "reportHref": "2026-04-28.html"
+    },
+    {
+      "id": "resource-0044",
+      "date": "2026-04-29",
+      "who": "李华荣分享，问能不能配小红书",
+      "title": "Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0045",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "Claude接入Blender、Adobe、Ableton... Anthropic一次放9个创作连接器",
+      "url": "https://www.anthropic.com/news/claude-connects",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0046",
+      "date": "2026-04-29",
+      "who": "Simonlin分享",
+      "title": "小米 MiMo 开放平台文档",
+      "url": "https://platform.xiaomimimo.com/#/docs/welcome",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0047",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "Claude 接入 Blender、Adobe、Ableton... Anthropic 一次放 9 个创作连接器",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247516385&idx=1&sn=737c41974fc1df297adbf65a084bf6fd&chksm=c347268fd86f4b0a123e2a96f11f1e9c5a71be3d946295b75cd624e4baf8f5e44b63f6b426eb&mpshare=1&scene=1&srcid=0429OSpxXQBADkREt0gVsYs3&sharer_shareinfo=f12f3a2b76fa2c5b799a112817574632&sharer_shareinfo_first=f12f3a2b76fa2c5b799a112817574632#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0048",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "我问了GPT一个问题，然后有点想哭",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzI1MTUxNzgxMA==&mid=2247501941&idx=1&sn=adb492da64e3d5bc64fc6206aea79131&from_masonry=1&sharer_shareinfo_first=d17860e18047c5314b471fbe50ae9bd7&sharer_shareinfo=d17860e18047c5314b471fbe50ae9bd7#wechat_redirect",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0049",
+      "date": "2026-04-29",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "开源「洁癖.skill」，让你的Agent越用越聪明。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647681967&idx=1&sn=d906e0075aed4b1ab924cefcb150b7dc&chksm=f15d543fbdda3c816e966320f15f39a6786feeb972b81d54c7b5651441b59327fe442a79ef0c&mpshare=1&scene=1&srcid=0429BGvTipk8Sbs9H1wHjcmH&sharer_shareinfo=b973e23839857fbcd1e1d947d44cd7cb&sharer_shareinfo_first=b973e23839857fbcd1e1d947d44cd7cb#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0050",
+      "date": "2026-04-29",
+      "who": "吴熳Rosia分享",
+      "title": "有人问我怎么学会 AI 的，这就是 KA21 教我 AI全部的故事了",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5ODU1ODg1Mg==&mid=2247489815&idx=1&sn=534485708bbc445828cce2ab3f15a48d&chksm=c154db6105d77fa5d757f18baf7910ba03b5517c276b0851eeb00795c7a224854b46ca2be46f&mpshare=1&scene=1&srcid=0429k9B5TBuZ9MYZp3f7L0il&sharer_shareinfo=ad2e5f849e5ebcf0c3e586691761986b&sharer_shareinfo_first=ad2e5f849e5ebcf0c3e586691761986b#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0051",
+      "date": "2026-04-29",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "你的第一个知识Agent：ima上线copilot功能",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk0MDg0MTkzOA==&mid=2247497757&idx=1&sn=e568ddffb50da531e92a5c6c28f56d35&chksm=c3e1b4d0fedb080e632f021a64dc474a5bdbbc25432fdbdc00e89e49d2fffb3a96ff81804ffa&mpshare=1&scene=1&srcid=0429rUUsNSiZ0UVh44aFwJbc&sharer_shareinfo=ccb3b0166daa261a3f96318f2d950f07&sharer_shareinfo_first=80e73714e5a23001738a917c4217be9e#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0052",
+      "date": "2026-04-29",
+      "who": "紫苏子ACG分享",
+      "title": "WorkBuddy接入腾讯文档 上线「资料库」功能",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzYzODgxODMzNQ==&mid=2247485572&idx=1&sn=4d76604678fd9de4ed1e26e4590a26d7&from_masonry=1&sharer_shareinfo_first=3cf41302cfce98029ea3f1e612dbb4ec&sharer_shareinfo=3cf41302cfce98029ea3f1e612dbb4ec#wechat_redirect",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0053",
+      "date": "2026-04-29",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "GPT-Image-2平替！最强开源生图模型来了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696301&idx=1&sn=40a255d23a8b0edaf8771b3799ad8304&chksm=f03f7093a0a47dcfd97ff11f6ff5bece8a88fbb9210ee46698741f651fffc2fe0721cd5cf5a6&mpshare=1&scene=1&srcid=0429QzeLyf3yOdycVLnV9BRm&sharer_shareinfo=2432c4a3f6f157e0b0a4ff598ebf2982&sharer_shareinfo_first=2432c4a3f6f157e0b0a4ff598ebf2982#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0054",
+      "date": "2026-04-29",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "MiniCPM-o 4.5 技术报告发布：全双工全模态 API 开放，RTX5070 即可实时运行",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk0NzM3OTc2Nw==&mid=2247502926&idx=1&sn=1aec4df6fbde3bcdbf886c3b8b56f54f&chksm=c23030a6ca3efca489e8d184473d912b41e508f0f381c69bf19be44795b66fdc4b4747a8ab93&mpshare=1&scene=1&srcid=0429gyWt4q74jZtkXWxNF1dQ&sharer_shareinfo=52fe4ee5cff9263224cd9252f70dee59&sharer_shareinfo_first=52fe4ee5cff9263224cd9252f70dee59#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0055",
+      "date": "2026-04-29",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "图片真的还是AI生成的？我做了个工具快速检测",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5Njc5NjcxNg==&mid=2247495368&idx=1&sn=96217218e5203b0cbdd6f3ced13d5594&chksm=912d4221320917a07df2b6261bbe8b8935ea4e94d99b303fbd087167e8a5ad3cfcd7778bc20e&mpshare=1&scene=1&srcid=0429jNCwDoD0ioXlj8BDZfT5&sharer_shareinfo=6ef7ad60e1adcaa7038c3cb339d378c4&sharer_shareinfo_first=6ef7ad60e1adcaa7038c3cb339d378c4#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0056",
+      "date": "2026-04-29",
+      "who": "烈日松饼分享",
+      "title": "实测GPT全新ImageV2分层透明PSD文件 骚操作",
+      "url": "https://mp.weixin.qq.com/s/0L0ImKU_BboA_9U_pFFZCA",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0057",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "大模型有情绪：Anthropic 首次在 Claude 内部发现可干预的“情绪向量”",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491792&idx=1&sn=f47f070a9762ecf541d1bba8d4fd60fa&chksm=ff5f779004cc2a9584e457aefc27a3c89ef30e82af962eb3c61ee93f97c2672b603262b72e1c&mpshare=1&scene=1&srcid=0429apOjnTR32ByQv1Q4n8YE&sharer_shareinfo=1607b61a2fa9a0ad06a20bbef0d468f0&sharer_shareinfo_first=1607b61a2fa9a0ad06a20bbef0d468f0#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0058",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "AI有情绪吗？ Anthropic 《情绪概念及其在大语言模型中的功能》论文解读（附录论文链接）",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUxMTYyODYzMg==&mid=2247484988&idx=1&sn=674efd697717dc590cf609ecdf1da32c&chksm=f818d55608ac4b3062f17a5dfe012166d4ebf1c581d97528196e4dc85bcaab87a1603d198e5c&mpshare=1&scene=1&srcid=0429QUUyogapz8bgfqeK75U3&sharer_shareinfo=d97e19343fde1a3bb28c4779efcfc150&sharer_shareinfo_first=d97e19343fde1a3bb28c4779efcfc150#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0059",
+      "date": "2026-04-29",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "让AI帮我写了首诗，结果出乎我的意料...",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzU1MDk3MzEwOA==&mid=2247488051&idx=1&sn=d519a04eead1ced84e93803528d93528&from_masonry=1&sharer_shareinfo_first=989f27e61a70ae2772a07ebcd6b8d229&sharer_shareinfo=989f27e61a70ae2772a07ebcd6b8d229#wechat_redirect",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0060",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "当我用Codex做PPT，这可能是目前最好的解法之一。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247497516&idx=1&sn=df86fcc1f15b137e51e35eb95bbce7ad&chksm=c06ab36906dddeb1690e7507761ba2f2080195380ed4a08fe11e5a8c73c13e36aca779b3601d&mpshare=1&scene=1&srcid=0429VmKqKf2eBizL6VowNzhH&sharer_shareinfo=5d2a1c078cf268334541a55f00aaef1e&sharer_shareinfo_first=48fcf4f964c84fe9789dadd7fd48310d#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0061",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "开源一个 PPT Skill｜压进了我 10 年的设计经验",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247496635&idx=1&sn=da89cfca975a6a09e7ed98166fb9bc74&chksm=fad44d32643feec01fc61f76548e989afe43c55ff5f84327c02a1fa9047191adf09dd17065ff&mpshare=1&scene=1&srcid=0429cMysYIh0osThlyo6UsEY&sharer_shareinfo=2105ed9f740597fc267d303842e8486d&sharer_shareinfo_first=2105ed9f740597fc267d303842e8486d#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0062",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "我用 Tabbit 浏览器搭了一套内容创作全自动流水线，太香了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4NTE1Mjg4MA==&mid=2247498371&idx=1&sn=44ff85faf1ffbbbc5db7de885a89a15a&chksm=fcf31617f92c4aadaa779aeccaa066539e505559155f718fbf5b32e4de085d24aa9ae9ef8855&mpshare=1&scene=1&srcid=04293NEPZmHUXht4ViNBKXFw&sharer_shareinfo=c7b1c07af549f2c84537dcac12be3ef1&sharer_shareinfo_first=c7b1c07af549f2c84537dcac12be3ef1#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0063",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "这张信息图，居然是8B开源模型做的？？",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2OTA1OTAxNA==&mid=2247489914&idx=1&sn=c3d8bd361819a41e089a4eab756cafcf&chksm=cf83111464ede0cb2f0b34808cfcbf6ce0a38e63b82bf528901854fd3833af1448994d65010e&mpshare=1&scene=1&srcid=0429dlxeTNqLawn8hJtK1l7j&sharer_shareinfo=f11f773a377115a840dda2e49465c8f6&sharer_shareinfo_first=f11f773a377115a840dda2e49465c8f6#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0064",
+      "date": "2026-04-29",
+      "who": "李华荣分享",
+      "title": "实测千问新出的PPT Agent，可算不用为了风格化牺牲二次编辑了。",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506736&idx=1&sn=93f8fd58b66418b87496bac512975b61&chksm=cf6e4c57aa9db079ff7c8243ef547bbf3d9fdb5816dd96987433e4558bcc5cacebeb71f3866f&mpshare=1&scene=1&srcid=04299yMjKQhR885JFWaKyZLn&sharer_shareinfo=62420e6830a5c89c4ade2e06d6fef55b&sharer_shareinfo_first=62420e6830a5c89c4ade2e06d6fef55b#rd",
+      "reportHref": "2026-04-29.html"
+    },
+    {
+      "id": "resource-0065",
+      "date": "2026-04-30",
+      "who": "千九",
+      "title": "Token导航站",
+      "url": "https://tokennav.cc/",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0066",
+      "date": "2026-04-30",
+      "who": "星淇",
+      "title": "SoftwareCopyright-Skill（软著申请Skill）",
+      "url": "https://github.com/Fokkyp/SoftwareCopyright-Skill",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0067",
+      "date": "2026-04-30",
+      "who": "凡有语",
+      "title": "Cola官网",
+      "url": "https://colaos.ai/",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0068",
+      "date": "2026-04-30",
+      "who": "李华荣",
+      "title": "Vibe-Skills",
+      "url": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0069",
+      "date": "2026-04-30",
+      "who": "Simonlin",
+      "title": "API中转站",
+      "url": "https://m1.92k.store/register?aff=dKxR",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0070",
+      "date": "2026-04-30",
+      "who": "李华荣",
+      "title": "pi-mono/coding-agent",
+      "url": "https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0071",
+      "date": "2026-04-30",
+      "who": "马佳彬",
+      "title": "奶爸的中转站",
+      "url": "https://manage-xai.ainaibahub.com",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0072",
+      "date": "2026-04-30",
+      "who": "瓦叔分享",
+      "title": "辅导作业血压飙升？我给女儿\"捏\"了一只AI数学宠物",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&mid=2247486143&idx=1&sn=1cf97a304c2de01e6c4ae912140e50a5&chksm=c58d65880bcfea10c2b7aa17dcd44a841155e0c5e85a1019fc4819aaab27af38580b3c50b9ec&mpshare=1&scene=1&srcid=0430bKe52KT9HFuyDD6njWHy&sharer_shareinfo=76413105fc639990b9582d0ed1080e27&sharer_shareinfo_first=76413105fc639990b9582d0ed1080e27#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0073",
+      "date": "2026-04-30",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "GPT-Image-2平替！最强开源生图模型来了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696301&idx=1&sn=40a255d23a8b0edaf8771b3799ad8304&chksm=f03f7093a0a47dcfd97ff11f6ff5bece8a88fbb9210ee46698741f651fffc2fe0721cd5cf5a6&mpshare=1&scene=1&srcid=0429QzeLyf3yOdycVLnV9BRm&sharer_shareinfo=2432c4a3f6f157e0b0a4ff598ebf2982&sharer_shareinfo_first=2432c4a3f6f157e0b0a4ff598ebf2982#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0074",
+      "date": "2026-04-30",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "写了上百个Skill效率起飞后，我总结了一套Skill实操教程",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyNTE1NTAzOA==&mid=2648669917&idx=1&sn=9a9402785ded63b7d23911abcb3a0869&chksm=f19d8f1a338e2e63164457eef11e348b952ac363e02017b81347c8737c7e083dfe105b0b9a93&mpshare=1&scene=1&srcid=0430U0GqpyuxkfFlIUzZ8AKd&sharer_shareinfo=3e769d936b333e3993829a21d730ffad&sharer_shareinfo_first=3e769d936b333e3993829a21d730ffad#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0075",
+      "date": "2026-04-30",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "专访VideoPoet作者：LLM能带来真正的视觉智能",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2OTY0MDk0NQ==&mid=2247506003&idx=1&sn=487ea38ec23a8dc9a797bb285c5393ce&chksm=cfd187c3d12097e121404fb1ce761fc85fbcfb0031dc9484978b6d306ccbb230f9800bdbd900&mpshare=1&scene=1&srcid=0430c7IawLC8HWRCUyRQA604&sharer_shareinfo=0e0d13f221a57dbe6b3e298ce3babad1&sharer_shareinfo_first=b1f0bfc33166a59c3d42ed04b8010451#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0076",
+      "date": "2026-04-30",
+      "who": "数字阿启分享",
+      "title": "9秒，公司没了！Claude「删库跑路」，Anthropic封杀110人公司，却还在扣钱",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU0OTkwNTM2Mw==&mid=2247697420&idx=1&sn=29be8c422bfaaad0a6bc6153302b60c9&chksm=fa48911338f9485ad4edc5c9abfcd473d35bbf00d73243245d43dc851eb593b3cc891c0e98fe&mpshare=1&scene=1&srcid=0430aXe2CKAxu6zkt156N35c&sharer_shareinfo=69358cc7bc128664307c5925a0040d71&sharer_shareinfo_first=69358cc7bc128664307c5925a0040d71#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0077",
+      "date": "2026-04-30",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "刚刚，小红书宣布重大组织调整",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4MjM5NzI0Nw==&mid=2652273750&idx=1&sn=3ee0ea386c494439d4d14cada606d940&chksm=8597de2dcc152b59419cc4f4a7a035a33deda2ae3f9afa810b56ba7da8d6b0f220ce65c2b538&mpshare=1&scene=1&srcid=0430l8K0ZyKpAQtcR68iQtlu&sharer_shareinfo=50c111d9b571405b32ced8c1b7f5d823&sharer_shareinfo_first=50c111d9b571405b32ced8c1b7f5d823#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0078",
+      "date": "2026-04-30",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "清华团队预言：90%的人将脱离谋生劳动，「零人公司」时代来了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696540&idx=1&sn=c72dcf9565f0cb1eabae75d0f8a87384&chksm=f06d546b673c4872f28c6405000eef7a83ae4793712dc062930597aac3a74bb7350b4ce76105&mpshare=1&scene=1&srcid=0430GkhFbjQ3Z90PJTCrwoOx&sharer_shareinfo=15d9b338dcf5cf85e2846e1cce57cc04&sharer_shareinfo_first=15d9b338dcf5cf85e2846e1cce57cc04#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0079",
+      "date": "2026-04-30",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "23岁门外汉携ChatGPT，攻克60年数学猜想！陶哲轩：我们全走偏了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652695341&idx=1&sn=77073b60886ca97dfd98ef9f75c36a49&chksm=f0720d3808ecb24ae15dd6fb07922f2c22b5a5e3c5dd64adf769e8862b48c19e48d281781d3c&mpshare=1&scene=1&srcid=0430oBWZeBY419hohUC3JmyX&sharer_shareinfo=70a521a0980e65cc0c1a68260dde54f8&sharer_shareinfo_first=70a521a0980e65cc0c1a68260dde54f8#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0080",
+      "date": "2026-04-30",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "别折腾插件了！这款笔记一出，Git同步和AI搜索全是自带，Obsidian插件党哭了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzE5ODk1NDg0Ng==&mid=2247487651&idx=1&sn=0da0adbd1c3b331928fca40ee3e7bbad&chksm=970d4167d81071b9b9cddadb2242c96e27331f31729be493cb65e5540084d2a414bca60e96ec&mpshare=1&scene=1&srcid=0430vyHlGVK1hL9PidYVRXLi&sharer_shareinfo=aa2e5604643756450287fba40b75d605&sharer_shareinfo_first=aa2e5604643756450287fba40b75d605#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0081",
+      "date": "2026-04-30",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "刚刚，GPT-5.6曝光了！GPT-5.5疯狂迷恋哥布林，OpenAI连夜封禁",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696644&idx=1&sn=23b23535952dc34a625b9ca67521b86a&chksm=f0c17e2baf5bc66e0033fa7670e86c92c64da341d9b86b1a5052d390f9889d6dd938b4053ac0&mpshare=1&scene=1&srcid=0430vMtqKVzsoNZgqb8lHJbp&sharer_shareinfo=89850172ce25f04172aa7e7acb1ce6e5&sharer_shareinfo_first=89850172ce25f04172aa7e7acb1ce6e5#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0082",
+      "date": "2026-04-30",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "GPT之父把AI扔回1930年：没见过一行代码，却「发明」了Python！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696063&idx=1&sn=75edf86a565e1ae602798ec9aaf4ea10&chksm=f06e57a1ce9888cb8faad35f4dee40c5e418a661a22495816c1d5e50a090511ad80c9626c159&mpshare=1&scene=1&srcid=0430ZUraGm84OmwmrEnzRMUm&sharer_shareinfo=aeb776d141a95f99f57272ae97f61e3c&sharer_shareinfo_first=aeb776d141a95f99f57272ae97f61e3c#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0083",
+      "date": "2026-04-30",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "Cell重磅：电磁场“遥控”体内基因表达，用于逆转衰老、阿尔茨海默病建模及抑郁症治疗",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MzMxMzcyMg==&mid=2247798984&idx=1&sn=a3f0a6826a2e25a4146f2d46fa27bde5&chksm=fad63d00af4b360850811c737375ebb105ba8913b2bbdf0b6e612ee4c1fbf9917c3ec096e370&mpshare=1&scene=1&srcid=0430q3ICMqXe36OmAqwCH1tY&sharer_shareinfo=12896bd9290c3c77f8de02d5b6f74b8a&sharer_shareinfo_first=12896bd9290c3c77f8de02d5b6f74b8a#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0084",
+      "date": "2026-04-30",
+      "who": "程玉分享",
+      "title": "《TIME 时代周刊》年度10家人工智能公司",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzYzMjAyMjQ0NQ==&mid=2247484467&idx=1&sn=358e683cab53fd0f9b3be1a400478f06&from_masonry=1&sharer_shareinfo_first=1051ce5fe6355d246f34b6c370a7ee57&sharer_shareinfo=1051ce5fe6355d246f34b6c370a7ee57#wechat_redirect",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0085",
+      "date": "2026-04-30",
+      "who": "李华荣分享",
+      "title": "7个Agent + 我，两天做了款能上架的 AI 游戏",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5OTIzMTE1OA==&mid=2247487494&idx=1&sn=1c85fe73d3d0cd06d0021f79ca2f0bc3&chksm=915cca94fc4aab2578549b066543805a5c63460f52fde8f6ca530c5ac4e8f40a45908b9b18cb&mpshare=1&scene=1&srcid=0430C6be1pOyZNaY2ZA5sZXQ&sharer_shareinfo=3a66b16c9cc5769dd1111edf073393e7&sharer_shareinfo_first=ff5268a9408eb52423b72508c64956e8#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0086",
+      "date": "2026-04-30",
+      "who": "卡尔的AI沃茨分享",
+      "title": "千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506818&idx=1&sn=67ee9ad5e61308664bf504571ec35b95&chksm=cf6b9e751442d05bd42849bbddc2a8a64beb77356826858806190b5c36b0e1f87e2399906abd&mpshare=1&scene=1&srcid=0430SqDRIe4UFqOveTgMoQ7u&sharer_shareinfo=e749693548b65356a003cc182d5a31a2&sharer_shareinfo_first=e749693548b65356a003cc182d5a31a2#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0087",
+      "date": "2026-04-30",
+      "who": "李华荣分享",
+      "title": "写了上百个Skill效率起飞后，我总结了一套Skill实操教程",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyNTE1NTAzOA==&mid=2648669917&idx=1&sn=9a9402785ded63b7d23911abcb3a0869&chksm=f1f46d1c0f8f4c1c793ae77602453e06f6f49ea3ce72d6ce275392adf99702cd6a2e38c4070a&mpshare=1&scene=1&srcid=0430kYcm9OYFWflheGkunzks&sharer_shareinfo=1e67db77df948f5f19c157e6d3775177&sharer_shareinfo_first=1e67db77df948f5f19c157e6d3775177#rd",
+      "reportHref": "2026-04-30.html"
+    },
+    {
+      "id": "resource-0088",
+      "date": "2026-05-01",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "Cola邀请码",
+      "url": "https://m1.92k.store/register?aff=dKxR",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0089",
+      "date": "2026-05-01",
+      "who": "马佳彬",
+      "title": "B站视频下载器",
+      "url": "https://github.com/difyz9/ytb2bili",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0090",
+      "date": "2026-05-01",
+      "who": "马佳彬",
+      "title": "Bilibili下载器",
+      "url": "https://github.com/lanyeeee/bilibili-video-downloader",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0091",
+      "date": "2026-05-01",
+      "who": "奕成",
+      "title": "Alice方法论",
+      "url": "https://alice.fans/methodology/",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0092",
+      "date": "2026-05-01",
+      "who": "信华分享",
+      "title": "解读DeepSeek最新多模态技术报告，要用视觉基本单元思考，看这一篇就够了",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5MTU1NTE1OQ==&mid=2247499685&idx=1&sn=5661aba0328581c77b27e30bb56dfe65&chksm=ceaad1f18a839c880cf59996321daf051ad5fce3e13ac8f554319951a03f33e69188d24dabf6&mpshare=1&scene=1&srcid=0501ZY6ivVUxLA0fEt0nun4H&sharer_shareinfo=480b7708e74e902cbf8a25816c9e3b3e&sharer_shareinfo_first=480b7708e74e902cbf8a25816c9e3b3e#rd",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0093",
+      "date": "2026-05-01",
+      "who": "凡有语分享",
+      "title": "我做了一个真正记住你的 AI Agent",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUwOTcxNjMyNg==&mid=2247489696&idx=1&sn=8b66d167f8323bc87b377b8278c02a02&chksm=f866abb39ffaa297f623fc0c1f6331c10949ba0e6ed94dd7154490c12955dcc5cec43935ce22&mpshare=1&scene=1&srcid=0501GjyCUtJPzLyfsMobru2G&sharer_shareinfo=f63b091c325d895a4bd374198dc5d10f&sharer_shareinfo_first=f63b091c325d895a4bd374198dc5d10f#rd",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0094",
+      "date": "2026-05-01",
+      "who": "凡有语分享",
+      "title": "真好啊Alice！小白也能玩转的AI助理APP。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247497447&idx=1&sn=b1fb56473c4c8971a29b48ea73dfa383&chksm=c041d0b781a716e3491b00549b7b20a18678141783c1752bee788e1a8f23222c3f9b9368803e&mpshare=1&scene=1&srcid=0428kaf00MQqAAPv1cKosOFG&sharer_shareinfo=1ff7db542f0509a68f0f8d40729af769&sharer_shareinfo_first=6ce008a99c8652971b4658fafeebd8f5#rd",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0095",
+      "date": "2026-05-01",
+      "who": "Stu(dy ing)分享",
+      "title": "跟 ColaOS 相处半个月：可能我们不再需要学 Agent 了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzODY1MjgxNA==&mid=2247483713&idx=1&sn=50fe51642717869e9c379f21027135e7&chksm=f142d32a59e9e181af127e3ece615e295ec678d9051fd7036c600caa5244c254ee70da45a577&mpshare=1&scene=1&srcid=0501tYovXN6uWdCDznDnxB6H&sharer_shareinfo=06a4fab5bd903611503bb55141775c74&sharer_shareinfo_first=06a4fab5bd903611503bb55141775c74#rd",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0096",
+      "date": "2026-05-01",
+      "who": "落尘分享",
+      "title": "永别了，终端！OpenAI疯狂升级Codex，接管Mac人类全程0操作围观",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652696950&idx=1&sn=21fccc2ad1d6da0a9081e392ba631c10&chksm=f09cd20740537ca545414031c4cc20d88a90e97af683b6fb6ad7de180d145244ba06f222d35e&mpshare=1&scene=1&srcid=0501dAvXrxnVFrN6TMVzpEqw&sharer_shareinfo=12451eed76d7f4edc34654a78a5136e5&sharer_shareinfo_first=12451eed76d7f4edc34654a78a5136e5#rd",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0097",
+      "date": "2026-05-01",
+      "who": "紫苏子ACG分享",
+      "title": "我把微信 cli 开源了，群消息终于不用爬楼了！",
+      "url": "https://mp.weixin.qq.com/s/J-nzvyL07VWyKEJyfDEXwQ",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0098",
+      "date": "2026-05-01",
+      "who": "紫苏子ACG分享",
+      "title": "Apple 翻车了：Apple Support App 竟带着 Claude.md 文件上架 App Store",
+      "url": "https://mp.weixin.qq.com/s/uriocSFa74k5eEel2CsSzw",
+      "reportHref": "2026-05-01.html"
+    },
+    {
+      "id": "resource-0099",
+      "date": "2026-05-02",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "吴恩达《给所有人的AI提示词课》",
+      "url": "https://www.deeplearning.ai/courses/ai-prompting-for-everyone/",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0100",
+      "date": "2026-05-02",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "吴恩达课程DeepSeek-v4-pro翻译版",
+      "url": "https://www.bilibili.com/video/BV1UT9qBDET7/",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0101",
+      "date": "2026-05-02",
+      "who": "吴熳Rosia",
+      "title": "ShowMeCode网页版",
+      "url": "https://www.showmecode.work/",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0102",
+      "date": "2026-05-02",
+      "who": "紫苏子ACG",
+      "title": "Design Tokens分析工具",
+      "url": "https://www.projectwallace.com/design-tokens",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0103",
+      "date": "2026-05-02",
+      "who": "李华荣分享",
+      "title": "《百变怪》：模型学会自我训练之后，他毕业了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwMzY5NzU2Nw==&mid=2247489581&idx=1&sn=cb2bd3deb5ecc7f41b02bd120bae2059&chksm=c13690d65420d63edb433867cc751f59025db9e81c0def206893857cffd754839f45f8672b72&mpshare=1&scene=1&srcid=0502E23Dg75ZZB3dYPwb5Xk8&sharer_shareinfo=976849e2ed74e4e63f534f39400db70b&sharer_shareinfo_first=976849e2ed74e4e63f534f39400db70b#rd",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0104",
+      "date": "2026-05-02",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "马斯克的Grok 4.3悄悄上线，跑分评测出炉",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652697397&idx=1&sn=67a2bfbe5b6216de750b95df471033c2&chksm=f0446f98d55fc8a97c24a72e1cadfab1776ab25d805c895c3c6fe592ab3dd7a1385330d9ab00&mpshare=1&scene=1&srcid=0502FpaSzIwR69Ok8UxFEIKN&sharer_shareinfo=72f93e6b9be460b5cbeb6e9cb9dfd81a&sharer_shareinfo_first=72f93e6b9be460b5cbeb6e9cb9dfd81a#rd",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0105",
+      "date": "2026-05-02",
+      "who": "那时年少分享",
+      "title": "GPT image 2 实用玩法合集分享~【秋芝的AI开箱】",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzMDU2Nzg3MQ==&mid=2247491471&idx=1&sn=ea590458df5d06254856dea6598fbc82&chksm=c36bacc7c35eb971331043e8e12d06901b2901521afddcb01f832e9c4b3574cdcf335049df22&mpshare=1&scene=1&srcid=0502wJxvDNPnr0iD5oaybd8P&sharer_shareinfo=8e4326b12b80c1e7050a20e79802946b&sharer_shareinfo_first=8e4326b12b80c1e7050a20e79802946b#rd",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0106",
+      "date": "2026-05-02",
+      "who": "李华荣分享",
+      "title": "AI 三范式",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxMzc1NzM1Mw==&mid=2247485246&idx=1&sn=7f5715cafd71ce2966a1b5558d7d5b27&chksm=c0b423693b6000363074b97d74ef058d65240e2b93e67a74c88799860a929658d1e27ae42a0b&mpshare=1&scene=1&srcid=05023TwvX2ihqcKUfsqsuoT7&sharer_shareinfo=1f0bada18b55df33bfb5568143181795&sharer_shareinfo_first=1f0bada18b55df33bfb5568143181795#rd",
+      "reportHref": "2026-05-02.html"
+    },
+    {
+      "id": "resource-0107",
+      "date": "2026-05-04",
+      "who": "NΞO 推荐",
+      "title": "卡琳娜·阮《我在 OpenAI 学到的那些事》",
+      "url": "https://semaphore.substack.com/p/things-i-learned-at-openai",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0108",
+      "date": "2026-05-04",
+      "who": "紫苏子ACG 分享",
+      "title": "Phantom Motion V8.0",
+      "url": "https://github.com/Pixelxzen/phantom-motion",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0109",
+      "date": "2026-05-04",
+      "who": "数字阿启 推荐",
+      "title": "《赢》：献给正在\"折腾\"的年轻人",
+      "url": "https://b23.tv/zqRJxsZ",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0110",
+      "date": "2026-05-04",
+      "who": "凡有语分享",
+      "title": "我把GPT-image-2生成PSD的能力打包成了Skill，免费开源",
+      "url": "https://mp.weixin.qq.com/s/dyo7naVRKC2Ww_WM2afasw",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0111",
+      "date": "2026-05-04",
+      "who": "留给中国队的时间不多了分享",
+      "title": "我把GPT-image-2生成PSD的能力打包成了Skill，免费开源",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NDI4MTY3NA==&mid=2257499862&idx=1&sn=cc50464d5406b361b6499d53f9805151&chksm=a4e7c1ca581c3b85514dcff8e02a6325921ccd252c13dddd892e0a79a659f1fbc497fd8a07bb&mpshare=1&scene=1&srcid=0504gK84g5sVHZYU16P6p7PW&sharer_shareinfo=b3d9f20fae734f27778c3c81136c6dab&sharer_shareinfo_first=b3d9f20fae734f27778c3c81136c6dab#rd",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0112",
+      "date": "2026-05-04",
+      "who": "DDA分享",
+      "title": "豆包新增付费订阅，标准版每月68元、加强版200元、专业版500元，官方回应：始终提供免费服务，相关方案细节还在测试阶段",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MTI3MTY3Mg==&mid=2651606584&idx=1&sn=dfd0a08cbe6da46d55a4f3d7e9f23a06&chksm=bc20bbb9792c49891f2c06e97cf93c3f26d61bf29b7013c11cdb963f764e0f2cecceee16f432&mpshare=1&scene=1&srcid=0504TTSES0r0Txtzeie9E5C8&sharer_shareinfo=114c62491e11bda60eae42a5b3086982&sharer_shareinfo_first=b01d87a68e189d9c451c6f8348586eb8#rd",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0113",
+      "date": "2026-05-04",
+      "who": "紫苏子ACG分享",
+      "title": "为什么你的 AI 知识库像个“智障”？",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk3NTgzNjkxNw==&mid=2247483942&idx=1&sn=51c3aca1d57a670fc0af2541c977db2a&chksm=c50e7073e6f0c12998dc285bb5b94103a8697e8da9ad2adf8cda10e6deb2e06a9bbad382de60&mpshare=1&scene=1&srcid=0504J4Wo0kGVF5Ku2JcssBmc&sharer_shareinfo=90d9e9b6758679d9a7fc73c1c61410a5&sharer_shareinfo_first=90d9e9b6758679d9a7fc73c1c61410a5#rd",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0114",
+      "date": "2026-05-04",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "AGENT橘的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzkwMzY5NzU2Nw==&mid=2247489608&idx=1&sn=bdf37cb298d3244a7219bb65f5c98535&sharer_shareinfo_first=dbd40419f8719e0cdfee8a3ab98f8228&sharer_shareinfo=dbd40419f8719e0cdfee8a3ab98f8228#wechat_redirect",
+      "reportHref": "2026-05-04.html"
+    },
+    {
+      "id": "resource-0115",
+      "date": "2026-05-05",
+      "who": "Simonlin",
+      "title": "AI绘图提示词资料库",
+      "url": "https://youmind.com/zh-CN/prompts",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0116",
+      "date": "2026-05-05",
+      "who": "Simonlin",
+      "title": "OPC知识库",
+      "url": "http://opcspace.com.cn/opc-wiki/",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0117",
+      "date": "2026-05-05",
+      "who": "Simonlin",
+      "title": "xue.ai每日学习平台",
+      "url": "https://xue.ai.app/",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0118",
+      "date": "2026-05-05",
+      "who": "霄凡旅行小刘",
+      "title": "weather-in-calendar天气日历工具",
+      "url": "https://weather-in-calendar.com/",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0119",
+      "date": "2026-05-05",
+      "who": "瓦叔分享",
+      "title": "同样的提示词出来不一样的效果，大家更喜欢哪种风格呀，提示词后续会更新在内容里！",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=Mzk2NDg2NjA1NQ==&mid=2247486234&idx=1&sn=d36e51832e36f3d8c0654591354d07b4&from_masonry=1&sharer_shareinfo_first=12b08e70bb45010cecc185fbeaa23711&sharer_shareinfo=12b08e70bb45010cecc185fbeaa23711#wechat_redirect",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0120",
+      "date": "2026-05-05",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "开源「淘金小镇.Skill」,让你的Agent挖出每个排行榜里隐藏的信息差！",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506844&idx=1&sn=c73027df17516dc6e518272b8c8f2784&chksm=cf278a2ccd4f067099836383f11b2013b7815af723f5731a8eb54c50762463eadce20ec2eea3&mpshare=1&scene=1&srcid=0505Rn6oefzEzAbnbWl4TmXp&sharer_shareinfo=a6c51f05b2a88d4e1459e25cf7e7638d&sharer_shareinfo_first=a6c51f05b2a88d4e1459e25cf7e7638d#rd",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0121",
+      "date": "2026-05-05",
+      "who": "卡尔的AI沃茨分享",
+      "title": "开源「淘金小镇.Skill」,让你的Agent挖出每个排行榜里隐藏的信息差！",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506844&idx=1&sn=c73027df17516dc6e518272b8c8f2784&chksm=cfcc2c4d8cb07f0f6217c97e7f7706d519b4dfe7dbe742de07acaa4e362713797cfd785b9550&mpshare=1&scene=1&srcid=0505TRTi5SFX4HC61QlmHm9y&sharer_shareinfo=df49ff975f9917d64624db89e7a3ab19&sharer_shareinfo_first=df49ff975f9917d64624db89e7a3ab19#rd",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0122",
+      "date": "2026-05-05",
+      "who": "是旦不是蛋分享",
+      "title": "道士招聘",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMTM5NTgxMw==&mid=2247486817&idx=1&sn=c77407527a6904a1a0863b55f63c6c95&chksm=f14aa850c0f41f90e93d84c9a289608d934daaa2b8af28f4b4b0388ea2a6e52be1518ba6a28b&mpshare=1&scene=1&srcid=0505Ag547ffYlCmEsPsYrIkC&sharer_shareinfo=3a0c5b18deb78ffe6392df897d98eee2&sharer_shareinfo_first=3a0c5b18deb78ffe6392df897d98eee2#rd",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0123",
+      "date": "2026-05-05",
+      "who": "留给中国队的时间不多了分享",
+      "title": "i 小声读书的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzI5MDM4NTYwOA==&mid=2247505481&idx=1&sn=4e7da7522f1e77299201691a667d17ef&sharer_shareinfo_first=5a55eae50766b90813f36d6cada97a42&sharer_shareinfo=5a55eae50766b90813f36d6cada97a42#wechat_redirect",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0124",
+      "date": "2026-05-05",
+      "who": "李华荣分享",
+      "title": "全网最全！60分钟全面掌握Claude Code~【附完整文档】",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzMDU2Nzg3MQ==&mid=2247491556&idx=1&sn=8ddaff5735e1fe782707ad7b912def7b&chksm=c3368415061ed4849b67307962eadb26ff9cf2cebd94b42b0c8413e0832d0eb1015e9c7e9173&mpshare=1&scene=1&srcid=0505U5zTueEYsfsXg6Kryj0y&sharer_shareinfo=84e61e6b12c45aa453e7eb6de2f5122f&sharer_shareinfo_first=84e61e6b12c45aa453e7eb6de2f5122f#rd",
+      "reportHref": "2026-05-05.html"
+    },
+    {
+      "id": "resource-0125",
+      "date": "2026-05-06",
+      "who": "程玉",
+      "title": "nousresearch/hermes-agent creative skills",
+      "url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0126",
+      "date": "2026-05-06",
+      "who": "程玉",
+      "title": "HyperFrames",
+      "url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/hyperframes",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0127",
+      "date": "2026-05-06",
+      "who": "钢针Edu、Simonlin",
+      "title": "jackwener/wx-cli",
+      "url": "https://github.com/jackwener/wx-cli",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0128",
+      "date": "2026-05-06",
+      "who": "马佳彬",
+      "title": "skill.majiabin.com",
+      "url": "https://skill.majiabin.com",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0129",
+      "date": "2026-05-06",
+      "who": "程玉",
+      "title": "Codex宠物领取",
+      "url": "https://petdex.crafter.run/zh",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0130",
+      "date": "2026-05-06",
+      "who": "Simonlin",
+      "title": "xcolab",
+      "url": "https://github.com/simonlin000/xcolab",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0131",
+      "date": "2026-05-06",
+      "who": "奕成分享",
+      "title": "提升 Agent 应用活人感的工程化思考。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUwOTcxNjMyNg==&mid=2247489902&idx=1&sn=137d6f72245e79c55d801f68d92f9d65&chksm=f815bfe515b9caa96cdea7ef6c836d0ef4a1fcedc8e6d0ee38f9ea767ec18829e9eabeb90c66&mpshare=1&scene=1&srcid=0506rEE4cOFe1XisztKG4d5T&sharer_shareinfo=92ae4240a69a861b6c06123c33224357&sharer_shareinfo_first=92ae4240a69a861b6c06123c33224357#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0132",
+      "date": "2026-05-06",
+      "who": "瓦叔分享",
+      "title": "8小时高铁，一堂最贵的AI课",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&mid=2247486266&idx=1&sn=3e5256225ae8730fb11a606202dee1ec&chksm=c58e4f4880fdecd762190734fdcbc6debc038eaeba12352af63e0dee3c29c04d758e1c80ba86&mpshare=1&scene=1&srcid=0506lyuoAfTL7tPGMeIEOK2e&sharer_shareinfo=772b8a81253942f3d4b0fee84b72203a&sharer_shareinfo_first=772b8a81253942f3d4b0fee84b72203a#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0133",
+      "date": "2026-05-06",
+      "who": "千九分享",
+      "title": "云舒的AI实践笔记的文字分享",
+      "url": "https://mp.weixin.qq.com/s/apwMQFjiD1zWNnrTTjQuww",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0134",
+      "date": "2026-05-06",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "8小时高铁，一堂最贵的AI课",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&mid=2247486266&idx=1&sn=3e5256225ae8730fb11a606202dee1ec&chksm=c5622db506e8aabc050cd8017493d33b38196f678f455a5b9ee608998f75a258a94c1f882916&mpshare=1&scene=1&srcid=0506lyuoAfTL7tPGMeIEOK2e&sharer_shareinfo=e8450d751468de586fabf377115226a9&sharer_shareinfo_first=772b8a81253942f3d4b0fee84b72203a#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0135",
+      "date": "2026-05-06",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "抱歉，团队准备解散了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MzU4NDg0NA==&mid=2247604361&idx=1&sn=b9761f8eb7ad7aa3b880a29d2c041295&chksm=eb7ea2bbe20f3ac6c492bb65fa370914d031fe52c005c31f63cdfd4f7b2e7810adb4580044c0&mpshare=1&scene=1&srcid=0506K9OiFzBWmflqdsz7DOlW&sharer_shareinfo=f79705a753331904282a137b1825bc83&sharer_shareinfo_first=f79705a753331904282a137b1825bc83#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0136",
+      "date": "2026-05-06",
+      "who": "千九分享",
+      "title": "ChatGPT正式上线广告主平台，AI产品从今天开始走向分裂。",
+      "url": "https://mp.weixin.qq.com/s/JEnOZqFgJNNHTCkxv6LRbw",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0137",
+      "date": "2026-05-06",
+      "who": "千九分享",
+      "title": "提升 Agent 应用活人感的工程化思考。",
+      "url": "https://mp.weixin.qq.com/s/zH3OjnJr_PwfmafYkse8nQ",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0138",
+      "date": "2026-05-06",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "本地知识库+AI协作，才是真正的第二大脑！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247488114&idx=1&sn=863decf51ddbe27f18baa3b64d5f4054&chksm=fa176c42e8d5c68ebff2625fb8b060555e6ed7fb47190650f00b87bf9136024552b4a5328a04&mpshare=1&scene=1&srcid=0506pHNYtVImgBIDbSf4bUqu&sharer_shareinfo=924216a4d820209bc1993cf5d8d29822&sharer_shareinfo_first=924216a4d820209bc1993cf5d8d29822#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0139",
+      "date": "2026-05-06",
+      "who": "卡尔的AI沃茨分享",
+      "title": "实测Buzzy，可算找到能精确二创视频的AI工作流了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506894&idx=1&sn=50acd89337a73fa50b3c731bbcac8605&chksm=cfc1f5d7e1e7d5ef54be83d6c0e06c77f0ab092a118d53bdc64ac9be5b569be29c1030501505&mpshare=1&scene=1&srcid=0506DJRJF7Pk4FXxwWXF2jjU&sharer_shareinfo=6f55cf6afbdcdb08747d6e8a043edf5e&sharer_shareinfo_first=adfaa548f55d3f32be0eb9b575c0433f#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0140",
+      "date": "2026-05-06",
+      "who": "是旦不是蛋分享",
+      "title": "我就BB怎么了的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzA5ODg5NDk1Ng==&mid=2247500531&idx=1&sn=b5570ee0f6205d37874e21f0d4eedecf&sharer_shareinfo_first=012c3ac215425d5a682435a9c4204799&sharer_shareinfo=012c3ac215425d5a682435a9c4204799#wechat_redirect",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0141",
+      "date": "2026-05-06",
+      "who": "向阳乔木分享",
+      "title": "同时听懂+看懂+读懂，豆包 Seed 2.0 lite 多个场景实测",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwODIyOTQ4Mw==&mid=2649447631&idx=1&sn=331c04d441a66717fa059e5d01f3f53d&chksm=82a539356e91ca79d3c03323d244ce6daa76baccea627823f3c67de8644845e42858d85dc5e9&mpshare=1&scene=1&srcid=0506t0hMVwDroRYqLW5WUEuA&sharer_shareinfo=a1d275e3340ffe4433e1cd8b74f536fa&sharer_shareinfo_first=1cc30e8abbd1c601554c89d356fc8569#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0142",
+      "date": "2026-05-06",
+      "who": "李华荣分享",
+      "title": "理解",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxMzc1NzM1Mw==&mid=2247485255&idx=1&sn=f4e75563a877be7639c386985bc860b9&chksm=c0dda28015d7007fa5ad71fc74354923d0c725d323c8dd1e93c89f23c0437b50be1baf8ff06e&mpshare=1&scene=1&srcid=0506810iK5c8wiB420Fe9i7S&sharer_shareinfo=398593d29f2ac22e1f459bccc88ebc90&sharer_shareinfo_first=398593d29f2ac22e1f459bccc88ebc90#rd",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0143",
+      "date": "2026-05-06",
+      "who": "卡尔的AI沃茨分享",
+      "title": "卡尔的AI沃茨的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=Mzg3MTk3NzYzNw==&mid=2247506897&idx=1&sn=05dea5c72e9649981a4683c1f9d4b53f&sharer_shareinfo_first=b6e401e0b6143b6e9bf2e5ea1900bdaf&sharer_shareinfo=d88849281da287758ec59699dd4e98cf#wechat_redirect",
+      "reportHref": "2026-05-06.html"
+    },
+    {
+      "id": "resource-0144",
+      "date": "2026-05-07",
+      "who": "程玉",
+      "title": "nousresearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0145",
+      "date": "2026-05-07",
+      "who": "程玉",
+      "title": "HyperFrames",
+      "url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/creative/hyperframes",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0146",
+      "date": "2026-05-07",
+      "who": "钢针Edu、Simonlin",
+      "title": "jackwener/wx-cli",
+      "url": "https://github.com/jackwener/wx-cli",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0147",
+      "date": "2026-05-07",
+      "who": "马佳彬",
+      "title": "skill.majiabin.com",
+      "url": "https://skill.majiabin.com",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0148",
+      "date": "2026-05-07",
+      "who": "程玉",
+      "title": "Codex宠物领取",
+      "url": "https://petdex.crafter.run/zh",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0149",
+      "date": "2026-05-07",
+      "who": "Simonlin",
+      "title": "xcolab",
+      "url": "https://github.com/simonlin000/xcolab",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0150",
+      "date": "2026-05-07",
+      "who": "李华荣",
+      "title": "image2hub.netlify.app",
+      "url": "https://image2hub.netlify.app/",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0151",
+      "date": "2026-05-07",
+      "who": "千九",
+      "title": "bewild.ai 订阅中转站",
+      "url": "https://bewild.ai?code=JYSUCAAE",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0152",
+      "date": "2026-05-07",
+      "who": "向阳乔木分享",
+      "title": "Al Agent装进口袋：TRAE SOLO移动端上手全攻略",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwODIyOTQ4Mw==&mid=2649447633&idx=1&sn=b04d3787314b501034ae169c6fe3bb9e&chksm=82159227b90897e613bcc98c707abf7022bebfade77152fc6dab606bf9abdb820115d8123897&mpshare=1&scene=1&srcid=0507GFQBsUeSNhh0SxrQW00h&sharer_shareinfo=1aff336cf579257f24ec854d03af5c73&sharer_shareinfo_first=1aff336cf579257f24ec854d03af5c73#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0153",
+      "date": "2026-05-07",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "这个封装了我3年自媒体经验的AI热点网站，今天向所有人免费开放。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647682019&idx=1&sn=13723968587c20aa81d71ed8c3b52fae&chksm=f11a9bb4b82028533ad42fef4a7c12bdfe8ea037fb99ccdd9cf916f03eb6a0b444486fe5ba99&mpshare=1&scene=1&srcid=05077E6rHq7GLU2TqX5uKlIA&sharer_shareinfo=8eb493d0176b5094706a1b1bb91ec444&sharer_shareinfo_first=8eb493d0176b5094706a1b1bb91ec444#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0154",
+      "date": "2026-05-07",
+      "who": "悖（FOMO、FOBO，AI中）分享",
+      "title": "哈萨比斯出的难题，GPT之父接上了：用一个知识停在1930年的模型",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651031116&idx=2&sn=fb6006ee2ab440c5bd27906b24641b4c&chksm=852a072b29c2c7522002cbd3b65ec0a57d29d3eb730cf4921c571d748e87dc0662f4c5089040&mpshare=1&scene=1&srcid=0507R9MhuDXkULiCwKxskzBb&sharer_shareinfo=390be29d1d1ae99a17ae96c2c062c5fd&sharer_shareinfo_first=390be29d1d1ae99a17ae96c2c062c5fd#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0155",
+      "date": "2026-05-07",
+      "who": "马其顿呼声（Simonlin）分享",
+      "title": "如何从零搭建Obsidian知识库：Karpathy框架+手把手实操",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247488148&idx=1&sn=0c777d7160cb94c5179e36191e64ef7c&chksm=fa23afd5df93cb86f001fb26d7bef53ed94bec48a4f02593b2efe806e4a6709e903a5b2313f8&mpshare=1&scene=1&srcid=0507TlWIV52WGv4jGiamU28w&sharer_shareinfo=e9f4ed19c04dc3a3947619ffc5944fd4&sharer_shareinfo_first=e9f4ed19c04dc3a3947619ffc5944fd4#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0156",
+      "date": "2026-05-07",
+      "who": "紫苏子ACG分享",
+      "title": "为什么你的 AI 知识库像个“智障”？",
+      "url": "https://mp.weixin.qq.com/s/fNuIekKxzJwxQm_x9GkXVA",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0157",
+      "date": "2026-05-07",
+      "who": "卡尔的AI沃茨分享",
+      "title": "说白了GPT-5.5 Instant的正确用法就不是即时编程！",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247506933&idx=1&sn=f0dfbe139e2600cfa490d79d964c3264&chksm=cff220fffe0b0bd0886f49124c6482e76430f5a512f35aa5db534f20e5bdaa7f48efcc6925f1&mpshare=1&scene=1&srcid=0507XWSmgf3ZBwG6mdGCSMIn&sharer_shareinfo=43f3c30bfa07026e78e6768144829947&sharer_shareinfo_first=43f3c30bfa07026e78e6768144829947#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0158",
+      "date": "2026-05-07",
+      "who": "李华荣分享",
+      "title": "12 天 4.2K 的 Star，我的 GPT-image2 开源项目火了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4NTE1Mjg4MA==&mid=2247498396&idx=1&sn=e9a2e993ad96e1db745257c3c0a15be5&chksm=fce4ce4b729d5208fbde728b0084601323edfb8385a837111e1cda79e02fc3ff3ff743484e52&mpshare=1&scene=1&srcid=0507PgZcqDmETz4AjP41tNV2&sharer_shareinfo=c215d5384869b7ead6738ff1155af5e1&sharer_shareinfo_first=c215d5384869b7ead6738ff1155af5e1#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0159",
+      "date": "2026-05-07",
+      "who": "李华荣分享",
+      "title": "开源个 Agent 用的网盘，让 Skill 跨设备同步",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247516741&idx=1&sn=c92a963dd105a5d6ad229f11128c8230&chksm=c38d611e950942f41d5a15dbfc6a76b25ea1ea54710abfc708a311a29b0f409f35e0f6e8f5d3&mpshare=1&scene=1&srcid=0507BtFSSvaGxFUXxd1YMkM0&sharer_shareinfo=baec53666da577029bc386b5bd31f87e&sharer_shareinfo_first=baec53666da577029bc386b5bd31f87e#rd",
+      "reportHref": "2026-05-07.html"
+    },
+    {
+      "id": "resource-0160",
+      "date": "2026-05-08",
+      "who": "信华",
+      "title": "Rohit：AI Agents学什么做什么跳过什么（飞书）",
+      "url": "https://waytoagi.feishu.cn/wiki/CNwfwuWqci6nQpkOzNCcCwYNnwh",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0161",
+      "date": "2026-05-08",
+      "who": "向阳乔木",
+      "title": "GEO红皮书免费领取（飞书）",
+      "url": "https://yaojingang.feishu.cn/wiki/Otqtw0HFbiNeCMkjKalcFkoJnpf",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0162",
+      "date": "2026-05-08",
+      "who": "Simonlin",
+      "title": "日报馆 · SimonlinのAI学术交流",
+      "url": "https://simonlin000.github.io/qun-riba-20260430/",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0163",
+      "date": "2026-05-08",
+      "who": "凡有语分享",
+      "title": "Claude Design的平替版来了！30+ 设计Skills，129 套品牌设计系统！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyOTY1ODAzNQ==&mid=2247485206&idx=1&sn=f25e85d9524371807cd447cc810ac134&chksm=e9194fa01d00dcf1744d68018f0ca755f005c475a46e8bc5e15c6ce7edd39d08c8bd7d64300c&mpshare=1&scene=1&srcid=0508i262cDmOUMlirNYRai4u&sharer_shareinfo=473a389f93592a731f349145e9ea5951&sharer_shareinfo_first=473a389f93592a731f349145e9ea5951#rd",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0164",
+      "date": "2026-05-08",
+      "who": "K分享",
+      "title": "篡改微信余额技术可刑性研讨 2.0",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NDU4OTExOQ==&mid=2247688195&idx=1&sn=a2ba7737825e9a82d816323338a21b88&chksm=ebab5f5c945f2251b0b0e7678a8101dc9597689438fe2b952bb9829480294b4346041bebb9e4&mpshare=1&scene=1&srcid=0325X0R54PAcVvh02oDNN4k3&sharer_shareinfo=9bbeb97756a08fda284246f9ada23cfd&sharer_shareinfo_first=24231d171a81372db0ebc37d3464aa7a#rd",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0165",
+      "date": "2026-05-08",
+      "who": "李华荣分享",
+      "title": "装了这个AI热点Skill之后，你再也不需要自己去刷AI新闻了。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647682046&idx=1&sn=f21b88c90627d7269724354359d0a9bd&chksm=f15db8218b6d005b18a02889194731d93bc22116ceabcd099250be8441c77686cb2c56cd5715&mpshare=1&scene=1&srcid=0508upklEeZwT9RUhla23Cuo&sharer_shareinfo=78733c1fc4ef38e32eab9cda353b3345&sharer_shareinfo_first=78733c1fc4ef38e32eab9cda353b3345#rd",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0166",
+      "date": "2026-05-08",
+      "who": "那时年少分享",
+      "title": "GPT image 2 实用玩法合集分享~【秋芝的AI开箱】",
+      "url": "https://mp.weixin.qq.com/s/PszdyZp58fEuJs1dq8ah3w",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0167",
+      "date": "2026-05-08",
+      "who": "千九分享",
+      "title": "卡尔的AI沃茨的文字分享",
+      "url": "https://mp.weixin.qq.com/s/P0ovoPmBAMIOxrMl5PL8gQ",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0168",
+      "date": "2026-05-08",
+      "who": "卡尔的AI沃茨分享",
+      "title": "卡尔的AI沃茨的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=Mzg3MTk3NzYzNw==&mid=2247506934&idx=1&sn=6626bfb45b931de96727c330e7e1cbe2&sharer_shareinfo_first=831f8eb535527c493541c080a0042932&sharer_shareinfo=831f8eb535527c493541c080a0042932#wechat_redirect",
+      "reportHref": "2026-05-08.html"
+    },
+    {
+      "id": "resource-0169",
+      "date": "2026-05-09",
+      "who": "李华荣",
+      "title": "GPT Image 2 生成月球全景图 Design by JZ Creative Studio",
+      "url": "https://m.creatby.com/v2/manage/book/1lhhs0/",
+      "reportHref": "2026-05-09.html"
+    },
+    {
+      "id": "resource-0170",
+      "date": "2026-05-09",
+      "who": "信华",
+      "title": "BabelDOC - PDF翻译与排版工具",
+      "url": "https://github.com/funstory-ai/BabelDOC",
+      "reportHref": "2026-05-09.html"
+    },
+    {
+      "id": "resource-0171",
+      "date": "2026-05-09",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "GEO红皮书免费领取（飞书）",
+      "url": "https://yaojingang.feishu.cn/wiki/Otqtw0HFbiNeCMkjKalcFkoJnpf",
+      "reportHref": "2026-05-09.html"
+    },
+    {
+      "id": "resource-0172",
+      "date": "2026-05-09",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "日报馆 · SimonlinのAI学术交流",
+      "url": "https://simonlin000.github.io/qun-riba-20260430/",
+      "reportHref": "2026-05-09.html"
+    },
+    {
+      "id": "resource-0173",
+      "date": "2026-05-10",
+      "who": "程玉",
+      "title": "Markdown还是HTML？这是个蠢问题！",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2OTA1OTAxNA==&mid=2247490035&idx=1&sn=010c227153bcbdd37fa9303ae8640295&chksm=cf8bc4ae55708fe98f241e1a606af53654315c6dd6d38fd7b7e0d77c317859f07dbcbff5a9e6&mpshare=1&scene=1&srcid=05096060awrntX3bpras1OWX&sharer_shareinfo=d58741f67deb0f0d9a512c119fda82c5&sharer_shareinfo_first=d58741f67deb0f0d9a512c119fda82c5#rd",
+      "reportHref": "2026-05-10.html"
+    },
+    {
+      "id": "resource-0174",
+      "date": "2026-05-10",
+      "who": "紫苏子ACG",
+      "title": "3.9 元不限量！讯飞星辰MaaS 掀了 AI 编程的桌子，按 Token 计费的时代终结了 | 前沿在线",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNjcxMTI5NQ==&mid=2247489015&idx=1&sn=c51313750f50c5cd799a5ba189a5164a&chksm=c049888f5d133a47f3ea93e16cbd06233881efd23e5f2ad7aee27f58c66c60ed7f4cba6428ff&mpshare=1&scene=1&srcid=0510HMTJbFtt8zvnebYjshn8&sharer_shareinfo=4bb063fe10c2ed05e717a1c56600aaf1&sharer_shareinfo_first=4bb063fe10c2ed05e717a1c56600aaf1#rd",
+      "reportHref": "2026-05-10.html"
+    },
+    {
+      "id": "resource-0175",
+      "date": "2026-05-10",
+      "who": "李华荣",
+      "title": "终于找到解决手机消息轰炸的 AI 神器，有点离谱...",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4NTE1Mjg4MA==&mid=2247498450&idx=1&sn=a35be5ed9bb4914781ae3f7351a263e4&chksm=fcc8e3605338053ce3faddf76cf799ba480e1e73d3d0a0bfd99a8b35c406e47d37a35996bde8&mpshare=1&scene=1&srcid=0510cPwoHKOS3JZlt6tf86SN&sharer_shareinfo=1f6735550cf68de2396f0e8a35121061&sharer_shareinfo_first=50e0986fcd6d686c9a295f8ee77274be#rd",
+      "reportHref": "2026-05-10.html"
+    },
+    {
+      "id": "resource-0176",
+      "date": "2026-05-10",
+      "who": "是旦不是蛋",
+      "title": "Codex 新功能，可一键迁移配置，更方便开发者使用了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MjU1MjU0NA==&mid=2247492861&idx=1&sn=f02ae56c64789008de61de47de0ad316&chksm=e866159b13db1ba6e95a20f8861f023042d059aff574429d6659ffc604565533e324349e048c&mpshare=1&scene=1&srcid=05107WRjf38Aakh6H2vEIC09&sharer_shareinfo=c1f4b4b54a7daa11c30eb01e36bf89d7&sharer_shareinfo_first=c1f4b4b54a7daa11c30eb01e36bf89d7#rd",
+      "reportHref": "2026-05-10.html"
+    },
+    {
+      "id": "resource-0177",
+      "date": "2026-05-10",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "深度拆解：AI 智能体 Harness 的构造【译】",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk1NzgxMjQ0OA==&mid=2247494817&idx=1&sn=f22c6d9af7323504d323a0453d6d4bc6&chksm=c2327a1481674ae76a87ee904dc5d3f2a0ab32b9dc07766699a0babd9418d87a698695d0aef3&mpshare=1&scene=1&srcid=0511G89ondB2N78K1abwsGnm&sharer_shareinfo=be0e722222a26f1076b6a3ee12f86c1b&sharer_shareinfo_first=be0e722222a26f1076b6a3ee12f86c1b#rd",
+      "reportHref": "2026-05-10.html"
+    },
+    {
+      "id": "resource-0178",
+      "date": "2026-05-13",
+      "who": "林义辉",
+      "title": "MiniMax 推出 Mavis：活脱脱的 Agent「三省六部」",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&mid=2651091117&idx=1&sn=4c6646cb1c6ebe92615f6ee035d9d6d4&chksm=bca71b936df39b702a070c84bda22f962f68435e46c9280d0765c978c247e4d299455ef59462&mpshare=1&scene=1&srcid=0513jzyjA1UIAIYkPfqVQTqZ&sharer_shareinfo=c804f4e305d0d58987e107ca49bc09e1&sharer_shareinfo_first=c804f4e305d0d58987e107ca49bc09e1#rd",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0179",
+      "date": "2026-05-13",
+      "who": "留给中国队的时间不多了",
+      "title": "即梦AI · 新中式国风插画风格案例",
+      "url": "https://jimeng.jianying.com",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0180",
+      "date": "2026-05-13",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "Simon讲章知识库 · 阿真姐活动现场（群友现场分享，非链接型资源）",
+      "url": "群友现场分享，非链接型资源",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0181",
+      "date": "2026-05-13",
+      "who": "草莓",
+      "title": "以前嫌《诗经》枯燥，直到我用AI把它做成视频！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MzM0ODY3MA==&mid=2650361857&idx=1&sn=fab9a0a4172f755b768ac8dd9073d5f7&chksm=bf8fda8954c1266f9b8df6901d093e24e76da55da0a0deecd78e428765f538b2188833b64553&mpshare=1&scene=1&srcid=0513t1sDxsU4ICexMYQiCAsi&sharer_shareinfo=26311454b34bcdc1c8f73f01baadaba7&sharer_shareinfo_first=26311454b34bcdc1c8f73f01baadaba7#rd",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0182",
+      "date": "2026-05-13",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "特朗普访华团16巨头全解析",
+      "url": "https://yb.tencent.com/wx/ct/f/YFFQRs41xE5393",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0183",
+      "date": "2026-05-13",
+      "who": "紫苏子ACG",
+      "title": "哲思漫画 ｜魏宁格《性与性格》的深度读后感",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk3NTgzNjkxNw==&mid=2247484003&idx=2&sn=b9ca658ee78147b8a6cf0ddb5a328a34&chksm=c5d383647d83f1866bcf7f8b1a26e3a904984d0c9ad0937f7daa57d3c924634784b3c23bc641&mpshare=1&scene=1&srcid=051377sSenFyoIKxooijsoKM&sharer_shareinfo=d1e76beb049eb8dce704a07f7ba88dc7&sharer_shareinfo_first=d1e76beb049eb8dce704a07f7ba88dc7#rd",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0184",
+      "date": "2026-05-13",
+      "who": "sliec789",
+      "title": "刚刚，微信群聊能一键总结了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3NDEyMDgzMw==&mid=2653002869&idx=1&sn=8ee3329878273f2e59746f47b72a0fd5&chksm=8531213c4f5c7d25b6a8b14c3edb36271666c712f4dbb1c72c5e9a0ea881a5f1958895efd0b5&mpshare=1&scene=1&srcid=0513PRW44aYDdT4UJuxZs6AX&sharer_shareinfo=89b486517077b4318d2e9baebd2a74ce&sharer_shareinfo_first=89b486517077b4318d2e9baebd2a74ce#rd",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0185",
+      "date": "2026-05-13",
+      "who": "李华荣",
+      "title": "Skills、Plugins、MCP、Agent 到底是什么？",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=Mzk1NzgxMjQ0OA==&mid=2247494842&idx=1&sn=00e7e28a184f4daa25e0cd3f293510a2&from_masonry=1&sharer_shareinfo_first=cc01d5246ffedf8afadb98de22f62d4c&sharer_shareinfo=cc01d5246ffedf8afadb98de22f62d4c#wechat_redirect",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0186",
+      "date": "2026-05-13",
+      "who": "烈日松饼",
+      "title": "全网确诊前额叶损伤 AI正在批量生产“空心人”",
+      "url": "https://mp.weixin.qq.com/s/jsQ8y0StO8vK7kxCkMfThQ",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0187",
+      "date": "2026-05-13",
+      "who": "马佳彬",
+      "title": "紧急通知！别在国内搞中转站了！",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzkzNjYyNzg4Mw==&mid=2247485313&idx=1&sn=434c7364bf59c47d14c43bceee047398&from_masonry=1&sharer_shareinfo_first=2bf26532c1dc85e172b156631ee7043a&sharer_shareinfo=31b5aa7c5af829296aa3c6d0bd5be895#wechat_redirect",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0188",
+      "date": "2026-05-13",
+      "who": "霄凡旅行小刘",
+      "title": "橘子老师的 ColaOS，邀请码来了",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzA5MDg2MzQ5NQ==&mid=2247488856&idx=1&sn=9343937622e8ea2452701f2bdfae62d8&from_masonry=1&sharer_shareinfo_first=35104b0cba5c18c80c770b48f5f3526a&sharer_shareinfo=35104b0cba5c18c80c770b48f5f3526a#wechat_redirect",
+      "reportHref": "2026-05-13.html"
+    },
+    {
+      "id": "resource-0189",
+      "date": "2026-05-14",
+      "who": "下一站",
+      "title": "如何从零搭建Obsidian知识库：AI Agent不是问答机器，它是执行者",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247488272&idx=1&sn=6a04e693a5c3386f40f2fd28ea8e21ed&chksm=fac685bebf4b272f0e654f88ef70c02097a46a7db41f293e0431f9f052416717007cdbf34081&mpshare=1&scene=1&srcid=0514DlmyPBUuWdt7ERREkvbj&sharer_shareinfo=f3a4d6244a77bf7552ed2487823a17dc&sharer_shareinfo_first=f3a4d6244a77bf7552ed2487823a17dc#rd",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0190",
+      "date": "2026-05-14",
+      "who": "瓦叔",
+      "title": "女儿用豆包做沈阳明信片，结果陪她试出了812张效果图",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg2NjA1NQ==&mid=2247486304&idx=1&sn=70633e1d1446b60b63e17416d8da7cc7&chksm=c5511a0fe47aec874945f314e3af8e805b42cf6734b9239392ede90cd20186784591a4ecc568&mpshare=1&scene=1&srcid=0514fvf6H0jj9itlmiZ37uzz&sharer_shareinfo=b6b1038ecf4fa83c0743b4dc48f06981&sharer_shareinfo_first=b6b1038ecf4fa83c0743b4dc48f06981#rd",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0191",
+      "date": "2026-05-14",
+      "who": "草莓",
+      "title": "以前嫌《诗经》枯燥，直到我用AI把它做成视频！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MzM0ODY3MA==&mid=2650361857&idx=1&sn=fab9a0a4172f755b768ac8dd9073d5f7&chksm=bf8fda8954c1266f9b8df6901d093e24e76da55da0a0deecd78e428765f538b2188833b64553&mpshare=1&scene=1&srcid=0513t1sDxsU4ICexMYQiCAsi&sharer_shareinfo=46daa922c99a4d24de703b11798d9e3e&sharer_shareinfo_first=46daa922c99a4d24de703b11798d9e3e#rd",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0192",
+      "date": "2026-05-14",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "小米技术新突破！Xiaomi OneVL 自动驾驶模型正式发布并全面开源",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUxMDQxMDMyNg==&mid=2247519290&idx=1&sn=bf4c6038188b651a3b300e6d2bcb57b2&chksm=f891e6e805b9371a12b5673d2aafb165d4ebee54cd684eb186c7b52e87adc0d05b3104510b67&mpshare=1&scene=1&srcid=0514iXhMUzGhRzzBSJit6PJv&sharer_shareinfo=1a599722de046821f2b72454678186e3&sharer_shareinfo_first=1a599722de046821f2b72454678186e3#rd",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0193",
+      "date": "2026-05-14",
+      "who": "凡有语",
+      "title": "Skill结合哩布哩布LibTV，轻松做出AI实机视频！",
+      "url": "https://mp.weixin.qq.com/s/06ppu58keeR-7JP1DdMKUg",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0194",
+      "date": "2026-05-14",
+      "who": "吴熳Rosia（整理）",
+      "title": "吴熳Rosia的AI日报（腾讯混元Hy3、Krea 2、SenseNova-U1、Runway Agent等）",
+      "url": "https://x.com/TencentHunyuan/status/2054403079433572357",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0195",
+      "date": "2026-05-14",
+      "who": "计育韬（Vibing...）",
+      "title": "【春】作品展播 | 2026ACX“节气里的大美中国”-24小时大师赛",
+      "url": "https://mp.weixin.qq.com/s?item_show_type=16&vid=wxv_4482054444762710016&__biz=MzkzNDkzNzAzMw==&mid=2247483805&idx=1&sn=28e66949bcd040adc5e03b60dc3eff7f&mpshare=1&scene=1&srcid=0430FFeKKYdyBL1vruwW7eNo&sharer_shareinfo=f244432b12109734897d05ff90021ca5&sharer_shareinfo_first=f244432b12109734897d05ff90021ca5#wechat_redirect",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0196",
+      "date": "2026-05-14",
+      "who": "Alan",
+      "title": "游戏",
+      "url": "https://mp.weixin.qq.com/s/bWxBBrRadK6XwRn7IGNfMA",
+      "reportHref": "2026-05-14.html"
+    },
+    {
+      "id": "resource-0197",
+      "date": "2026-05-16",
+      "who": "吴熳Rosia",
+      "title": "陈星：经历过VR泡沫后，我在AI短剧里找到了\"进得去也出得来\"的生意",
+      "url": "https://www.xiaoyuzhoufm.com/episode/6a0475e41b7bd502951680d5?s=eyJ1IjogIjYwNGFkMDFhZTBmNWU3MjNiYjI5OGVkMiJ9",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0198",
+      "date": "2026-05-16",
+      "who": "Simonlin",
+      "title": "vibe-coding-cn：vibecoding从入门到精通",
+      "url": "https://github.com/tukuaiai/vibe-coding-cn",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0199",
+      "date": "2026-05-16",
+      "who": "Simonlin",
+      "title": "ai-data-extraction：从AI编程助手提取对话记录",
+      "url": "https://github.com/0xSero/ai-data-extraction",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0200",
+      "date": "2026-05-16",
+      "who": "刘琦",
+      "title": "codex-session-handoff-skill：Codex会话交接Skill",
+      "url": "https://github.com/Liu-Bot24/codex-session-handoff-skill",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0201",
+      "date": "2026-05-16",
+      "who": "NΞO",
+      "title": "NotebookLM Python CLI",
+      "url": "https://github.com/win4r/notebooklm-py",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0202",
+      "date": "2026-05-16",
+      "who": "刘琦",
+      "title": "course-navigator：课程导航ASR工具",
+      "url": "https://github.com/Liu-Bot24/course-navigator",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0203",
+      "date": "2026-05-16",
+      "who": "刘琦",
+      "title": "飞书文档：AI信息整理工作流",
+      "url": "https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0204",
+      "date": "2026-05-16",
+      "who": "李华荣",
+      "title": "一位语文老师眼中的SKILL（一）",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyODIyMDAzMQ==&mid=2247484989&idx=1&sn=5e4e7e6c339a1be137cf40e2dfe9debb&chksm=e9ae4b86e2ee104992e62d6a890a06cd94273540966ddbef81e4ea13bd2935a981c28b03f58c&mpshare=1&scene=1&srcid=051602mUcvclUW9ZYf3uu5T2&sharer_shareinfo=d9b2f8410d56398b8751ad2ffbefcb36&sharer_shareinfo_first=d90b9adaa4b7e4d043f962501ac888fd#rd",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0205",
+      "date": "2026-05-16",
+      "who": "悖",
+      "title": "OpenHuman：20分钟了解你的一切",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247891192&idx=1&sn=1e616d38f9318e76085825355e549b97&chksm=e955ffc0935f77d5d3e4de13f550d2985f16a6d5cbbefecab1b82f1424e697bbf1d6dfe3fe45&mpshare=1&scene=1&srcid=0516804S30ITlpQZHRPSjZJw&sharer_shareinfo=4f5a61eb877c0273013f2d0222f72bc1&sharer_shareinfo_first=4f5a61eb877c0273013f2d0222f72bc1#rd",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0206",
+      "date": "2026-05-16",
+      "who": "留给中国队的时间不多了",
+      "title": "马耳他向全民发放免费ChatGPT会员",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247517066&idx=1&sn=0b407e1797ba301455ccb1ff42e8eb04&chksm=c3a8a88140296889b0fa5830e228189e5d91c08e2d47dc26b0bef5d15a34682bcf4f3f5f283e&mpshare=1&scene=1&srcid=0516fx3slDVldEjgXu7rvZcV&sharer_shareinfo=e9d8893f76eb0b6889ec5a56e66ee9e1&sharer_shareinfo_first=e9d8893f76eb0b6889ec5a56e66ee9e1#rd",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0207",
+      "date": "2026-05-16",
+      "who": "看到我请叫我滚去练琴",
+      "title": "Gemini 3.5 Pro全网首曝，编程追平GPT-5.5！谷歌终于狠起来了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652700805&idx=2&sn=22c779c450a54e03ac3e755d3683ea70&chksm=f059dee584b5c35900450022473390eb486e51b24391dbd26c2000c4bce53396a3d65b8f5970&mpshare=1&scene=1&srcid=05151MKGfBS41JeX569btmK3&sharer_shareinfo=ad121b65e3287266888494b7df4b104e&sharer_shareinfo_first=ad121b65e3287266888494b7df4b104e#rd",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0208",
+      "date": "2026-05-16",
+      "who": "๑🌱๑",
+      "title": "12699元 Apple/苹果2025款MacBookPro14英寸M5芯片10+10核笔记本 24+1T 拼多多",
+      "url": "https://mobile.yangkeduo.com/goods1.html?ps=yPWJKfB1un",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0209",
+      "date": "2026-05-16",
+      "who": "沈旸",
+      "title": "Codex 额度即将重置！因 GPT-5.5 能力退化",
+      "url": "https://www.xiaohongshu.com/discovery/item/6a07d58e0000000007012025?app_platform=ios&app_version=9.30.1&share_from_user_hidden=true&xsec_source=app_share&type=normal&xsec_token=CBkrPzxTt46ldCJ5UWWPOtKWv5fTTfd4ec98vli-84-vI=&author_share=1&xhsshare=WeixinSession&shareRedId=N0dHRjY7Rjk3OEdHOjgwOjo0SjlHOUk6&apptime=1778902531&share_id=b206e32fc3fc474ba031ce2998403c52",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0210",
+      "date": "2026-05-16",
+      "who": "李华荣",
+      "title": "特朗普访华3天，都谈成了些什么？",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjM5MjQ4MQ==&mid=2651783999&idx=1&sn=aa605a3c41154b33d0c4c60875009abd&chksm=bced10ba00efd05e0ef9674deb328804220926b14dd9f07dd06165a09d452b736db17391fedb&mpshare=1&scene=1&srcid=0516w2RFqCXX8DHblv8V1IOY&sharer_shareinfo=42837f17d79874913533e098e19de398&sharer_shareinfo_first=42837f17d79874913533e098e19de398#rd",
+      "reportHref": "2026-05-16.html"
+    },
+    {
+      "id": "resource-0211",
+      "date": "2026-05-17",
+      "who": "李华荣",
+      "title": "飞书文档：一位语文老师眼中的SKILL",
+      "url": "https://my.feishu.cn/wiki/YIZzwi6eqihpfLkhHhhcDq1Bnrd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0212",
+      "date": "2026-05-17",
+      "who": "刘琦",
+      "title": "codex-session-handoff-skill：Codex会话交接Skill",
+      "url": "https://github.com/Liu-Bot24/codex-session-handoff-skill",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0213",
+      "date": "2026-05-17",
+      "who": "刘琦",
+      "title": "飞书文档：AI信息整理工作流",
+      "url": "https://my.feishu.cn/docx/KEAcduYsDoF5J9xw7lFcJ1aWncb",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0214",
+      "date": "2026-05-17",
+      "who": "NΞO",
+      "title": "notebooklm-py：NotebookLM Python CLI",
+      "url": "https://github.com/win4r/notebooklm-py",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0215",
+      "date": "2026-05-17",
+      "who": "刘琦",
+      "title": "course-navigator：课程导航ASR工具",
+      "url": "https://github.com/Liu-Bot24/course-navigator",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0216",
+      "date": "2026-05-17",
+      "who": "程玉",
+      "title": "qiaomu-anything-to-notebooklm：Anything转NotebookLM",
+      "url": "https://github.com/joeseesun/qiaomu-anything-to-notebooklm",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0217",
+      "date": "2026-05-17",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "Token越来越贵？别慌，算力网要来了！",
+      "url": "https://mp.weixin.qq.com/s?__biz=MTI0MDU3NDYwMQ==&mid=2657923454&idx=1&sn=643bd353233ea2ebd3e083146c928637&chksm=7b1cf575be3810ad6652da1388ee19cd8d434072912003e148bcb291b16bcbf3b233f89209f1&mpshare=1&scene=1&srcid=0517kLU00S5zmlfQTyK3CJIj&sharer_shareinfo=70fd02962a4462ebb1d8eeee0cd33bae&sharer_shareinfo_first=70fd02962a4462ebb1d8eeee0cd33bae#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0218",
+      "date": "2026-05-17",
+      "who": "是旦不是蛋",
+      "title": "Playwright拉爆了！请给你的Agent安装上真正的浏览器访问能力——CDP Bridge MCP",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwNDE5ODc3Nw==&mid=2247487841&idx=1&sn=34cc084a8fb03f581939838944bdd3cb&chksm=c1e35999041b73b67ae2a8b6f8eda1b55665a2df237eeb76f9ea5d86e42bc1b5d6f7eb2c2ebc&mpshare=1&scene=1&srcid=0517mUfndxNWgGxqAe1PrugH&sharer_shareinfo=2893dc5f8ee0843ea663e1a2f1a9702f&sharer_shareinfo_first=2893dc5f8ee0843ea663e1a2f1a9702f#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0219",
+      "date": "2026-05-17",
+      "who": "李华荣",
+      "title": "现在的电脑，已经自带 Agent 了？",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzMDU2Nzg3MQ==&mid=2247491737&idx=1&sn=b36bb43489a59869925672c5f5ad71c2&chksm=c3d5471eb923b7cbf76bbe2c94e1a5f74a2c72b5b2259fcf703390ac46eaebdbd6768f346944&mpshare=1&scene=1&srcid=0517yNIlBloZTVr8b7IICWrZ&sharer_shareinfo=3263d22c2c2656c68deee3f4bfe777ab&sharer_shareinfo_first=3263d22c2c2656c68deee3f4bfe777ab#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0220",
+      "date": "2026-05-17",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "Holy Sh*t，我的大便被卖给 AI 了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&mid=2651091538&idx=1&sn=b8c7e7be862c414b724007873371e4df&chksm=bc36ae1395aba91b631026026f3941c29d34a54152dcd14cff0c2fe874af43f7cf566254c063&mpshare=1&scene=1&srcid=0517UJqPBoq1VWqAV71HvAF4&sharer_shareinfo=2a2147914f19b9b84fb4f87292ea219a&sharer_shareinfo_first=2a2147914f19b9b84fb4f87292ea219a#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0221",
+      "date": "2026-05-17",
+      "who": "是旦不是蛋",
+      "title": "26个PPT生成Skill，我做了一次系统梳理",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NTE1ODI1Mg==&mid=2247485494&idx=1&sn=3cec18f524da9e79f8dc30488030f1e0&chksm=cf58e6998bbba0825684cddee153e3b91a4f2d2c5377933bc9eb32e3ef71cbbd4af25e2cbd25&mpshare=1&scene=1&srcid=0517kkhMjFAfgcDNaCi6R90h&sharer_shareinfo=14e272a407fa283ee2570b615c135cfd&sharer_shareinfo_first=14e272a407fa283ee2570b615c135cfd#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0222",
+      "date": "2026-05-17",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "如何从零搭建Obsidian知识库：让AI替你当信息守门员（附工具资源）",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1MDk3MzEwOA==&mid=2247488403&idx=1&sn=8cfc3116f7a0320e0c47f078689bdf8a&chksm=fa0b2216013a9000bdced54aa3fe681af122c30e41e1f6e844e61b8b950e14be331920ff49da&mpshare=1&scene=1&srcid=0517nnD3ukksK6ikEUJbkFL9&sharer_shareinfo=d864610306bf3782144b268628185925&sharer_shareinfo_first=d864610306bf3782144b268628185925#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0223",
+      "date": "2026-05-17",
+      "who": "吴熳Rosia",
+      "title": "给Codex一篇公众号文章，用这个开源skill直出优雅海报",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5ODU1ODg1Mg==&mid=2247490525&idx=1&sn=a441dc65e47fbe878e82259397667484&chksm=c1ef2934f49d6975dcc28a249458c37884a368c9593651f07dd7559039ef351773906403db6e&mpshare=1&scene=1&srcid=0517pKF11xKLf9Lby2IWMYOI&sharer_shareinfo=aa0c66d78351891896a1906c41944ad7&sharer_shareinfo_first=359fd8c0d60057a90d07a80eda0bd180#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0224",
+      "date": "2026-05-17",
+      "who": "李华荣",
+      "title": "我把自己做成了codex桌宠，喜当赛博监工（附教程",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxOTU4NzEyOQ==&mid=2247523724&idx=1&sn=cb3b2cf7878cdac6598d9874d24b9bf5&chksm=c0726b6019d08ce9ced4c524421ebc1e4e1c25dbed84f90cc5169101eafb3ce887c05abf3e64&mpshare=1&scene=24&srcid=051732Fqeyzc33rg5hPope5c&sharer_shareinfo=42f542438f4323ee6f19f15142ab58a8&sharer_shareinfo_first=814ee91d306879f95d9461374e459622#rd",
+      "reportHref": "2026-05-17.html"
+    },
+    {
+      "id": "resource-0225",
+      "date": "2026-05-18",
+      "who": "数字阿启",
+      "title": "Datawhale AI教程 easy-vibe",
+      "url": "https://github.com/datawhalechina/easy-vibe",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0226",
+      "date": "2026-05-18",
+      "who": "数字阿启",
+      "title": "AI提示词教程",
+      "url": "https://datawhalechina.github.io/ai-prompting-for-everyone",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0227",
+      "date": "2026-05-18",
+      "who": "Simonlin",
+      "title": "VibeVibe中文教程站",
+      "url": "https://www.vibevibe.cn/zh/",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0228",
+      "date": "2026-05-18",
+      "who": "Simonlin",
+      "title": "藏师傅PPT Skill + Codex + HyperFrames",
+      "url": "https://mp.weixin.qq.com/s?t=pages/video_detail_new&scene=1&vid=wxv_4520271596624019469&__biz=MzU0MDk3NTUxMA==&mid=2247496840&idx=1&sn=dc0ce18ca6a7c41b706abb383d7a2f29&vidsn=&sharer_shareinfo_first=69fdd29c1dfb5a9c82e9f41da167f71e&sharer_shareinfo=c6ab13044a3d12e6449a676e6a07480e#wechat_redirect",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0229",
+      "date": "2026-05-18",
+      "who": "千九",
+      "title": "Google Flow视频生成",
+      "url": "https://labs.google/fx/zh/tools/flow",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0230",
+      "date": "2026-05-18",
+      "who": "李华荣",
+      "title": "通往AGI之路的视频",
+      "url": "视频资源",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0231",
+      "date": "2026-05-18",
+      "who": "Simonlin",
+      "title": "《一人企业方法论》v2.0 PDF",
+      "url": "PDF资源",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0232",
+      "date": "2026-05-18",
+      "who": "Simonlin",
+      "title": "论文PDF：Useful Memories Become Faulty When Continuously Updated by LLMs",
+      "url": "PDF资源",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0233",
+      "date": "2026-05-18",
+      "who": "数字阿启",
+      "title": "又一历史时刻，突破1w star了🎉",
+      "url": "https://mp.weixin.qq.com/s?t=pages/image_detail&scene=1&__biz=MzIyNjM2MzQyNg==&mid=2247722807&idx=1&sn=519b984044e275d952fcb91e5d0dc4d7&from_masonry=1&sharer_shareinfo_first=f210f79a272655f6d222948b6c362350&sharer_shareinfo=d698865548b93c4b911338e405893d1a#wechat_redirect",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0234",
+      "date": "2026-05-18",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "捐赠“新标配”！河南三位00后给母校捐赠20亿Token，支持大学生“一人公司”创业，笑称：我们的实力还没强到能捐教学楼",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NzQwMzcwMA==&mid=2655097701&idx=3&sn=25f418b1b08006d1169cb3ea827934c9&chksm=bc266d8d73e945b1caced624336c8568d08e061c784ec88dde7e46ff9b7fc0d3fa768a0a3552&mpshare=1&scene=1&srcid=051822dsGpO6egARVwESbAqM&sharer_shareinfo=53e84f73375c41962358a66288479659&sharer_shareinfo_first=53e84f73375c41962358a66288479659#rd",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0235",
+      "date": "2026-05-18",
+      "who": "吴熳Rosia",
+      "title": "AI赋能工作流系列",
+      "url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5ODU1ODg1Mg==&action=getalbum&album_id=4521209267995213830#wechat_redirect",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0236",
+      "date": "2026-05-18",
+      "who": "千九",
+      "title": "我把GPT-Image-2 的电商素材能力，装进了一个 Skill 里。",
+      "url": "https://mp.weixin.qq.com/s/MaLnBpaqjR5BiW8ovXMDAw",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0237",
+      "date": "2026-05-18",
+      "who": "当我看见蓝色的大海",
+      "title": "广西柳州再次发生5.2级地震",
+      "url": "https://mp.weixin.qq.com/s?__biz=MTI0MDU3NDYwMQ==&mid=2657924421&idx=1&sn=f2b36bee0eaf59ece0f35a6577c06255&chksm=7b4ee8df9784f72ea087d033893fc3d75575f7aeddc34d8cdab1f0ff0049d2fc904dc01747a5&mpshare=1&scene=1&srcid=0518eWSn14ys1XKuZ5SfvBIM&sharer_shareinfo=e4243e503709a295e3dc3d6c3310388d&sharer_shareinfo_first=e4243e503709a295e3dc3d6c3310388d#rd",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0238",
+      "date": "2026-05-18",
+      "who": "数字阿启",
+      "title": "Datawhale AI教程 easy-vibe，突破1万星",
+      "url": "https://github.com/datawhalechina/easy-vibe",
+      "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0239",
+      "date": "2026-05-18",
+      "who": "千九",
+      "title": "Google Flow视频生成，Veo 3.1模型",
+      "url": "https://labs.google/fx/zh/tools/flow",
+      "reportHref": "2026-05-18.html"
+    }
+  ]
+}

@@ -37,7 +37,10 @@ function buildContext(contexts) {
     .map((item, index) => {
       const id = item.id || index + 1;
       const when = [item.date, item.time].filter(Boolean).join(" ");
-      return `【${id}】${when} ${item.who || "未知群友"}：${clipText(item.text)}`;
+      if (item.type === "resource") {
+        return `【${id}】资源 ${item.date || ""} ${item.who || "未知群友"}：${clipText(item.title || item.text)}\nURL：${item.url || "无"}`;
+      }
+      return `【${id}】聊天 ${when} ${item.who || "未知群友"}：${clipText(item.text)}`;
     })
     .join("\n\n");
 }
@@ -74,7 +77,7 @@ async function callMiniMax(question, contexts, activityStats) {
     model: MODEL,
     max_tokens: MAX_TOKENS,
     temperature: TEMPERATURE,
-    system: "你是群日报网站的知识库问答助手。只能根据用户提供的群聊检索片段和统计回答。不要编造人物、链接、日期或结论。资料不足时直接说“资料里没找到”。回答要简洁，关键结论后标注引用编号，例如【1】。",
+    system: "你是群日报网站的知识库问答助手。只能根据用户提供的群聊检索片段、资源链接和统计回答。不要编造人物、链接、日期或结论。用户问文章、链接、资料在哪里时，优先列出资源标题和URL。资料不足时直接说“资料里没找到”。回答要简洁，关键结论后标注引用编号，例如【1】。",
     messages: [
       {
         role: "user",
@@ -132,9 +135,12 @@ module.exports = async function askHandler(req, res) {
       answer,
       sources: contexts.slice(0, 12).map((item, index) => ({
         id: item.id || index + 1,
+        type: item.type || "message",
         date: item.date || "",
         time: item.time || "",
         who: item.who || "",
+        title: item.title || "",
+        url: item.url || "",
         reportHref: item.reportHref || "",
       })),
     });

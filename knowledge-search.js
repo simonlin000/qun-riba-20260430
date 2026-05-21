@@ -1,5 +1,5 @@
 (function () {
-  const state = { indexMeta: null, decrypted: null, unlockedAt: null };
+  const state = { indexMeta: null, resourceIndex: null, decrypted: null, unlockedAt: null };
   const $ = (selector) => document.querySelector(selector);
   const normalize = (value) => String(value || '').toLowerCase().replace(/\s+/g, '');
   const escapeHtml = (value) => String(value || '').replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
@@ -35,6 +35,16 @@
     const key = await deriveKey(password, base64ToBytes(meta.kdf.salt), meta.kdf.iterations);
     const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: base64ToBytes(meta.cipher.iv), tagLength: meta.cipher.tagLength }, key, combined);
     return JSON.parse(new TextDecoder().decode(plain));
+  }
+
+  async function loadResourceIndex() {
+    try {
+      const response = await fetch('resources-index.json?v=' + Date.now(), { cache: 'no-store' });
+      if (!response.ok) throw new Error('resource index not found');
+      state.resourceIndex = await response.json();
+    } catch (error) {
+      state.resourceIndex = { resources: [] };
+    }
   }
 
   function setStatus(message, type) {
@@ -84,11 +94,71 @@
     return results;
   }
 
+  function searchResources(query, day) {
+    const normalizedQuery = normalize(query);
+    if (!normalizedQuery) return [];
+    const results = [];
+    for (const resource of state.resourceIndex?.resources || []) {
+      if (day && resource.date !== day) continue;
+      const haystack = normalize(`${resource.date} ${resource.who} ${resource.title} ${resource.url}`);
+      if (!haystack.includes(normalizedQuery)) continue;
+      results.push({ ...resource, type: 'resource' });
+      if (results.length >= 80) break;
+    }
+    return results;
+  }
+
   function tokenize(value) {
-    return Array.from(new Set(String(value || '')
-      .toLowerCase()
-      .match(/[a-z0-9\u4e00-\u9fff]{2,}|[\u4e00-\u9fff]/g) || []))
-      .filter((token) => !['这个', '那个', '最近', '什么', '哪里', '如何', '一下', '文章', '知识库'].includes(token));
+    const tokens = [];
+    const chunks = String(value || '').toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]+/g) || [];
+    const keepPhrases = ['知识库', '文章', '链接', '资源', '地址', '教程', '工具'];
+    for (const chunk of chunks) {
+      if (/^[a-z0-9]+$/.test(chunk)) {
+        if (chunk.length >= 2) tokens.push(chunk);
+        continue;
+      }
+      for (const phrase of keepPhrases) {
+        if (chunk.includes(phrase)) tokens.push(phrase);
+      }
+      for (let index = 0; index < chunk.length - 1; index += 1) {
+        tokens.push(chunk.slice(index, index + 2));
+      }
+    }
+    return Array.from(new Set(tokens))
+      .filter((token) => !['这个', '那个', '最近', '什么', '哪里', '在哪', '如何', '一下', '的是', '的是', '的文', '在哪里'].includes(token));
+  }
+
+  function scoreText(tokens, value, weight = 1) {
+    const haystack = normalize(value);
+    return tokens.reduce((sum, token) => {
+      const normalized = normalize(token);
+      if (!normalized || !haystack.includes(normalized)) return sum;
+      return sum + (normalized.length > 1 ? weight * 2 : weight);
+    }, 0);
+  }
+
+  function retrieveResourcesForQuestion(question, limit = 8) {
+    const tokens = tokenize(question);
+    if (!tokens.length) return [];
+    return (state.resourceIndex?.resources || [])
+      .map((resource) => {
+        const text = `${resource.date} ${resource.who} ${resource.title} ${resource.url}`;
+        const score = scoreText(tokens, text, 2)
+          + (/文章|链接|资料|资源|哪里|在哪|地址|url/i.test(question) ? 3 : 0);
+        return { resource, score };
+      })
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map((item) => ({
+        type: 'resource',
+        date: item.resource.date || '',
+        who: item.resource.who || '',
+        title: item.resource.title || '',
+        url: item.resource.url || '',
+        text: `${item.resource.title || '未命名资源'}${item.resource.url ? `：${item.resource.url}` : ''}`,
+        reportHref: item.resource.reportHref || `${item.resource.date}.html`
+      }));
   }
 
   function retrieveForQuestion(question) {
@@ -97,21 +167,24 @@
     const scored = [];
     for (const message of state.decrypted.messages || []) {
       const haystack = normalize(`${message.date} ${message.time} ${message.who} ${message.text}`);
-      const score = tokens.reduce((sum, token) => sum + (haystack.includes(normalize(token)) ? 1 : 0), 0);
+      const score = scoreText(tokens, haystack);
       if (score <= 0) continue;
       scored.push({ message, score });
     }
-    return scored
+    const messages = scored
       .sort((a, b) => b.score - a.score)
-      .slice(0, 12)
-      .map((item, index) => ({
-        id: index + 1,
+      .slice(0, 8)
+      .map((item) => ({
+        type: 'message',
         date: item.message.date || '',
         time: item.message.time || '',
         who: item.message.who || '',
         text: item.message.text || '',
         reportHref: item.message.reportHref || `${item.message.date}.html`
       }));
+    return [...retrieveResourcesForQuestion(question), ...messages]
+      .slice(0, 12)
+      .map((item, index) => ({ ...item, id: index + 1 }));
   }
 
   function buildActivityStats() {
@@ -153,17 +226,29 @@
       countEl.textContent = '';
       return;
     }
-    const results = searchMessages(query, day);
+    const resourceResults = searchResources(query, day);
+    const results = [
+      ...resourceResults,
+      ...searchMessages(query, day).map((message) => ({ ...message, type: 'message' }))
+    ].slice(0, 120);
     countEl.textContent = `找到 ${results.length} 条${results.length >= 120 ? '（最多显示 120 条）' : ''}`;
     if (!results.length) {
       resultsEl.innerHTML = '<div class="empty-state">没搜到，换个关键词试试。</div>';
       return;
     }
-    resultsEl.innerHTML = results.map((message) => {
-      const href = message.reportHref || `${message.date}.html`;
+    resultsEl.innerHTML = results.map((item) => {
+      if (item.type === 'resource') {
+        const href = item.url || item.reportHref || `${item.date}.html`;
+        return `<article class="result-card">
+          <div class="result-meta"><span>${escapeHtml(item.date)}</span><span>资源链接</span><span>${escapeHtml(item.who)}</span></div>
+          <p>${buildSnippet({ text: `${item.title} ${item.url}` }, query)}</p>
+          <a href="${escapeHtml(href)}" target="_blank" rel="noopener">打开资源</a>
+        </article>`;
+      }
+      const href = item.reportHref || `${item.date}.html`;
       return `<article class="result-card">
-        <div class="result-meta"><span>${escapeHtml(message.date)} ${escapeHtml(message.time)}</span><span>${escapeHtml(message.who)}</span></div>
-        <p>${buildSnippet(message, query)}</p>
+        <div class="result-meta"><span>${escapeHtml(item.date)} ${escapeHtml(item.time)}</span><span>${escapeHtml(item.who)}</span></div>
+        <p>${buildSnippet(item, query)}</p>
         <a href="${escapeHtml(href)}">打开当日日报</a>
       </article>`;
     }).join('');
@@ -177,8 +262,11 @@
     answer.innerHTML = `
       <div>${escapeHtml(payload.answer || '资料里没找到。').replace(/\n/g, '<br>')}</div>
       ${sources.length ? `<ol>${sources.map((source) => {
-        const label = `【${source.id}】${source.date || ''} ${source.time || ''} ${source.who || ''}`.trim();
-        return `<li>${source.reportHref ? `<a href="${escapeHtml(source.reportHref)}">${escapeHtml(label)}</a>` : escapeHtml(label)}</li>`;
+        const label = source.type === 'resource'
+          ? `【${source.id}】${source.date || ''} ${source.who || ''} ${source.title || '资源链接'}`.trim()
+          : `【${source.id}】${source.date || ''} ${source.time || ''} ${source.who || ''}`.trim();
+        const target = source.url || source.reportHref;
+        return `<li>${target ? `<a href="${escapeHtml(target)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>` : escapeHtml(label)}</li>`;
       }).join('')}</ol>` : ''}
     `;
   }
@@ -205,7 +293,8 @@
       answer.classList.add('is-visible');
       answer.textContent = contexts.length ? '正在把命中片段交给 AI...' : '没有明显命中片段，AI 会基于活跃度统计和空证据判断。';
     }
-    if (status) status.textContent = `已选出 ${contexts.length} 条证据片段。`;
+    const resourceCount = contexts.filter((item) => item.type === 'resource').length;
+    if (status) status.textContent = `已选出 ${contexts.length} 条证据，其中 ${resourceCount} 条资源链接。`;
     if (button) button.disabled = true;
 
     try {
@@ -239,6 +328,7 @@
     const lockPanel = $('#lockPanel');
     const searchPanel = $('#searchPanel');
     try {
+      await loadResourceIndex();
       const response = await fetch('search-index.enc.json?v=' + Date.now(), { cache: 'no-store' });
       if (!response.ok) throw new Error('index not found');
       state.indexMeta = await response.json();
