@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月19日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=6">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月19日 · 周二</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><div class="bubble-who">乔帮主夸群，全员飘了</div><div class="bubble-text">Simonlin扔出“我们群被乔帮主夸了”，群里瞬间士气拉满，大家开始集体飘。</div><span class="event-tag">群友夸奖</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('千九')"><div class="bubble-who">GPT Image 2邪修玩法</div><div class="bubble-text">千九分享6个玄学玩法提示词，AI作图一路滑向玄学现场。</div><span class="event-tag">提示词</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('小耳｜李娟｜AI Builder')"><div class="bubble-who">小耳Ask把AI浏览器干废</div><div class="bubble-text">小耳介绍桌面AI浏览器助手，群友评价“这直接把AI浏览器干废了”。</div><span class="event-tag">AI助手</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><div class="bubble-who">日报馆样式更新</div><div class="bubble-text">Simonlin发出新版日报馆，群友围观新样式，也顺手抓出时间轴逻辑问题。</div><span class="event-tag">日报馆</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('M')"><div class="bubble-who">GPT Image 2中文字体</div><div class="bubble-text">M分享中文字体生成案例，群里开始讨论字体prompt和海报实用场景。</div><span class="event-tag">设计</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥇</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">102次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥈</span><span class="name">马佳彬</span><span class="count">86次</span></div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">🥉</span><span class="name">那时年少</span><span class="count">58次</span></div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">4</span><span class="name">李华荣</span><span class="count">53次</span></div>
+<div class="dragon-mini" onclick="filterByMember('霄凡旅行小刘')"><span class="rank">5</span><span class="name">霄凡旅行小刘</span><span class="count">37次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://v.douyin.com/CXlEdMuBl4c/','_blank')"><div class="link-who">霄凡旅行小刘</div><div class="link-desc">心怡的产品日记：14块8到手5块2，中间的钱去哪了？</div><div class="link-url">https://v.douyin.com/CXlEdMuBl4c/</div></div>
+<div class="link-card" onclick="window.open('https://style.qiaomu.ai/','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">Style：AI风格迁移工具</div><div class="link-url">https://style.qiaomu.ai/</div></div>
+<div class="link-card" onclick="window.open('https://midlibrary.io/','_blank')"><div class="link-who">信华</div><div class="link-desc">Midlibrary：Midjourney风格库</div><div class="link-url">https://midlibrary.io/</div></div>
+<div class="link-card" onclick="window.open('https://www.xiaoer.com','_blank')"><div class="link-who">小耳｜李娟｜AI Builder</div><div class="link-desc">小耳 Ask：AI浏览器助手</div><div class="link-url">https://www.xiaoer.com</div></div>
+<div class="link-card" onclick="window.open('https://ai.699pic.com/superai/stai','_blank')"><div class="link-who">烈日松饼</div><div class="link-desc">699pic AI：超能AI设计</div><div class="link-url">https://ai.699pic.com/superai/stai</div></div>
+<div class="link-card" onclick="window.open('https://x.com/AdrianPunk115/status/2056655062865490112','_blank')"><div class="link-who">千九</div><div class="link-desc">GPT Image 2邪修！6个玄学玩法提示词</div><div class="link-url">https://x.com/AdrianPunk115/status/2056655062865490112</div></div>
+<div class="link-card" onclick="window.open('https://x.com/AdrianPunk115/status/2056655062865490112','_blank')"><div class="link-who">M</div><div class="link-desc">GPT Image 2生成中文字体图</div><div class="link-url">https://x.com/AdrianPunk115/status/2056655062865490112</div></div>
+<div class="link-card" onclick="window.open('https://qun-riba-20260430.vercel.app/search.html','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">日报馆（新版）</div><div class="link-url">https://qun-riba-20260430.vercel.app/search.html</div></div>
+<div class="link-card" onclick="window.open('https://waytoagi.feishu.cn/wiki/Kzu6w2koFi07bZkAD2ec9KBgnN7','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">WaytoAGI飞书知识库</div><div class="link-url">https://waytoagi.feishu.cn/wiki/Kzu6w2koFi07bZkAD2ec9KBgnN7</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月19日 · 周二 · 共862条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card" onclick="window.open('https://v.douyin.com/CXlEdMuBl4c/','_blank')"><div class="link-who">霄凡旅行小刘</div><div class="link-desc">心怡的产品日记：14块8到手5块2，中间的钱去哪了？</div><div class="link-url">https://v.douyin.com/CXlEdMuBl4c/</div></div>
+<div class="link-card" onclick="window.open('https://style.qiaomu.ai/','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">Style：AI风格迁移工具</div><div class="link-url">https://style.qiaomu.ai/</div></div>
+<div class="link-card" onclick="window.open('https://midlibrary.io/','_blank')"><div class="link-who">信华</div><div class="link-desc">Midlibrary：Midjourney风格库</div><div class="link-url">https://midlibrary.io/</div></div>
+<div class="link-card" onclick="window.open('https://www.xiaoer.com','_blank')"><div class="link-who">小耳｜李娟｜AI Builder</div><div class="link-desc">小耳 Ask：AI浏览器助手</div><div class="link-url">https://www.xiaoer.com</div></div>
+<div class="link-card" onclick="window.open('https://ai.699pic.com/superai/stai','_blank')"><div class="link-who">烈日松饼</div><div class="link-desc">699pic AI：超能AI设计</div><div class="link-url">https://ai.699pic.com/superai/stai</div></div>
+<div class="link-card" onclick="window.open('https://x.com/AdrianPunk115/status/2056655062865490112','_blank')"><div class="link-who">千九</div><div class="link-desc">GPT Image 2邪修！6个玄学玩法提示词</div><div class="link-url">https://x.com/AdrianPunk115/status/2056655062865490112</div></div>
+<div class="link-card" onclick="window.open('https://x.com/AdrianPunk115/status/2056655062865490112','_blank')"><div class="link-who">M</div><div class="link-desc">GPT Image 2生成中文字体图</div><div class="link-url">https://x.com/AdrianPunk115/status/2056655062865490112</div></div>
+<div class="link-card" onclick="window.open('https://qun-riba-20260430.vercel.app/search.html','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">日报馆（新版）</div><div class="link-url">https://qun-riba-20260430.vercel.app/search.html</div></div>
+<div class="link-card" onclick="window.open('https://waytoagi.feishu.cn/wiki/Kzu6w2koFi07bZkAD2ec9KBgnN7','_blank')"><div class="link-who">Simonlin</div><div class="link-desc">WaytoAGI飞书知识库</div><div class="link-url">https://waytoagi.feishu.cn/wiki/Kzu6w2koFi07bZkAD2ec9KBgnN7</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 上午9点：乔帮主夸群，全员飘了<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">夸</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simonlin在群里扔了一句：“我们群被乔帮主夸了[坏笑]”。群里瞬间炸锅，南舟说：“夸的我都飘了，简直是天选。”千九回：“要的就是夸奖。”</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">夸</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">虽然没人说清楚乔帮主具体夸了什么，但群里士气直接拉满。Simonlin顺势补了一句：“兄弟们再接再厉。”</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：被夸一句就能飘，这群人是多缺认可？</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 上午9点：千九分享GPT Image 2邪修玩法<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">图</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">千九在群里发了一个链接：“GPT image2 邪修！6个玄学玩法提示词开箱即用！”群里瞬间被“邪修”两个字吸引。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">图</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">有人问什么是邪修，千九解释说是一些不走寻常路的prompt技巧，比如用GPT Image 2做赛博算命、生成玄学符咒图。Simonlin说：“这个可以放进提示词库里。”</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI都已经被你们玩成玄学了，下一步是不是要请GPT跳大神？</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 下午1点：小耳Ask，把AI浏览器干废<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">Ask</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">小耳｜李娟｜AI Builder介绍了“小耳 Ask”。这个工具住在电脑里，按快捷键就能召唤，根据当前屏幕内容提问、划词解释，从网页到PDF到PPT无缝切换。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">Ask</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里有人评价：“这直接把AI浏览器干废了。”</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI浏览器刚火起来就被干废，这迭代速度比iPhone还快。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 下午4点：日报馆样式更新，全员围观<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">报</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simonlin在群里发了日报馆新链接：“日报馆的样式也更新了。”群友们点进去一看，排版更清爽，信息层级更清晰，还加了时间轴。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">报</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">小辣椒评价：“这个日报画面好清新。”那时年少问：“群主，这些资料是你自己摘出来的啊？”Simonlin回：“等等，逻辑有点问题，我得修复一下。”结果大家发现时间轴是反的，Simonlin说：“我刻意没改，不走寻常路。”</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：时间轴反了就说“不走寻常路”，这嘴硬的程度堪比苹果取消耳机孔。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 晚上9点：GPT Image 2生成中文字体，设计师慌了<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">字</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">M在群里分享了一个X帖子，有人用GPT Image 2生成了中文字体图，效果出奇的好。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">字</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">群里纷纷问怎么做到的。M说关键是prompt要写得够详细，要指定字体风格、笔画粗细、结构比例。Simonlin说：“这个可以放进提示词库里，以后做海报用得上。”</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI都能写中文字了，设计师的饭碗又少了一块。</div></div>
+
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最卷的人</div><div class="value">马其顿呼声（Simonlin） — 一天发了102条消息，更新了日报馆样式，还发了WaytoAGI知识库</div></div>
+<div class="summary-item"><div class="label">最佳气氛组</div><div class="value">马佳彬 — 86条消息，凌晨1点还在聊沉香和藏香，白天到处搭话</div></div>
+<div class="summary-item"><div class="label">最佳助攻</div><div class="value">千九 — 分享了GPT Image 2邪修玩法，引发群友热议</div></div>
+<div class="summary-item"><div class="label">最佳预言家</div><div class="value">小耳｜李娟｜AI Builder — “把AI浏览器干废”这句话，预言了AI工具的快速迭代</div></div>
+</div></div>
+<div class="footer">共862条记录 · 2026-5-19完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=4"></script>
+</body>
+</html>

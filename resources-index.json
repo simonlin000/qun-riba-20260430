@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-21T01:48:07.302Z",
+  "generatedAt": "2026-05-21T05:43:22.627Z",
   "stats": {
-    "resourceCount": 239
+    "resourceCount": 256
   },
   "resources": [
     {
@@ -1916,6 +1916,142 @@
       "title": "Google Flow视频生成，Veo 3.1模型",
       "url": "https://labs.google/fx/zh/tools/flow",
       "reportHref": "2026-05-18.html"
+    },
+    {
+      "id": "resource-0240",
+      "date": "2026-05-19",
+      "who": "霄凡旅行小刘",
+      "title": "心怡的产品日记：14块8到手5块2，中间的钱去哪了？",
+      "url": "https://v.douyin.com/CXlEdMuBl4c/",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0241",
+      "date": "2026-05-19",
+      "who": "向阳乔木",
+      "title": "Style：AI风格迁移工具",
+      "url": "https://style.qiaomu.ai/",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0242",
+      "date": "2026-05-19",
+      "who": "信华",
+      "title": "Midlibrary：Midjourney风格库",
+      "url": "https://midlibrary.io/",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0243",
+      "date": "2026-05-19",
+      "who": "小耳｜李娟｜AI Builder",
+      "title": "小耳 Ask：AI浏览器助手",
+      "url": "https://www.xiaoer.com",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0244",
+      "date": "2026-05-19",
+      "who": "烈日松饼",
+      "title": "699pic AI：超能AI设计",
+      "url": "https://ai.699pic.com/superai/stai",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0245",
+      "date": "2026-05-19",
+      "who": "千九",
+      "title": "GPT Image 2邪修！6个玄学玩法提示词",
+      "url": "https://x.com/AdrianPunk115/status/2056655062865490112",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0246",
+      "date": "2026-05-19",
+      "who": "M",
+      "title": "GPT Image 2生成中文字体图",
+      "url": "https://x.com/AdrianPunk115/status/2056655062865490112",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0247",
+      "date": "2026-05-19",
+      "who": "Simonlin",
+      "title": "日报馆（新版）",
+      "url": "https://qun-riba-20260430.vercel.app/search.html",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0248",
+      "date": "2026-05-19",
+      "who": "Simonlin",
+      "title": "WaytoAGI飞书知识库",
+      "url": "https://waytoagi.feishu.cn/wiki/Kzu6w2koFi07bZkAD2ec9KBgnN7",
+      "reportHref": "2026-05-19.html"
+    },
+    {
+      "id": "resource-0249",
+      "date": "2026-05-20",
+      "who": "程玉",
+      "title": "Anthropic 2028 AI Leadership 研究",
+      "url": "资源线索",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0250",
+      "date": "2026-05-20",
+      "who": "程玉",
+      "title": "html-anything 项目（GitHub）",
+      "url": "GitHub项目",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0251",
+      "date": "2026-05-20",
+      "who": "向阳乔木",
+      "title": "qiaomu-userscripts 油猴脚本（GitHub）",
+      "url": "GitHub项目",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0252",
+      "date": "2026-05-20",
+      "who": "李华荣",
+      "title": "Gemini 3.5 案例合集+教程：几十个场景测评，含 GPT Image 2 横向对比",
+      "url": "教程资源",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0253",
+      "date": "2026-05-20",
+      "who": "Simonlin",
+      "title": "DeepSeek 组建 Harness 团队对标 Claude Code（甲子光年报道）",
+      "url": "行业报道",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0254",
+      "date": "2026-05-20",
+      "who": "卡尔的AI沃茨",
+      "title": "微信读书 Skill 升级文章《踢飞信息焦虑找回阅读快乐》",
+      "url": "文章资源",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0255",
+      "date": "2026-05-20",
+      "who": "Simonlin",
+      "title": "数字生命卡兹克文字分享",
+      "url": "群内分享",
+      "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0256",
+      "date": "2026-05-20",
+      "who": "霄凡旅行小刘",
+      "title": "抖音 AI 视频《骗你的，其实520那天我没去白宫》",
+      "url": "视频资源",
+      "reportHref": "2026-05-20.html"
     }
   ]
 }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月20日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=6">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月20日 · 周三</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('李华荣')"><div class="bubble-who">Gemini 3.5 vs GPT 5.5</div><div class="bubble-text">李华荣团队测评几十个场景，Gemini在长图、PPT场景优势明显，但群友仍惦记GPT体验。</div><span class="event-tag">模型测评</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><div class="bubble-who">DeepSeek对标Claude Code</div><div class="bubble-text">Simonlin分享甲子光年报道，DeepSeek组建Harness团队，国产AI编程助手开始正面硬刚。</div><span class="event-tag">AI编程</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('向阳乔木')"><div class="bubble-who">乔木开源油猴脚本</div><div class="bubble-text">向阳乔木开源qiaomu-userscripts，群友直呼内容批量生产神脚本。</div><span class="event-tag">开源工具</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('瑞塔Rita')"><div class="bubble-who">Claude企业推广困境</div><div class="bubble-text">瑞塔Rita推Claude.ai给老板试用，结果贵和VPN海外成了硬伤。</div><span class="event-tag">企业落地</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('数字阿启')"><div class="bubble-who">AI机器人社交账号</div><div class="bubble-text">数字阿启发现多个几乎模仿真人的AI机器人账号，AI社交渗透感直接拉满。</div><span class="event-tag">AI社交</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥇</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">116次</span></div>
+<div class="dragon-mini" onclick="filterByMember('那时年少')"><span class="rank">🥈</span><span class="name">那时年少</span><span class="count">71次</span></div>
+<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">🥉</span><span class="name">千九</span><span class="count">71次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">4</span><span class="name">马佳彬</span><span class="count">64次</span></div>
+<div class="dragon-mini" onclick="filterByMember('๑🌱๑')"><span class="rank">5</span><span class="name">๑🌱๑</span><span class="count">61次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card"><div class="link-who">程玉</div><div class="link-desc">Anthropic 2028 AI Leadership 研究</div><div class="link-url">资源线索</div></div>
+<div class="link-card"><div class="link-who">程玉</div><div class="link-desc">html-anything 项目（GitHub）</div><div class="link-url">GitHub项目</div></div>
+<div class="link-card"><div class="link-who">向阳乔木</div><div class="link-desc">qiaomu-userscripts 油猴脚本（GitHub）</div><div class="link-url">GitHub项目</div></div>
+<div class="link-card"><div class="link-who">李华荣</div><div class="link-desc">Gemini 3.5 案例合集+教程：几十个场景测评，含 GPT Image 2 横向对比</div><div class="link-url">教程资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">DeepSeek 组建 Harness 团队对标 Claude Code（甲子光年报道）</div><div class="link-url">行业报道</div></div>
+<div class="link-card"><div class="link-who">卡尔的AI沃茨</div><div class="link-desc">微信读书 Skill 升级文章《踢飞信息焦虑找回阅读快乐》</div><div class="link-url">文章资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">数字生命卡兹克文字分享</div><div class="link-url">群内分享</div></div>
+<div class="link-card"><div class="link-who">霄凡旅行小刘</div><div class="link-desc">抖音 AI 视频《骗你的，其实520那天我没去白宫》</div><div class="link-url">视频资源</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月20日 · 周三 · 共1237条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card"><div class="link-who">程玉</div><div class="link-desc">Anthropic 2028 AI Leadership 研究</div><div class="link-url">资源线索</div></div>
+<div class="link-card"><div class="link-who">程玉</div><div class="link-desc">html-anything 项目（GitHub）</div><div class="link-url">GitHub项目</div></div>
+<div class="link-card"><div class="link-who">向阳乔木</div><div class="link-desc">qiaomu-userscripts 油猴脚本（GitHub）</div><div class="link-url">GitHub项目</div></div>
+<div class="link-card"><div class="link-who">李华荣</div><div class="link-desc">Gemini 3.5 案例合集+教程：几十个场景测评，含 GPT Image 2 横向对比</div><div class="link-url">教程资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">DeepSeek 组建 Harness 团队对标 Claude Code（甲子光年报道）</div><div class="link-url">行业报道</div></div>
+<div class="link-card"><div class="link-who">卡尔的AI沃茨</div><div class="link-desc">微信读书 Skill 升级文章《踢飞信息焦虑找回阅读快乐》</div><div class="link-url">文章资源</div></div>
+<div class="link-card"><div class="link-who">Simonlin</div><div class="link-desc">数字生命卡兹克文字分享</div><div class="link-url">群内分享</div></div>
+<div class="link-card"><div class="link-who">霄凡旅行小刘</div><div class="link-desc">抖音 AI 视频《骗你的，其实520那天我没去白宫》</div><div class="link-url">视频资源</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 Gemini 3.5 vs GPT 5.5 实测对比<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">G</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">李华荣团队测评几十个场景，Gemini 3.5 在长图、PPT等场景有绝对优势。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">G</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">但群友反馈用惯 GPT 5.5 后再用 Gemini 会有落差感，千九认为“不如 GPT 5.5，但快是真的快”。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Google的速度优势终于有人承认了，但“快”和“好”之间还差着一个用户体验。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 DeepSeek 组建 Harness 团队对标 Claude Code<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">DS</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simonlin分享甲子光年报道，DeepSeek正在组建 Harness 团队，目标直指 Claude Code。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">DS</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">国产 AI 编程助手开始正面硬刚国际选手，群里也开始讨论国内Agent工具接下来的竞争走向。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：DeepSeek这是要把“对标”两个字刻进DNA里，从模型到工具一个都不放过。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 向阳乔木开源 YouTube 油猴脚本<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">脚</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">向阳乔木分享刚开源的 qiaomu-userscripts，千九直呼“太强了”。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">脚</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">紫苏子ACG评价这是“内容批量生产神脚本”，一个油猴脚本直接把重复操作批量化。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：油猴脚本才是前端工程师的浪漫，一个脚本干翻一个产品团队。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 Claude.ai 企业推广困境<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">企</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">瑞塔Rita公司推 Claude.ai 给老板试用，但 Claude 贵、VPN海外网络门槛高，成了两个最硬的落地阻力。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">企</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">对比腾讯 Workbuddy、火山 Hiagent，群友讨论后发现模型能力之外，落地成本才是真正决定企业采购的因素。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：Claude什么都好，就是不适合中国企业的钱包和网络环境。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 数字阿启发现 AI 机器人社交账号<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">AI</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">数字阿启发现多个几乎模仿真人的 AI 机器人账号，有说说、有视频，要不是有机器人标识，普通人根本分不清。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">AI</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">AI 社交渗透已经开始，群里顺着这个话题聊到了内容平台、真人感和未来身份辨认问题。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：以后网恋先查对方是不是机器人，可能比查户口还重要。</div></div>
+<div class="event-section"><div class="event-title">🔭 边缘信号</div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Anthropic 发布 2028 AI Leadership 研究</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">html-anything 项目：HTML 生成新工具</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">微信读书 Skill 升级，支持更多阅读场景</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">抖音 AI 视频内容涌现，520 主题 AI 生成内容传播</div></div></div>
+</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最卷的人</div><div class="value">马其顿呼声（Simonlin） — 116条消息，全天持续输出</div></div>
+<div class="summary-item"><div class="label">最佳气氛组</div><div class="value">马佳彬 — “6啊”“李佬发话了”，精准捧场</div></div>
+<div class="summary-item"><div class="label">最佳助攻</div><div class="value">程玉 — 一个“强”字走天下，还分享了多个资源</div></div>
+<div class="summary-item"><div class="label">最佳预言家</div><div class="value">千九 — Gemini“快是真的快”一语道破天机</div></div>
+</div></div>
+<div class="footer">共1237条记录 · 2026-5-20完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=4"></script>
+</body>
+</html>
