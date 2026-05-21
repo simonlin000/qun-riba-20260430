@@ -1,6 +1,7 @@
 (function () {
   const state = { indexMeta: null, resourceIndex: null, decrypted: null, unlockedAt: null };
   const $ = (selector) => document.querySelector(selector);
+  const ASK_API_URL = window.location.protocol === 'file:' ? 'https://qun-riba-20260430.vercel.app/api/ask' : '/api/ask';
   const normalize = (value) => String(value || '').toLowerCase().replace(/\s+/g, '');
   const escapeHtml = (value) => String(value || '').replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
 
@@ -81,31 +82,31 @@
   }
 
   function searchMessages(query, day) {
-    const normalizedQuery = normalize(query);
-    if (!state.decrypted || !normalizedQuery) return [];
+    if (!state.decrypted || !normalize(query)) return [];
+    const tokens = tokenize(query);
     const results = [];
     for (const message of state.decrypted.messages || []) {
       if (day && message.date !== day) continue;
-      const haystack = normalize(`${message.date} ${message.time} ${message.who} ${message.text}`);
-      if (!haystack.includes(normalizedQuery)) continue;
-      results.push(message);
-      if (results.length >= 120) break;
+      const haystack = `${message.date} ${message.time} ${message.who} ${message.text}`;
+      const score = scoreText(tokens, haystack);
+      if (score <= 0 && !normalize(haystack).includes(normalize(query))) continue;
+      results.push({ ...message, type: 'message', score: score || 1 });
     }
-    return results;
+    return results.sort((a, b) => b.score - a.score).slice(0, 120);
   }
 
   function searchResources(query, day) {
-    const normalizedQuery = normalize(query);
-    if (!normalizedQuery) return [];
+    if (!normalize(query)) return [];
+    const tokens = tokenize(query);
     const results = [];
     for (const resource of state.resourceIndex?.resources || []) {
       if (day && resource.date !== day) continue;
-      const haystack = normalize(`${resource.date} ${resource.who} ${resource.title} ${resource.url}`);
-      if (!haystack.includes(normalizedQuery)) continue;
-      results.push({ ...resource, type: 'resource' });
-      if (results.length >= 80) break;
+      const haystack = `${resource.date} ${resource.who} ${resource.title} ${resource.url}`;
+      const score = scoreText(tokens, haystack, 2);
+      if (score <= 0 && !normalize(haystack).includes(normalize(query))) continue;
+      results.push({ ...resource, type: 'resource', score: score || 1 });
     }
-    return results;
+    return results.sort((a, b) => b.score - a.score).slice(0, 80);
   }
 
   function tokenize(value) {
@@ -229,7 +230,7 @@
     const resourceResults = searchResources(query, day);
     const results = [
       ...resourceResults,
-      ...searchMessages(query, day).map((message) => ({ ...message, type: 'message' }))
+      ...searchMessages(query, day)
     ].slice(0, 120);
     countEl.textContent = `找到 ${results.length} 条${results.length >= 120 ? '（最多显示 120 条）' : ''}`;
     if (!results.length) {
@@ -298,7 +299,7 @@
     if (button) button.disabled = true;
 
     try {
-      const response = await fetch('/api/ask', {
+      const response = await fetch(ASK_API_URL, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ question, contexts, activityStats })
