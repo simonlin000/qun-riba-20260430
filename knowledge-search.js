@@ -2,6 +2,10 @@
   const state = { indexMeta: null, resourceIndex: null, decrypted: null, unlockedAt: null };
   const $ = (selector) => document.querySelector(selector);
   const ASK_API_URL = window.location.protocol === 'file:' ? 'https://qun-riba-20260430.vercel.app/api/ask' : '/api/ask';
+  const RESOURCE_INDEX_URLS = [
+    'resources-index.json?v=' + Date.now(),
+    'https://raw.githubusercontent.com/simonlin000/qun-riba-20260430/main/resources-index.json?v=' + Date.now()
+  ];
   const normalize = (value) => String(value || '').toLowerCase().replace(/\s+/g, '');
   const escapeHtml = (value) => String(value || '').replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
 
@@ -39,12 +43,15 @@
   }
 
   async function loadResourceIndex() {
-    try {
-      const response = await fetch('resources-index.json?v=' + Date.now(), { cache: 'no-store' });
-      if (!response.ok) throw new Error('resource index not found');
-      state.resourceIndex = await response.json();
-    } catch (error) {
-      state.resourceIndex = { resources: [] };
+    for (const url of RESOURCE_INDEX_URLS) {
+      try {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error('resource index not found');
+        state.resourceIndex = await response.json();
+        return;
+      } catch (error) {
+        state.resourceIndex = { resources: [] };
+      }
     }
   }
 
@@ -198,6 +205,17 @@
       .map((item, index) => ({ ...item, id: index + 1 }));
   }
 
+  function buildQuestionForApi(question, contexts) {
+    const hasResources = contexts.some((item) => item.type === 'resource');
+    if (!hasResources) return question;
+    if (!/文章|链接|资料|资源|哪里|在哪|地址|url|是什么|有哪些|知识库/i.test(question)) return question;
+    return [
+      question,
+      '',
+      '回答要求：检索片段里如果包含资源标题或URL，说明知识库已经搜到了相关资源。请直接列出这些资源的标题、日期和URL；不要因为片段没有定义性文字就回答“资料里没找到”。'
+    ].join('\n');
+  }
+
   function buildActivityStats() {
     if (!state.decrypted) return [];
     const counts = new Map();
@@ -312,7 +330,7 @@
       const response = await fetch(ASK_API_URL, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ question, contexts, activityStats })
+        body: JSON.stringify({ question: buildQuestionForApi(question, contexts), contexts, activityStats })
       });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || `请求失败：${response.status}`);
