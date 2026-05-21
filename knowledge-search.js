@@ -84,6 +84,50 @@
     return results;
   }
 
+  function tokenize(value) {
+    return Array.from(new Set(String(value || '')
+      .toLowerCase()
+      .match(/[a-z0-9\u4e00-\u9fff]{2,}|[\u4e00-\u9fff]/g) || []))
+      .filter((token) => !['这个', '那个', '最近', '什么', '哪里', '如何', '一下', '文章', '知识库'].includes(token));
+  }
+
+  function retrieveForQuestion(question) {
+    if (!state.decrypted) return [];
+    const tokens = tokenize(question);
+    const scored = [];
+    for (const message of state.decrypted.messages || []) {
+      const haystack = normalize(`${message.date} ${message.time} ${message.who} ${message.text}`);
+      const score = tokens.reduce((sum, token) => sum + (haystack.includes(normalize(token)) ? 1 : 0), 0);
+      if (score <= 0) continue;
+      scored.push({ message, score });
+    }
+    return scored
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 12)
+      .map((item, index) => ({
+        id: index + 1,
+        date: item.message.date || '',
+        time: item.message.time || '',
+        who: item.message.who || '',
+        text: item.message.text || '',
+        reportHref: item.message.reportHref || `${item.message.date}.html`
+      }));
+  }
+
+  function buildActivityStats() {
+    if (!state.decrypted) return [];
+    const counts = new Map();
+    for (const message of state.decrypted.messages || []) {
+      const who = String(message.who || '').trim();
+      if (!who) continue;
+      counts.set(who, (counts.get(who) || 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 12)
+      .map(([who, count]) => ({ who, count }));
+  }
+
   function renderDayFilter() {
     const select = $('#dayFilter');
     if (!select || !state.decrypted) return;
@@ -125,10 +169,72 @@
     }).join('');
   }
 
+  function renderAskAnswer(payload) {
+    const answer = $('#askAnswer');
+    if (!answer) return;
+    const sources = payload.sources || [];
+    answer.classList.add('is-visible');
+    answer.innerHTML = `
+      <div>${escapeHtml(payload.answer || '资料里没找到。').replace(/\n/g, '<br>')}</div>
+      ${sources.length ? `<ol>${sources.map((source) => {
+        const label = `【${source.id}】${source.date || ''} ${source.time || ''} ${source.who || ''}`.trim();
+        return `<li>${source.reportHref ? `<a href="${escapeHtml(source.reportHref)}">${escapeHtml(label)}</a>` : escapeHtml(label)}</li>`;
+      }).join('')}</ol>` : ''}
+    `;
+  }
+
+  async function askKnowledgeBase() {
+    const questionEl = $('#knowledgeQuestion');
+    const status = $('#askStatus');
+    const button = $('#askKnowledge');
+    const answer = $('#askAnswer');
+    const question = questionEl?.value.trim();
+    if (!state.decrypted) {
+      if (status) status.textContent = '先输入今日口令解锁。';
+      return;
+    }
+    if (!question) {
+      if (status) status.textContent = '先输入一个具体问题。';
+      questionEl?.focus();
+      return;
+    }
+
+    const contexts = retrieveForQuestion(question);
+    const activityStats = buildActivityStats();
+    if (answer) {
+      answer.classList.add('is-visible');
+      answer.textContent = contexts.length ? '正在把命中片段交给 AI...' : '没有明显命中片段，AI 会基于活跃度统计和空证据判断。';
+    }
+    if (status) status.textContent = `已选出 ${contexts.length} 条证据片段。`;
+    if (button) button.disabled = true;
+
+    try {
+      const response = await fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ question, contexts, activityStats })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || `请求失败：${response.status}`);
+      renderAskAnswer(payload);
+      if (status) status.textContent = '回答完成。';
+    } catch (error) {
+      if (answer) {
+        answer.classList.add('is-visible');
+        answer.textContent = `问答接口失败：${error.message}`;
+      }
+      if (status) status.textContent = '后端暂时没接通。';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
   async function boot() {
     const form = $('#unlockForm');
     const password = $('#dailyPassword');
     const query = $('#knowledgeQuery');
+    const question = $('#knowledgeQuestion');
+    const askButton = $('#askKnowledge');
     const dayFilter = $('#dayFilter');
     const lockPanel = $('#lockPanel');
     const searchPanel = $('#searchPanel');
@@ -153,6 +259,8 @@
         lockPanel?.classList.add('is-unlocked');
         searchPanel?.classList.add('is-ready');
         query.disabled = false;
+        if (question) question.disabled = false;
+        if (askButton) askButton.disabled = false;
         renderDayFilter();
         query.focus();
         setStatus(`已解锁：${state.decrypted.stats.messageCount.toLocaleString('zh-CN')} 条消息，只在本机浏览器内解密。`, 'ok');
@@ -171,11 +279,17 @@
       lockPanel?.classList.remove('is-unlocked');
       searchPanel?.classList.remove('is-ready');
       query.disabled = true;
+      if (question) question.disabled = true;
+      if (askButton) askButton.disabled = true;
       setStatus('已清除本次解锁状态。', 'hint');
       renderResults();
     });
     query?.addEventListener('input', renderResults);
     dayFilter?.addEventListener('change', renderResults);
+    askButton?.addEventListener('click', askKnowledgeBase);
+    question?.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') askKnowledgeBase();
+    });
     renderResults();
   }
 
