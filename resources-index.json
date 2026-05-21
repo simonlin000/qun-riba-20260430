@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-21T05:43:22.627Z",
+  "generatedAt": "2026-05-21T07:25:01.211Z",
   "stats": {
-    "resourceCount": 256
+    "resourceCount": 266
   },
   "resources": [
     {
@@ -1994,7 +1994,7 @@
       "date": "2026-05-20",
       "who": "程玉",
       "title": "Anthropic 2028 AI Leadership 研究",
-      "url": "资源线索",
+      "url": "https://www.anthropic.com/research/2028-ai-leadership",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2002,7 +2002,7 @@
       "date": "2026-05-20",
       "who": "程玉",
       "title": "html-anything 项目（GitHub）",
-      "url": "GitHub项目",
+      "url": "https://github.com/nexu-io/html-anything/blob/main/README.zh-CN.md",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2010,7 +2010,7 @@
       "date": "2026-05-20",
       "who": "向阳乔木",
       "title": "qiaomu-userscripts 油猴脚本（GitHub）",
-      "url": "GitHub项目",
+      "url": "https://github.com/joeseesun/qiaomu-userscripts",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2018,7 +2018,7 @@
       "date": "2026-05-20",
       "who": "李华荣",
       "title": "Gemini 3.5 案例合集+教程：几十个场景测评，含 GPT Image 2 横向对比",
-      "url": "教程资源",
+      "url": "https://seedesign.feishu.cn/wiki/ZJKQwuOSPicL7EktJJkcypy7nid",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2026,7 +2026,7 @@
       "date": "2026-05-20",
       "who": "Simonlin",
       "title": "DeepSeek 组建 Harness 团队对标 Claude Code（甲子光年报道）",
-      "url": "行业报道",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5OTI0NTc3Mg==&mid=2247554219&idx=1&sn=dcd3b9d1c29e2f6bbfa49b4f96cc875a",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2034,7 +2034,7 @@
       "date": "2026-05-20",
       "who": "卡尔的AI沃茨",
       "title": "微信读书 Skill 升级文章《踢飞信息焦虑找回阅读快乐》",
-      "url": "文章资源",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247507153&idx=1&sn=1b5e804355bd86b824c0209820b9f0b3",
       "reportHref": "2026-05-20.html"
     },
     {
@@ -2050,8 +2050,88 @@
       "date": "2026-05-20",
       "who": "霄凡旅行小刘",
       "title": "抖音 AI 视频《骗你的，其实520那天我没去白宫》",
-      "url": "视频资源",
+      "url": "https://v.douyin.com/Hdho5fOib1M/",
       "reportHref": "2026-05-20.html"
+    },
+    {
+      "id": "resource-0257",
+      "date": "2026-05-21",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "CLI-Anything：GUI软件一键变原生CLI",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0258",
+      "date": "2026-05-21",
+      "who": "李华荣",
+      "title": "Oracle：Claude Code 与网页版 GPT 5.5 Pro 讨论方案",
+      "url": "https://github.com/steipete/oracle",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0259",
+      "date": "2026-05-21",
+      "who": "李华荣",
+      "title": "codex-image-bridge：用 Codex 能力桥接 Claude 生成图片",
+      "url": "https://github.com/xmasdong/codex-image-bridge",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0260",
+      "date": "2026-05-21",
+      "who": "Leo Feng 🍊",
+      "title": "AGENT橘的文字分享",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzkwMzY5NzU2Nw==&mid=2247489735&idx=1&sn=6634dc2adef26643accfa6d6153deb66",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0261",
+      "date": "2026-05-21",
+      "who": "千九",
+      "title": "数字生命卡兹克的文字分享",
+      "url": "https://mp.weixin.qq.com/s/TOlv8akMwwHM9u41U-P5eQ",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0262",
+      "date": "2026-05-21",
+      "who": "小耳｜李娟｜AI Builder",
+      "title": "网页撕拉技术开源说明",
+      "url": "https://x.com/xiaoerzhan/status/2057266029714370946",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0263",
+      "date": "2026-05-21",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "云舒：从提示词卡片到 Agent，一个 AI 产品经理的“游戏”之路",
+      "url": "https://www.xiaoyuzhoufm.com/episode/6a0dbcf5e1eb34a939c730b4",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0264",
+      "date": "2026-05-21",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "2026中国AI应用全景图谱报告（量子位智库）",
+      "url": "群内文件",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0265",
+      "date": "2026-05-21",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "飞书 AI 应用图谱/资料库",
+      "url": "https://jkhbjkhb.feishu.cn/wiki/W5D7wuDcbiPXDLkaRLQcAJpOn8f?view=vewf0LppY2",
+      "reportHref": "2026-05-21.html"
+    },
+    {
+      "id": "resource-0266",
+      "date": "2026-05-21",
+      "who": "数字阿启",
+      "title": "nima-tech：集众人之广博做的平台",
+      "url": "https://www.nima-tech.space/",
+      "reportHref": "2026-05-21.html"
     }
   ]
 }
