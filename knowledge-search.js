@@ -98,13 +98,15 @@
   function searchResources(query, day) {
     if (!normalize(query)) return [];
     const tokens = tokenize(query);
+    const subjects = subjectTokens(tokens);
     const results = [];
     for (const resource of state.resourceIndex?.resources || []) {
       if (day && resource.date !== day) continue;
       const haystack = `${resource.date} ${resource.who} ${resource.title} ${resource.url}`;
       const score = scoreText(tokens, haystack, 2);
-      if (score <= 0 && !normalize(haystack).includes(normalize(query))) continue;
-      results.push({ ...resource, type: 'resource', score: score || 1 });
+      const subjectScore = subjects.length ? scoreText(subjects, haystack, 4) : score;
+      if ((score <= 0 && !normalize(haystack).includes(normalize(query))) || (subjects.length && subjectScore <= 0)) continue;
+      results.push({ ...resource, type: 'resource', score: score + subjectScore || 1 });
     }
     return results.sort((a, b) => b.score - a.score).slice(0, 80);
   }
@@ -126,7 +128,12 @@
       }
     }
     return Array.from(new Set(tokens))
-      .filter((token) => !['这个', '那个', '最近', '什么', '哪里', '在哪', '如何', '一下', '的是', '的是', '的文', '在哪里'].includes(token));
+      .filter((token) => !['这个', '那个', '最近', '什么', '哪里', '在哪', '如何', '一下', '的是', '的文', '是什', '什么', '有什', '么文', '章是', '在哪里'].includes(token));
+  }
+
+  function subjectTokens(tokens) {
+    const generic = new Set(['文章', '链接', '资源', '地址', '教程', '工具', '知识库']);
+    return tokens.filter((token) => !generic.has(token) && !/^[\u4e00-\u9fff]{2}$/.test(token));
   }
 
   function scoreText(tokens, value, weight = 1) {
@@ -141,14 +148,17 @@
   function retrieveResourcesForQuestion(question, limit = 8) {
     const tokens = tokenize(question);
     if (!tokens.length) return [];
+    const subjects = subjectTokens(tokens);
+    const wantsResource = /文章|链接|资料|资源|哪里|在哪|地址|url/i.test(question);
     return (state.resourceIndex?.resources || [])
       .map((resource) => {
         const text = `${resource.date} ${resource.who} ${resource.title} ${resource.url}`;
-        const score = scoreText(tokens, text, 2)
-          + (/文章|链接|资料|资源|哪里|在哪|地址|url/i.test(question) ? 3 : 0);
-        return { resource, score };
+        const baseScore = scoreText(tokens, text, 2);
+        const subjectScore = subjects.length ? scoreText(subjects, text, 4) : baseScore;
+        const score = baseScore + subjectScore + (wantsResource && subjectScore > 0 ? 3 : 0);
+        return { resource, score, subjectScore };
       })
-      .filter((item) => item.score > 0)
+      .filter((item) => item.score > 0 && (!subjects.length || item.subjectScore > 0))
       .sort((a, b) => b.score - a.score)
       .slice(0, limit)
       .map((item) => ({
