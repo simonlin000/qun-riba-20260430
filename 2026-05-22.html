@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月22日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=6">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月22日 · 周五</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('马佳彬')"><div class="bubble-who">Marvis与AI泔水</div><div class="bubble-text">凌晨从腾讯 Marvis、Claude Code 流量文聊到 AI 泔水和新媒体封面，马佳彬直接开骂。</div><span class="event-tag">内容</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('Vinc')"><div class="bubble-who">Codex/Appshots 更新</div><div class="bubble-text">Vinc 分享 Codex Appshots 更新，群里继续讨论 Mac、窗口快照和 AI 编程体验。</div><span class="event-tag">Codex</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><div class="bubble-who">Hermes与AI工程</div><div class="bubble-text">风林要把 Codex 接入 hermes，Simon 分享 PRD Skill、AI 工程从零开始项目和 WaytoAGI 资料。</div><span class="event-tag">工程</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('程玉')"><div class="bubble-who">工具与资源爆发</div><div class="bubble-text">remove-ai-watermarks、sub2api、乔木快捷提示词、carboncode、Seedance Fast 等资源全天出现。</div><span class="event-tag">资源</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('Pan')"><div class="bubble-who">Pan总账号互助</div><div class="bubble-text">晚上 Pan 继续发 GPT/Grok/Gemini 账号福利，钢针Edu、夏日午茶等人在线完成登录。</div><span class="event-tag">互助</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥇</span><span class="name">马佳彬</span><span class="count">115次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">🥈</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">110次</span></div>
+<div class="dragon-mini" onclick="filterByMember('亿华工业地产  朱孟凯 13616607031')"><span class="rank">🥉</span><span class="name">亿华工业地产  朱孟凯 13616607031</span><span class="count">71次</span></div>
+<div class="dragon-mini" onclick="filterByMember('程玉')"><span class="rank">4</span><span class="name">程玉</span><span class="count">55次</span></div>
+<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">5</span><span class="name">千九</span><span class="count">55次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://v.douyin.com/5_EprUbFCJA/','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">腾讯操作系统级 AI 助手 Marvis 相关视频</div><div class="link-url">https://v.douyin.com/5_EprUbFCJA/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&amp;mid=2652378174&amp;idx=1&amp;sn=72bb773a932e7c5f56582e8c187e9bc5','_blank')"><div class="link-who">辛亥</div><div class="link-desc">用 Claude Code，你以为说了一个 Hello？不是，你发过去一本三国演义</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&amp;mid=2652378174&amp;idx=1&amp;sn=72bb773a932e7c5f56582e8c187e9bc5</div></div>
+<div class="link-card" onclick="window.open('https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&amp;wx=1','_blank')"><div class="link-who">Vinc</div><div class="link-desc">OpenAI Codex Appshots 更新介绍</div><div class="link-url">https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&amp;wx=1</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA','_blank')"><div class="link-who">瓦叔</div><div class="link-desc">8天，120美元，我和一个AI搭档做了个产品</div><div class="link-url">https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?scene=1&amp;__biz=MzIyNTE1NTAzOA==&amp;mid=2648669925&amp;idx=1&amp;sn=f26395bdea4c3202646e36d67f7e7617','_blank')"><div class="link-who">星淇</div><div class="link-desc">云舒的AI实践笔记</div><div class="link-url">https://mp.weixin.qq.com/s?scene=1&amp;__biz=MzIyNTE1NTAzOA==&amp;mid=2648669925&amp;idx=1&amp;sn=f26395bdea4c3202646e36d67f7e7617</div></div>
+<div class="link-card" onclick="window.open('https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">云舒 PRD Skill：prd-test-writer</div><div class="link-url">https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer</div></div>
+<div class="link-card" onclick="window.open('https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">WaytoAGI 资料库</div><div class="link-url">https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg</div></div>
+<div class="link-card" onclick="window.open('https://github.com/NousResearch/hermes-agent','_blank')"><div class="link-who">๑🌱๑</div><div class="link-desc">hermes-agent：NousResearch Hermes Agent</div><div class="link-url">https://github.com/NousResearch/hermes-agent</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA','_blank')"><div class="link-who">雨一直下</div><div class="link-desc">3.9元搞定Codex！国内也能畅用</div><div class="link-url">https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA</div></div>
+<div class="link-card" onclick="window.open('https://github.com/rohitg00/ai-engineering-from-scratch','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">AI Engineering From Scratch</div><div class="link-url">https://github.com/rohitg00/ai-engineering-from-scratch</div></div>
+<div class="link-card" onclick="window.open('https://github.com/wiltodelta/remove-ai-watermarks','_blank')"><div class="link-who">程玉</div><div class="link-desc">remove-ai-watermarks：移除 AI 图片水印工具</div><div class="link-url">https://github.com/wiltodelta/remove-ai-watermarks</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&amp;mid=2247533878&amp;idx=1&amp;sn=c8ecc5c7d91dda9355eda9c51c87f2b0','_blank')"><div class="link-who">十九</div><div class="link-desc">GLM-5.1 高速版来了</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&amp;mid=2247533878&amp;idx=1&amp;sn=c8ecc5c7d91dda9355eda9c51c87f2b0</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Wei-Shaw/sub2api','_blank')"><div class="link-who">对长亭晚</div><div class="link-desc">sub2api：把现成 AI 账号接成统一 API 入口</div><div class="link-url">https://github.com/Wei-Shaw/sub2api</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&amp;mid=2247484719&amp;idx=1&amp;sn=692ffe367084bc70364fd8420dc014d5','_blank')"><div class="link-who">李华荣</div><div class="link-desc">拆解 Agent Skill 核心逻辑，告别 skill 频繁翻车</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&amp;mid=2247484719&amp;idx=1&amp;sn=692ffe367084bc70364fd8420dc014d5</div></div>
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">乔木快捷提示词 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Yapie0/carboncode','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">carboncode</div><div class="link-url">https://github.com/Yapie0/carboncode</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&amp;mid=2247498888&amp;idx=1&amp;sn=a978271aaa16ae153edf868d88d20b44','_blank')"><div class="link-who">留给中国队的时间不多了</div><div class="link-desc">Seedance2.0 Fast 版更新</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&amp;mid=2247498888&amp;idx=1&amp;sn=a978271aaa16ae153edf868d88d20b44</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月22日 · 周五 · 共978条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card" onclick="window.open('https://v.douyin.com/5_EprUbFCJA/','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">腾讯操作系统级 AI 助手 Marvis 相关视频</div><div class="link-url">https://v.douyin.com/5_EprUbFCJA/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&amp;mid=2652378174&amp;idx=1&amp;sn=72bb773a932e7c5f56582e8c187e9bc5','_blank')"><div class="link-who">辛亥</div><div class="link-desc">用 Claude Code，你以为说了一个 Hello？不是，你发过去一本三国演义</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&amp;mid=2652378174&amp;idx=1&amp;sn=72bb773a932e7c5f56582e8c187e9bc5</div></div>
+<div class="link-card" onclick="window.open('https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&amp;wx=1','_blank')"><div class="link-who">Vinc</div><div class="link-desc">OpenAI Codex Appshots 更新介绍</div><div class="link-url">https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&amp;wx=1</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA','_blank')"><div class="link-who">瓦叔</div><div class="link-desc">8天，120美元，我和一个AI搭档做了个产品</div><div class="link-url">https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?scene=1&amp;__biz=MzIyNTE1NTAzOA==&amp;mid=2648669925&amp;idx=1&amp;sn=f26395bdea4c3202646e36d67f7e7617','_blank')"><div class="link-who">星淇</div><div class="link-desc">云舒的AI实践笔记</div><div class="link-url">https://mp.weixin.qq.com/s?scene=1&amp;__biz=MzIyNTE1NTAzOA==&amp;mid=2648669925&amp;idx=1&amp;sn=f26395bdea4c3202646e36d67f7e7617</div></div>
+<div class="link-card" onclick="window.open('https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">云舒 PRD Skill：prd-test-writer</div><div class="link-url">https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer</div></div>
+<div class="link-card" onclick="window.open('https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">WaytoAGI 资料库</div><div class="link-url">https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg</div></div>
+<div class="link-card" onclick="window.open('https://github.com/NousResearch/hermes-agent','_blank')"><div class="link-who">๑🌱๑</div><div class="link-desc">hermes-agent：NousResearch Hermes Agent</div><div class="link-url">https://github.com/NousResearch/hermes-agent</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA','_blank')"><div class="link-who">雨一直下</div><div class="link-desc">3.9元搞定Codex！国内也能畅用</div><div class="link-url">https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA</div></div>
+<div class="link-card" onclick="window.open('https://github.com/rohitg00/ai-engineering-from-scratch','_blank')"><div class="link-who">马其顿呼声（Simonlin）</div><div class="link-desc">AI Engineering From Scratch</div><div class="link-url">https://github.com/rohitg00/ai-engineering-from-scratch</div></div>
+<div class="link-card" onclick="window.open('https://github.com/wiltodelta/remove-ai-watermarks','_blank')"><div class="link-who">程玉</div><div class="link-desc">remove-ai-watermarks：移除 AI 图片水印工具</div><div class="link-url">https://github.com/wiltodelta/remove-ai-watermarks</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&amp;mid=2247533878&amp;idx=1&amp;sn=c8ecc5c7d91dda9355eda9c51c87f2b0','_blank')"><div class="link-who">十九</div><div class="link-desc">GLM-5.1 高速版来了</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&amp;mid=2247533878&amp;idx=1&amp;sn=c8ecc5c7d91dda9355eda9c51c87f2b0</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Wei-Shaw/sub2api','_blank')"><div class="link-who">对长亭晚</div><div class="link-desc">sub2api：把现成 AI 账号接成统一 API 入口</div><div class="link-url">https://github.com/Wei-Shaw/sub2api</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&amp;mid=2247484719&amp;idx=1&amp;sn=692ffe367084bc70364fd8420dc014d5','_blank')"><div class="link-who">李华荣</div><div class="link-desc">拆解 Agent Skill 核心逻辑，告别 skill 频繁翻车</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&amp;mid=2247484719&amp;idx=1&amp;sn=692ffe367084bc70364fd8420dc014d5</div></div>
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">乔木快捷提示词 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej</div></div>
+<div class="link-card" onclick="window.open('https://github.com/Yapie0/carboncode','_blank')"><div class="link-who">数字阿启</div><div class="link-desc">carboncode</div><div class="link-url">https://github.com/Yapie0/carboncode</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&amp;mid=2247498888&amp;idx=1&amp;sn=a978271aaa16ae153edf868d88d20b44','_blank')"><div class="link-who">留给中国队的时间不多了</div><div class="link-desc">Seedance2.0 Fast 版更新</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&amp;mid=2247498888&amp;idx=1&amp;sn=a978271aaa16ae153edf868d88d20b44</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 Marvis上线与AI泔水大战，凌晨直接吵醒内容焦虑<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">泔</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">数字阿启凌晨抛出腾讯 AI 助手 Marvis，上来就问“马维斯谁用了？”并补充它像本地 Codex/Cowork 类助手。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">泔</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">辛亥转发 Claude Code 流量文后，马佳彬对 AI 生成泔水内容火力全开，群里顺势聊到封面、标题、阅读量和新媒体玩法变迁。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI泔水最离谱的地方不是难喝，是它真的有人排队喝。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 Codex Appshots更新，Mac一等公民话题再起<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">CDX</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Vinc 分享 Codex Appshots：双 Command 截屏送入 Codex，不只是 OCR，还能结合 Chrome 自动化补上下文。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">CDX</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚间夏日午茶问 Mac 是否必备，群友从“AI时代一等公民”聊到 Windows 路径报错、Codex 控制电脑体验和 Mac 托儿梗。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：以前买 Mac 是为了设计审美，现在买 Mac 是为了少跟路径和权限吵架。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 Hermes、PRD Skill和AI工程，工具链继续向工程化推进<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">工</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">风林提出安装 hermes-agent，并把 Codex 接入 Hermes 作为底层模型，群里继续把模型、代理和工具链往一起拧。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">工</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Simon 分享云舒的 PRD Skill、WaytoAGI 资料库和 AI Engineering From Scratch，上午主线从“用工具”切到“搭系统”。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：这群人的日常：别人收藏教程，他们想把教程变成 skill，再让 agent 替自己学教程。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 资源分享全天不断，从水印工具到统一API入口<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">链</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">程玉分享 remove-ai-watermarks，能移除可见水印和 SynthID 等不可见水印；对长亭晚带来 sub2api，把现成 AI 账号接成统一 API 入口。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">链</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">李华荣分享 Agent Skill 核心逻辑文章，向阳乔木发布快捷提示词 Chrome 插件，数字阿启抛出 carboncode，深夜还有 Seedance Fast 更新。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：资源密度已经不是“今天有几个链接”，而是“今天不建索引就会迷路”。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 Pan总账号互助继续，Codex入门靠验证码续命<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">号</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚上 Pan 发第20期 AI 会员账号福利，GPT Plus、Grok、Gemini、镜像站一应俱全，还持续帮群友接验证码。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">号</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">钢针Edu想用 Codex 做网站，夏日午茶登录 Antigravity，群里一边调账号一边感慨 Pan 总大气。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI时代的新手村 NPC：发账号、接验证码、顺手帮你跨过第一道门。</div></div>
+<div class="event-section"><div class="event-title">🔭 边缘信号</div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Codex Appshots 让“截图上下文 + 浏览器自动化”成为新的入口，桌面环境状态正在变成 Agent 输入。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Marvis、Cowork、Antigravity、Codex 被放在一起比较，群友已经默认多 Agent 客户端并存。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">sub2api、共享账号、镜像站反复出现，说明“把账号能力 API 化/共享化”仍是强需求。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">AI泔水争论背后，是创作者对“低质量内容获得流量”的长期焦虑。</div></div></div>
+</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最活跃的人</div><div class="value">马佳彬 — 115条消息，从AI泔水骂到Mac托儿，输出密度拉满</div></div>
+<div class="summary-item"><div class="label">最佳推进者</div><div class="value">马其顿呼声（Simonlin） — 110条消息，继续分享 PRD Skill、AI工程和资料库</div></div>
+<div class="summary-item"><div class="label">最佳资源官</div><div class="value">程玉 — 55条消息，贡献水印工具、Appshots理解和多个工程资源</div></div>
+<div class="summary-item"><div class="label">最佳后勤</div><div class="value">Pan — 继续发账号福利、接验证码，帮群友跨过 Codex/Antigravity 登录门槛</div></div>
+</div></div>
+<div class="footer">共978条记录 · 2026-5-22完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=4"></script>
+</body>
+</html>

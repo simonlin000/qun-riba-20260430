@@ -170,7 +170,108 @@ const report = {
   ]
 };
 
+const report22 = {
+  file: '2026-05-22.html',
+  titleDate: '5月22日',
+  fullDate: '2026年5月22日',
+  weekday: '周五',
+  count: '978',
+  sidebarEvents: [
+    ['Marvis与AI泔水', '凌晨从腾讯 Marvis、Claude Code 流量文聊到 AI 泔水和新媒体封面，马佳彬直接开骂。', '马佳彬', '内容'],
+    ['Codex/Appshots 更新', 'Vinc 分享 Codex Appshots 更新，群里继续讨论 Mac、窗口快照和 AI 编程体验。', 'Vinc', 'Codex'],
+    ['Hermes与AI工程', '风林要把 Codex 接入 hermes，Simon 分享 PRD Skill、AI 工程从零开始项目和 WaytoAGI 资料。', '马其顿呼声（Simonlin）', '工程'],
+    ['工具与资源爆发', 'remove-ai-watermarks、sub2api、乔木快捷提示词、carboncode、Seedance Fast 等资源全天出现。', '程玉', '资源'],
+    ['Pan总账号互助', '晚上 Pan 继续发 GPT/Grok/Gemini 账号福利，钢针Edu、夏日午茶等人在线完成登录。', 'Pan', '互助']
+  ],
+  dragons: [
+    ['🥇', '马佳彬', '115次'],
+    ['🥈', '马其顿呼声（Simonlin）', '110次'],
+    ['🥉', '亿华工业地产  朱孟凯 13616607031', '71次'],
+    ['4', '程玉', '55次'],
+    ['5', '千九', '55次']
+  ],
+  resources: [
+    ['数字阿启', '腾讯操作系统级 AI 助手 Marvis 相关视频', 'https://v.douyin.com/5_EprUbFCJA/'],
+    ['辛亥', '用 Claude Code，你以为说了一个 Hello？不是，你发过去一本三国演义', 'https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&mid=2652378174&idx=1&sn=72bb773a932e7c5f56582e8c187e9bc5'],
+    ['Vinc', 'OpenAI Codex Appshots 更新介绍', 'https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&wx=1'],
+    ['瓦叔', '8天，120美元，我和一个AI搭档做了个产品', 'https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA'],
+    ['星淇', '云舒的AI实践笔记', 'https://mp.weixin.qq.com/s?scene=1&__biz=MzIyNTE1NTAzOA==&mid=2648669925&idx=1&sn=f26395bdea4c3202646e36d67f7e7617'],
+    ['马其顿呼声（Simonlin）', '云舒 PRD Skill：prd-test-writer', 'https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer'],
+    ['马其顿呼声（Simonlin）', 'WaytoAGI 资料库', 'https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg'],
+    ['๑🌱๑', 'hermes-agent：NousResearch Hermes Agent', 'https://github.com/NousResearch/hermes-agent'],
+    ['雨一直下', '3.9元搞定Codex！国内也能畅用', 'https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA'],
+    ['马其顿呼声（Simonlin）', 'AI Engineering From Scratch', 'https://github.com/rohitg00/ai-engineering-from-scratch'],
+    ['程玉', 'remove-ai-watermarks：移除 AI 图片水印工具', 'https://github.com/wiltodelta/remove-ai-watermarks'],
+    ['十九', 'GLM-5.1 高速版来了', 'https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&mid=2247533878&idx=1&sn=c8ecc5c7d91dda9355eda9c51c87f2b0'],
+    ['对长亭晚', 'sub2api：把现成 AI 账号接成统一 API 入口', 'https://github.com/Wei-Shaw/sub2api'],
+    ['李华荣', '拆解 Agent Skill 核心逻辑，告别 skill 频繁翻车', 'https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&mid=2247484719&idx=1&sn=692ffe367084bc70364fd8420dc014d5'],
+    ['向阳乔木', '乔木快捷提示词 Chrome 插件', 'https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej'],
+    ['数字阿启', 'carboncode', 'https://github.com/Yapie0/carboncode'],
+    ['留给中国队的时间不多了', 'Seedance2.0 Fast 版更新', 'https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&mid=2247498888&idx=1&sn=a978271aaa16ae153edf868d88d20b44']
+  ],
+  events: [
+    {
+      title: 'Marvis上线与AI泔水大战，凌晨直接吵醒内容焦虑',
+      avatar: '泔',
+      lines: [
+        '数字阿启凌晨抛出腾讯 AI 助手 Marvis，上来就问“马维斯谁用了？”并补充它像本地 Codex/Cowork 类助手。',
+        '辛亥转发 Claude Code 流量文后，马佳彬对 AI 生成泔水内容火力全开，群里顺势聊到封面、标题、阅读量和新媒体玩法变迁。'
+      ],
+      comment: 'AI泔水最离谱的地方不是难喝，是它真的有人排队喝。'
+    },
+    {
+      title: 'Codex Appshots更新，Mac一等公民话题再起',
+      avatar: 'CDX',
+      lines: [
+        'Vinc 分享 Codex Appshots：双 Command 截屏送入 Codex，不只是 OCR，还能结合 Chrome 自动化补上下文。',
+        '晚间夏日午茶问 Mac 是否必备，群友从“AI时代一等公民”聊到 Windows 路径报错、Codex 控制电脑体验和 Mac 托儿梗。'
+      ],
+      comment: '以前买 Mac 是为了设计审美，现在买 Mac 是为了少跟路径和权限吵架。'
+    },
+    {
+      title: 'Hermes、PRD Skill和AI工程，工具链继续向工程化推进',
+      avatar: '工',
+      lines: [
+        '风林提出安装 hermes-agent，并把 Codex 接入 Hermes 作为底层模型，群里继续把模型、代理和工具链往一起拧。',
+        'Simon 分享云舒的 PRD Skill、WaytoAGI 资料库和 AI Engineering From Scratch，上午主线从“用工具”切到“搭系统”。'
+      ],
+      comment: '这群人的日常：别人收藏教程，他们想把教程变成 skill，再让 agent 替自己学教程。'
+    },
+    {
+      title: '资源分享全天不断，从水印工具到统一API入口',
+      avatar: '链',
+      lines: [
+        '程玉分享 remove-ai-watermarks，能移除可见水印和 SynthID 等不可见水印；对长亭晚带来 sub2api，把现成 AI 账号接成统一 API 入口。',
+        '李华荣分享 Agent Skill 核心逻辑文章，向阳乔木发布快捷提示词 Chrome 插件，数字阿启抛出 carboncode，深夜还有 Seedance Fast 更新。'
+      ],
+      comment: '资源密度已经不是“今天有几个链接”，而是“今天不建索引就会迷路”。'
+    },
+    {
+      title: 'Pan总账号互助继续，Codex入门靠验证码续命',
+      avatar: '号',
+      lines: [
+        '晚上 Pan 发第20期 AI 会员账号福利，GPT Plus、Grok、Gemini、镜像站一应俱全，还持续帮群友接验证码。',
+        '钢针Edu想用 Codex 做网站，夏日午茶登录 Antigravity，群里一边调账号一边感慨 Pan 总大气。'
+      ],
+      comment: 'AI时代的新手村 NPC：发账号、接验证码、顺手帮你跨过第一道门。'
+    }
+  ],
+  edgeSignals: [
+    'Codex Appshots 让“截图上下文 + 浏览器自动化”成为新的入口，桌面环境状态正在变成 Agent 输入。',
+    'Marvis、Cowork、Antigravity、Codex 被放在一起比较，群友已经默认多 Agent 客户端并存。',
+    'sub2api、共享账号、镜像站反复出现，说明“把账号能力 API 化/共享化”仍是强需求。',
+    'AI泔水争论背后，是创作者对“低质量内容获得流量”的长期焦虑。'
+  ],
+  summary: [
+    ['最活跃的人', '马佳彬 — 115条消息，从AI泔水骂到Mac托儿，输出密度拉满'],
+    ['最佳推进者', '马其顿呼声（Simonlin） — 110条消息，继续分享 PRD Skill、AI工程和资料库'],
+    ['最佳资源官', '程玉 — 55条消息，贡献水印工具、Appshots理解和多个工程资源'],
+    ['最佳后勤', 'Pan — 继续发账号福利、接验证码，帮群友跨过 Codex/Antigravity 登录门槛']
+  ]
+};
+
 function renderReport(item) {
+  const footerDate = item.file.replace(/^(\d{4})-(\d{2})-(\d{2})\.html$/, (_, year, month, day) => `${year}-${Number(month)}-${Number(day)}`);
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -205,7 +306,7 @@ ${item.resources.map(linkCard).join('\n')}
 ${item.events.map(eventSection).join('\n')}
 ${edgeSection(item)}
 ${summarySection(item)}
-<div class="footer">共${esc(item.count)}条记录 · 2026-5-21完 · 🐉</div>
+<div class="footer">共${esc(item.count)}条记录 · ${esc(footerDate)}完 · 🐉</div>
 </div>
 </div>
 <script src="daily-enhance.js?v=4"></script>
@@ -237,7 +338,11 @@ function indexCard(item, newest = false) {
     </a>`;
 }
 
-writeFileSync(join(repoRoot, report.file), renderReport(report));
+const reports = [report, report22];
+const latestReport = report22;
+for (const item of reports) {
+  writeFileSync(join(repoRoot, item.file), renderReport(item));
+}
 
 let html20 = readFileSync(join(repoRoot, '2026-05-20.html'), 'utf8');
 const replacements20 = [
@@ -254,18 +359,28 @@ writeFileSync(join(repoRoot, '2026-05-20.html'), html20);
 
 let index = readFileSync(join(repoRoot, 'index.html'), 'utf8');
 index = index
-  .replace('<span class="num">25</span>\n      <span class="label">期日报</span>', '<span class="num">26</span>\n      <span class="label">期日报</span>')
-  .replace('<span class="num">5月20日</span>\n      <span class="label">最新一期</span>', '<span class="num">5月21日</span>\n      <span class="label">最新一期</span>')
+  .replace(/<span class="num">(?:25|26)<\/span>\n      <span class="label">期日报<\/span>/, '<span class="num">27</span>\n      <span class="label">期日报</span>')
+  .replace(/<span class="num">5月(?:20|21)日<\/span>\n      <span class="label">最新一期<\/span>/, '<span class="num">5月22日</span>\n      <span class="label">最新一期</span>')
+  .replace('href="2026-05-20.html">查看最新日报', 'href="2026-05-22.html">查看最新日报')
+  .replace(/共\d+期日报 · 持续更新中/, '共27期日报 · 持续更新中')
   .replace('<a href="2026-05-20.html" class="report-card newest">', '<a href="2026-05-20.html" class="report-card">')
+  .replace('<a href="2026-05-21.html" class="report-card newest">', '<a href="2026-05-21.html" class="report-card">')
   .replace(/\n\s*<span class="newest-badge">最新<\/span>\n\s*<span class="card-weekday">周三<\/span>/, '\n          <span class="card-weekday">周三</span>');
+index = index.replace(/\n\s*<span class="newest-badge">最新<\/span>\n\s*<span class="card-weekday">周四<\/span>/, '\n          <span class="card-weekday">周四</span>');
 
-const reportCardPattern = new RegExp(`    <!-- ${report.titleDate} -->\\n    <a href="${report.file}" class="report-card newest">[\\s\\S]*?\\n    <\\/a>`);
-if (reportCardPattern.test(index)) {
-  index = index.replace(reportCardPattern, indexCard(report, true));
-} else if (!index.includes(`href="${report.file}"`)) {
-  index = index.replace('    <!-- 5月20日 -->', `${indexCard(report, true)}\n    <!-- 5月20日 -->`);
+function upsertIndexCard(item, newest = false) {
+  const pattern = new RegExp(`    <!-- ${item.titleDate} -->\\n    <a href="${item.file}" class="report-card(?: newest)?">[\\s\\S]*?\\n    <\\/a>`);
+  if (pattern.test(index)) {
+    index = index.replace(pattern, indexCard(item, newest));
+    return;
+  }
+  const nextDate = item.file === '2026-05-22.html' ? '5月21日' : '5月20日';
+  index = index.replace(`    <!-- ${nextDate} -->`, `${indexCard(item, newest)}\n    <!-- ${nextDate} -->`);
 }
+
+upsertIndexCard(report, false);
+upsertIndexCard(latestReport, true);
 
 writeFileSync(join(repoRoot, 'index.html'), index);
 
-console.log('Updated 2026-05-21.html, 2026-05-20.html resource links, and index.html');
+console.log('Updated 2026-05-22.html, 2026-05-21.html, 2026-05-20.html resource links, and index.html');

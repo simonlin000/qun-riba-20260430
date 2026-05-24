@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-22T01:58:10.574Z",
+  "generatedAt": "2026-05-24T07:01:22.314Z",
   "stats": {
-    "resourceCount": 488,
-    "reportResourceCount": 269,
-    "chatResourceCount": 219
+    "resourceCount": 511,
+    "reportResourceCount": 286,
+    "chatResourceCount": 225
   },
   "resources": [
     {
@@ -2430,6 +2430,159 @@
     },
     {
       "id": "resource-0270",
+      "date": "2026-05-22",
+      "who": "数字阿启",
+      "title": "腾讯操作系统级 AI 助手 Marvis 相关视频",
+      "url": "https://v.douyin.com/5_EprUbFCJA/",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0271",
+      "date": "2026-05-22",
+      "who": "辛亥",
+      "title": "用 Claude Code，你以为说了一个 Hello？不是，你发过去一本三国演义",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NzI0Mjg0MA==&mid=2652378174&idx=1&sn=72bb773a932e7c5f56582e8c187e9bc5",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0272",
+      "date": "2026-05-22",
+      "who": "Vinc",
+      "title": "OpenAI Codex Appshots 更新介绍",
+      "url": "https://mapp.api.weibo.cn/fx/2b42c1706bdb137fc97dd1d5ae3de7a0.html&wx=1",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0273",
+      "date": "2026-05-22",
+      "who": "瓦叔",
+      "title": "8天，120美元，我和一个AI搭档做了个产品",
+      "url": "https://mp.weixin.qq.com/s/1rgRa5KSgIPXBytbJLmksA",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0274",
+      "date": "2026-05-22",
+      "who": "星淇",
+      "title": "云舒的AI实践笔记",
+      "url": "https://mp.weixin.qq.com/s?scene=1&__biz=MzIyNTE1NTAzOA==&mid=2648669925&idx=1&sn=f26395bdea4c3202646e36d67f7e7617",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0275",
+      "date": "2026-05-22",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "云舒 PRD Skill：prd-test-writer",
+      "url": "https://github.com/yunshu0909/yunshu_skillshub/tree/master/prd-test-writer",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0276",
+      "date": "2026-05-22",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "WaytoAGI 资料库",
+      "url": "https://waytoagi.feishu.cn/wiki/OpxpwRsrYiaWs3kNUqbc2hhnngg",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0277",
+      "date": "2026-05-22",
+      "who": "๑🌱๑",
+      "title": "hermes-agent：NousResearch Hermes Agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0278",
+      "date": "2026-05-22",
+      "who": "雨一直下",
+      "title": "3.9元搞定Codex！国内也能畅用",
+      "url": "https://mp.weixin.qq.com/s/Apug3BJtiIxItslFkmEvnA",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0279",
+      "date": "2026-05-22",
+      "who": "马其顿呼声（Simonlin）",
+      "title": "AI Engineering From Scratch",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0280",
+      "date": "2026-05-22",
+      "who": "程玉",
+      "title": "remove-ai-watermarks：移除 AI 图片水印工具",
+      "url": "https://github.com/wiltodelta/remove-ai-watermarks",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0281",
+      "date": "2026-05-22",
+      "who": "十九",
+      "title": "GLM-5.1 高速版来了",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUxNjg4NDEzNA==&mid=2247533878&idx=1&sn=c8ecc5c7d91dda9355eda9c51c87f2b0",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0282",
+      "date": "2026-05-22",
+      "who": "对长亭晚",
+      "title": "sub2api：把现成 AI 账号接成统一 API 入口",
+      "url": "https://github.com/Wei-Shaw/sub2api",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0283",
+      "date": "2026-05-22",
+      "who": "李华荣",
+      "title": "拆解 Agent Skill 核心逻辑，告别 skill 频繁翻车",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzk4ODQ3MTU0Nw==&mid=2247484719&idx=1&sn=692ffe367084bc70364fd8420dc014d5",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0284",
+      "date": "2026-05-22",
+      "who": "向阳乔木",
+      "title": "乔木快捷提示词 Chrome 插件",
+      "url": "https://chromewebstore.google.com/detail/%E4%B9%94%E6%9C%A8%E5%BF%AB%E6%8D%B7%E6%8F%90%E7%A4%BA%E8%AF%8D/ndfmbdiaclladmoeifbhlkacllmfhjej",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0285",
+      "date": "2026-05-22",
+      "who": "数字阿启",
+      "title": "carboncode",
+      "url": "https://github.com/Yapie0/carboncode",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0286",
+      "date": "2026-05-22",
+      "who": "留给中国队的时间不多了",
+      "title": "Seedance2.0 Fast 版更新",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzE5ODI2NDM3Mw==&mid=2247498888&idx=1&sn=a978271aaa16ae153edf868d88d20b44",
+      "reportHref": "2026-05-22.html",
+      "source": "report"
+    },
+    {
+      "id": "resource-0287",
       "date": "2026-04-20",
       "time": "05:12",
       "who": "李华荣",
@@ -2439,7 +2592,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0271",
+      "id": "resource-0288",
       "date": "2026-04-20",
       "time": "10:18",
       "who": "马其顿呼声（Simonlin）",
@@ -2449,7 +2602,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0272",
+      "id": "resource-0289",
       "date": "2026-04-20",
       "time": "10:18",
       "who": "马其顿呼声（Simonlin）",
@@ -2459,7 +2612,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0273",
+      "id": "resource-0290",
       "date": "2026-04-20",
       "time": "14:09",
       "who": "凡有语",
@@ -2469,7 +2622,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0274",
+      "id": "resource-0291",
       "date": "2026-04-20",
       "time": "14:54",
       "who": "奕成",
@@ -2479,7 +2632,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0275",
+      "id": "resource-0292",
       "date": "2026-04-20",
       "time": "15:41",
       "who": "李华荣",
@@ -2489,7 +2642,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0276",
+      "id": "resource-0293",
       "date": "2026-04-20",
       "time": "16:42",
       "who": "李华荣",
@@ -2499,7 +2652,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0277",
+      "id": "resource-0294",
       "date": "2026-04-20",
       "time": "16:44",
       "who": "程玉",
@@ -2509,7 +2662,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0278",
+      "id": "resource-0295",
       "date": "2026-04-20",
       "time": "16:56",
       "who": "程玉",
@@ -2519,7 +2672,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0279",
+      "id": "resource-0296",
       "date": "2026-04-20",
       "time": "18:00",
       "who": "千九",
@@ -2529,7 +2682,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0280",
+      "id": "resource-0297",
       "date": "2026-04-20",
       "time": "18:08",
       "who": "千九",
@@ -2539,7 +2692,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0281",
+      "id": "resource-0298",
       "date": "2026-04-20",
       "time": "21:28",
       "who": "奕成",
@@ -2549,7 +2702,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0282",
+      "id": "resource-0299",
       "date": "2026-04-21",
       "time": "07:16",
       "who": "吴熳Rosia",
@@ -2559,7 +2712,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0283",
+      "id": "resource-0300",
       "date": "2026-04-21",
       "time": "09:04",
       "who": "向阳乔木",
@@ -2569,7 +2722,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0284",
+      "id": "resource-0301",
       "date": "2026-04-21",
       "time": "09:04",
       "who": "向阳乔木",
@@ -2579,7 +2732,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0285",
+      "id": "resource-0302",
       "date": "2026-04-21",
       "time": "09:04",
       "who": "向阳乔木",
@@ -2589,7 +2742,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0286",
+      "id": "resource-0303",
       "date": "2026-04-21",
       "time": "10:02",
       "who": "程玉",
@@ -2599,7 +2752,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0287",
+      "id": "resource-0304",
       "date": "2026-04-21",
       "time": "10:52",
       "who": "马佳彬",
@@ -2609,7 +2762,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0288",
+      "id": "resource-0305",
       "date": "2026-04-21",
       "time": "13:25",
       "who": "程玉",
@@ -2619,7 +2772,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0289",
+      "id": "resource-0306",
       "date": "2026-04-22",
       "time": "08:41",
       "who": "马其顿呼声（Simonlin）",
@@ -2629,7 +2782,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0290",
+      "id": "resource-0307",
       "date": "2026-04-22",
       "time": "18:48",
       "who": "向阳乔木",
@@ -2639,7 +2792,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0291",
+      "id": "resource-0308",
       "date": "2026-04-22",
       "time": "18:48",
       "who": "向阳乔木",
@@ -2649,7 +2802,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0292",
+      "id": "resource-0309",
       "date": "2026-04-22",
       "time": "21:16",
       "who": "信华",
@@ -2659,7 +2812,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0293",
+      "id": "resource-0310",
       "date": "2026-04-22",
       "time": "21:16",
       "who": "信华",
@@ -2669,7 +2822,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0294",
+      "id": "resource-0311",
       "date": "2026-04-22",
       "time": "21:29",
       "who": "是旦不是蛋",
@@ -2679,7 +2832,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0295",
+      "id": "resource-0312",
       "date": "2026-04-22",
       "time": "21:43",
       "who": "Pan",
@@ -2689,7 +2842,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0296",
+      "id": "resource-0313",
       "date": "2026-04-22",
       "time": "23:05",
       "who": "宋志",
@@ -2699,7 +2852,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0297",
+      "id": "resource-0314",
       "date": "2026-04-24",
       "time": "10:49",
       "who": "悖（FOMO、FOBO，AI中）",
@@ -2709,7 +2862,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0298",
+      "id": "resource-0315",
       "date": "2026-04-24",
       "time": "15:29",
       "who": "Pan",
@@ -2719,7 +2872,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0299",
+      "id": "resource-0316",
       "date": "2026-04-24",
       "time": "15:29",
       "who": "Pan",
@@ -2729,7 +2882,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0300",
+      "id": "resource-0317",
       "date": "2026-04-24",
       "time": "20:53",
       "who": "吴熳Rosia",
@@ -2739,7 +2892,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0301",
+      "id": "resource-0318",
       "date": "2026-04-24",
       "time": "21:51",
       "who": "吴熳Rosia",
@@ -2749,7 +2902,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0302",
+      "id": "resource-0319",
       "date": "2026-04-24",
       "time": "22:36",
       "who": "钢针Edu",
@@ -2759,7 +2912,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0303",
+      "id": "resource-0320",
       "date": "2026-04-24",
       "time": "22:37",
       "who": "钢针Edu",
@@ -2769,7 +2922,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0304",
+      "id": "resource-0321",
       "date": "2026-04-25",
       "time": "03:19",
       "who": "大有Dario",
@@ -2779,7 +2932,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0305",
+      "id": "resource-0322",
       "date": "2026-04-25",
       "time": "16:17",
       "who": "程玉",
@@ -2789,7 +2942,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0306",
+      "id": "resource-0323",
       "date": "2026-04-25",
       "time": "17:08",
       "who": "程玉",
@@ -2799,7 +2952,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0307",
+      "id": "resource-0324",
       "date": "2026-04-25",
       "time": "17:08",
       "who": "程玉",
@@ -2809,7 +2962,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0308",
+      "id": "resource-0325",
       "date": "2026-04-25",
       "time": "17:08",
       "who": "程玉",
@@ -2819,7 +2972,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0309",
+      "id": "resource-0326",
       "date": "2026-04-25",
       "time": "17:12",
       "who": "程玉",
@@ -2829,7 +2982,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0310",
+      "id": "resource-0327",
       "date": "2026-04-25",
       "time": "17:29",
       "who": "悖（FOMO、FOBO，AI中）",
@@ -2839,7 +2992,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0311",
+      "id": "resource-0328",
       "date": "2026-04-25",
       "time": "21:04",
       "who": "留给中国队的时间不多了",
@@ -2849,7 +3002,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0312",
+      "id": "resource-0329",
       "date": "2026-04-27",
       "time": "09:21",
       "who": "留给中国队的时间不多了",
@@ -2859,7 +3012,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0313",
+      "id": "resource-0330",
       "date": "2026-04-27",
       "time": "10:19",
       "who": "马其顿呼声（Simonlin）",
@@ -2869,7 +3022,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0314",
+      "id": "resource-0331",
       "date": "2026-04-27",
       "time": "12:03",
       "who": "程玉",
@@ -2879,7 +3032,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0315",
+      "id": "resource-0332",
       "date": "2026-04-27",
       "time": "13:14",
       "who": "马佳彬",
@@ -2889,7 +3042,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0316",
+      "id": "resource-0333",
       "date": "2026-04-27",
       "time": "16:19",
       "who": "悖（FOMO、FOBO，AI中）",
@@ -2899,7 +3052,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0317",
+      "id": "resource-0334",
       "date": "2026-04-27",
       "time": "18:46",
       "who": "潘雷CFA JDT~ 创业&职业教练",
@@ -2909,7 +3062,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0318",
+      "id": "resource-0335",
       "date": "2026-04-27",
       "time": "20:09",
       "who": "凡有语",
@@ -2919,7 +3072,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0319",
+      "id": "resource-0336",
       "date": "2026-04-27",
       "time": "21:46",
       "who": "马其顿呼声（Simonlin）",
@@ -2929,7 +3082,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0320",
+      "id": "resource-0337",
       "date": "2026-04-27",
       "time": "22:11",
       "who": "马其顿呼声（Simonlin）",
@@ -2939,7 +3092,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0321",
+      "id": "resource-0338",
       "date": "2026-04-27",
       "time": "22:27",
       "who": "凡有语",
@@ -2949,7 +3102,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0322",
+      "id": "resource-0339",
       "date": "2026-04-27",
       "time": "22:50",
       "who": "烈日松饼",
@@ -2959,7 +3112,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0323",
+      "id": "resource-0340",
       "date": "2026-04-27",
       "time": "23:17",
       "who": "烈日松饼",
@@ -2969,7 +3122,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0324",
+      "id": "resource-0341",
       "date": "2026-04-27",
       "time": "23:28",
       "who": "奕成",
@@ -2979,7 +3132,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0325",
+      "id": "resource-0342",
       "date": "2026-04-28",
       "time": "01:41",
       "who": "李华荣",
@@ -2989,7 +3142,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0326",
+      "id": "resource-0343",
       "date": "2026-04-28",
       "time": "14:41",
       "who": "千九",
@@ -2999,7 +3152,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0327",
+      "id": "resource-0344",
       "date": "2026-04-28",
       "time": "16:26",
       "who": "吴熳Rosia",
@@ -3009,7 +3162,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0328",
+      "id": "resource-0345",
       "date": "2026-04-28",
       "time": "16:47",
       "who": "马其顿呼声（Simonlin）",
@@ -3019,7 +3172,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0329",
+      "id": "resource-0346",
       "date": "2026-04-28",
       "time": "16:58",
       "who": "程玉",
@@ -3029,7 +3182,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0330",
+      "id": "resource-0347",
       "date": "2026-04-28",
       "time": "17:28",
       "who": "紫苏子ACG",
@@ -3039,7 +3192,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0331",
+      "id": "resource-0348",
       "date": "2026-04-28",
       "time": "17:38",
       "who": "马其顿呼声（Simonlin）",
@@ -3049,7 +3202,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0332",
+      "id": "resource-0349",
       "date": "2026-04-28",
       "time": "19:22",
       "who": "吴熳Rosia",
@@ -3059,7 +3212,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0333",
+      "id": "resource-0350",
       "date": "2026-04-28",
       "time": "19:22",
       "who": "吴熳Rosia",
@@ -3069,7 +3222,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0334",
+      "id": "resource-0351",
       "date": "2026-04-28",
       "time": "19:41",
       "who": "吴熳Rosia",
@@ -3079,7 +3232,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0335",
+      "id": "resource-0352",
       "date": "2026-04-28",
       "time": "20:46",
       "who": "紫苏子ACG",
@@ -3089,7 +3242,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0336",
+      "id": "resource-0353",
       "date": "2026-04-28",
       "time": "21:50",
       "who": "马其顿呼声（Simonlin）",
@@ -3099,7 +3252,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0337",
+      "id": "resource-0354",
       "date": "2026-04-29",
       "time": "11:01",
       "who": "千九",
@@ -3109,7 +3262,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0338",
+      "id": "resource-0355",
       "date": "2026-04-29",
       "time": "13:30",
       "who": "凡有语",
@@ -3119,7 +3272,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0339",
+      "id": "resource-0356",
       "date": "2026-04-29",
       "time": "16:57",
       "who": "奕成",
@@ -3129,7 +3282,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0340",
+      "id": "resource-0357",
       "date": "2026-04-29",
       "time": "22:31",
       "who": "阿布",
@@ -3139,7 +3292,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0341",
+      "id": "resource-0358",
       "date": "2026-04-30",
       "time": "10:57",
       "who": "吴熳Rosia",
@@ -3149,7 +3302,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0342",
+      "id": "resource-0359",
       "date": "2026-04-30",
       "time": "13:15",
       "who": "紫苏子ACG",
@@ -3159,7 +3312,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0343",
+      "id": "resource-0360",
       "date": "2026-04-30",
       "time": "15:59",
       "who": "宋志",
@@ -3169,7 +3322,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0344",
+      "id": "resource-0361",
       "date": "2026-04-30",
       "time": "23:11",
       "who": "凡有语",
@@ -3179,7 +3332,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0345",
+      "id": "resource-0362",
       "date": "2026-05-01",
       "time": "11:31",
       "who": "๑🌱๑",
@@ -3189,7 +3342,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0346",
+      "id": "resource-0363",
       "date": "2026-05-01",
       "time": "13:12",
       "who": "凡有语",
@@ -3199,7 +3352,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0347",
+      "id": "resource-0364",
       "date": "2026-05-01",
       "time": "17:24",
       "who": "马其顿呼声（Simonlin）",
@@ -3209,7 +3362,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0348",
+      "id": "resource-0365",
       "date": "2026-05-01",
       "time": "17:24",
       "who": "马其顿呼声（Simonlin）",
@@ -3219,7 +3372,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0349",
+      "id": "resource-0366",
       "date": "2026-05-01",
       "time": "22:46",
       "who": "马佳彬",
@@ -3229,7 +3382,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0350",
+      "id": "resource-0367",
       "date": "2026-05-01",
       "time": "23:34",
       "who": "程玉",
@@ -3239,7 +3392,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0351",
+      "id": "resource-0368",
       "date": "2026-05-02",
       "time": "01:29",
       "who": "凡有语",
@@ -3249,7 +3402,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0352",
+      "id": "resource-0369",
       "date": "2026-05-02",
       "time": "11:53",
       "who": "紫苏子ACG",
@@ -3259,7 +3412,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0353",
+      "id": "resource-0370",
       "date": "2026-05-02",
       "time": "11:56",
       "who": "马其顿呼声（Simonlin）",
@@ -3269,7 +3422,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0354",
+      "id": "resource-0371",
       "date": "2026-05-02",
       "time": "12:04",
       "who": "吴熳Rosia",
@@ -3279,7 +3432,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0355",
+      "id": "resource-0372",
       "date": "2026-05-02",
       "time": "12:22",
       "who": "吴熳Rosia",
@@ -3289,7 +3442,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0356",
+      "id": "resource-0373",
       "date": "2026-05-02",
       "time": "18:26",
       "who": "李华荣",
@@ -3299,7 +3452,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0357",
+      "id": "resource-0374",
       "date": "2026-05-02",
       "time": "18:26",
       "who": "李华荣",
@@ -3309,7 +3462,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0358",
+      "id": "resource-0375",
       "date": "2026-05-02",
       "time": "19:49",
       "who": "阿布",
@@ -3319,7 +3472,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0359",
+      "id": "resource-0376",
       "date": "2026-05-02",
       "time": "22:18",
       "who": "Epoch.",
@@ -3329,7 +3482,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0360",
+      "id": "resource-0377",
       "date": "2026-05-04",
       "time": "22:05",
       "who": "向阳乔木",
@@ -3339,7 +3492,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0361",
+      "id": "resource-0378",
       "date": "2026-05-05",
       "time": "19:10",
       "who": "留给中国队的时间不多了",
@@ -3349,7 +3502,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0362",
+      "id": "resource-0379",
       "date": "2026-05-05",
       "time": "19:17",
       "who": "紫苏子ACG",
@@ -3359,7 +3512,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0363",
+      "id": "resource-0380",
       "date": "2026-05-05",
       "time": "19:17",
       "who": "紫苏子ACG",
@@ -3369,7 +3522,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0364",
+      "id": "resource-0381",
       "date": "2026-05-05",
       "time": "20:36",
       "who": "马其顿呼声（Simonlin）",
@@ -3379,7 +3532,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0365",
+      "id": "resource-0382",
       "date": "2026-05-06",
       "time": "14:26",
       "who": "钢针Edu",
@@ -3389,7 +3542,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0366",
+      "id": "resource-0383",
       "date": "2026-05-06",
       "time": "16:55",
       "who": "马其顿呼声（Simonlin）",
@@ -3399,7 +3552,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0367",
+      "id": "resource-0384",
       "date": "2026-05-07",
       "time": "08:53",
       "who": "吴熳Rosia",
@@ -3409,7 +3562,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0368",
+      "id": "resource-0385",
       "date": "2026-05-07",
       "time": "13:09",
       "who": "马其顿呼声（Simonlin）",
@@ -3419,7 +3572,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0369",
+      "id": "resource-0386",
       "date": "2026-05-08",
       "time": "01:08",
       "who": "马其顿呼声（Simonlin）",
@@ -3429,7 +3582,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0370",
+      "id": "resource-0387",
       "date": "2026-05-08",
       "time": "11:00",
       "who": "林义辉",
@@ -3439,7 +3592,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0371",
+      "id": "resource-0388",
       "date": "2026-05-08",
       "time": "12:11",
       "who": "Dark 玄真",
@@ -3449,7 +3602,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0372",
+      "id": "resource-0389",
       "date": "2026-05-08",
       "time": "13:35",
       "who": "奕成",
@@ -3459,7 +3612,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0373",
+      "id": "resource-0390",
       "date": "2026-05-08",
       "time": "16:42",
       "who": "千九",
@@ -3469,7 +3622,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0374",
+      "id": "resource-0391",
       "date": "2026-05-08",
       "time": "20:53",
       "who": "吴熳Rosia",
@@ -3479,7 +3632,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0375",
+      "id": "resource-0392",
       "date": "2026-05-08",
       "time": "22:20",
       "who": "留给中国队的时间不多了",
@@ -3489,7 +3642,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0376",
+      "id": "resource-0393",
       "date": "2026-05-09",
       "time": "01:31",
       "who": "马其顿呼声（Simonlin）",
@@ -3499,7 +3652,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0377",
+      "id": "resource-0394",
       "date": "2026-05-09",
       "time": "08:54",
       "who": "瓦叔",
@@ -3509,7 +3662,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0378",
+      "id": "resource-0395",
       "date": "2026-05-09",
       "time": "10:06",
       "who": "Stu(dy ing)",
@@ -3519,7 +3672,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0379",
+      "id": "resource-0396",
       "date": "2026-05-09",
       "time": "11:04",
       "who": "那时年少",
@@ -3529,7 +3682,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0380",
+      "id": "resource-0397",
       "date": "2026-05-09",
       "time": "12:28",
       "who": "纵逸",
@@ -3539,7 +3692,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0381",
+      "id": "resource-0398",
       "date": "2026-05-09",
       "time": "12:54",
       "who": "Stu(dy ing)",
@@ -3549,7 +3702,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0382",
+      "id": "resource-0399",
       "date": "2026-05-09",
       "time": "12:57",
       "who": "李华荣",
@@ -3559,7 +3712,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0383",
+      "id": "resource-0400",
       "date": "2026-05-09",
       "time": "13:27",
       "who": "马其顿呼声（Simonlin）",
@@ -3569,7 +3722,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0384",
+      "id": "resource-0401",
       "date": "2026-05-09",
       "time": "13:28",
       "who": "李华荣",
@@ -3579,7 +3732,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0385",
+      "id": "resource-0402",
       "date": "2026-05-09",
       "time": "14:53",
       "who": "是旦不是蛋",
@@ -3589,7 +3742,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0386",
+      "id": "resource-0403",
       "date": "2026-05-09",
       "time": "14:55",
       "who": "马其顿呼声（Simonlin）",
@@ -3599,7 +3752,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0387",
+      "id": "resource-0404",
       "date": "2026-05-09",
       "time": "15:27",
       "who": "程玉",
@@ -3609,7 +3762,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0388",
+      "id": "resource-0405",
       "date": "2026-05-09",
       "time": "16:14",
       "who": "计育韬（Vibing...）",
@@ -3619,7 +3772,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0389",
+      "id": "resource-0406",
       "date": "2026-05-09",
       "time": "16:33",
       "who": "马其顿呼声（Simonlin）",
@@ -3629,7 +3782,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0390",
+      "id": "resource-0407",
       "date": "2026-05-09",
       "time": "16:34",
       "who": "马其顿呼声（Simonlin）",
@@ -3639,7 +3792,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0391",
+      "id": "resource-0408",
       "date": "2026-05-09",
       "time": "16:51",
       "who": "程玉",
@@ -3649,7 +3802,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0392",
+      "id": "resource-0409",
       "date": "2026-05-09",
       "time": "17:18",
       "who": "程玉",
@@ -3659,7 +3812,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0393",
+      "id": "resource-0410",
       "date": "2026-05-09",
       "time": "19:22",
       "who": "Pan",
@@ -3669,7 +3822,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0394",
+      "id": "resource-0411",
       "date": "2026-05-09",
       "time": "19:22",
       "who": "Pan",
@@ -3679,7 +3832,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0395",
+      "id": "resource-0412",
       "date": "2026-05-09",
       "time": "20:16",
       "who": "Pan",
@@ -3689,7 +3842,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0396",
+      "id": "resource-0413",
       "date": "2026-05-09",
       "time": "21:43",
       "who": "林义辉",
@@ -3699,7 +3852,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0397",
+      "id": "resource-0414",
       "date": "2026-05-09",
       "time": "21:44",
       "who": "留给中国队的时间不多了",
@@ -3709,7 +3862,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0398",
+      "id": "resource-0415",
       "date": "2026-05-10",
       "time": "16:20",
       "who": "Lee",
@@ -3719,7 +3872,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0399",
+      "id": "resource-0416",
       "date": "2026-05-10",
       "time": "16:20",
       "who": "Lee",
@@ -3729,7 +3882,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0400",
+      "id": "resource-0417",
       "date": "2026-05-10",
       "time": "16:20",
       "who": "Lee",
@@ -3739,7 +3892,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0401",
+      "id": "resource-0418",
       "date": "2026-05-10",
       "time": "17:15",
       "who": "李华荣",
@@ -3749,7 +3902,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0402",
+      "id": "resource-0419",
       "date": "2026-05-13",
       "time": "11:29",
       "who": "千九",
@@ -3759,7 +3912,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0403",
+      "id": "resource-0420",
       "date": "2026-05-13",
       "time": "11:29",
       "who": "千九",
@@ -3769,7 +3922,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0404",
+      "id": "resource-0421",
       "date": "2026-05-13",
       "time": "17:36",
       "who": "钢针Edu",
@@ -3779,7 +3932,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0405",
+      "id": "resource-0422",
       "date": "2026-05-13",
       "time": "18:58",
       "who": "Pan",
@@ -3789,7 +3942,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0406",
+      "id": "resource-0423",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3799,7 +3952,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0407",
+      "id": "resource-0424",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3809,7 +3962,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0408",
+      "id": "resource-0425",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3819,7 +3972,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0409",
+      "id": "resource-0426",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3829,7 +3982,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0410",
+      "id": "resource-0427",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3839,7 +3992,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0411",
+      "id": "resource-0428",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3849,7 +4002,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0412",
+      "id": "resource-0429",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3859,7 +4012,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0413",
+      "id": "resource-0430",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3869,7 +4022,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0414",
+      "id": "resource-0431",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3879,7 +4032,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0415",
+      "id": "resource-0432",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3889,7 +4042,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0416",
+      "id": "resource-0433",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3899,7 +4052,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0417",
+      "id": "resource-0434",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3909,7 +4062,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0418",
+      "id": "resource-0435",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3919,7 +4072,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0419",
+      "id": "resource-0436",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3929,7 +4082,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0420",
+      "id": "resource-0437",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3939,7 +4092,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0421",
+      "id": "resource-0438",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3949,7 +4102,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0422",
+      "id": "resource-0439",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3959,7 +4112,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0423",
+      "id": "resource-0440",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3969,7 +4122,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0424",
+      "id": "resource-0441",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3979,7 +4132,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0425",
+      "id": "resource-0442",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3989,7 +4142,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0426",
+      "id": "resource-0443",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -3999,7 +4152,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0427",
+      "id": "resource-0444",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4009,7 +4162,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0428",
+      "id": "resource-0445",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4019,7 +4172,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0429",
+      "id": "resource-0446",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4029,7 +4182,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0430",
+      "id": "resource-0447",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4039,7 +4192,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0431",
+      "id": "resource-0448",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4049,7 +4202,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0432",
+      "id": "resource-0449",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4059,7 +4212,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0433",
+      "id": "resource-0450",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4069,7 +4222,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0434",
+      "id": "resource-0451",
       "date": "2026-05-14",
       "time": "10:18",
       "who": "吴熳Rosia",
@@ -4079,7 +4232,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0435",
+      "id": "resource-0452",
       "date": "2026-05-14",
       "time": "10:31",
       "who": "K",
@@ -4089,7 +4242,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0436",
+      "id": "resource-0453",
       "date": "2026-05-14",
       "time": "11:23",
       "who": "K",
@@ -4099,7 +4252,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0437",
+      "id": "resource-0454",
       "date": "2026-05-14",
       "time": "11:23",
       "who": "K",
@@ -4109,7 +4262,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0438",
+      "id": "resource-0455",
       "date": "2026-05-14",
       "time": "21:08",
       "who": "禾怡亲亲",
@@ -4119,7 +4272,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0439",
+      "id": "resource-0456",
       "date": "2026-05-16",
       "time": "10:24",
       "who": "马其顿呼声（Simonlin）",
@@ -4129,7 +4282,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0440",
+      "id": "resource-0457",
       "date": "2026-05-16",
       "time": "18:00",
       "who": "李华荣",
@@ -4139,7 +4292,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0441",
+      "id": "resource-0458",
       "date": "2026-05-16",
       "time": "20:08",
       "who": "李华荣",
@@ -4149,7 +4302,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0442",
+      "id": "resource-0459",
       "date": "2026-05-17",
       "time": "19:15",
       "who": "李华荣",
@@ -4159,7 +4312,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0443",
+      "id": "resource-0460",
       "date": "2026-05-18",
       "time": "00:14",
       "who": "数字阿启",
@@ -4169,7 +4322,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0444",
+      "id": "resource-0461",
       "date": "2026-05-18",
       "time": "12:13",
       "who": "向阳乔木",
@@ -4179,7 +4332,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0445",
+      "id": "resource-0462",
       "date": "2026-05-18",
       "time": "16:25",
       "who": "留给中国队的时间不多了",
@@ -4189,7 +4342,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0446",
+      "id": "resource-0463",
       "date": "2026-05-19",
       "time": "07:17",
       "who": "林义辉",
@@ -4199,7 +4352,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0447",
+      "id": "resource-0464",
       "date": "2026-05-19",
       "time": "08:38",
       "who": "银海",
@@ -4209,7 +4362,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0448",
+      "id": "resource-0465",
       "date": "2026-05-19",
       "time": "09:01",
       "who": "瓦叔",
@@ -4219,7 +4372,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0449",
+      "id": "resource-0466",
       "date": "2026-05-19",
       "time": "09:42",
       "who": "千九",
@@ -4229,7 +4382,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0450",
+      "id": "resource-0467",
       "date": "2026-05-19",
       "time": "10:11",
       "who": "向阳乔木",
@@ -4239,7 +4392,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0451",
+      "id": "resource-0468",
       "date": "2026-05-19",
       "time": "11:14",
       "who": "siuser小伟",
@@ -4249,7 +4402,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0452",
+      "id": "resource-0469",
       "date": "2026-05-19",
       "time": "13:22",
       "who": "小耳｜李娟｜AI Builder",
@@ -4259,7 +4412,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0453",
+      "id": "resource-0470",
       "date": "2026-05-19",
       "time": "16:11",
       "who": "马其顿呼声（Simonlin）",
@@ -4269,7 +4422,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0454",
+      "id": "resource-0471",
       "date": "2026-05-19",
       "time": "18:24",
       "who": "留给中国队的时间不多了",
@@ -4279,7 +4432,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0455",
+      "id": "resource-0472",
       "date": "2026-05-19",
       "time": "21:09",
       "who": "计育韬（Vibing...）",
@@ -4289,7 +4442,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0456",
+      "id": "resource-0473",
       "date": "2026-05-20",
       "time": "00:42",
       "who": "马其顿呼声（Simonlin）",
@@ -4299,7 +4452,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0457",
+      "id": "resource-0474",
       "date": "2026-05-20",
       "time": "01:41",
       "who": "数字阿启",
@@ -4309,7 +4462,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0458",
+      "id": "resource-0475",
       "date": "2026-05-20",
       "time": "01:44",
       "who": "数字阿启",
@@ -4319,7 +4472,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0459",
+      "id": "resource-0476",
       "date": "2026-05-20",
       "time": "07:40",
       "who": "瑞塔Rita",
@@ -4329,7 +4482,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0460",
+      "id": "resource-0477",
       "date": "2026-05-20",
       "time": "08:20",
       "who": "数字阿启",
@@ -4339,7 +4492,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0461",
+      "id": "resource-0478",
       "date": "2026-05-20",
       "time": "09:23",
       "who": "千九",
@@ -4349,7 +4502,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0462",
+      "id": "resource-0479",
       "date": "2026-05-20",
       "time": "10:08",
       "who": "小耳｜李娟｜AI Builder",
@@ -4359,7 +4512,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0463",
+      "id": "resource-0480",
       "date": "2026-05-20",
       "time": "11:22",
       "who": "马其顿呼声（Simonlin）",
@@ -4369,7 +4522,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0464",
+      "id": "resource-0481",
       "date": "2026-05-20",
       "time": "11:36",
       "who": "数字阿启",
@@ -4379,7 +4532,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0465",
+      "id": "resource-0482",
       "date": "2026-05-20",
       "time": "12:36",
       "who": "计育韬（Vibing...）",
@@ -4389,7 +4542,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0466",
+      "id": "resource-0483",
       "date": "2026-05-20",
       "time": "14:04",
       "who": "对长亭晚",
@@ -4399,7 +4552,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0467",
+      "id": "resource-0484",
       "date": "2026-05-20",
       "time": "14:15",
       "who": "是旦不是蛋",
@@ -4409,7 +4562,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0468",
+      "id": "resource-0485",
       "date": "2026-05-20",
       "time": "18:46",
       "who": "是旦不是蛋",
@@ -4419,7 +4572,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0469",
+      "id": "resource-0486",
       "date": "2026-05-20",
       "time": "19:08",
       "who": "紫苏子ACG",
@@ -4429,7 +4582,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0470",
+      "id": "resource-0487",
       "date": "2026-05-20",
       "time": "21:21",
       "who": "马其顿呼声（Simonlin）",
@@ -4439,7 +4592,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0471",
+      "id": "resource-0488",
       "date": "2026-05-21",
       "time": "06:20",
       "who": "李华荣",
@@ -4449,7 +4602,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0472",
+      "id": "resource-0489",
       "date": "2026-05-21",
       "time": "09:36",
       "who": "马其顿呼声（Simonlin）",
@@ -4459,7 +4612,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0473",
+      "id": "resource-0490",
       "date": "2026-05-21",
       "time": "09:47",
       "who": "me",
@@ -4469,7 +4622,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0474",
+      "id": "resource-0491",
       "date": "2026-05-21",
       "time": "16:14",
       "who": "霄凡旅行小刘",
@@ -4479,7 +4632,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0475",
+      "id": "resource-0492",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4489,7 +4642,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0476",
+      "id": "resource-0493",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4499,7 +4652,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0477",
+      "id": "resource-0494",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4509,7 +4662,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0478",
+      "id": "resource-0495",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4519,7 +4672,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0479",
+      "id": "resource-0496",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4529,7 +4682,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0480",
+      "id": "resource-0497",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4539,7 +4692,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0481",
+      "id": "resource-0498",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4549,7 +4702,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0482",
+      "id": "resource-0499",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "千九",
@@ -4559,7 +4712,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0483",
+      "id": "resource-0500",
       "date": "2026-05-21",
       "time": "16:15",
       "who": "悖（FOMO、FOBO，AI中）",
@@ -4569,7 +4722,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0484",
+      "id": "resource-0501",
       "date": "2026-05-21",
       "time": "16:37",
       "who": "李华荣",
@@ -4579,7 +4732,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0485",
+      "id": "resource-0502",
       "date": "2026-05-21",
       "time": "17:40",
       "who": "对长亭晚",
@@ -4589,7 +4742,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0486",
+      "id": "resource-0503",
       "date": "2026-05-21",
       "time": "18:11",
       "who": "Gu",
@@ -4599,7 +4752,7 @@
       "source": "chat"
     },
     {
-      "id": "resource-0487",
+      "id": "resource-0504",
       "date": "2026-05-21",
       "time": "22:36",
       "who": "烈日松饼",
@@ -4609,13 +4762,73 @@
       "source": "chat"
     },
     {
-      "id": "resource-0488",
+      "id": "resource-0505",
       "date": "2026-05-21",
       "time": "23:00",
       "who": "留给中国队的时间不多了",
       "title": "x.com 链接",
       "url": "https://x.com/xiaoxiaodong01/status/2057391950031122683",
       "reportHref": "2026-05-21.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0506",
+      "date": "2026-05-22",
+      "time": "08:15",
+      "who": "林义辉",
+      "title": "同天发布，千问新模型居然谷歌Gemini排名高",
+      "url": "https://www.xiaohongshu.com/discovery/item/6a0ed280000000000702ef57?secondshare=weixin&share_from_user_hidden=true&appuid=&apptime=1779407655&share_id=17fe4661ee2e445aa973e86f9a4560c4&xsec_source=h5_share&xsec_token=CBxU5c4HkZeI6MuAI8sN3rL2gRinUT1jDgZtP7ixsjRpI%3D",
+      "reportHref": "2026-05-22.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0507",
+      "date": "2026-05-22",
+      "time": "10:09",
+      "who": "程玉",
+      "title": "weibo.com 链接",
+      "url": "https://weibo.com/1909367514/QFGDreCYu",
+      "reportHref": "2026-05-22.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0508",
+      "date": "2026-05-22",
+      "time": "16:02",
+      "who": "是旦不是蛋",
+      "title": "震惊！AI美女让全网宅男沦陷，福利姬一夜被淘汰？（附提示词）",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MTg5NTU0MQ==&mid=2654155677&idx=1&sn=bbd24a1604cbe17aa4f9c17c3ddbf092&chksm=bcb3b78bb8db72d9a80ecd0d606646ae91e92236371cd8aeb9637fc4e6b4462e703fee43d25d&mpshare=1&scene=1&srcid=0522gA4woHE4NZgjpzpCwj5k&sharer_shareinfo=5ecfeebdb147d9a1ed70767972ebbd8a&sharer_shareinfo_first=5ecfeebdb147d9a1ed70767972ebbd8a#rd",
+      "reportHref": "2026-05-22.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0509",
+      "date": "2026-05-22",
+      "time": "20:00",
+      "who": "K",
+      "title": "科技特长生的家庭创客实验室",
+      "url": "https://www.xiaohongshu.com/discovery/item/6a0da3e20000000036030c4b?app_platform=android&ignoreEngage=true&app_version=9.30.0&share_from_user_hidden=true&xsec_source=app_share&type=normal&xsec_token=CBdJLybd7aoY7prX9GNshliJkhgKTKESqlRH-w9P7DN7I%3D&author_share=1&xhsshare=&shareRedId=OD01OTk6SkE2NzUyOTgwNjdHOTlHNUo5&apptime=1779451128&share_id=ed7d12ff369d430b99ca8c261e703b5f&share_channel=wechat",
+      "reportHref": "2026-05-22.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0510",
+      "date": "2026-05-22",
+      "time": "20:05",
+      "who": "Pan",
+      "title": "第 20 期AI 会员账号免费福利它又...又来了，enjoy 🎉 【官方】GPT Plus（image2 可以用） 账号：fredaonifer04076@outlook.de 密码：MoMoDa6666NB.0522 （需要验证码，找",
+      "url": "https://clauo1.585dg.com/list/#/home",
+      "reportHref": "2026-05-22.html",
+      "source": "chat"
+    },
+    {
+      "id": "resource-0511",
+      "date": "2026-05-22",
+      "time": "20:05",
+      "who": "Pan",
+      "title": "第 20 期AI 会员账号免费福利它又...又来了，enjoy 🎉 【官方】GPT Plus（image2 可以用） 账号：fredaonifer04076@outlook.de 密码：MoMoDa6666NB.0522 （需要验证码，找",
+      "url": "https://node6.chatshare.biz/login",
+      "reportHref": "2026-05-22.html",
       "source": "chat"
     }
   ]
