@@ -270,6 +270,104 @@ const report22 = {
   ]
 };
 
+const report23 = {
+  file: '2026-05-23.html',
+  titleDate: '5月23日',
+  fullDate: '2026年5月23日',
+  weekday: '周六',
+  count: '1235',
+  sidebarEvents: [
+    ['XPoster发布神器', '李华荣凌晨分享 Markdown 转 X 文章插件，Chrome版和GitHub源码都放出。', '李华荣', '发布'],
+    ['Codex与Mac体验大战', 'Codex、Claude 客户端更新频繁，群友继续争论 Mac 是否是 AI 时代一等公民。', '草莓', 'Codex'],
+    ['AI教育与广告焦虑', '草莓、程玉等聊 AI 时代教育、生成式搜索广告和“AI正引发降智”。', '草莓', '教育'],
+    ['图片与内容工具继续刷屏', 'Image2降噪、乔木插件、papr RSS、jm-style、吐司App等资源密集出现。', '千九', '资源'],
+    ['Skill不是越多越好', '李华荣晚间强调，真正有用的是结合自己业务工作流搭出来的 skill。', '李华荣', 'Skill']
+  ],
+  dragons: [
+    ['🥇', '千九', '130次'],
+    ['🥈', '早上不吃饭的孟凡', '102次'],
+    ['🥉', '马佳彬', '101次'],
+    ['4', '马其顿呼声（Simonlin）', '98次'],
+    ['5', '李华荣', '74次']
+  ],
+  resources: [
+    ['李华荣', 'XPoster：Markdown 转 X 文章 Chrome 插件', 'https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&hl=zh-CN'],
+    ['李华荣', 'XPoster GitHub 源码', 'https://github.com/nevertoday/xposter'],
+    ['李华荣', 'ljg-skills：李继刚分享/演示技能合集', 'https://github.com/lijigang/ljg-skills.git'],
+    ['李华荣', 'Claude Code 多 Agent 实现机制源码解读', 'https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&mid=2247557309&idx=1&sn=db872d9df4336797d2c364b5c4e4e880'],
+    ['对长亭晚', 'ChatGPT 正式上线广告主平台', 'https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647681988&idx=1&sn=2051287bbaf999b6c956e3069049d449'],
+    ['千九', 'Image2 越改越脏？降噪思路救回来', 'https://mp.weixin.qq.com/s/qDkqAuVGKmtM-okJAuexiQ'],
+    ['千九', '乔木快捷提示词 Chrome 插件', 'https://chromewebstore.google.com/detail/ndfmbdiaclladmoeifbhlkacllmfhjej?utm_source=item-share-cb'],
+    ['千九', '骡子：跑通海外垂直测评站/GEO服务', 'https://mp.weixin.qq.com/s/LmKe7FAAL67-z7ERA2xbTA'],
+    ['程玉', 'papr：轻量 RSS 阅读器，支持 AI 摘要', 'https://github.com/l0ng-ai/papr/tree/main'],
+    ['向阳乔木', 'jm-style：乔木风格工具/站点', 'https://jm-style.qiaomu.ai/'],
+    ['程玉', 'AI正引发第一波人类降智', 'https://mp.weixin.qq.com/s?__biz=MzI1NjUyOTUxNA==&mid=2247491176&idx=1&sn=ff360417880d6c95f54820fdd6a53a0d'],
+    ['紫苏子ACG', '腾讯，造了个史上最好玩的免费App', 'https://mp.weixin.qq.com/s/jhAwd5_kUubHZJEujiQsWg'],
+    ['紫苏子ACG', '腾讯吐司 App Android 版', 'https://sj.qq.com/appdetail/com.tencent.aiyyb?mid=7960'],
+    ['卡尔的AI沃茨', '100小时实测EVE的AI伴侣', 'https://mp.weixin.qq.com/s/gQA6E2NuLrFkokxjFBi-Yg'],
+    ['李华荣', '甲木未来派的文字分享', 'http://mp.weixin.qq.com/s?__biz=MzkxNjY0MzM1MA==&mid=2247492794&idx=1&sn=f490d57c12b349d869b22977ef0303bc']
+  ],
+  events: [
+    {
+      title: 'XPoster发布，Markdown转X文章成了新工具',
+      avatar: 'X',
+      lines: [
+        '凌晨李华荣分享 XPoster：Markdown 转 X 文章的 Chrome 插件，并把 GitHub 源码一起放出来。',
+        '这个工具把写作、排版和 X 长文发布串起来，群里的内容分发工具链又补了一块。'
+      ],
+      comment: '以前是写完文章再想怎么发，现在是还没写完，发布插件已经在旁边等着了。'
+    },
+    {
+      title: 'Codex/Claude天天更新，Mac一等公民再次开战',
+      avatar: 'Mac',
+      lines: [
+        '上午围绕 Codex、Claude 客户端、窗口快照和桌面 Agent 体验继续展开，Mac 与 Windows 的体验差异又被拉出来讨论。',
+        '草莓等人把“AI时代设备优先级”聊成了现实问题：不是谁更高级，而是谁少折腾、谁能更顺手地跑工具。'
+      ],
+      comment: '买电脑这件事，已经从看配置表变成看 Agent 会不会和系统打架。'
+    },
+    {
+      title: 'AI教育、广告和降智焦虑集中爆发',
+      avatar: '教',
+      lines: [
+        '对长亭晚分享 ChatGPT 正式上线广告主平台，群里顺势聊到生成式搜索、广告商业化和内容生态变化。',
+        '程玉转发“AI正引发第一波人类降智”，草莓等人围绕 AI 教育、学习方式和判断力继续讨论。'
+      ],
+      comment: 'AI从工具聊到教育和广告，说明它已经不是“能不能用”的问题，而是“用完人会变成什么样”的问题。'
+    },
+    {
+      title: '资源密度继续升高：Image2、RSS、GEO和吐司App',
+      avatar: '链',
+      lines: [
+        '千九分享 Image2 降噪文章、乔木快捷提示词插件和骡子 GEO 文章，程玉带来 papr RSS 阅读器和 AI 摘要工具。',
+        '紫苏子ACG分享腾讯吐司 App，卡尔的AI沃茨发 EVE AI伴侣实测，工具链接从生产力一路扩展到陪伴和娱乐。'
+      ],
+      comment: '这天的链接不是“收藏一下”，而是需要索引，不然第二天就找不到自己看过什么。'
+    },
+    {
+      title: 'Skill不是越多越好，工作流才是正道',
+      avatar: '技',
+      lines: [
+        '晚间李华荣提到 skill 不是越多越好，通用 skill 没想象中那么有用。',
+        '真正能提升效率的是围绕自己的业务工作流，拆出固定步骤、沉淀成稳定可复用的 skill。'
+      ],
+      comment: '装一堆 skill 不等于自动变强，能把自己的工作流说清楚，才是隐藏升级点。'
+    }
+  ],
+  edgeSignals: [
+    'XPoster 把 Markdown 到 X 长文发布做成浏览器插件，内容分发链条继续自动化。',
+    'Codex/Claude 高频更新和 Mac 体验讨论显示，桌面端 Agent 体验正在变成选设备的重要理由。',
+    'AI 搜索广告、生成式搜索和“AI 降智”讨论说明群友开始关注 AI 产品的商业化副作用。',
+    '李华荣的 skill 观点把“装更多 skill”拉回到“贴合业务工作流”的实用主义。'
+  ],
+  summary: [
+    ['最活跃的人', '千九 — 130条消息，围绕 Image2、插件和资源持续互动'],
+    ['最佳推进者', '李华荣 — 发布 XPoster、分享多 Agent 机制和 skill 方法论'],
+    ['最佳争议点', 'Mac 与 Codex — 从体验差异聊到 AI 时代设备优先级'],
+    ['最佳资源日', '5月23日 — 从 XPoster、papr 到吐司App，工具链接密度继续很高']
+  ]
+};
+
 function renderReport(item) {
   const footerDate = item.file.replace(/^(\d{4})-(\d{2})-(\d{2})\.html$/, (_, year, month, day) => `${year}-${Number(month)}-${Number(day)}`);
   return `<!DOCTYPE html>
@@ -338,8 +436,8 @@ function indexCard(item, newest = false) {
     </a>`;
 }
 
-const reports = [report, report22];
-const latestReport = report22;
+const reports = [report, report22, report23];
+const latestReport = report23;
 for (const item of reports) {
   writeFileSync(join(repoRoot, item.file), renderReport(item));
 }
@@ -359,14 +457,16 @@ writeFileSync(join(repoRoot, '2026-05-20.html'), html20);
 
 let index = readFileSync(join(repoRoot, 'index.html'), 'utf8');
 index = index
-  .replace(/<span class="num">(?:25|26)<\/span>\n      <span class="label">期日报<\/span>/, '<span class="num">27</span>\n      <span class="label">期日报</span>')
-  .replace(/<span class="num">5月(?:20|21)日<\/span>\n      <span class="label">最新一期<\/span>/, '<span class="num">5月22日</span>\n      <span class="label">最新一期</span>')
-  .replace('href="2026-05-20.html">查看最新日报', 'href="2026-05-22.html">查看最新日报')
-  .replace(/共\d+期日报 · 持续更新中/, '共27期日报 · 持续更新中')
+  .replace(/<span class="num">(?:25|26|27)<\/span>\n      <span class="label">期日报<\/span>/, '<span class="num">28</span>\n      <span class="label">期日报</span>')
+  .replace(/<span class="num">5月(?:20|21|22)日<\/span>\n      <span class="label">最新一期<\/span>/, '<span class="num">5月23日</span>\n      <span class="label">最新一期</span>')
+  .replace(/href="2026-05-(?:20|22)\.html">查看最新日报/, 'href="2026-05-23.html">查看最新日报')
+  .replace(/共\d+期日报 · 持续更新中/, '共28期日报 · 持续更新中')
   .replace('<a href="2026-05-20.html" class="report-card newest">', '<a href="2026-05-20.html" class="report-card">')
   .replace('<a href="2026-05-21.html" class="report-card newest">', '<a href="2026-05-21.html" class="report-card">')
+  .replace('<a href="2026-05-22.html" class="report-card newest">', '<a href="2026-05-22.html" class="report-card">')
   .replace(/\n\s*<span class="newest-badge">最新<\/span>\n\s*<span class="card-weekday">周三<\/span>/, '\n          <span class="card-weekday">周三</span>');
 index = index.replace(/\n\s*<span class="newest-badge">最新<\/span>\n\s*<span class="card-weekday">周四<\/span>/, '\n          <span class="card-weekday">周四</span>');
+index = index.replace(/\n\s*<span class="newest-badge">最新<\/span>\n\s*<span class="card-weekday">周五<\/span>/, '\n          <span class="card-weekday">周五</span>');
 
 function upsertIndexCard(item, newest = false) {
   const pattern = new RegExp(`    <!-- ${item.titleDate} -->\\n    <a href="${item.file}" class="report-card(?: newest)?">[\\s\\S]*?\\n    <\\/a>`);
@@ -374,13 +474,14 @@ function upsertIndexCard(item, newest = false) {
     index = index.replace(pattern, indexCard(item, newest));
     return;
   }
-  const nextDate = item.file === '2026-05-22.html' ? '5月21日' : '5月20日';
+  const nextDate = item.file === '2026-05-23.html' ? '5月22日' : item.file === '2026-05-22.html' ? '5月21日' : '5月20日';
   index = index.replace(`    <!-- ${nextDate} -->`, `${indexCard(item, newest)}\n    <!-- ${nextDate} -->`);
 }
 
 upsertIndexCard(report, false);
+upsertIndexCard(report22, false);
 upsertIndexCard(latestReport, true);
 
 writeFileSync(join(repoRoot, 'index.html'), index);
 
-console.log('Updated 2026-05-22.html, 2026-05-21.html, 2026-05-20.html resource links, and index.html');
+console.log('Updated 2026-05-23.html, 2026-05-22.html, 2026-05-21.html, 2026-05-20.html resource links, and index.html');

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>群日报 · 5月23日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f0ede8;color:#4a3f35;min-height:100vh}
+.layout{display:flex;max-width:1100px;margin:0 auto;min-height:100vh}
+.sidebar{width:240px;background:#fff;border-right:1px solid #e8e0d5;padding:24px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.sidebar-header{text-align:center;margin-bottom:20px}
+.sidebar-header h1{font-size:1.1rem;color:#c47a3a;margin-bottom:4px}
+.sidebar-header .date{font-size:0.8rem;color:#a08060}
+.sidebar-section{margin-bottom:20px}
+.sidebar-section-title{font-size:0.75rem;color:#b08060;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding-left:8px}
+.dragon-mini{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:0.85rem;transition:background 0.15s;color:#4a3f35;text-decoration:none}
+.dragon-mini:hover{background:#f5efe8}.dragon-mini.active{background:#fdf0e3;color:#c47a3a}
+.dragon-mini .rank{font-size:0.9rem}.dragon-mini .name{flex:1}.dragon-mini .count{font-size:0.75rem;color:#a08060}
+.chat-bubble-mini{background:#fdf6ec;border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:background 0.15s}
+.chat-bubble-mini:hover{background:#fbe8d0}
+.chat-bubble-mini .bubble-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.chat-bubble-mini .bubble-text{font-size:0.82rem;color:#5a4030;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.event-tag{display:inline-block;background:#f0e6d8;color:#8a6040;font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-top:6px}
+.main{flex:1;padding:32px 40px;overflow:hidden}
+.main-header{margin-bottom:32px}
+.main-header h1{font-size:1.8rem;color:#c47a3a;margin-bottom:6px}
+.main-header .subtitle{color:#a08060;font-size:0.9rem}
+.active-filter-banner{display:none;background:linear-gradient(135deg,#f8e8c8,#f0d4a0);border-radius:12px;padding:12px 20px;margin-bottom:24px;align-items:center;gap:10px}
+.active-filter-banner.show{display:flex}
+.active-filter-banner span{flex:1;font-size:0.9rem;color:#6a4020}
+.active-filter-banner .clear-btn{background:#c47a3a;color:white;border:none;border-radius:6px;padding:4px 12px;font-size:0.8rem;cursor:pointer}
+.event-section{background:#fff;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(180,120,60,0.06)}
+.event-title{font-size:1.05rem;color:#c47a3a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px dashed #f0dcc0;display:flex;align-items:center;gap:8px}
+.bubbles{display:flex;flex-direction:column;gap:12px}
+.bubble-row{display:flex;align-items:flex-start;gap:10px}
+.bubble-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0c98a,#e8a960);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:white;font-weight:bold;flex-shrink:0}
+.bubble-content{max-width:75%}
+.bubble-who{font-size:0.75rem;color:#a08060;margin-bottom:3px;padding-left:4px}
+.bubble-chat{display:inline-block;background:#f5efe8;border-radius:16px;border-top-left-radius:4px;padding:10px 14px;font-size:0.88rem;color:#4a3f35;line-height:1.6}
+.event-comment{margin-top:16px;padding:12px 16px;background:#fdf6ec;border-radius:12px;border-left:4px solid #e8a960;font-size:0.85rem;color:#8a6040;font-style:italic;line-height:1.6}
+.links-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.link-card{background:#fdf9f5;border-radius:12px;padding:14px;border:1px solid #f0e6d8;cursor:pointer;transition:all 0.15s;text-decoration:none;color:inherit}
+.link-card:hover{border-color:#e8c090;background:#fdf6ec}
+.link-card .link-who{font-size:0.78rem;color:#c47a3a;font-weight:bold;margin-bottom:4px}
+.link-card .link-desc{font-size:0.85rem;color:#5a4030;margin-bottom:4px}
+.link-card .link-url{font-size:0.72rem;color:#a08060;word-break:break-all}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary-item{background:#fdf6ec;border-radius:12px;padding:14px}
+.summary-item .label{font-size:0.78rem;color:#a08060;margin-bottom:4px}
+.summary-item .value{font-size:0.88rem;color:#5a3e2b;font-weight:bold}
+.footer{text-align:center;color:#b08060;font-size:0.8rem;margin-top:40px;padding-bottom:40px}
+.event-section.hidden{display:none}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #e8e0d5}.main{padding:20px}.summary-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="daily-enhance.css?v=6">
+</head>
+<body>
+<div class="layout">
+<div class="sidebar">
+<div class="sidebar-header"><h1>🐉 群日报</h1><div class="date">5月23日 · 周六</div></div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔥 快捷事件</div>
+<div class="chat-bubble-mini" onclick="filterByMember('李华荣')"><div class="bubble-who">XPoster发布神器</div><div class="bubble-text">李华荣凌晨分享 Markdown 转 X 文章插件，Chrome版和GitHub源码都放出。</div><span class="event-tag">发布</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('草莓')"><div class="bubble-who">Codex与Mac体验大战</div><div class="bubble-text">Codex、Claude 客户端更新频繁，群友继续争论 Mac 是否是 AI 时代一等公民。</div><span class="event-tag">Codex</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('草莓')"><div class="bubble-who">AI教育与广告焦虑</div><div class="bubble-text">草莓、程玉等聊 AI 时代教育、生成式搜索广告和“AI正引发降智”。</div><span class="event-tag">教育</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('千九')"><div class="bubble-who">图片与内容工具继续刷屏</div><div class="bubble-text">Image2降噪、乔木插件、papr RSS、jm-style、吐司App等资源密集出现。</div><span class="event-tag">资源</span></div>
+<div class="chat-bubble-mini" onclick="filterByMember('李华荣')"><div class="bubble-who">Skill不是越多越好</div><div class="bubble-text">李华荣晚间强调，真正有用的是结合自己业务工作流搭出来的 skill。</div><span class="event-tag">Skill</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🏆 龙王榜</div>
+<div class="dragon-mini" onclick="filterByMember('千九')"><span class="rank">🥇</span><span class="name">千九</span><span class="count">130次</span></div>
+<div class="dragon-mini" onclick="filterByMember('早上不吃饭的孟凡')"><span class="rank">🥈</span><span class="name">早上不吃饭的孟凡</span><span class="count">102次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马佳彬')"><span class="rank">🥉</span><span class="name">马佳彬</span><span class="count">101次</span></div>
+<div class="dragon-mini" onclick="filterByMember('马其顿呼声（Simonlin）')"><span class="rank">4</span><span class="name">马其顿呼声（Simonlin）</span><span class="count">98次</span></div>
+<div class="dragon-mini" onclick="filterByMember('李华荣')"><span class="rank">5</span><span class="name">李华荣</span><span class="count">74次</span></div>
+</div>
+<div class="sidebar-section"><div class="sidebar-section-title">🔗 资源分享</div>
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&amp;hl=zh-CN','_blank')"><div class="link-who">李华荣</div><div class="link-desc">XPoster：Markdown 转 X 文章 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&amp;hl=zh-CN</div></div>
+<div class="link-card" onclick="window.open('https://github.com/nevertoday/xposter','_blank')"><div class="link-who">李华荣</div><div class="link-desc">XPoster GitHub 源码</div><div class="link-url">https://github.com/nevertoday/xposter</div></div>
+<div class="link-card" onclick="window.open('https://github.com/lijigang/ljg-skills.git','_blank')"><div class="link-who">李华荣</div><div class="link-desc">ljg-skills：李继刚分享/演示技能合集</div><div class="link-url">https://github.com/lijigang/ljg-skills.git</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247557309&amp;idx=1&amp;sn=db872d9df4336797d2c364b5c4e4e880','_blank')"><div class="link-who">李华荣</div><div class="link-desc">Claude Code 多 Agent 实现机制源码解读</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247557309&amp;idx=1&amp;sn=db872d9df4336797d2c364b5c4e4e880</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647681988&amp;idx=1&amp;sn=2051287bbaf999b6c956e3069049d449','_blank')"><div class="link-who">对长亭晚</div><div class="link-desc">ChatGPT 正式上线广告主平台</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647681988&amp;idx=1&amp;sn=2051287bbaf999b6c956e3069049d449</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/qDkqAuVGKmtM-okJAuexiQ','_blank')"><div class="link-who">千九</div><div class="link-desc">Image2 越改越脏？降噪思路救回来</div><div class="link-url">https://mp.weixin.qq.com/s/qDkqAuVGKmtM-okJAuexiQ</div></div>
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/ndfmbdiaclladmoeifbhlkacllmfhjej?utm_source=item-share-cb','_blank')"><div class="link-who">千九</div><div class="link-desc">乔木快捷提示词 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/ndfmbdiaclladmoeifbhlkacllmfhjej?utm_source=item-share-cb</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/LmKe7FAAL67-z7ERA2xbTA','_blank')"><div class="link-who">千九</div><div class="link-desc">骡子：跑通海外垂直测评站/GEO服务</div><div class="link-url">https://mp.weixin.qq.com/s/LmKe7FAAL67-z7ERA2xbTA</div></div>
+<div class="link-card" onclick="window.open('https://github.com/l0ng-ai/papr/tree/main','_blank')"><div class="link-who">程玉</div><div class="link-desc">papr：轻量 RSS 阅读器，支持 AI 摘要</div><div class="link-url">https://github.com/l0ng-ai/papr/tree/main</div></div>
+<div class="link-card" onclick="window.open('https://jm-style.qiaomu.ai/','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">jm-style：乔木风格工具/站点</div><div class="link-url">https://jm-style.qiaomu.ai/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI1NjUyOTUxNA==&amp;mid=2247491176&amp;idx=1&amp;sn=ff360417880d6c95f54820fdd6a53a0d','_blank')"><div class="link-who">程玉</div><div class="link-desc">AI正引发第一波人类降智</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI1NjUyOTUxNA==&amp;mid=2247491176&amp;idx=1&amp;sn=ff360417880d6c95f54820fdd6a53a0d</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/jhAwd5_kUubHZJEujiQsWg','_blank')"><div class="link-who">紫苏子ACG</div><div class="link-desc">腾讯，造了个史上最好玩的免费App</div><div class="link-url">https://mp.weixin.qq.com/s/jhAwd5_kUubHZJEujiQsWg</div></div>
+<div class="link-card" onclick="window.open('https://sj.qq.com/appdetail/com.tencent.aiyyb?mid=7960','_blank')"><div class="link-who">紫苏子ACG</div><div class="link-desc">腾讯吐司 App Android 版</div><div class="link-url">https://sj.qq.com/appdetail/com.tencent.aiyyb?mid=7960</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/gQA6E2NuLrFkokxjFBi-Yg','_blank')"><div class="link-who">卡尔的AI沃茨</div><div class="link-desc">100小时实测EVE的AI伴侣</div><div class="link-url">https://mp.weixin.qq.com/s/gQA6E2NuLrFkokxjFBi-Yg</div></div>
+<div class="link-card" onclick="window.open('http://mp.weixin.qq.com/s?__biz=MzkxNjY0MzM1MA==&amp;mid=2247492794&amp;idx=1&amp;sn=f490d57c12b349d869b22977ef0303bc','_blank')"><div class="link-who">李华荣</div><div class="link-desc">甲木未来派的文字分享</div><div class="link-url">http://mp.weixin.qq.com/s?__biz=MzkxNjY0MzM1MA==&amp;mid=2247492794&amp;idx=1&amp;sn=f490d57c12b349d869b22977ef0303bc</div></div>
+</div>
+</div>
+<div class="main">
+<div class="main-header"><h1>📰 SimonlinのAI学术交流（兄弟姐妹）· 日报</h1><div class="subtitle">2026年5月23日 · 周六 · 共1235条记录</div></div>
+<div class="active-filter-banner" id="filterBanner"><span id="filterText">当前筛选：</span><button class="clear-btn" onclick="clearFilter()">清除筛选</button></div>
+<div class="event-section"><div class="event-title">🔗 资源分享</div><div class="links-grid">
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&amp;hl=zh-CN','_blank')"><div class="link-who">李华荣</div><div class="link-desc">XPoster：Markdown 转 X 文章 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&amp;hl=zh-CN</div></div>
+<div class="link-card" onclick="window.open('https://github.com/nevertoday/xposter','_blank')"><div class="link-who">李华荣</div><div class="link-desc">XPoster GitHub 源码</div><div class="link-url">https://github.com/nevertoday/xposter</div></div>
+<div class="link-card" onclick="window.open('https://github.com/lijigang/ljg-skills.git','_blank')"><div class="link-who">李华荣</div><div class="link-desc">ljg-skills：李继刚分享/演示技能合集</div><div class="link-url">https://github.com/lijigang/ljg-skills.git</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247557309&amp;idx=1&amp;sn=db872d9df4336797d2c364b5c4e4e880','_blank')"><div class="link-who">李华荣</div><div class="link-desc">Claude Code 多 Agent 实现机制源码解读</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247557309&amp;idx=1&amp;sn=db872d9df4336797d2c364b5c4e4e880</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647681988&amp;idx=1&amp;sn=2051287bbaf999b6c956e3069049d449','_blank')"><div class="link-who">对长亭晚</div><div class="link-desc">ChatGPT 正式上线广告主平台</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647681988&amp;idx=1&amp;sn=2051287bbaf999b6c956e3069049d449</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/qDkqAuVGKmtM-okJAuexiQ','_blank')"><div class="link-who">千九</div><div class="link-desc">Image2 越改越脏？降噪思路救回来</div><div class="link-url">https://mp.weixin.qq.com/s/qDkqAuVGKmtM-okJAuexiQ</div></div>
+<div class="link-card" onclick="window.open('https://chromewebstore.google.com/detail/ndfmbdiaclladmoeifbhlkacllmfhjej?utm_source=item-share-cb','_blank')"><div class="link-who">千九</div><div class="link-desc">乔木快捷提示词 Chrome 插件</div><div class="link-url">https://chromewebstore.google.com/detail/ndfmbdiaclladmoeifbhlkacllmfhjej?utm_source=item-share-cb</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/LmKe7FAAL67-z7ERA2xbTA','_blank')"><div class="link-who">千九</div><div class="link-desc">骡子：跑通海外垂直测评站/GEO服务</div><div class="link-url">https://mp.weixin.qq.com/s/LmKe7FAAL67-z7ERA2xbTA</div></div>
+<div class="link-card" onclick="window.open('https://github.com/l0ng-ai/papr/tree/main','_blank')"><div class="link-who">程玉</div><div class="link-desc">papr：轻量 RSS 阅读器，支持 AI 摘要</div><div class="link-url">https://github.com/l0ng-ai/papr/tree/main</div></div>
+<div class="link-card" onclick="window.open('https://jm-style.qiaomu.ai/','_blank')"><div class="link-who">向阳乔木</div><div class="link-desc">jm-style：乔木风格工具/站点</div><div class="link-url">https://jm-style.qiaomu.ai/</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzI1NjUyOTUxNA==&amp;mid=2247491176&amp;idx=1&amp;sn=ff360417880d6c95f54820fdd6a53a0d','_blank')"><div class="link-who">程玉</div><div class="link-desc">AI正引发第一波人类降智</div><div class="link-url">https://mp.weixin.qq.com/s?__biz=MzI1NjUyOTUxNA==&amp;mid=2247491176&amp;idx=1&amp;sn=ff360417880d6c95f54820fdd6a53a0d</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/jhAwd5_kUubHZJEujiQsWg','_blank')"><div class="link-who">紫苏子ACG</div><div class="link-desc">腾讯，造了个史上最好玩的免费App</div><div class="link-url">https://mp.weixin.qq.com/s/jhAwd5_kUubHZJEujiQsWg</div></div>
+<div class="link-card" onclick="window.open('https://sj.qq.com/appdetail/com.tencent.aiyyb?mid=7960','_blank')"><div class="link-who">紫苏子ACG</div><div class="link-desc">腾讯吐司 App Android 版</div><div class="link-url">https://sj.qq.com/appdetail/com.tencent.aiyyb?mid=7960</div></div>
+<div class="link-card" onclick="window.open('https://mp.weixin.qq.com/s/gQA6E2NuLrFkokxjFBi-Yg','_blank')"><div class="link-who">卡尔的AI沃茨</div><div class="link-desc">100小时实测EVE的AI伴侣</div><div class="link-url">https://mp.weixin.qq.com/s/gQA6E2NuLrFkokxjFBi-Yg</div></div>
+<div class="link-card" onclick="window.open('http://mp.weixin.qq.com/s?__biz=MzkxNjY0MzM1MA==&amp;mid=2247492794&amp;idx=1&amp;sn=f490d57c12b349d869b22977ef0303bc','_blank')"><div class="link-who">李华荣</div><div class="link-desc">甲木未来派的文字分享</div><div class="link-url">http://mp.weixin.qq.com/s?__biz=MzkxNjY0MzM1MA==&amp;mid=2247492794&amp;idx=1&amp;sn=f490d57c12b349d869b22977ef0303bc</div></div>
+</div></div>
+<div class="event-section" id="event-1"><div class="event-title">🔥 XPoster发布，Markdown转X文章成了新工具<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">X</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">凌晨李华荣分享 XPoster：Markdown 转 X 文章的 Chrome 插件，并把 GitHub 源码一起放出来。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">X</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">这个工具把写作、排版和 X 长文发布串起来，群里的内容分发工具链又补了一块。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：以前是写完文章再想怎么发，现在是还没写完，发布插件已经在旁边等着了。</div></div>
+<div class="event-section" id="event-2"><div class="event-title">🔥 Codex/Claude天天更新，Mac一等公民再次开战<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">Mac</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">上午围绕 Codex、Claude 客户端、窗口快照和桌面 Agent 体验继续展开，Mac 与 Windows 的体验差异又被拉出来讨论。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">Mac</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">草莓等人把“AI时代设备优先级”聊成了现实问题：不是谁更高级，而是谁少折腾、谁能更顺手地跑工具。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：买电脑这件事，已经从看配置表变成看 Agent 会不会和系统打架。</div></div>
+<div class="event-section" id="event-3"><div class="event-title">🔥 AI教育、广告和降智焦虑集中爆发<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">教</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">对长亭晚分享 ChatGPT 正式上线广告主平台，群里顺势聊到生成式搜索、广告商业化和内容生态变化。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">教</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">程玉转发“AI正引发第一波人类降智”，草莓等人围绕 AI 教育、学习方式和判断力继续讨论。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：AI从工具聊到教育和广告，说明它已经不是“能不能用”的问题，而是“用完人会变成什么样”的问题。</div></div>
+<div class="event-section" id="event-4"><div class="event-title">🔥 资源密度继续升高：Image2、RSS、GEO和吐司App<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">链</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">千九分享 Image2 降噪文章、乔木快捷提示词插件和骡子 GEO 文章，程玉带来 papr RSS 阅读器和 AI 摘要工具。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">链</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">紫苏子ACG分享腾讯吐司 App，卡尔的AI沃茨发 EVE AI伴侣实测，工具链接从生产力一路扩展到陪伴和娱乐。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：这天的链接不是“收藏一下”，而是需要索引，不然第二天就找不到自己看过什么。</div></div>
+<div class="event-section" id="event-5"><div class="event-title">🔥 Skill不是越多越好，工作流才是正道<div class="event-tags"></div></div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">技</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">晚间李华荣提到 skill 不是越多越好，通用 skill 没想象中那么有用。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">技</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">真正能提升效率的是围绕自己的业务工作流，拆出固定步骤、沉淀成稳定可复用的 skill。</div></div></div>
+</div><div class="event-comment">💬 毒舌点评：装一堆 skill 不等于自动变强，能把自己的工作流说清楚，才是隐藏升级点。</div></div>
+<div class="event-section"><div class="event-title">🔭 边缘信号</div><div class="bubbles">
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">XPoster 把 Markdown 到 X 长文发布做成浏览器插件，内容分发链条继续自动化。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">Codex/Claude 高频更新和 Mac 体验讨论显示，桌面端 Agent 体验正在变成选设备的重要理由。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">AI 搜索广告、生成式搜索和“AI 降智”讨论说明群友开始关注 AI 产品的商业化副作用。</div></div></div>
+<div class="bubble-row"><div class="bubble-avatar">信</div><div class="bubble-content"><div class="bubble-who"></div><div class="bubble-chat">李华荣的 skill 观点把“装更多 skill”拉回到“贴合业务工作流”的实用主义。</div></div></div>
+</div></div>
+<div class="event-section"><div class="event-title">📊 今日总结</div><div class="summary-grid">
+<div class="summary-item"><div class="label">最活跃的人</div><div class="value">千九 — 130条消息，围绕 Image2、插件和资源持续互动</div></div>
+<div class="summary-item"><div class="label">最佳推进者</div><div class="value">李华荣 — 发布 XPoster、分享多 Agent 机制和 skill 方法论</div></div>
+<div class="summary-item"><div class="label">最佳争议点</div><div class="value">Mac 与 Codex — 从体验差异聊到 AI 时代设备优先级</div></div>
+<div class="summary-item"><div class="label">最佳资源日</div><div class="value">5月23日 — 从 XPoster、papr 到吐司App，工具链接密度继续很高</div></div>
+</div></div>
+<div class="footer">共1235条记录 · 2026-5-23完 · 🐉</div>
+</div>
+</div>
+<script src="daily-enhance.js?v=4"></script>
+</body>
+</html>
